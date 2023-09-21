@@ -1,0 +1,52 @@
+.navbar-toggler-icon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon.open {
+    transform: rotate(180deg);
+}
+
+.navbar-collapse {
+    max-height: 0;
+    /* overflow: hidden; */
+    transition: max-height 0.5s ease-in-out;
+    justify-content: flex-end;
+    
+}
+
+.navbar-collapse.show {
+    max-height: 300px; /* Adjust as needed */
+    
+    
+}
+
+.nav-item{
+    color: #000000;
+    transition: ease-in-out 0.3s;
+}
+
+.nav-item:hover{
+    .nav-link{
+        color: white;
+    }
+    background-color: #000000;
+    transition: ease-in-out 0.3s;
+}
+
+hr{
+    background-color: #000000;
+    height: 1px;
+    border: none;
+    margin: 0;
+}
+
+.dropdowns:hover .menus {
+    display: block;
+    margin-top: 0; 
+}
+
+@media (max-width: 990px){
+    .hidden{
+        display: none;
+    }
+}
