@@ -1,0 +1,5 @@
+.footer-space{
+    flex-direction: row;
+    width: 70px;
+    justify-content:space-between;
+}
