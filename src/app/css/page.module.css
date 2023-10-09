@@ -231,10 +231,10 @@
 .mainBanner{
   color: white;
   
-  background: url(../../../public/main-banner.png);
+  background: url(../../../public/banner1.png);
   background-position: center;
-  height: 50vh;
-  /* min-height: 80rem; */
+  height: 33vh;
   max-height: 120rem;
   position: relative;
+  background-repeat: no-repeat;
 }

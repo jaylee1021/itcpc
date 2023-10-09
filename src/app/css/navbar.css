@@ -1,18 +1,38 @@
+.background{
+    display: flex;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+.sliderimg {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    /* position: absolute; */
+    /* top: 0;
+    left: 0; */
+}
+
 .navbar-toggler-icon {
     transition: transform 0.3s ease-in-out;
 }
 
-.navbar-toggler-icon.open {
-    transform: rotate(180deg);
+#navbarNavDropdown {
+    justify-content: flex-end;
 }
+/* .navbar-toggler-icon.open {
+    transform: rotate(180deg);
+} */
 
-.navbar-collapse {
+/* .navbar-collapse {
     max-height: 0;
-    /* overflow: hidden; */
     transition: max-height 0.5s ease-in-out;
     justify-content: flex-end;
     
-}
+} */
 
 .navbar-collapse.show {
     max-height: 300px; /* Adjust as needed */
