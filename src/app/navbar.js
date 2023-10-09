@@ -144,7 +144,7 @@ export default function Navbar() {
         <li className="nav-item dropdown dropdowns">
             <a className="nav-link dropwodn-toggle" href="#">English Ministry</a>
 
-            <ul className="dropdown-menu menus" style={{ right: '0', left: 'auto' }}>
+            <ul className="dropdown-menu menus drop-to-left" >
                 <li><a href='http://www.owtcpc.org' target='_blank'><MenuItem>Open Worship(열린예배)</MenuItem></a></li>
                 <li><a href='#'><MenuItem>English Ministry</MenuItem></a></li>
                 <li><a href='#'><MenuItem>EM 게시판 EM Board</MenuItem></a></li>
