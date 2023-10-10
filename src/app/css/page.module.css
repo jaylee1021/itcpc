@@ -266,6 +266,16 @@
   text-align: center;
 }
 
+
+
+.new_comer_content {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: aqua;
+  height:300px;
+}
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
@@ -295,10 +305,13 @@
 @media screen and (max-width: 770px) {
   .videoSection {
     flex-direction: column;
-    transition: ease-in-out 0.3s;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 1024px){
-
+  .second_section {
+    flex-direction: column;
+    text-align: center;
+  }
 }
