@@ -12,12 +12,12 @@ export default function Navbar() {
     const [menuVisible, setMenuVisible] = useState(false);
 
     const toggleMenu = () => {
-        setMenuVisible(true);
+        setMenuVisible(!menuVisible);
     };
 
     const menuOpen = (
 
-        <ul className="navbar-nav">
+        <ul className="navbar-nav" style={{ backgroundColor: 'white' }}>
             <hr></hr>
             <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">교회소개</a>
@@ -153,16 +153,20 @@ export default function Navbar() {
     </ul>);
 
     return (
-        <nav className="navbar navbar-expand-lg sticky-top background">
-            <div className="container-fluid">
-                <a className="navbar-brand" href="/"><img src='/itcpc-logo.png'></img></a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavpullwn" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" onClick={toggleMenu}>
-                    <span className={`navbar-toggler-icon ${menuVisible ? 'open' : ''}`}></span>
-                </button>
-                <div className={`collapse navbar-collapse ${menuVisible ? 'show' : ''}`} id="navbarNavDropdown">
-                    {menuVisible ? menuOpen : menuClosed}
+        <div>
+            <nav className="navbar navbar-expand-lg sticky-top background">
+                <div className="container-fluid">
+                    <a className="navbar-brand" href="/"><img src='/itcpc-logo.png' alt="Logo" /></a>
+                    <button className="navbar-toggler" onClick={toggleMenu} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className={`navbar-toggler-icon ${menuVisible ? 'open' : ''}`}></span>
+                    </button>
+                    <div className={`collapse navbar-collapse ${menuVisible ? 'show' : ''}`} id="navbarNavDropdown">
+                        {menuVisible ? menuOpen : menuClosed}
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     );
 }
+
+
