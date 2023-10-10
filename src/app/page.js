@@ -8,7 +8,7 @@ export default function Home() {
       <section className='mainBanner'>
 
       </section>
-      <div className='sermonTitle' >
+      <div className='title' >
         <h4>설교</h4>
         <h5>Sermon</h5>
       </div>
@@ -62,10 +62,14 @@ export default function Home() {
         <div className='new_comer_content'>
           New Comer section (image goes here)
         </div>
-
-
       </section>
-
+      <div className='title'>
+        <h4>주일스케치</h4>
+        <h5>What's New</h5>
+      </div>
+      <section>
+        
+      </section>
     </>
   );
 }

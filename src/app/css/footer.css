@@ -17,6 +17,14 @@
     width: 60%;
 }
 
+@media screen and (max-width: 770px) {
+    .logo-dark{
+        width: 80%;
+    }
+    .copywrite {
+        font-size: 10px;
+    }
+}
 .footer-logo-position {
     display: flex;
     align-items: center;
