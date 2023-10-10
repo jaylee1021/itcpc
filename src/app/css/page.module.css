@@ -202,6 +202,70 @@
   }
 }
 
+.mainBanner {
+  color: white;
+  
+  background: url(../../../public/banner1.png);
+  background-position: center;
+  height: 33vh;
+  max-height: 120rem;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.sermonTitle {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.videoSection {
+  display: flex;
+  max-width: 1522px;
+  margin: auto;
+}
+
+.padding10 {
+  padding: 10px;
+}
+
+.articleImage {
+  width: 100%;
+}
+
+.imageWrapper {
+  display: inline-block;
+  overflow: hidden;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.imageWrapper img {
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -ms-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
+  vertical-align: middle;
+}
+
+.imageWrapper img:hover {
+  opacity: 0.6;
+  -webkit-transform:scale(1.2); /* Safari and Chrome */
+  -moz-transform:scale(1.2); /* Firefox */
+  -ms-transform:scale(1.2); /* IE 9 */
+  -o-transform:scale(1.2); /* Opera */
+  transform:scale(1.2);
+}
+
+.articleTitle {
+  padding-top:40px;
+  text-align: center;
+}
+
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
@@ -228,13 +292,13 @@
   }
 }
 
-.mainBanner{
-  color: white;
-  
-  background: url(../../../public/banner1.png);
-  background-position: center;
-  height: 33vh;
-  max-height: 120rem;
-  position: relative;
-  background-repeat: no-repeat;
+@media screen and (max-width: 770px) {
+  .videoSection {
+    flex-direction: column;
+    transition: ease-in-out 0.3s;
+  }
+}
+
+@media screen and (max-width: 1024px){
+
 }
