@@ -10,64 +10,25 @@ import { faSquareEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faSquareGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 export default function Footer() {
-    const linkedinTooltip = (props) => (
-        <Tooltip id="tooltip-id" {...props}>
-            LinkedIn
-        </Tooltip>
-    );
 
-    const githubTooltip = (props) => (
-        <Tooltip id="tooltip-id" {...props}>
-            GitHub
-        </Tooltip>
-    );
-
-    const emailTooltip = (props) => (
-        <Tooltip id="tooltip-id" {...props}>
-            Email
-        </Tooltip>
-    );
 
     return (
-        <nav class="navbar sticky-bottom bg-body-tertiary" style={{ position: 'absolute', bottom: '0', width: '100%' }}>
-            <div className="container-fluid">
-                <a className="navbar-brand" href="#">© 2023 Jay Lee</a>
-                <div >
-                    <ul className="navbar-nav footer-space">
-                        <li className="nav-item">
-                            <a className="nav-link" href="https://www.linkedin.com/in/jayjonglee" target='_blank' >
-                                <OverlayTrigger
-                                    placement="top"
-                                    delay={{ show: 250, hide: 400 }}
-                                    overlay={linkedinTooltip}>
-                                    <FontAwesomeIcon icon={faLinkedin} size='lg' />
-                                </OverlayTrigger>
-
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="https://github.com/jaylee1021" target='_blank'>
-                                <OverlayTrigger
-                                    placement="top"
-                                    delay={{ show: 250, hide: 400 }}
-                                    overlay={githubTooltip}>
-                                    <FontAwesomeIcon icon={faSquareGithub} size='lg' />
-                                </OverlayTrigger>
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="mailto:leejayjong@gmail.com">
-                                <OverlayTrigger
-                                    placement="top"
-                                    delay={{ show: 250, hide: 400 }}
-                                    overlay={emailTooltip}>
-                                    <FontAwesomeIcon icon={faSquareEnvelope} size='lg' />
-                                </OverlayTrigger>
-                            </a>
-                        </li>
-                    </ul>
+        <footer>
+            <nav className="navbar sticky-bottom footer-style" >
+                <div className='footer-group'>
+                    <div className='footer-logo-position'>
+                        <a className="" href="#"><img className='logo-dark' src='/itcpc-logo-dark.png' /></a>
+                    </div>
+                    <div className='copywrite'>
+                        Tacoma Central Presbyterian Church
+                        <br />
+                        8001 Pine St. S. Lakewood, WA 98499 / TEL: 253-589-8900, 6873, 6874
+                        FAX: 253-589-6875 / E-mail : <a href='mailto: office@itcpc.org'>office@itcpc.org</a>
+                        <br />
+                        Copyright(c) 2015. Tacoma Central Presbyterian Church . All rights reserved.
+                    </div >
                 </div>
-            </div>
-        </nav>
+            </nav >
+        </footer >
     );
 }

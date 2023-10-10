@@ -1,5 +1,28 @@
-.footer-space{
-    flex-direction: row;
-    width: 70px;
-    justify-content:space-between;
+.footer-style {
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(49, 65, 71);
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    height: 120px; 
+}
+
+.copywrite {
+    font-size: 13px;
+    align-self: center;
+}
+
+.logo-dark {
+    width: 60%;
+}
+
+.footer-logo-position {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-group {
+    display: flex;
 }
