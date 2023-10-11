@@ -16,17 +16,51 @@ export default function Footer() {
         <footer>
             <nav className="navbar sticky-bottom footer-style" >
                 <div className='footer-group'>
-                    <div className='footer-logo-position'>
-                        <a className="" href="#"><img className='logo-dark' src='/itcpc-logo-dark.png' /></a>
+                    <div className='footer-section'>
+                        <p>
+                            253-589-8990
+                            <br />
+                        </p>
+                        <p>
+                            <a href='mailto:office@itcpc.org'>office@itcpc.org</a>
+                        </p>
+                        <p>
+                            10002 59th Ave SW
+                            <br />
+                            Lakewood, WA 98499
+                        </p>
+                        <p>
+                            <a href='https://www.facebook.com/itgroup.tcpc' target='_blank'>
+                                <img src='/facebook.png' className='social-icon' />
+                            </a>
+
+                            <a href='https://www.youtube.com/@TCPCTV' target='_blank'>
+                                <img src='/youtube.png' className='social-icon' />
+                            </a>
+                        </p>
+                        <p>
+                            Copyright(c) 2023.
+                            <br />
+                            Tacoma Central Presbyterian Church.
+                            <br />
+                            All rights reserved.
+                        </p>
                     </div>
-                    <div className='copywrite'>
-                        Tacoma Central Presbyterian Church
-                        <br />
-                        8001 Pine St. S. Lakewood, WA 98499 / TEL: 253-589-8900, 6873, 6874
-                        FAX: 253-589-6875 / E-mail : <a href='mailto: office@itcpc.org'>office@itcpc.org</a>
-                        <br />
-                        Copyright(c) 2015. Tacoma Central Presbyterian Church . All rights reserved.
-                    </div >
+                    <div className='footer-section'>
+                        <p>
+                            About
+                        </p>
+                    </div>
+                    <div className='footer-section'>
+                    <p>
+                            Sermon
+                        </p>
+                    </div>
+                    <div className='footer-section'>
+                    <p>
+                            교회학교
+                        </p>
+                    </div>
                 </div>
             </nav >
         </footer >
