@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-around;
     color: white;
-    height: 120px; 
+    height: 100%;
 }
 
 .copywrite {
@@ -33,4 +33,13 @@
 
 .footer-group {
     display: flex;
+    width: 100%;
+    max-width: 1522px;
+    justify-content: space-between;
+    padding: 40px 10px 40px 10px;
+}
+
+.footer-section {
+    width: 30%;
+    padding: 15px;
 }
