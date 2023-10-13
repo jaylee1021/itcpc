@@ -1,37 +1,80 @@
 import Image from 'next/image';
 import './css/page.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Home() {
 
   return (
     <>
-      <section className='mainBanner'>
-
+      <title>타코마중앙장로교회</title>
+      <section >
+        {/* <video controls className='mainBannerVideo' muted autoplay='autoplay' loop>
+          <source src='/banner_video.mov' type='video/mp4' />
+        </video> */}
+        <img src='/main_banner.png' className='mainBannerImage' />
       </section>
+      <br />
+      <br />
       <div className='title' >
-        <h4>설교</h4>
-        <h5>Sermon</h5>
+        <p className='title-style'>주일 예배</p>
+        <p className='subtitle-style'>Sunday Worship</p>
       </div>
       <section className='videoSection'>
         <article className='padding10'>
           <div className='imageWrapper'>
             <a href='#'><img src='/Korean.png' className='articleImage' /></a>
+            <div className='articleTitle' >
+              <p>
+                소망의 하나님 God of Hope - 로마서 15:13
+              </p>
+              <p className='date_time'>
+                2023.10.01 @ 8:00 AM - 이형석 목사
+              </p>
+
+            </div>
           </div>
-          <div className='articleTitle' >
-            <h4>소망의 하나님 God of Hope - 로마서 15:13</h4>
-            <h6>2023.10.01 - 이형성 목사</h6>
+          <div className='articleSub'>
+            1부 장년예배와 성가대찬양 (임시)
           </div>
+
         </article>
         <article className='padding10'>
           <div className='imageWrapper'>
             <a href='#'><img src='/English.png' className='articleImage' /></a>
+            <div className='articleTitle'>
+              <p>
+                Go Up To Bethel - Romans 15:13
+              </p>
+              <p className='date_time'>
+                2023.10.01 @ 9:30 AM - Rev. Samuel Lee
+              </p>
+            </div>
           </div>
-          <div className='articleTitle'>
-            <h4>Go Up To Bethel - Romans 15:13</h4>
-            <h6>2023.10.01 - Rev. Samuel Lee</h6>
+          <div className='articleSub'>
+            2부 영어예배 (임시)
           </div>
+
+        </article>
+        <article className='padding10'>
+          <div className='imageWrapper'>
+            <a href='#'><img src='/English.png' className='articleImage' /></a>
+            <div className='articleTitle'>
+              <p>
+                소망의 하나님 God of Hope - 로마서 15:13
+              </p>
+              <p className='date_time'>
+                2023.10.01 @ 11:00 AM - 이형석 목사
+              </p>
+            </div>
+          </div>
+          <div className='articleSub'>
+            3부 젊은예배와 실로암 찬양대 (임시)
+          </div>
+
         </article>
       </section>
+      <br />
+      <br />
       <section className='videoSection' >
         <div className='videoSection second_section'>
           <div className='padding10'>
@@ -58,6 +101,35 @@ export default function Home() {
           </div>
         </div>
       </section >
+      <br />
+      <div className='title'>
+        <p className='title-style'>2023년 교회표어</p>
+        <p className='subtitle-style'>Ministry Emphasis</p>
+      </div>
+      <section className='mid-banner'>
+        <div id="carouselExampleAutoplaying" className="carousel slide carousel-position" data-bs-ride="carousel">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img src="/banner1.png" className="d-block w-100" alt="..." />
+            </div>
+            <div className="carousel-item">
+              <img src="/banner2.png" className="d-block w-100" alt="..." />
+            </div>
+
+          </div>
+          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      <br />
+      <br />
+      <br />
       <section className='new_comer'>
         <div className='new_comer_content'>
           <h1>새가족 안내</h1>
@@ -66,9 +138,11 @@ export default function Home() {
           <p>새가복으로 등록 하신 분들은 교회 소개와 안내, 소그룹안내(구역) 밑 새가족 교육에 참여하시면서 교회 생활에 필요한 도움을 받으시게 됩니다.</p>
         </div>
       </section>
+      <br />
+      <br />
       <div className='title'>
-        <h4>주일스케치</h4>
-        <h5>What's New</h5>
+        <p className='title-style'>주일스케치</p>
+        <p className='subtitle-style'>What's New</p>
       </div>
       <section className='videoSection'>
         <div className='whats_new_image_wrapper'>
@@ -96,6 +170,9 @@ export default function Home() {
           </div>
         </div >
       </section >
+      <br />
+      <br />
+      <br />
     </>
   );
 }
