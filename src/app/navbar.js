@@ -80,7 +80,7 @@ export default function Navbar() {
 
     const menuClosed = (<ul className="navbar-nav hidden">
         <li className="nav-item dropdown dropdowns">
-            <a className="nav-link" href="./about" >교회소개</a>
+            <a className="nav-link" style={{ fontWeight: 'bold' }} href="./about" >교회소개</a>
             <ul className="dropdown-menu menus">
                 <li><a href='#'><MenuItem>환영인사</MenuItem></a></li>
                 <li><a href='#'><MenuItem>새가족</MenuItem></a></li>
@@ -94,7 +94,7 @@ export default function Navbar() {
             <a className="nav-link" href="#">|</a>
         </li>
         <li className="nav-item dropdown dropdowns">
-            <a className="nav-link" href="#">설교와 찬양</a>
+            <a className="nav-link" style={{ fontWeight: 'bold' }} href="#">설교와 찬양</a>
             <ul className="dropdown-menu menus">
                 <li><a href='#'><MenuItem>설교말씀</MenuItem></a></li>
                 <li><a href='#'><MenuItem>찬양</MenuItem></a></li>
@@ -104,7 +104,7 @@ export default function Navbar() {
             <a className="nav-link" href="#">|</a>
         </li>
         <li className="nav-item dropdown dropdowns">
-            <a className="nav-link" href="#">교회학교</a>
+            <a className="nav-link" style={{ fontWeight: 'bold' }} href="#">교회학교</a>
             <ul className="dropdown-menu menus">
                 <li><a href='#'><MenuItem>영유아부 Promise Land</MenuItem></a></li>
                 <li><a href='#'><MenuItem>유년부 Team K5</MenuItem></a></li>
@@ -116,7 +116,7 @@ export default function Navbar() {
             <a className="nav-link" href="#">|</a>
         </li>
         <li className="nav-item dropdown dropdowns">
-            <a className="nav-link" href="#">선교와 공동체</a>
+            <a className="nav-link" style={{ fontWeight: 'bold' }} href="#">선교와 공동체</a>
             <ul className="dropdown-menu menus">
                 <li><a href='#'><MenuItem>선교회/구역</MenuItem></a></li>
                 <li><a href='#'><MenuItem>세계선교</MenuItem></a></li>
@@ -129,7 +129,7 @@ export default function Navbar() {
             <a className="nav-link" href="#">|</a>
         </li>
         <li className="nav-item dropdown dropdowns">
-            <a className="nav-link" href="#">교회소식</a>
+            <a className="nav-link" style={{ fontWeight: 'bold' }} href="#">교회소식</a>
             <ul className="dropdown-menu menus">
                 <li><a href='#'><MenuItem>주보</MenuItem></a></li>
                 <li><a href='#'><MenuItem>주일스케치</MenuItem></a></li>
@@ -142,7 +142,7 @@ export default function Navbar() {
         </li>
 
         <li className="nav-item dropdown dropdowns">
-            <a className="nav-link dropwodn-toggle" href="#">English Ministry</a>
+            <a className="nav-link dropwodn-toggle" style={{ fontWeight: 'bold' }} href="#">English Ministry</a>
 
             <ul className="dropdown-menu menus drop-to-left" >
                 <li><a href='http://www.owtcpc.org' target='_blank'><MenuItem>Open Worship(열린예배)</MenuItem></a></li>
