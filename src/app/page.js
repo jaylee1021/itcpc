@@ -1,11 +1,48 @@
+'use client';
 import Image from 'next/image';
 import './css/page.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect, useState } from 'react';
+import axios, { all } from 'axios';
+import { el } from '@faker-js/faker';
 
 export default function Home() {
+  const [sermons, setSermons] = useState([]);
+  const [allSermons, setAllSermons] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons`)
+      .then((res) => {
+        console.log(res.data.sermons);
+        setAllSermons(res.data.sermons);
+        setSermons(res.data.sermons.slice(-1)[0]);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  let firstSermon = '';
+  let secondSermon = '';
+  let thirdSermon = '';
+
+  if (allSermons.length > 0) {
+    for (let x = 0; x < allSermons.length; x++) {
+      if (allSermons[x].session === 'first') {
+        firstSermon = allSermons[x];
+      } else if (allSermons[x].session === 'second') {
+        secondSermon = allSermons[x];
+      } else if (allSermons[x].session === 'third') {
+        thirdSermon = allSermons[x];
+      }
+    }
+  }
 
 
-    
+  if (isLoading) return <div>Loading...</div>;
+
   return (
     <>
       <title>타코마중앙장로교회</title>
@@ -24,13 +61,14 @@ export default function Home() {
       <section className='videoSection'>
         <article className='padding10'>
           <div className='imageWrapper'>
-            <a href='#'><img src='/Korean.png' className='articleImage' /></a>
+            <a href='#'><img src={firstSermon.snap} className='articleImage' /></a>
             <div className='articleTitle' >
               <p>
-                소망의 하나님 God of Hope - 로마서 15:13
+
+                {firstSermon.title} - {firstSermon.passage}
               </p>
               <p className='date_time'>
-                2023.10.01 @ 8:00 AM - 이형석 목사
+                {firstSermon.date.split('T')[0]} @ 8:00 AM - {firstSermon.preacher} 목사
               </p>
 
             </div>
@@ -42,13 +80,13 @@ export default function Home() {
         </article>
         <article className='padding10'>
           <div className='imageWrapper'>
-            <a href='#'><img src='/English.png' className='articleImage' /></a>
+            <a href='#'><img src={secondSermon.snap} className='articleImage' /></a>
             <div className='articleTitle'>
               <p>
-                Go Up To Bethel - Romans 15:13
+                {secondSermon.title} - {secondSermon.passage}
               </p>
               <p className='date_time'>
-                2023.10.01 @ 9:30 AM - Rev. Samuel Lee
+                {secondSermon.date.split('T')[0]} @ 9:30 AM - Rev. {secondSermon.preacher}
               </p>
             </div>
           </div>
@@ -177,4 +215,4 @@ export default function Home() {
       <br />
     </>
   );
-}
+};
