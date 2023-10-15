@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Home() {
 
+
+    
   return (
     <>
       <title>타코마중앙장로교회</title>
