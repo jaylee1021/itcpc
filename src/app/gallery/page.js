@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Photo } from '../Component/Photo';
 
-export default function Sermon() {
+export default function Gallery() {
     return (
         <>
-            Sermon page
+            Photo page
         </>
     );
 }
