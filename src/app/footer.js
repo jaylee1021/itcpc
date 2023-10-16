@@ -50,18 +50,14 @@ export default function Footer() {
                             <img src='/itcpc-logo-dark.png' className='footer-logo' />
                         </div>
                         <br />
-                        <br />
-                        <br />
                         <p>
                             253-589-8990
                             <br />
-                            <a href='mailto:office@itcpc.org'>office@itcpc.org</a>
+                            <a className='email_link' href='mailto:office@itcpc.org'>office@itcpc.org</a>
                         </p>
-                        <br />
                         <p>
                             10002 59th Ave SW, Lakewood, WA 98499
                         </p>
-                        <br />
                         <br />
                         <p>
                             <a href='https://www.youtube.com/@TCPCTV' target='_blank'>

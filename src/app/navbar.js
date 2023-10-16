@@ -154,7 +154,7 @@ export default function Navbar() {
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg sticky-top background">
+            <nav className="navbar navbar-expand-lg sticky-top" style={{ position: 'sticky', top: '0' }}>
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/"><img src='/itcpc-logo.png' alt="Logo" /></a>
                     <button className="navbar-toggler" onClick={toggleMenu} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

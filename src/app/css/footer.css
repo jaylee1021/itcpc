@@ -80,6 +80,9 @@
     background-color:darkcyan;
 }
 
+.email_link {
+    color: white;
+}
 
 @media screen and (max-width: 770px) {
     .logo-dark{
