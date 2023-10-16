@@ -97,13 +97,13 @@ export default function Home() {
         </article>
         <article className='padding10'>
           <div className='imageWrapper'>
-            <a href='#'><img src='/English.png' className='articleImage' /></a>
+            <a href='#'><img src={thirdSermon.snap} className='articleImage' /></a>
             <div className='articleTitle'>
               <p>
-                소망의 하나님 God of Hope - 로마서 15:13
+                {thirdSermon.title} - {thirdSermon.passage}
               </p>
               <p className='date_time'>
-                2023.10.01 @ 11:00 AM - 이형석 목사
+                {thirdSermon.date.split('T')[0]} @ 11:00 AM - {thirdSermon.preacher} 목사
               </p>
             </div>
           </div>
@@ -113,6 +113,38 @@ export default function Home() {
 
         </article>
       </section>
+      <br />
+      <br />
+      <div className='title'>
+        <p className='title-style'>다가오는 이벤트</p>
+        <p className='subtitle-style'>Upcoming Events</p>
+      </div>
+      <section className='videoSection'>
+        <div className='whats_new_image_wrapper'>
+          <div className=''>
+            <a href='#'><img src='/2023_vbs.png' className='whats_new_image' /></a>
+          </div>
+          <div className='more-info'>
+            <p>2023 VBS</p>
+          </div>
+        </div>
+        <div className='whats_new_image_wrapper'>
+          <div className=''>
+            <a href='#'><img src='/2023_picnic.png' className='whats_new_image' /></a>
+          </div>
+          <div className='more-info'>
+            <p>2023 전교인 피크닉</p>
+          </div>
+        </div>
+        <div className='whats_new_image_wrapper'>
+          <div className=''>
+            <a href='#'><img src='/2023_appointment.png' className='whats_new_image' /></a>
+          </div>
+          <div className='more-info'>
+            <p>2023 신년 임직식</p>
+          </div>
+        </div >
+      </section >
       <br />
       <br />
       <section className='videoSection' >
@@ -131,7 +163,7 @@ export default function Home() {
         <div className='videoSection second_section'>
           <div className='padding10'>
             <div className='imageWrapper'>
-              <a href='#'><img src='/church_school.png' className='articleImage' /></a>
+              <a href='./education'><img src='/church_school.png' className='articleImage' /></a>
             </div>
           </div>
           <div className='padding10'>
