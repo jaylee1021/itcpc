@@ -1,0 +1,63 @@
+.main_background {
+    background-color: rgb(49, 65, 71);
+}
+
+.education_section {
+    display: flex;
+    max-width: 1522px;
+    margin: auto;
+    justify-content: center;
+}
+
+.left,
+.right {
+    flex: 1 0 50%;
+    white-space: wrap;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.education_section_image {
+    width: 100%;
+}
+
+.education_section_description {
+    max-width: 50%;
+    padding: 0 100px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+.education_section_title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1030px) {
+  .education_section {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .education_section_description,
+  .education_section_image {
+    max-width: 100%;
+  }
+
+  .education_section_image,
+  .education_section_description {
+    order: 1; /* Change the order of elements */
+  }
+
+  .education_section_description {
+    padding: 20px 0; /* Adjust padding for better spacing */
+  }
+}
+    
