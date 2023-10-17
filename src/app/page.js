@@ -115,38 +115,6 @@ export default function Home() {
       </section>
       <br />
       <br />
-      <div className='title'>
-        <p className='title-style'>다가오는 이벤트</p>
-        <p className='subtitle-style'>Upcoming Events</p>
-      </div>
-      <section className='videoSection'>
-        <div className='whats_new_image_wrapper'>
-          <div className=''>
-            <a href='#'><img src='/2023_vbs.png' className='whats_new_image' /></a>
-          </div>
-          <div className='more-info'>
-            <p>2023 VBS</p>
-          </div>
-        </div>
-        <div className='whats_new_image_wrapper'>
-          <div className=''>
-            <a href='#'><img src='/2023_picnic.png' className='whats_new_image' /></a>
-          </div>
-          <div className='more-info'>
-            <p>2023 전교인 피크닉</p>
-          </div>
-        </div>
-        <div className='whats_new_image_wrapper'>
-          <div className=''>
-            <a href='#'><img src='/2023_appointment.png' className='whats_new_image' /></a>
-          </div>
-          <div className='more-info'>
-            <p>2023 신년 임직식</p>
-          </div>
-        </div >
-      </section >
-      <br />
-      <br />
       <section className='videoSection' >
         <div className='videoSection second_section'>
           <div className='padding10'>
@@ -210,6 +178,38 @@ export default function Home() {
           <p>새가복으로 등록 하신 분들은 교회 소개와 안내, 소그룹안내(구역) 밑 새가족 교육에 참여하시면서 교회 생활에 필요한 도움을 받으시게 됩니다.</p>
         </div>
       </section>
+      <br />
+      <br />
+      <div className='title'>
+        <p className='title-style'>소식</p>
+        <p className='subtitle-style'>News</p>
+      </div>
+      <section className='videoSection'>
+        <div className='whats_new_image_wrapper'>
+          <div className=''>
+            <a href='#'><img src='/2023_vbs.png' className='whats_new_image' /></a>
+          </div>
+          <div className='more-info'>
+            <p>2023 VBS</p>
+          </div>
+        </div>
+        <div className='whats_new_image_wrapper'>
+          <div className=''>
+            <a href='#'><img src='/2023_picnic.png' className='whats_new_image' /></a>
+          </div>
+          <div className='more-info'>
+            <p>2023 전교인 피크닉</p>
+          </div>
+        </div>
+        <div className='whats_new_image_wrapper'>
+          <div className=''>
+            <a href='#'><img src='/2023_appointment.png' className='whats_new_image' /></a>
+          </div>
+          <div className='more-info'>
+            <p>2023 신년 임직식</p>
+          </div>
+        </div >
+      </section >
       <br />
       <br />
       <div className='title'>
