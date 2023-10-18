@@ -1,0 +1,152 @@
+'use client';
+import '../css/page.css';
+import '../css/service.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+export default function ServiceAndDirection() {
+
+    return (
+        <>
+            <title>타코마중앙장로교회</title>
+            <section >
+                <div className='service_banner_wrapper'>
+                    <img src='/new_comer_top_banner.jpg' className='mainBannerImage' />
+                    <div className='service_banner_title'>
+                        <p>
+                            {/* 예배 및 모임 / 약도 */}
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <br />
+            <br />
+            <div className='title' >
+                <p className='title-style'>예배 및 모임</p>
+                <p className='subtitle-style'>Service & Meetings </p>
+            </div>
+            <br />
+            <section className='service_total'>
+                <div className='service_section'>
+                    <div className='service_section_title'>
+                        <p>주일예배
+                            <br />
+                            <span>Sunday Worship</span>
+                        </p>
+                    </div>
+                    <div className='hide'>
+                        <div className='service_section_description'>
+                            <p>
+                                <b>1부</b> 한어예배 오전 8:00
+                                <br />
+                                <b>2부</b> 영어예배 오전 9:30
+                                <br />
+                                <b>3부</b> 한어예배 오전 11:00
+                                <br />
+                                <a href='https://www.youtube.com/@TCPCTV'>&gt;라이브 온라인 예배&lt;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div className='service_section'>
+                    <div className='service_section_title'>
+                        <p>열린예베
+                            <br />
+                            <span> Open Worship</span>
+                        </p>
+                    </div>
+                    <div className='service_section_description'>
+                        <p>비전채플 Vision Chapel 오전 11:00 </p>
+                    </div>
+                </div>
+                <div className='service_section'>
+                    <div className='service_section_title'>
+                        <p>중고등부
+                            <br />
+                            <span> Youth Group</span>
+                        </p>
+                    </div>
+                    <div className='service_section_description'>
+                        <p>드림채플 Dream Chapel 오전 11:00 </p>
+                    </div>
+                </div>
+                <div className='service_section'>
+                    <div className='service_section_title'>
+                        <p>주일학교
+                            <br />
+                            <span>Sunday School</span>
+                        </p>
+                    </div>
+                    <div className='service_section_description'>
+                        <p><b>영아부</b> (영아부실) 오전 11:00
+                            <br />
+                            <b>유아부</b> (유아부실) 오전 11:00
+                            <br />
+                            <b>유년부</b> (주일학교 예배실) 오전 11:00</p>
+                    </div>
+                </div>
+                <div className='service_section'>
+                    <div className='service_section_title'>
+                        <p>수요예배
+                            <br />
+                            <span>Wednesday Worship</span>
+                        </p>
+                    </div>
+                    <div className='service_section_description'>
+                        <p>
+                            매주 수요일 오전 10:00
+                        </p>
+                    </div>
+                    <br />
+                    <div className='service_section_title'>
+                        <p>새벽기도
+                            <br />
+                            <span>Morning Prayer</span>
+                        </p>
+                    </div>
+                    <div className='service_section_description'>
+                        <p>매주 화~토요일 오전 6:00
+                            <br />
+                            <a href='https://www.youtube.com/@TCPCTV'>&gt;라이브 온라인 예배&lt;</a>
+                        </p>
+                    </div>
+                </div>
+                <div className='service_section'>
+                    <div className='service_section_title'>
+                        <p>소그룹모임
+                            <br />
+                            <span>Small Group</span>
+                        </p>
+                    </div>
+                    <div className='service_section_description'>
+                        <p>각 소그릅별</p>
+                    </div>
+                    <br />
+                    <div className='service_section_title'>
+                        <p>한국학교
+                            <br />
+                            <span>Korean School</span>
+                        </p>
+                    </div>
+                    <div className='service_section_description'>
+                        <p>학기중 매주 토요일 오전 9:30 ~ 오전 12:00
+                            <br />
+                            <a href='https://www.tacomakoreanschool.org/'>&gt;한국학교 홈페이지&lt;</a></p>
+                    </div>
+                </div>
+            </section >
+            <br />
+            <br />
+            <div className='title' >
+                <p className='title-style'>교회 위치</p>
+                <p className='subtitle-style'>Location </p>
+            </div>
+            <br />
+            <section>
+                <div className='map_section'>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10846.614585254953!2d-122.47267004491583!3d47.18421748529249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549100492e173d13%3A0x7c95ea046cca1fc1!2s8001+Pine+St+S%2C+Lakewood%2C+WA+98499%2C+USA!5e0!3m2!1sen!2skr!4v1441865312583"
+                        allowFullScreen loading='lazy'></iframe>
+                </div>
+            </section>
+        </>
+    );
+}

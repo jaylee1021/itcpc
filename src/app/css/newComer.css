@@ -1,0 +1,107 @@
+.newComer_banner_wrapper {
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+
+.newComer_banner_title {
+    padding-top:40px;
+    text-align: center;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    padding: 10px;
+    font-size: 20px;
+    width: 100%;
+    margin: auto;
+    text-shadow: 0 0 3px #ffffff, 0 0 5px #000000; 
+}
+
+.newComer_banner_title p {
+    margin: 0;
+    font-size: 5rem;
+}
+
+.top_background {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.newComer_section {
+    display: flex;
+    flex-direction: column;
+    max-width: 866px;
+    margin: auto;
+    align-items: center;
+}
+
+.new_comer_passage_title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: teal;
+}
+
+.new_comer_contacts {
+    display: flex;
+}
+
+.new_comer_contact {
+    border-radius: 5px;
+    padding: 3px;
+    margin: 0 10px;
+    width: 33%;
+    font-size: 0.8rem;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    text-decoration: none;
+}
+
+.new_comer_contact p {
+    padding: 3px;
+    margin: 0px;
+}
+
+.phone {
+    background-color: rgb(77, 190, 255);
+}
+
+.e-mail {
+    background-color: rgb(54, 190, 54);
+}
+
+.direction {
+    background-color: rgb(255, 166, 0);
+}
+
+.new_comer_helper_section {
+    display: flex;
+}
+
+.new_comer_helper {
+    border-radius: 5px;
+    padding: 35px;
+    width: 25%;
+    font-size: 1.3rem;
+    color: black;
+    font-weight: 700;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(white, rgb(178, 235, 255));
+}
+
+.new_comer_helper_description {
+    border-radius: 5px;
+    padding-left: 50px;
+    width: 75%;
+    font-size: 1rem;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;
+    align-items: center;
+
+}

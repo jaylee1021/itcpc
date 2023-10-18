@@ -11,7 +11,6 @@
 .top_background {
     background-color: #f2f2f2;
     padding: 20px;
-    /* max-width: 866px; */
     border-radius: 10px;
 }
 
@@ -67,7 +66,6 @@
 
 .about_vision_kr_sub {
     font-size: 1.5rem;
-    /* font-weight: 700; */
     margin-bottom: 20px;
     color: teal;
 }
@@ -120,6 +118,12 @@
     width: 100%;
 }
 
+@media screen and (max-width: 1300px){
+    .profile_section {
+        max-width: 40%
+    }
+}
+
 @media screen and (max-width: 1104px) {
     .about_banner_title p {
         font-size: 150px;
@@ -135,6 +139,10 @@
 @media screen and (max-width: 969px) {
     .about_banner_title p {
         font-size: 130px;
+    }
+
+    .profile_section {
+        max-width: 75%
     }
 }
 
@@ -176,16 +184,88 @@
     }   
 }
 
-@media screen and (max-width: 400px) {
-    .about_vision_kr_sub {
-        font-size: 1.2rem;
+@media screen and (max-width: 630px) {
+    .about_banner_title p {
+        font-size: 80px;
     }
 
-    .about_vision_sub {
-        font-size: 0.9rem;
+    .aboutSection {
+        flex-direction: column;
+        align-items: center;
     }
-
+    
     .about_vision_description {
-        padding: 0;
+        max-width: 100%;
+        
+    }
+
+    .about_vision_kr_sub {
+        font-size: 1.3rem;
+    }   
+}
+
+@media screen and (max-width: 562px) {
+    .about_banner_title p {
+        font-size: 70px;
+    }
+
+    .aboutSection {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about_vision_description {
+        max-width: 100%;
+        
+    }
+
+    .about_vision_kr_sub {
+        font-size: 1.3rem;
+    }   
+
+    .profile_section {
+        max-width: 100%
     }
 }
+
+@media screen and (max-width: 495px) {
+    .about_banner_title p {
+        font-size: 60px;
+    }
+
+    .aboutSection {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about_vision_description {
+        max-width: 100%;
+        
+    }
+
+    .about_vision_kr_sub {
+        font-size: 1.3rem;
+    }   
+}
+
+@media screen and (max-width: 427px) {
+    .about_banner_title p {
+        font-size: 50px;
+    }
+
+    .aboutSection {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about_vision_description {
+        max-width: 100%;
+        
+    }
+
+    .about_vision_kr_sub {
+        font-size: 1.3rem;
+    }   
+}
+
+

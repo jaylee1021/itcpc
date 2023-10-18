@@ -1,0 +1,77 @@
+.service_banner_wrapper {
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+
+.service_banner_title {
+    padding-top:40px;
+    text-align: center;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    padding: 10px;
+    font-size: 20px;
+    width: 100%;
+    margin: auto;
+    text-shadow: 0 0 3px #ffffff, 0 0 5px #000000; 
+}
+
+.service_banner_title p {
+    margin: 0;
+    font-size: 5rem;
+}
+
+.service_total {
+    display: flex;
+    max-width: 1522px;
+    margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service_section {
+    display: flex;
+    flex: 1 0 50%;
+    padding: 0 px;
+    margin: 10px;
+    background-color: white;
+    max-width: 25%;
+    flex-direction: column;   
+}
+
+.service_section_title p {
+    font-size: 1.2rem;
+    /* margin-bottom: 5px; */
+    color: black;
+    font-weight: bold;
+}
+
+.service_section_description a {
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+}
+
+.service_section_description p {
+    color: rgb(90, 90, 90);
+}
+
+.service_section_title span {
+    font-size: 1.1rem;
+    color: rgb(90, 90, 90);
+}
+
+.map_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.map_section iframe {
+    width: 100%;
+    height: 100%; 
+}
