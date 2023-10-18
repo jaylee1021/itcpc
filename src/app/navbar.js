@@ -20,14 +20,13 @@ export default function Navbar() {
         <ul className="navbar-nav" style={{ backgroundColor: 'white' }}>
             <hr></hr>
             <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">교회소개</a>
+                <a className="nav-link dropdown-toggle" role="button" href='#' data-bs-toggle="dropdown" aria-expanded="false">교회소개</a>
                 <ul className="dropdown-menu">
-                    <li><a href='#' className='menu_link'><MenuItem>환영인사</MenuItem></a></li>
-                    <li><a href='#' className='menu_link'><MenuItem>새가족</MenuItem></a></li>
+                    <li><a href='./about' className='menu_link'><MenuItem>환영인사</MenuItem></a></li>
+                    <li><a href='./newComer' className='menu_link'><MenuItem>새가족</MenuItem></a></li>
                     <li><a href='#' className='menu_link'><MenuItem>교회비전</MenuItem></a></li>
                     <li><a href='#' className='menu_link'><MenuItem>교회연헉</MenuItem></a></li>
-                    <li><a href='#' className='menu_link'><MenuItem>예배안내/약도</MenuItem></a></li>
-                    <li><a href='#' className='menu_link'><MenuItem>섬기는분들</MenuItem></a></li>
+                    <li><a href='./serviceAndDirection' className='menu_link'><MenuItem>예배안내/약도</MenuItem></a></li>
                 </ul>
             </li>
             <li className="nav-item dropdown">
@@ -74,14 +73,13 @@ export default function Navbar() {
 
     const menuClosed = (<ul className="navbar-nav hidden">
         <li className="nav-item dropdown dropdowns">
-            <a className="nav-link" style={{ fontWeight: 'bold' }} href="./about" >교회소개</a>
+            <button className="nav-link" style={{ fontWeight: 'bold' }} >교회소개</button>
             <ul className="dropdown-menu menus">
-                <li><a href='#' className='menu_link'><MenuItem>환영인사</MenuItem></a></li>
-                <li><a href='#' className='menu_link'><MenuItem>새가족</MenuItem></a></li>
+                <li><a href="./about" className='menu_link'><MenuItem>환영인사</MenuItem></a></li>
+                <li><a href='./newComer' className='menu_link'><MenuItem>새가족</MenuItem></a></li>
                 <li><a href='#' className='menu_link'><MenuItem>교회비전</MenuItem></a></li>
                 <li><a href='#' className='menu_link'><MenuItem>교회연헉</MenuItem></a></li>
-                <li><a href='#' className='menu_link'><MenuItem>예배안내/약도</MenuItem></a></li>
-                <li><a href='#' className='menu_link'><MenuItem>섬기는분들</MenuItem></a></li>
+                <li><a href='./serviceAndDirection' className='menu_link'><MenuItem>예배안내/약도</MenuItem></a></li>
             </ul>
         </li>
         <li>
@@ -140,7 +138,7 @@ export default function Navbar() {
     </ul>);
 
     return (
-        <div>
+        <div >
             <nav className="navbar navbar-expand-lg sticky-top" >
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/"><img src='/itcpc-logo.png' alt="Logo" /></a>
