@@ -17,7 +17,7 @@ export default function Gallery() {
                 </div>
                 <div className='education_section_description right'>
                     <p className='education_section_title'>
-                        영아부 (18개월 ~ 3.5세)
+                        영아부 Toddlers (18개월 ~ 3.5세)
                     </p>
                     <p>
                         저희반은 4살부터 5살까지의 어린이들로 구성되어 있습니다.
@@ -38,7 +38,7 @@ export default function Gallery() {
 
                 <div className='education_section_description left'>
                     <p className='education_section_title'>
-                        Promiseland (Pre-k 3.5세 ~ 4.5세)
+                        유아부 Promiseland (Pre-k 3.5세 ~ 4.5세)
                     </p>
                     <p>
                         Description goes here
@@ -61,7 +61,7 @@ export default function Gallery() {
                 </div>
                 <div className='education_section_description right'>
                     <p className='education_section_title'>
-                        Team K5 (K ~ 5th Grade)
+                        유년부 Team K5 (K ~ 5th Grade)
                     </p>
                     <p>
                         Description goes here
@@ -77,7 +77,7 @@ export default function Gallery() {
             <section className='education_section'>
                 <div className='education_section_description left'>
                     <p className='education_section_title'>
-                        Matus United (중고등부)
+                        중고등부 Youth Group (6th ~ 12th Grade)
                     </p>
                     <p>
                         Description goes here

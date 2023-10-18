@@ -290,6 +290,9 @@ export default function About() {
                     </div>
                 </div>
             </section>
+            <br />
+            <br />
+            <br />
         </ >
     );
 }

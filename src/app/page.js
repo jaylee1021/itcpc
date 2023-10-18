@@ -3,7 +3,7 @@ import Image from 'next/image';
 import './css/page.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
-import axios, { all } from 'axios';
+import axios from 'axios';
 import { el } from '@faker-js/faker';
 
 export default function Home() {
