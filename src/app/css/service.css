@@ -75,3 +75,18 @@
     width: 100%;
     height: 100%; 
 }
+
+@media screen and (max-width: 750px) {
+    .service_section {
+        flex: 1 0 100%;
+        max-width: 45%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .service_section {
+        flex: 1 0 100%;
+        max-width: 100%;
+        padding: 0 50px;
+    }
+}
