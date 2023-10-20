@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { el } from '@faker-js/faker';
+import TransitionsModal from './Component/PhotoModal';
 
 export default function Home() {
   const [sermons, setSermons] = useState([]);
@@ -178,26 +179,26 @@ export default function Home() {
           <div className='news_wrapper'>
             <div className='news_image'>
               <div className='news_description'>
-                <h2>예배안내</h2>
-                <button className='news_sub'>더보기</button>
+                <h2 className='news_image_title'>예배안내</h2>
+                <a href='#'><p className='news_image_button'><TransitionsModal /></p></a>
               </div>
             </div>
             <div className='news_image'>
               <div className='news_description'>
-                <h2>부흥회</h2>
-                <button className='news_sub'>더보기</button>
+                <h2 className='news_image_title'>가을 글로벌 특별 새벽 부흥회</h2>
+                <a href='#'><p className='news_image_button'>더보기</p></a>
               </div>
             </div>
             <div className='news_image' >
               <div className='news_description'>
-                <h2>피크닉</h2>
-                <button className='news_sub'>더보기</button>
+                <h2 className='news_image_title'>피크닉</h2>
+                <a href='#'><p className='news_image_button'>더보기</p></a>
               </div>
             </div>
             <div className='news_image'>
               <div className='news_description'>
-                <h2>임직식</h2>
-                <button className='news_sub'>더보기</button>
+                <h2 className='news_image_title'>임직식</h2>
+                <a href='#'><p className='news_image_button'>더보기</p></a>
               </div>
             </div>
           </div >
