@@ -12,13 +12,27 @@ const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
+    maxHeight: '100vh',
     transform: 'translate(-50%, -50%)',
-    // width: '100%',
+    maxWidth: '100%',
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
+    padding: '32px'
 };
+// const OVERLAY_STYLE = {
+//     position: "fixed",
+//     display: "flex",
+//     justifyContent: "center",
+//     top: "0",
+//     left: "0",
+//     width: "100%",
+//     height: "100%",
+//     backgroundColor: "rgba(0,0,0, .8)",
+//     zIndex: "1000",
+//     overflowY: "auto"
+// };
 
 export default function TransitionsModal({ image }) {
     const [open, setOpen] = useState(false);
@@ -42,14 +56,16 @@ export default function TransitionsModal({ image }) {
                 }}
             >
                 <Fade in={open}>
+                    {/* <div style={OVERLAY_STYLE}> */}
                     <Box sx={style}>
-                        <Typography id="transition-modal-title" variant="h6" component="h2">
-                            <img src={image} alt="..." />
+                        <Typography id="transition-modal-title" variant="h6" component="h2" style={{ overflow: 'auto' }}>
+                            <img src={image} style={{ maxHeight: '90vh' }} alt="..." />
                         </Typography>
-                        <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-                            {/* Your description */}
-                        </Typography>
+                        {/* <Typography id="transition-modal-description" sx={{ mt: 2 }}> */}
+                        {/* Your description */}
+                        {/* </Typography> */}
                     </Box>
+                    {/* </div> */}
                 </Fade>
             </Modal>
         </div>

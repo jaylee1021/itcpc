@@ -43,6 +43,7 @@ export default function Home() {
 
   const imageOne = '/worship_service.png';
   const imageTwo = '/revival.jpg';
+  const imageThree = '/fall_festival_tall.jpg';
 
 
   if (isLoading) return <div>Loading...</div>;
@@ -195,8 +196,8 @@ export default function Home() {
             </div>
             <div className='news_image' >
               <div className='news_description'>
-                <h2 className='news_image_title'>피크닉</h2>
-                <a href='#'><p className='news_image_button'><TransitionsModal /></p></a>
+                <h2 className='news_image_title'>가을축제</h2>
+                <a href='#'><p className='news_image_button'><TransitionsModal image={imageThree} /></p></a>
               </div>
             </div>
             <div className='news_image'>
