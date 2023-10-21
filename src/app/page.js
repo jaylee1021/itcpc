@@ -41,6 +41,9 @@ export default function Home() {
     }
   }
 
+  const imageOne = '/worship_service.png';
+  const imageTwo = '/revival.jpg';
+
 
   if (isLoading) return <div>Loading...</div>;
 
@@ -173,6 +176,7 @@ export default function Home() {
       <div className='title'>
         <p className='title-style'>소식</p>
         <p className='subtitle-style'>News</p>
+
       </div>
       <section className='videoSection'>
         <div className='news_body'>
@@ -180,25 +184,25 @@ export default function Home() {
             <div className='news_image'>
               <div className='news_description'>
                 <h2 className='news_image_title'>예배안내</h2>
-                <a href='#'><p className='news_image_button'><TransitionsModal /></p></a>
+                <a href='#'><p className='news_image_button'><TransitionsModal image={imageOne} /></p></a>
               </div>
             </div>
             <div className='news_image'>
               <div className='news_description'>
                 <h2 className='news_image_title'>가을 글로벌 특별 새벽 부흥회</h2>
-                <a href='#'><p className='news_image_button'>더보기</p></a>
+                <a href='#'><p className='news_image_button'><TransitionsModal image={imageTwo} /></p></a>
               </div>
             </div>
             <div className='news_image' >
               <div className='news_description'>
                 <h2 className='news_image_title'>피크닉</h2>
-                <a href='#'><p className='news_image_button'>더보기</p></a>
+                <a href='#'><p className='news_image_button'><TransitionsModal /></p></a>
               </div>
             </div>
             <div className='news_image'>
               <div className='news_description'>
                 <h2 className='news_image_title'>임직식</h2>
-                <a href='#'><p className='news_image_button'>더보기</p></a>
+                <a href='#'><p className='news_image_button'><TransitionsModal /></p></a>
               </div>
             </div>
           </div >

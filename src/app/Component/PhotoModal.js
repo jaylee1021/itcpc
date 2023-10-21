@@ -5,6 +5,8 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useState, useEffect } from 'react';
+import '../css/page.css';
 
 const style = {
     position: 'absolute',
@@ -18,14 +20,14 @@ const style = {
     p: 4,
 };
 
-export default function TransitionsModal() {
-    const [open, setOpen] = React.useState(false);
+export default function TransitionsModal({ image }) {
+    const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     return (
         <div>
-            <Button onClick={handleOpen}>Open modal</Button>
+            <Button onClick={handleOpen} style={{ color: 'white', padding: '0' }}>더보기</Button>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
@@ -42,10 +44,10 @@ export default function TransitionsModal() {
                 <Fade in={open}>
                     <Box sx={style}>
                         <Typography id="transition-modal-title" variant="h6" component="h2">
-                            <img src="/fall_festival.jpg" alt="..." />
+                            <img src={image} alt="..." />
                         </Typography>
                         <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-                            {/* Duis mollis, est non commodo luctus, nisi erat porttitor ligula. */}
+                            {/* Your description */}
                         </Typography>
                     </Box>
                 </Fade>
