@@ -1,52 +1,50 @@
 'use client';
-import Image from 'next/image';
 import './css/page.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { el } from '@faker-js/faker';
 import TransitionsModal from './Component/PhotoModal';
+import GetSermon from './Component/GetSermon';
 
 export default function Home() {
-  const [sermons, setSermons] = useState([]);
-  const [allSermons, setAllSermons] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [sermons, setSermons] = useState([]);
+  // const [allSermons, setAllSermons] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons`)
-      .then((res) => {
-        console.log(res.data.sermons);
-        setAllSermons(res.data.sermons);
-        setSermons(res.data.sermons.slice(-1)[0]);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons`)
+  //     .then((res) => {
+  //       setAllSermons(res.data.sermons);
+  //       setSermons(res.data.sermons.slice(-1)[0]);
+  //       setIsLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
-  let firstSermon = '';
-  let secondSermon = '';
-  let thirdSermon = '';
+  // let firstSermon = '';
+  // let secondSermon = '';
+  // let thirdSermon = '';
 
-  if (allSermons.length > 0) {
-    for (let x = 0; x < allSermons.length; x++) {
-      if (allSermons[x].session === 'first') {
-        firstSermon = allSermons[x];
-      } else if (allSermons[x].session === 'second') {
-        secondSermon = allSermons[x];
-      } else if (allSermons[x].session === 'third') {
-        thirdSermon = allSermons[x];
-      }
-    }
-  }
+  // if (allSermons.length > 0) {
+  //   for (let x = 0; x < allSermons.length; x++) {
+  //     if (allSermons[x].session === 'first' || allSermons[x].session === 'First') {
+  //       firstSermon = allSermons[x];
+  //     } else if (allSermons[x].session === 'second' || allSermons[x].session === 'Second') {
+  //       secondSermon = allSermons[x];
+  //     } else if (allSermons[x].session === 'third' || allSermons[x].session === 'Third') {
+  //       thirdSermon = allSermons[x];
+  //     }
+  //   }
+  // }
 
   const imageOne = '/worship_service.png';
   const imageTwo = '/revival.jpg';
   const imageThree = '/fall_festival_tall.jpg';
 
 
-  if (isLoading) return <div>Loading...</div>;
+  // if (isLoading) return <div>Loading...</div>;
 
   return (
     <>
@@ -63,10 +61,11 @@ export default function Home() {
         <p className='title-style'>주일 예배</p>
         <p className='subtitle-style'>Sunday Worship</p>
       </div>
+
       <section className='videoSection'>
         <article className='padding10'>
           <div className='imageWrapper'>
-            <a href='#'><img src={firstSermon.snap} className='articleImage' /></a>
+            {/* <a href='#'><img src={firstSermon.snap} className='articleImage' /></a>
             <div className='articleTitle' >
               <p>
 
@@ -76,7 +75,8 @@ export default function Home() {
                 {firstSermon.date.split('T')[0]} @ 8:00 AM - {firstSermon.preacher} 목사
               </p>
 
-            </div>
+            </div> */}
+            <GetSermon sermonSession='First' />
           </div>
           <div className='articleSub'>
             1부 장년예배와 성가대찬양 (임시)
@@ -85,15 +85,7 @@ export default function Home() {
         </article>
         <article className='padding10'>
           <div className='imageWrapper'>
-            <a href='#'><img src={secondSermon.snap} className='articleImage' /></a>
-            <div className='articleTitle'>
-              <p>
-                {secondSermon.title} - {secondSermon.passage}
-              </p>
-              <p className='date_time'>
-                {secondSermon.date.split('T')[0]} @ 9:30 AM - Rev. {secondSermon.preacher}
-              </p>
-            </div>
+            <GetSermon sermonSession='Second' />
           </div>
           <div className='articleSub'>
             2부 영어예배 (임시)
@@ -102,15 +94,7 @@ export default function Home() {
         </article>
         <article className='padding10'>
           <div className='imageWrapper'>
-            <a href='#'><img src={thirdSermon.snap} className='articleImage' /></a>
-            <div className='articleTitle'>
-              <p>
-                {thirdSermon.title} - {thirdSermon.passage}
-              </p>
-              <p className='date_time'>
-                {thirdSermon.date.split('T')[0]} @ 11:00 AM - {thirdSermon.preacher} 목사
-              </p>
-            </div>
+            <GetSermon sermonSession='Third' />
           </div>
           <div className='articleSub'>
             3부 젊은예배와 실로암 찬양대 (임시)

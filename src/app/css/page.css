@@ -304,6 +304,7 @@
   opacity: 0;
   transition: visibility 1s linear,opacity 1s linear;
   
+  background-color: rgba(0, 0, 0, 0.5);
   padding-top:40px;
   text-align: center;
   position:absolute;
