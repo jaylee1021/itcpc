@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import TransitionsModal from './Component/PhotoModal';
-import GetSermon from './Component/GetSermon';
+import GetLastSermon from './Component/GetLastSermon';
 
 export default function Home() {
   // const [sermons, setSermons] = useState([]);
@@ -65,18 +65,7 @@ export default function Home() {
       <section className='videoSection'>
         <article className='padding10'>
           <div className='imageWrapper'>
-            {/* <a href='#'><img src={firstSermon.snap} className='articleImage' /></a>
-            <div className='articleTitle' >
-              <p>
-
-                {firstSermon.title} - {firstSermon.passage}
-              </p>
-              <p className='date_time'>
-                {firstSermon.date.split('T')[0]} @ 8:00 AM - {firstSermon.preacher} 목사
-              </p>
-
-            </div> */}
-            <GetSermon sermonSession='First' />
+            <GetLastSermon sermonSession='First' />
           </div>
           <div className='articleSub'>
             1부 장년예배와 성가대찬양 (임시)
@@ -85,7 +74,7 @@ export default function Home() {
         </article>
         <article className='padding10'>
           <div className='imageWrapper'>
-            <GetSermon sermonSession='Second' />
+            <GetLastSermon sermonSession='Second' />
           </div>
           <div className='articleSub'>
             2부 영어예배 (임시)
@@ -94,7 +83,7 @@ export default function Home() {
         </article>
         <article className='padding10'>
           <div className='imageWrapper'>
-            <GetSermon sermonSession='Third' />
+            <GetLastSermon sermonSession='Third' />
           </div>
           <div className='articleSub'>
             3부 젊은예배와 실로암 찬양대 (임시)
