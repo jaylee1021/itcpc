@@ -3,36 +3,42 @@ import { useEffect, useState } from "react";
 import '../css/page.css';
 import '../css/sermons.css';
 import SermonModal from "./SermonModal";
+import Sermon_pagination from "./Sermon_pagination";
 
 export default function GetAllSermon() {
 
     const [sermon, setSermon] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [currentPosts, setCurrentPosts] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(10);
 
     useEffect(() => {
-        const fetchSermon = async () => {
-            try {
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons`);
+        const lastPostIndex = currentPage * postsPerPage;
+        const firstPostIndex = lastPostIndex - postsPerPage;
+
+        axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons`)
+            .then((response) => {
+                setCurrentPosts(response.data.sermons.toReversed().slice(firstPostIndex, lastPostIndex));
                 setSermon(response.data.sermons);
                 setIsLoading(false);
-            }
-            catch (err) {
+            })
+            .catch((err) => {
                 console.log(err);
-            }
-        };
-        fetchSermon();
-    }, []);
+            });
+    }, [currentPage]);
 
     if (isLoading) return <div>Loading...</div>;
 
     return (
         <>
-            {sermon.toReversed().map((sermon) => (
+            <Sermon_pagination totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+            <br />
+            {currentPosts.map((sermon) => (
                 <div className="component_sermon_section" key={sermon._id}>
                     <div className="sermon_snap">
-                        <a href='#'><img src={sermon.snap} className='sermon_snap' /></a>
+                        <img src={sermon.snap} className='sermon_snap' />
                     </div>
-
                     <div className="sermon_info" >
                         <h3>
                             <SermonModal sermon={sermon} />
@@ -44,6 +50,8 @@ export default function GetAllSermon() {
                         </p>
                     </div>
                 </div>))}
+            <Sermon_pagination totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+            <br />
         </>
     );
 };;
