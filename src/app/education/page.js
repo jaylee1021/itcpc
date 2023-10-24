@@ -5,6 +5,7 @@ import '../css/page.css';
 import '../css/education.css';
 
 export default function Gallery() {
+    
     return (
         <div >
             <title>타코마중앙장로교회</title>
