@@ -12,29 +12,33 @@ export default function Sermons() {
     const [sermon, setSermon] = useState({});
     const [loading, setLoading] = useState(true);
     const [session, setSession] = useState('');
-    useEffect(() => {
-        const fetchSermon = async () => {
-            try {
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons`);
-                console.log('sermons', response.data.sermons);
-                if (response.data.sermons.session === 'First') {
-                    setSession('1부');
-                } else if (response.data.sermons.session === 'Second') {
-                    setSession('2부');
-                } else if (response.data.sermons.session === 'Third') {
-                    setSession('3부');
-                }
-                setSermon(response.data.sermons);
-                setLoading(false);
-            }
-            catch (err) {
-                console.log(err);
-            }
-        };
-        fetchSermon();
-    }, []);
 
-    if (loading) return <div>Loading...</div>;
+
+
+
+    // useEffect(() => {
+    //     const fetchSermon = async () => {
+    //         try {
+    //             const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons`);
+    //             console.log('sermons', response.data.sermons);
+    //             if (response.data.sermons.session === 'First') {
+    //                 setSession('1부');
+    //             } else if (response.data.sermons.session === 'Second') {
+    //                 setSession('2부');
+    //             } else if (response.data.sermons.session === 'Third') {
+    //                 setSession('3부');
+    //             }
+    //             setSermon(response.data.sermons);
+    //             setLoading(false);
+    //         }
+    //         catch (err) {
+    //             console.log(err);
+    //         }
+    //     };
+    //     fetchSermon();
+    // }, []);
+
+    // if (loading) return <div>Loading...</div>;
 
     return (
         <>
@@ -54,16 +58,6 @@ export default function Sermons() {
                 <div className='session_section' >
                     <GetAllSermon />
                 </div>
-                {/* <div className='session_section' >
-                    <p className='title-style'>2부</p>
-                    <p className='subtitle-style'>Sermons</p>
-                    <GetAllSermon sermonSession={'Second'} />
-                </div>
-                <div className='session_section' >
-                    <p className='title-style'>3부</p>
-                    <p className='subtitle-style'>Sermons</p>
-                    <GetAllSermon sermonSession={'Third'} />
-                </div> */}
             </div>
 
         </>

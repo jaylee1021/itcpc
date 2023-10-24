@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import '../css/page.css';
+import SermonModal from "./SermonModal";
 
 export default function GetLastSermon({ sermonSession }) {
 
@@ -31,7 +32,6 @@ export default function GetLastSermon({ sermonSession }) {
         };
         fetchSermon();
     }, []);
-
 
     return (
         <>
