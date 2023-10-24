@@ -22,18 +22,6 @@ const style = {
     p: 4,
     padding: '32px'
 };
-// const OVERLAY_STYLE = {
-//     position: "fixed",
-//     display: "flex",
-//     justifyContent: "center",
-//     top: "0",
-//     left: "0",
-//     width: "100%",
-//     height: "100%",
-//     backgroundColor: "rgba(0,0,0, .8)",
-//     zIndex: "1000",
-//     overflowY: "auto"
-// };
 
 export default function SermonModal({ sermon }) {
     const [open, setOpen] = useState(false);
@@ -59,15 +47,27 @@ export default function SermonModal({ sermon }) {
                 }}
             >
                 <Fade in={open}>
-                    {/* <div style={OVERLAY_STYLE}> */}
                     <Box sx={style}>
                         <Typography id="transition-modal-title" variant="h6" component="h2" style={{ overflow: 'auto' }}>
-                            {/* <img src={image} style={{ maxHeight: '90vh' }} alt="..." /> */}
-                            sermon modal
+                            <div className="video-responsive">
+                                <iframe
+                                    width="853"
+                                    height="480"
+                                    src={`https://www.youtube.com/embed/${sermon.embed}`}
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    title="Embedded youtube"
+                                />
+                            </div>
                         </Typography>
-                        {/* <Typography id="transition-modal-description" sx={{ mt: 2 }}> */}
-                        {/* Your description */}
-                        {/* </Typography> */}
+                        <Typography id="transition-modal-description" sx={{ mt: 2 }}>
+                            {sermon.title} - {sermon.passage}
+                            <br />
+                            {sermon.date.split('T')[0]} @ {sermon.session === 'First' ? '8:00 AM (1부)' : null ||
+                                sermon.session === 'Second' ? '09:30 AM (2부)' : null ||
+                                    sermon.session === 'Third' ? '11:00 AM (3부)' : null} - {sermon.preacher} 목사
+                        </Typography>
                     </Box>
                     {/* </div> */}
                 </Fade>
