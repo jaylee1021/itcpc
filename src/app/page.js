@@ -7,37 +7,6 @@ import TransitionsModal from './Component/PhotoModal';
 import GetLastSermon from './Component/GetLastSermon';
 
 export default function Home() {
-  // const [sermons, setSermons] = useState([]);
-  // const [allSermons, setAllSermons] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
-
-  // useEffect(() => {
-  //   axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons`)
-  //     .then((res) => {
-  //       setAllSermons(res.data.sermons);
-  //       setSermons(res.data.sermons.slice(-1)[0]);
-  //       setIsLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
-
-  // let firstSermon = '';
-  // let secondSermon = '';
-  // let thirdSermon = '';
-
-  // if (allSermons.length > 0) {
-  //   for (let x = 0; x < allSermons.length; x++) {
-  //     if (allSermons[x].session === 'first' || allSermons[x].session === 'First') {
-  //       firstSermon = allSermons[x];
-  //     } else if (allSermons[x].session === 'second' || allSermons[x].session === 'Second') {
-  //       secondSermon = allSermons[x];
-  //     } else if (allSermons[x].session === 'third' || allSermons[x].session === 'Third') {
-  //       thirdSermon = allSermons[x];
-  //     }
-  //   }
-  // }
 
   const imageOne = '/worship_service.png';
   const imageTwo = '/revival.jpg';
@@ -65,7 +34,7 @@ export default function Home() {
       <section className='videoSection'>
         <article className='padding10'>
           <div className='imageWrapper'>
-            <GetLastSermon sermonSession='First' />
+            <GetLastSermon sermonSession='1부' />
           </div>
           <div className='articleSub'>
             1부 장년예배와 성가대찬양 (임시)
@@ -74,7 +43,7 @@ export default function Home() {
         </article>
         <article className='padding10'>
           <div className='imageWrapper'>
-            <GetLastSermon sermonSession='Second' />
+            <GetLastSermon sermonSession='2부' />
           </div>
           <div className='articleSub'>
             2부 영어예배 (임시)
@@ -83,7 +52,7 @@ export default function Home() {
         </article>
         <article className='padding10'>
           <div className='imageWrapper'>
-            <GetLastSermon sermonSession='Third' />
+            <GetLastSermon sermonSession='3부' />
           </div>
           <div className='articleSub'>
             3부 젊은예배와 실로암 찬양대 (임시)
