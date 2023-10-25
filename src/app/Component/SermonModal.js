@@ -30,8 +30,8 @@ export default function SermonModal({ sermon }) {
 
     return (
         <div>
-            <div onClick={handleOpen} className='sermon_info sermon_info_modal' style={{ fontSize: '2rem', padding: '0' }}>
-                {sermon.title} - {sermon.passage}
+            <div onClick={handleOpen} className='sermon_info sermon_info_modal' style={{ fontSize: '1.5rem', padding: '0' }}>
+                <img src={sermon.snap} className='articleImage' />
             </div>
             <Modal
                 aria-labelledby="transition-modal-title"
@@ -64,9 +64,9 @@ export default function SermonModal({ sermon }) {
                         <Typography id="transition-modal-description" sx={{ mt: 2 }}>
                             {sermon.title} - {sermon.passage}
                             <br />
-                            {sermon.date.split('T')[0]} @ {sermon.session === 'First' ? '8:00 AM (1부)' : null ||
-                                sermon.session === 'Second' ? '09:30 AM (2부)' : null ||
-                                    sermon.session === 'Third' ? '11:00 AM (3부)' : null} - {sermon.preacher} 목사
+                            {sermon.date.split('T')[0]} @ {sermon.session === '1부' ? '8:00 AM (1부)' : null ||
+                                sermon.session === '2부' ? '09:30 AM (2부)' : null ||
+                                    sermon.session === '3부' ? '11:00 AM (3부)' : null} - {sermon.preacher} 목사
                         </Typography>
                     </Box>
                     {/* </div> */}
