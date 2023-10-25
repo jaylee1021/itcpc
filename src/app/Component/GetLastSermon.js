@@ -10,11 +10,11 @@ export default function GetLastSermon({ sermonSession }) {
 
     let time = '';
 
-    if (sermonSession === 'First') {
+    if (sermonSession === '1부') {
         time = '8:00 AM';
-    } else if (sermonSession === 'Second') {
+    } else if (sermonSession === '2부') {
         time = '9:30 AM';
-    } else if (sermonSession === 'Third') {
+    } else if (sermonSession === '3부') {
         time = '11:00 AM';
     }
 
@@ -37,7 +37,7 @@ export default function GetLastSermon({ sermonSession }) {
         <>
             {sermon.date && (
                 <>
-                    <a href='#'><img src={sermon.snap} className='articleImage' /></a>
+                    <SermonModal sermon={sermon} />
                     <div className='articleTitle'>
                         <p>
                             {sermon.title}
