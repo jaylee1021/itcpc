@@ -30,11 +30,7 @@ export default function Navbar() {
                 </ul>
             </li>
             <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">설교와 찬양</a>
-                <ul className="dropdown-menu">
-                    <li><a href='./sermons' className='menu_link'><MenuItem>설교말씀</MenuItem></a></li>
-                    <li><a href='#' className='menu_link'><MenuItem>찬양</MenuItem></a></li>
-                </ul>
+                <a className="nav-link" href="./sermons" role="button" data-bs-toggle="dropdown" aria-expanded="false">설교말씀</a>
             </li>
             <li className="nav-item dropdown">
                 <a className="nav-link" href="./education" role="button" data-bs-toggle="dropdown" aria-expanded="false">교회학교</a>
@@ -86,11 +82,7 @@ export default function Navbar() {
             <a className="nav-link">|</a>
         </li>
         <li className="nav-item dropdown dropdowns">
-            <a className="nav-link" style={{ fontWeight: 'bold' }} href="#">설교와 찬양</a>
-            <ul className="dropdown-menu menus">
-                <li><a href='./sermons' className='menu_link'><MenuItem>설교말씀</MenuItem></a></li>
-                <li><a href='#' className='menu_link'><MenuItem>찬양</MenuItem></a></li>
-            </ul>
+            <a className="nav-link" style={{ fontWeight: 'bold' }} href="./sermons">설교말씀</a>
         </li>
         <li>
             <a className="nav-link">|</a>
