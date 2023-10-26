@@ -1,9 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import '../css/page.css';
 import '../css/sermons.css';
 import SermonModal from "./SermonModal";
 import Sermon_pagination from "./Sermon_pagination";
+import SermonsList from "./SermonsList";
 
 export default function GetAllSermon() {
 
@@ -12,6 +13,9 @@ export default function GetAllSermon() {
     const [currentPosts, setCurrentPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(10);
+
+    const [searchQuery, setSearchQuery] = useState('');
+    const [sermonList, setSermonList] = useState([]);
 
     useEffect(() => {
         const lastPostIndex = currentPage * postsPerPage;
@@ -28,28 +32,43 @@ export default function GetAllSermon() {
             });
     }, [currentPage]);
 
+    const sermonSearchResult = useCallback((newSearchQuery) => {
+        const results = sermon.filter((singleSermon) => {
+            return singleSermon.together.toLowerCase().includes(newSearchQuery.toLowerCase());
+        });
+
+        setSermonList(results);
+    }, [sermon]);
+
+    const renderSermon = () => {
+        let rows = [];
+        for (let i = 0; i < sermonList.length; i++) {
+            rows.push(
+                <SermonsList sermon={sermonList[i]} key={sermonList[i]._id} />
+            );
+        }
+        return rows.toReversed();
+    };
+
+    const handleSearchChange = (e) => {
+        const newSearchQuery = e.target.value;
+        setSearchQuery(newSearchQuery);
+        sermonSearchResult(newSearchQuery);
+    };
+
     if (isLoading) return <div>Loading...</div>;
 
     return (
         <>
+            <div>
+                <input type="text" placeholder="찾기... (설교자, 설교 제목, 성경말씀, 또는 설교 날짜로 찾아보세요)" className="search_sermon" onChange={handleSearchChange} />
+            </div>
+
             <Sermon_pagination totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
             <br />
-            {currentPosts.map((sermon) => (
-                <div className="component_sermon_section" key={sermon._id}>
-                    <div className="sermon_snap">
-                        <SermonModal sermon={sermon} />
-                    </div>
-                    <div className="sermon_info" >
-                        <h3>
-                            {sermon.title} - {sermon.passage}
-                        </h3>
-                        <p className='date_time'>
-                            {sermon.date.split('T')[0]} @ {sermon.session === '1부' ? '8:00 AM 1부' : null ||
-                                sermon.session === '2부' ? '09:30 AM 2부' : null ||
-                                    sermon.session === '3부' ? '11:00 AM 3부' : null} - {sermon.preacher} 목사
-                        </p>
-                    </div>
-                </div>))}
+            {searchQuery === '' ? currentPosts.map((sermon) => (
+                <SermonsList sermon={sermon} key={sermon._id} />)) : renderSermon()
+            }
             <Sermon_pagination totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
             <br />
         </>
