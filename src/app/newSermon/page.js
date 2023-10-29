@@ -72,6 +72,7 @@ export default function newSermon() {
 
     return (
         <>
+            <title>설교등록</title>
             <div className='title' >
                 <p className='title-style'>설교등록</p>
                 <p className='subtitle-style'>Register Sermon</p>
