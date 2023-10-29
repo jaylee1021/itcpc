@@ -9,37 +9,6 @@ import GetAllSermon from '../Component/GetAllSermon';
 
 export default function Sermons() {
 
-    const [sermon, setSermon] = useState({});
-    const [loading, setLoading] = useState(true);
-    const [session, setSession] = useState('');
-
-
-
-
-    // useEffect(() => {
-    //     const fetchSermon = async () => {
-    //         try {
-    //             const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons`);
-    //             console.log('sermons', response.data.sermons);
-    //             if (response.data.sermons.session === 'First') {
-    //                 setSession('1부');
-    //             } else if (response.data.sermons.session === 'Second') {
-    //                 setSession('2부');
-    //             } else if (response.data.sermons.session === 'Third') {
-    //                 setSession('3부');
-    //             }
-    //             setSermon(response.data.sermons);
-    //             setLoading(false);
-    //         }
-    //         catch (err) {
-    //             console.log(err);
-    //         }
-    //     };
-    //     fetchSermon();
-    // }, []);
-
-    // if (loading) return <div>Loading...</div>;
-
     return (
         <>
             <title>타코마중앙장로교회</title>
