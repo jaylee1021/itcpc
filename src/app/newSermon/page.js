@@ -50,14 +50,17 @@ export default function newSermon() {
         const new_sermon = { embed, preacher, session, snap, date, title, passage };
         axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons/new`, new_sermon)
             .then(response => {
-                console.log(response);
+                if (response.data.message === 'sermon already exists') {
+                    alert('새로운 설교 등록에 "실패"했습니다.');
+                } else {
+                    alert('새로운 설교 등록에 "성공"했습니다.');
+                }
             })
-            .catch(error => console.log('===> Error in New Sermon', error));
+            .catch(error => console.log('===> Error creating a sermon', error));
     };
 
     const handleClean = (e) => {
         e.preventDefault();
-        console.log('===> Cleaned');
         setEmbed('');
         setPreacher('');
         setSession('');
@@ -81,9 +84,9 @@ export default function newSermon() {
                     <p>Preacher</p>
                     <select name='session' value={session} onChange={handleSession} required >
                         <option value=''>Select Session</option>
-                        <option value='First'>First</option>
-                        <option value='Second'>Second</option>
-                        <option value='Third'>Third</option>
+                        <option value='1부'>1부</option>
+                        <option value='2부'>2부</option>
+                        <option value='3부'>3부</option>
                     </select>
                     <p>Session</p>
                     <input type='text' name='snap' value={snap} onChange={handleSnap} required />
