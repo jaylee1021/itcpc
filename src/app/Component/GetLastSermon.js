@@ -44,9 +44,16 @@ export default function GetLastSermon({ sermonSession }) {
                             <br />
                             {sermon.passage}
                         </p>
-                        <p className='date_time'>
-                            {sermon.date.split('T')[0]} @ {time} - {sermon.preacher} 목사
-                        </p>
+                        {sermonSession === '1부' || sermonSession === '3부' ? (
+                            <p className='date_time'>
+                                {sermon.date.split('T')[0]} @ {time} - {sermon.preacher} 목사
+                            </p>
+                        ) : (
+                            <p className='date_time'>
+                                {sermon.date.split('T')[0]} @ {time} - Rev. {sermon.preacher}
+                            </p>
+                        )}
+
                     </div>
                 </>
             )}

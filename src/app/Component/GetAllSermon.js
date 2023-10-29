@@ -42,11 +42,30 @@ export default function GetAllSermon() {
 
     const renderSermon = () => {
         let rows = [];
-        for (let i = 0; i < sermonList.length; i++) {
+        if (sermonList.length) {
+            for (let i = 0; i < sermonList.length; i++) {
+                rows.push(
+                    <SermonsList sermon={sermonList[i]} key={sermonList[i]._id} />
+                );
+            }
+        } else {
             rows.push(
-                <SermonsList sermon={sermonList[i]} key={sermonList[i]._id} />
+                <div className="component_sermon_section" key={sermon._id}>
+                    <div className="sermon_snap">
+                        <img src='404_not_found.png' className='articleImage' />
+                    </div>
+                    <div className="sermon_info" >
+                        <h3>
+                            <h3>검색 결과가 없습니다.</h3>
+                        </h3>
+                        <p style={{ paddingRight: '400px' }}>
+                            <h3>철자를 확인 하시고 다시 검색 해 주세요.</h3>
+                        </p>
+                    </div>
+                </div>
             );
         }
+
         return rows.toReversed();
     };
 
@@ -56,14 +75,14 @@ export default function GetAllSermon() {
         sermonSearchResult(newSearchQuery);
     };
 
-    if (isLoading) return <div>Loading...</div>;
+    if (isLoading) return <div>로딩중...</div>;
 
     return (
         <>
             <div>
-                <input type="text" placeholder="찾기... (설교자, 설교 제목, 성경말씀, 또는 설교 날짜로 찾아보세요)" className="search_sermon" onChange={handleSearchChange} />
+                <input type="text" placeholder="찾기... (설교자, 설교제목, 성경구절, 또는 설교 날짜로 찾아 보실 수 있습니다)" className="search_sermon" onChange={handleSearchChange} />
+                (왼쪽 사진을 클릭하시면 설교를 보실 수 있습니다.)
             </div>
-
             <Sermon_pagination totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
             <br />
             {searchQuery === '' ? currentPosts.map((sermon) => (
@@ -73,4 +92,4 @@ export default function GetAllSermon() {
             <br />
         </>
     );
-};;
+};
