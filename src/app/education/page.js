@@ -5,12 +5,12 @@ import '../css/page.css';
 import '../css/education.css';
 
 export default function Gallery() {
-    
+
     return (
         <div >
             <title>타코마중앙장로교회</title>
             <section>
-                <img src='/education_banner.jpg' className='mainBannerImage' />
+                <img src='/2023_VBS_all.png' className='mainBannerImage' />
             </section>
             <section className='education_section'>
                 <div>
