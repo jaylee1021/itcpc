@@ -55,7 +55,7 @@ export default function ServiceAndDirection() {
                         </p>
                     </div>
                     <div className='service_section_description'>
-                        <p>비전채플 Vision Chapel 오전 11:00 </p>
+                        <p>비전채플 Vision Chapel 주일 오전 11:00 </p>
                     </div>
                 </div>
                 <div className='service_section'>
@@ -66,7 +66,19 @@ export default function ServiceAndDirection() {
                         </p>
                     </div>
                     <div className='service_section_description'>
-                        <p>드림채플 Dream Chapel 오전 11:00 </p>
+                        <p>
+                            드림채플 Dream Chapel 주일 오전 11:00
+                        </p>
+                        <div className='service_section_title'>
+                            <p>
+                                <span> 금요예배</span>
+                            </p>
+                        </div>
+                        <div className='service_section_description'>
+                            <p>
+                                매주 금요일 오후 7:00
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div className='service_section'>
