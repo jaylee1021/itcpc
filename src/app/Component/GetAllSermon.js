@@ -62,7 +62,7 @@ export default function GetAllSermon() {
                             <h3>철자를 확인 하시고 다시 검색 해 주세요.</h3>
                         </p>
                     </div>
-                </div>
+                </div >
             );
         }
 
@@ -83,12 +83,24 @@ export default function GetAllSermon() {
                 <input type="text" placeholder="찾기... (설교자, 설교제목, 성경구절, 또는 설교 날짜로 찾아 보실 수 있습니다)" className="search_sermon" onChange={handleSearchChange} />
                 (왼쪽 사진을 클릭하시면 설교를 보실 수 있습니다.)
             </div>
-            <Sermon_pagination totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
-            <br />
-            {searchQuery === '' ? currentPosts.map((sermon) => (
-                <SermonsList sermon={sermon} key={sermon._id} />)) : renderSermon()
+
+            {searchQuery === '' ?
+                <div>
+                    <Sermon_pagination totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+                    <br />
+                    {currentPosts.map((sermon) => (
+                        <SermonsList sermon={sermon} key={sermon._id} />))}
+                    <Sermon_pagination totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+                </div>
+                :
+                <div>
+                    <Sermon_pagination totalPosts={sermonList.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+                    <br />
+                    {renderSermon()}
+                    <Sermon_pagination totalPosts={sermonList.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+                </div>
             }
-            <Sermon_pagination totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+
             <br />
         </>
     );
