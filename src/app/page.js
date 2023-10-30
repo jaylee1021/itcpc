@@ -9,10 +9,27 @@ import GetLastSermonDate from './Component/GetLastSermonDate';
 
 export default function Home() {
 
-  const imageOne = '/worship_service.png';
-  const imageTwo = '/revival.jpg';
-  const imageThree = '/fall_festival_tall.jpg';
+  const [firstBoard, setFirstBoard] = useState([]);
+  const [secondBoard, setSecondBoard] = useState([]);
+  const [thirdBoard, setThirdBoard] = useState([]);
+  const [fourthBoard, setFourthBoard] = useState([]);
 
+  useEffect(() => {
+    const fetchBoard = async () => {
+      try {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/boards`);
+        const newBoard = response.data.boards;
+        setFirstBoard(newBoard[0]);
+        setSecondBoard(newBoard[newBoard.length - 3]);
+        setThirdBoard(newBoard[newBoard.length - 2]);
+        setFourthBoard(newBoard[newBoard.length - 1]);
+      }
+      catch (err) {
+        console.log(err);
+      }
+    };
+    fetchBoard();
+  }, []);
 
   // if (isLoading) return <div>Loading...</div>;
 
@@ -121,28 +138,28 @@ export default function Home() {
       <section className='videoSection'>
         <div className='news_body'>
           <div className='news_wrapper'>
-            <div className='news_image'>
+            <div className='news_image' style={{ backgroundImage: `url(${firstBoard.snap})` }}>
               <div className='news_description'>
-                <h2 className='news_image_title'>예배안내</h2>
-                <p className='news_image_button'><TransitionsModal image={imageOne} /></p>
+                <h2 className='news_image_title'>{firstBoard.title}</h2>
+                <p className='news_image_button'><TransitionsModal image={firstBoard.url} /></p>
               </div>
             </div>
-            <div className='news_image'>
+            <div className='news_image' style={{ backgroundImage: `url(${secondBoard.snap})` }}>
               <div className='news_description'>
-                <h2 className='news_image_title'>가을 글로벌 특별 새벽 부흥회</h2>
-                <p className='news_image_button'><TransitionsModal image={imageTwo} /></p>
+                <h2 className='news_image_title'>{secondBoard.title}</h2>
+                <p className='news_image_button'><TransitionsModal image={secondBoard.url} /></p>
               </div>
             </div>
-            <div className='news_image' >
+            <div className='news_image' style={{ backgroundImage: `url(${thirdBoard.snap})` }}>
               <div className='news_description'>
-                <h2 className='news_image_title'>가을축제</h2>
-                <p className='news_image_button'><TransitionsModal image={imageThree} /></p>
+                <h2 className='news_image_title'>{thirdBoard.title}</h2>
+                <p className='news_image_button'><TransitionsModal image={thirdBoard.url} /></p>
               </div>
             </div>
-            <div className='news_image'>
+            <div className='news_image' style={{ backgroundImage: `url(${fourthBoard.snap})` }}>
               <div className='news_description'>
-                <h2 className='news_image_title'>임직식</h2>
-                <p className='news_image_button'><TransitionsModal /></p>
+                <h2 className='news_image_title'>{fourthBoard.title}</h2>
+                <p className='news_image_button'><TransitionsModal image={fourthBoard.url} /></p>
               </div>
             </div>
           </div >
