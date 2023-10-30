@@ -28,6 +28,13 @@ export default function SermonModal({ sermon }) {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    let emPreacher = '';
+    if (sermon.preacher.includes('Danny Kim') || sermon.preacher.includes('David Rho')) {
+        emPreacher = 'Pastor ' + sermon.preacher;
+    } else {
+        emPreacher = 'Rev. ' + sermon.preacher;
+    }
+
     return (
         <div>
             <div onClick={handleOpen} className='sermon_info sermon_info_modal' style={{ fontSize: '1.5rem', padding: '0' }}>
@@ -64,9 +71,9 @@ export default function SermonModal({ sermon }) {
                         <Typography id="transition-modal-description" sx={{ mt: 2 }}>
                             {sermon.title} - {sermon.passage}
                             <br />
-                            {sermon.date.split('T')[0]} @ {sermon.session === '1부' ? '8:00 AM (1부)' : null ||
-                                sermon.session === '2부' ? '9:30 AM (2부)' : null ||
-                                    sermon.session === '3부' ? '11:00 AM (3부)' : null} - {sermon.preacher} 목사
+                            {sermon.date.split('T')[0]} @ {sermon.session === '1부' ? '8:00 AM 1부 - ' + sermon.preacher + '목사' : null ||
+                                sermon.session === '2부' ? '9:30 AM 2부 - ' + emPreacher : null ||
+                                    sermon.session === '3부' ? '11:00 AM 3부 - ' + sermon.preacher + '목사' : null}
                         </Typography>
                     </Box>
                     {/* </div> */}
