@@ -378,22 +378,6 @@
   transition: 500ms ease-in-out background-color;
 }
 
-.news_image:nth-child(1) {
-  background-image: url(/worship_service.png);
-}
-
-.news_image:nth-child(2) {
-  background-image: url(/prayer_small.jpg);
-}
-
-.news_image:nth-child(3) {
-  background-image: url(/fall_festival_small.png);
-}
-
-.news_image:nth-child(4) {
-  background-image: url(/2023_appointment.png);
-}
-
 .news_description {
   overflow: hidden;
   max-height: 0;
