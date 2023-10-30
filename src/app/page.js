@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import TransitionsModal from './Component/PhotoModal';
 import GetLastSermon from './Component/GetLastSermon';
+import GetLastSermonDate from './Component/GetLastSermonDate';
 
 export default function Home() {
 
@@ -19,9 +20,6 @@ export default function Home() {
     <>
       <title>타코마중앙장로교회</title>
       <section >
-        {/* <video controls className='mainBannerVideo' muted autoplay='autoplay' loop>
-          <source src='/banner_video.mov' type='video/mp4' />
-        </video> */}
         <img src='/main_banner.png' className='mainBannerImage' />
       </section>
       <br />
@@ -37,7 +35,7 @@ export default function Home() {
             <GetLastSermon sermonSession='1부' />
           </div>
           <div className='articleSub'>
-            1부 장년예배와 성가대찬양 (임시)
+            <GetLastSermonDate sermonSession='1부' /> 1부 주일예배와 성가대 찬양
           </div>
 
         </article>
@@ -46,7 +44,7 @@ export default function Home() {
             <GetLastSermon sermonSession='2부' />
           </div>
           <div className='articleSub'>
-            2부 영어예배 (임시)
+            <GetLastSermonDate sermonSession='2부' /> 2부 주일 영어예배
           </div>
 
         </article>
@@ -55,7 +53,7 @@ export default function Home() {
             <GetLastSermon sermonSession='3부' />
           </div>
           <div className='articleSub'>
-            3부 젊은예배와 실로암 찬양대 (임시)
+            <GetLastSermonDate sermonSession='3부' /> 3부 주일예배와 실로암 찬양대
           </div>
 
         </article>
@@ -119,7 +117,6 @@ export default function Home() {
       <div className='title'>
         <p className='title-style'>소식</p>
         <p className='subtitle-style'>News</p>
-
       </div>
       <section className='videoSection'>
         <div className='news_body'>
@@ -127,25 +124,25 @@ export default function Home() {
             <div className='news_image'>
               <div className='news_description'>
                 <h2 className='news_image_title'>예배안내</h2>
-                <a href='#'><p className='news_image_button'><TransitionsModal image={imageOne} /></p></a>
+                <p className='news_image_button'><TransitionsModal image={imageOne} /></p>
               </div>
             </div>
             <div className='news_image'>
               <div className='news_description'>
                 <h2 className='news_image_title'>가을 글로벌 특별 새벽 부흥회</h2>
-                <a href='#'><p className='news_image_button'><TransitionsModal image={imageTwo} /></p></a>
+                <p className='news_image_button'><TransitionsModal image={imageTwo} /></p>
               </div>
             </div>
             <div className='news_image' >
               <div className='news_description'>
                 <h2 className='news_image_title'>가을축제</h2>
-                <a href='#'><p className='news_image_button'><TransitionsModal image={imageThree} /></p></a>
+                <p className='news_image_button'><TransitionsModal image={imageThree} /></p>
               </div>
             </div>
             <div className='news_image'>
               <div className='news_description'>
                 <h2 className='news_image_title'>임직식</h2>
-                <a href='#'><p className='news_image_button'><TransitionsModal /></p></a>
+                <p className='news_image_button'><TransitionsModal /></p>
               </div>
             </div>
           </div >
