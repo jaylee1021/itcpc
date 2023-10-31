@@ -1,6 +1,7 @@
 'use client';
 import '../css/page.css';
 import '../css/newComer.css';
+import '../css/about.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -81,6 +82,156 @@ export default function NewComer() {
             </section>
             <br />
             <br />
+            <div className='title'>
+                <p className='title-style'>새가족 팀</p>
+                <p className='subtitle-style'>Welcoming Committee</p>
+            </div>
+            <section className='staff_section'>
+                <div className='profile_section'>
+                    <img src='/pastor_james.png' className='pastor_image' />
+                    <div className='profile_info'>
+                        <p>
+                            <span className='staff_name'>
+                                김용주 목사
+                            </span>
+                            <br />
+                            <span className='staff_eng_name'>
+                                Pastor James Y. Kim
+                            </span>
+                            <br />
+                            <span className='staff_position'>
+                                교구, 양육/새가족
+                            </span>
+                            <br />
+                            <br />
+                            <br />
+                            <span>
+                                tcpcristern@gmail.com
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div className='profile_section'>
+                    <img src='/pastor_james.png' className='pastor_image' />
+                    <div className='profile_info'>
+                        <p>
+                            <span className='staff_name'>
+                                김용주 목사
+                            </span>
+                            <br />
+                            <span className='staff_eng_name'>
+                                Pastor James Y. Kim
+                            </span>
+                            <br />
+                            <span className='staff_position'>
+                                교구, 양육/새가족
+                            </span>
+                            <br />
+                            <br />
+                            <br />
+                            <span>
+                                tcpcristern@gmail.com
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div className='profile_section'>
+                    <img src='/pastor_james.png' className='pastor_image' />
+                    <div className='profile_info'>
+                        <p>
+                            <span className='staff_name'>
+                                김용주 목사
+                            </span>
+                            <br />
+                            <span className='staff_eng_name'>
+                                Pastor James Y. Kim
+                            </span>
+                            <br />
+                            <span className='staff_position'>
+                                교구, 양육/새가족
+                            </span>
+                            <br />
+                            <br />
+                            <br />
+                            <span>
+                                tcpcristern@gmail.com
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div className='profile_section'>
+                    <img src='/pastor_james.png' className='pastor_image' />
+                    <div className='profile_info'>
+                        <p>
+                            <span className='staff_name'>
+                                김용주 목사
+                            </span>
+                            <br />
+                            <span className='staff_eng_name'>
+                                Pastor James Y. Kim
+                            </span>
+                            <br />
+                            <span className='staff_position'>
+                                교구, 양육/새가족
+                            </span>
+                            <br />
+                            <br />
+                            <br />
+                            <span>
+                                tcpcristern@gmail.com
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div className='profile_section'>
+                    <img src='/pastor_james.png' className='pastor_image' />
+                    <div className='profile_info'>
+                        <p>
+                            <span className='staff_name'>
+                                김용주 목사
+                            </span>
+                            <br />
+                            <span className='staff_eng_name'>
+                                Pastor James Y. Kim
+                            </span>
+                            <br />
+                            <span className='staff_position'>
+                                교구, 양육/새가족
+                            </span>
+                            <br />
+                            <br />
+                            <br />
+                            <span>
+                                tcpcristern@gmail.com
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div className='profile_section'>
+                    <img src='/pastor_james.png' className='pastor_image' />
+                    <div className='profile_info'>
+                        <p>
+                            <span className='staff_name'>
+                                김용주 목사
+                            </span>
+                            <br />
+                            <span className='staff_eng_name'>
+                                Pastor James Y. Kim
+                            </span>
+                            <br />
+                            <span className='staff_position'>
+                                교구, 양육/새가족
+                            </span>
+                            <br />
+                            <br />
+                            <br />
+                            <span>
+                                tcpcristern@gmail.com
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </section>
         </>
     );
 }

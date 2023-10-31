@@ -116,6 +116,19 @@
     padding: 10px 10px 10px 20px;
     background-color: rgba(190, 169, 169, 0.717);
     width: 100%;
+    border-radius: 10px;
+}
+
+.staff_name {
+    font-weight: 800;
+}
+
+.staff_eng_name {
+    color: rgb(118, 117, 117);
+}
+
+.staff_position{
+    color: rgb(255, 61, 61);
 }
 
 @media screen and (max-width: 1300px){
