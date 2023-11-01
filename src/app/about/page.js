@@ -12,12 +12,11 @@ export default function About() {
             <section>
                 <div className='about_banner_wrapper'>
                     <img src='/main_banner.png' className='mainBannerImage' />
-                    <div className='about_banner_title'>
+                    {/* <div className='about_banner_title'>
                         <p>
                             W  E  L  C  O  M  E
                         </p>
-
-                    </div>
+                    </div> */}
                 </div>
             </section>
             <br />
@@ -235,7 +234,7 @@ export default function About() {
                             <br />
                             <br />
                             <br />
-                            <span>
+                            <span style={{ paddingRight: '36.54px' }}>
                                 tcpcyg253@gmail.com
                             </span>
                         </p>

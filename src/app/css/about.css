@@ -118,6 +118,28 @@
     width: 100%;
 }
 
+.korean_school_title {
+    display:flex;
+    justify-content: space-between;
+}
+
+.korean_school_home_button {
+    margin: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(91, 91, 91, 0.5);
+}
+
+.korean_school_home_button:hover {
+    background-color: rgba(138, 179, 255, 0.5);
+    color: black;
+    cursor: pointer;
+}
+
+.korean_school_home_button p {
+    margin: 5px 10px;
+}
+
 @media screen and (max-width: 1300px){
     .profile_section {
         max-width: 40%

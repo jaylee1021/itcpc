@@ -12,6 +12,13 @@ export default function Gallery() {
             <section>
                 <img src='/2023_VBS_all.png' className='mainBannerImage' />
             </section>
+            <br />
+            <div className='title' >
+                <p className='title-style'>교회학교</p>
+                <p className='subtitle-style'>Education</p>
+            </div>
+            <br />
+            <hr />
             <section className='education_section'>
                 <div>
                     <img src='/baby.jpg' className='education_section_image left' />
@@ -95,7 +102,10 @@ export default function Gallery() {
                 <div>
                     <img src='/youth.jpg' className='education_section_image right' />
                 </div>
+
             </section>
+            <hr />
+            <br />
         </div>
     );
 };
