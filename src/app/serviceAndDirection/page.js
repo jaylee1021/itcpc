@@ -118,7 +118,8 @@ export default function ServiceAndDirection() {
                     <div className='service_section_description'>
                         <p>매주 화~토요일 오전 6:00
                             <br />
-                            <a href='https://www.youtube.com/@TCPCTV'>&gt;라이브 온라인 예배&lt;</a>
+                            대면 및 온라인
+                            <a href='https://www.youtube.com/@TCPCTV'> &gt;라이브 온라인 예배&lt;</a>
                         </p>
                     </div>
                 </div>
