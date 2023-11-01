@@ -41,7 +41,7 @@ export default function Navbar() {
                     <li><a href='#' className='menu_link'><MenuItem>선교회/구역</MenuItem></a></li>
                     <li><a href='#' className='menu_link'><MenuItem>세계선교</MenuItem></a></li>
                     <li><a href='#' className='menu_link'><MenuItem>평신도훈련</MenuItem></a></li>
-                    <li><a href='#' className='menu_link'><MenuItem>타코마한국학교</MenuItem></a></li>
+                    <li><a href='https://www.tacomakoreanschool.org/' className='menu_link'><MenuItem>타코마한국학교</MenuItem></a></li>
                     <li><a href='#' className='menu_link'><MenuItem>늘푸른대학</MenuItem></a></li>
                 </ul>
             </li>
@@ -99,7 +99,7 @@ export default function Navbar() {
                 <li><a href='#' className='menu_link'><MenuItem>선교회/구역</MenuItem></a></li>
                 <li><a href='#' className='menu_link'><MenuItem>세계선교</MenuItem></a></li>
                 <li><a href='#' className='menu_link'><MenuItem>평신도훈련</MenuItem></a></li>
-                <li><a href='#' className='menu_link'><MenuItem>타코마한국학교</MenuItem></a></li>
+                <li><a href='https://www.tacomakoreanschool.org/' className='menu_link'><MenuItem>타코마한국학교</MenuItem></a></li>
                 <li><a href='#' className='menu_link'><MenuItem>늘푸른대학</MenuItem></a></li>
             </ul>
         </li>
