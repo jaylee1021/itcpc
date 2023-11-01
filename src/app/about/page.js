@@ -105,10 +105,10 @@ export default function About() {
                             </span>
                             <br />
                             <span className='staff_eng_name'>
-                                Senior Pastor Samuel Lee
+                                Senior Pastor. Samuel Lee
                             </span>
                             <br />
-                            <span className='staff_job'>
+                            <span className='staff_position'>
                                 담임목사
                             </span>
                             <br />
@@ -129,10 +129,10 @@ export default function About() {
                             </span>
                             <br />
                             <span className='staff_eng_name'>
-                                Pastor James Y. Kim
+                                Pastor. James Y. Kim
                             </span>
                             <br />
-                            <span className='staff_job'>
+                            <span className='staff_position'>
                                 교구, 양육/새가족
                             </span>
                             <br />
@@ -153,10 +153,10 @@ export default function About() {
                             </span>
                             <br />
                             <span className='staff_eng_name'>
-                                Pastor Brian D. Lee
+                                Pastor. Brian D. Lee
                             </span>
                             <br />
-                            <span className='staff_job'>
+                            <span className='staff_position'>
                                 교구, 예베/찬양
                             </span>
                             <br />
@@ -177,10 +177,10 @@ export default function About() {
                             </span>
                             <br />
                             <span className='staff_eng_name'>
-                                Pastor Jim Han
+                                Pastor. Jim Han
                             </span>
                             <br />
-                            <span className='staff_job'>
+                            <span className='staff_position'>
                                 영어권 2세 OW
                             </span>
                             <br />
@@ -201,10 +201,10 @@ export default function About() {
                             </span>
                             <br />
                             <span className='staff_eng_name'>
-                                Pastor Danny Kim
+                                Pastor. Danny Kim
                             </span>
                             <br />
-                            <span className='staff_job'>
+                            <span className='staff_position'>
                                 열린예배/2세영어
                             </span>
                             <br />
@@ -225,10 +225,10 @@ export default function About() {
                             </span>
                             <br />
                             <span className='staff_eng_name'>
-                                Pastor David Rho
+                                Pastor. David Rho
                             </span>
                             <br />
-                            <span className='staff_job'>
+                            <span className='staff_position'>
                                 중고등부
                             </span>
                             <br />
@@ -249,10 +249,10 @@ export default function About() {
                             </span>
                             <br />
                             <span className='staff_eng_name'>
-                                Director Monica Mata
+                                Director. Monica Mata
                             </span>
                             <br />
-                            <span className='staff_job'>
+                            <span className='staff_position'>
                                 유년부
                             </span>
                             <br />
@@ -273,10 +273,10 @@ export default function About() {
                             </span>
                             <br />
                             <span className='staff_eng_name'>
-                                Administratic Staff Young Kwok
+                                Administrative Staff. Young Kwok
                             </span>
                             <br />
-                            <span className='staff_job'>
+                            <span className='staff_position'>
                                 행정
                             </span>
                             <br />
