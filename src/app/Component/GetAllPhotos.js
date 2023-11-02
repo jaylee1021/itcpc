@@ -10,13 +10,10 @@ export default function GetAllSermon() {
 
     const [photo, setPhoto] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+
+
     const [searchQuery, setSearchQuery] = useState('');
     const [photoList, setPhotoList] = useState([]);
-    const [photoToShow, setPhotoToShow] = useState([]);
-    const [next, setNext] = useState(3);
-    
-    const photoPerPage = 20;
-    let arrayforHoldingPhotos = [];
 
     useEffect(() => {
 
