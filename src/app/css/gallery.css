@@ -1,0 +1,19 @@
+.photoSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 25%;
+    padding: 5px;
+    max-width: 1522px;
+}
+
+.gallery_photo {
+    border-radius: 5px;
+    width: 100%;
+    max-height: 226px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}

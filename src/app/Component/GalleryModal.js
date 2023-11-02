@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import '../css/page.css';
+import '../css/gallery.css';
 
 const style = {
     position: 'absolute',
@@ -22,14 +23,16 @@ const style = {
     padding: '32px'
 };
 
-export default function PhotoModal({ image }) {
+export default function GalleryModal({ image }) {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     return (
         <div>
-            <Button onClick={handleOpen} style={{ color: 'black', padding: '0' }}>더보기</Button>
+            <div className='column'>
+                <img onClick={handleOpen} className='gallery_photo' src={image} />
+            </div>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
@@ -44,16 +47,12 @@ export default function PhotoModal({ image }) {
                 }}
             >
                 <Fade in={open}>
-                    {/* <div style={OVERLAY_STYLE}> */}
                     <Box sx={style}>
                         <Typography id="transition-modal-title" variant="h6" component="h2" style={{ overflow: 'auto' }}>
                             <img src={image} style={{ maxHeight: '90vh' }} alt="..." />
                         </Typography>
-                        {/* <Typography id="transition-modal-description" sx={{ mt: 2 }}> */}
-                        {/* Your description */}
-                        {/* </Typography> */}
                     </Box>
-                    {/* </div> */}
+
                 </Fade>
             </Modal>
         </div>
