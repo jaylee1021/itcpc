@@ -3,7 +3,7 @@ import './css/page.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import TransitionsModal from './Component/PhotoModal';
+import PhotoModal from './Component/PhotoModal';
 import GetLastSermon from './Component/GetLastSermon';
 import GetLastSermonDate from './Component/GetLastSermonDate';
 
@@ -141,25 +141,25 @@ export default function Home() {
             <div className='news_image' style={{ backgroundImage: `url(${firstBoard.snap})` }}>
               <div className='news_description'>
                 <h2 className='news_image_title'>{firstBoard.title}</h2>
-                <p className='news_image_button'><TransitionsModal image={firstBoard.url} /></p>
+                <p className='news_image_button'><PhotoModal image={firstBoard.url} /></p>
               </div>
             </div>
             <div className='news_image' style={{ backgroundImage: `url(${secondBoard.snap})` }}>
               <div className='news_description'>
                 <h2 className='news_image_title'>{secondBoard.title}</h2>
-                <p className='news_image_button'><TransitionsModal image={secondBoard.url} /></p>
+                <p className='news_image_button'><PhotoModal image={secondBoard.url} /></p>
               </div>
             </div>
             <div className='news_image' style={{ backgroundImage: `url(${thirdBoard.snap})` }}>
               <div className='news_description'>
                 <h2 className='news_image_title'>{thirdBoard.title}</h2>
-                <p className='news_image_button'><TransitionsModal image={thirdBoard.url} /></p>
+                <p className='news_image_button'><PhotoModal image={thirdBoard.url} /></p>
               </div>
             </div>
             <div className='news_image' style={{ backgroundImage: `url(${fourthBoard.snap})` }}>
               <div className='news_description'>
                 <h2 className='news_image_title'>{fourthBoard.title}</h2>
-                <p className='news_image_button'><TransitionsModal image={fourthBoard.url} /></p>
+                <p className='news_image_button'><PhotoModal image={fourthBoard.url} /></p>
               </div>
             </div>
           </div >
