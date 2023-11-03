@@ -44,16 +44,11 @@ export default function PhotoModal({ image }) {
                 }}
             >
                 <Fade in={open}>
-                    {/* <div style={OVERLAY_STYLE}> */}
                     <Box sx={style}>
                         <Typography id="transition-modal-title" variant="h6" component="h2" style={{ overflow: 'auto' }}>
                             <img src={image} style={{ maxHeight: '90vh' }} alt="..." />
                         </Typography>
-                        {/* <Typography id="transition-modal-description" sx={{ mt: 2 }}> */}
-                        {/* Your description */}
-                        {/* </Typography> */}
                     </Box>
-                    {/* </div> */}
                 </Fade>
             </Modal>
         </div>
