@@ -2,9 +2,9 @@ import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import '../css/page.css';
 import '../css/sermons.css';
-import SermonModal from "./SermonModal";
 import Sermon_pagination from "./Sermon_pagination";
 import SermonsList from "./SermonsList";
+import { LoadingCircle } from "./Loading";
 
 export default function GetAllSermon() {
 
@@ -75,7 +75,7 @@ export default function GetAllSermon() {
         sermonSearchResult(newSearchQuery);
     };
 
-    if (isLoading) return <div>로딩중...</div>;
+    if (isLoading) return <LoadingCircle />;
 
     return (
         <>
