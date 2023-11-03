@@ -50,7 +50,7 @@ export default function Navbar() {
                 <ul className="dropdown-menu">
                     <li><a href='#' className='menu_link'><MenuItem>주보</MenuItem></a></li>
                     <li><a href='./gallery' className='menu_link'><MenuItem>주일스케치</MenuItem></a></li>
-                    <li><a href='#' className='menu_link'><MenuItem>자유게시판</MenuItem></a></li>
+                    <li><a href='./board' className='menu_link'><MenuItem>게시판</MenuItem></a></li>
                     <li><a href='#' className='menu_link'><MenuItem>캘린더</MenuItem></a></li>
                 </ul>
             </li>
@@ -111,7 +111,7 @@ export default function Navbar() {
             <ul className="dropdown-menu menus">
                 <li><a href='#' className='menu_link'><MenuItem>주보</MenuItem></a></li>
                 <li><a href='./gallery' className='menu_link'><MenuItem>주일스케치</MenuItem></a></li>
-                <li><a href='#' className='menu_link'><MenuItem>자유게시판</MenuItem></a></li>
+                <li><a href='./board' className='menu_link'><MenuItem>게시판</MenuItem></a></li>
                 <li><a href='#' className='menu_link'><MenuItem>캘린더</MenuItem></a></li>
             </ul>
         </li>
@@ -120,7 +120,7 @@ export default function Navbar() {
         </li>
 
         <li className="nav-item dropdown dropdowns">
-            <a className="nav-link dropwodn-toggle" style={{ fontWeight: 'bold' }} href="#">English Ministry</a>
+            <a className="nav-link dropwodn-toggle" style={{ fontWeight: 'bold' }} >English Ministry</a>
             <ul className="dropdown-menu menus drop-to-left" >
                 <li><a href='http://www.owtcpc.org' target='_blank' className='menu_link'><MenuItem>Open Worship(열린예배)</MenuItem></a></li>
                 <li><a href='#' className='menu_link'><MenuItem>English Ministry</MenuItem></a></li>
