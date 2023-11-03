@@ -1,7 +1,15 @@
+.gallery_section {
+    max-width: 1522px;
+    margin: auto;
+}
+
 .photoSection {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+}
+
+.input_style {
+    padding: 5px;
 }
 
 .column {

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import '../css/page.css';
-import '../css/sermons.css';
+import '../css/gallery.css';
 import GetAllPhotos from '../Component/GetAllPhotos';
 
 export default function Sermons() {
@@ -24,7 +24,7 @@ export default function Sermons() {
             <br />
             <br />
             <div>
-                <div >
+                <div className='gallery_section'>
                     <GetAllPhotos />
                 </div>
             </div>

@@ -76,12 +76,12 @@ export default function GetAllSermon() {
 
     return (
         <>
-            <div>
+            <div className="input_style">
                 <input type="text" placeholder="찾기..." className="search_sermon" onChange={handleSearchChange} />
             </div>
 
             {searchQuery === '' ?
-                <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                <div className="photoSection">
                     {photo.map((photo) => (
                         <div className='column' key={photo._id}>
                             <GalleryModal image={photo.url} />
@@ -89,7 +89,7 @@ export default function GetAllSermon() {
                     ))}
                 </div>
                 :
-                <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                <div className="photoSection">
                     {renderPhoto()}
                 </div>
             }

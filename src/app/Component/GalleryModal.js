@@ -30,7 +30,7 @@ export default function GalleryModal({ image }) {
 
     return (
         <div>
-            <div className='column'>
+            <div>
                 <img onClick={handleOpen} className='gallery_photo' src={image} />
             </div>
             <Modal
