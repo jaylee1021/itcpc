@@ -18,7 +18,6 @@ export default function Gallery() {
                 <p className='subtitle-style'>Education</p>
             </div>
             <br />
-            <hr />
             <section className='education_section'>
                 <div>
                     <img src='/baby.jpg' className='education_section_image left' />
@@ -104,7 +103,6 @@ export default function Gallery() {
                 </div>
 
             </section>
-            <hr />
             <br />
         </div>
     );
