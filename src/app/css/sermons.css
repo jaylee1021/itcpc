@@ -59,4 +59,6 @@
     background-color: white;
     color: black;
     margin: 0 0 20px 0;
+    outline: none;
+    text-indent: 10px;
 }
