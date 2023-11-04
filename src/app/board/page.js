@@ -24,12 +24,16 @@ export default function Main() {
             });
     }, []);
 
-    const count = () => {
-        let index = 0;
-        for (let i = 1; i < board.length + 1; i++) {
-            index = i;
-            return index;
-        }
+    const count = (singleBoard) => {
+        singleBoard.count += 1;
+        console.log(singleBoard.count);
+        axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/boards/${singleBoard._id}`, singleBoard)
+            .then((response) => {
+                console.log(response.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
     return (
         <>
@@ -57,10 +61,10 @@ export default function Main() {
                         {board.map((singleBoard) => {
                             return (
                                 <tbody >
-                                    <tr style={{ maxHeight: '72px' }}>
-                                        <td style={{ width: '20%' }}>
+                                    <tr>
+                                        <td >
                                             <div >
-
+                                                <BoardModal image={singleBoard} />
                                             </div>
                                         </td>
                                         <td style={{ width: '60%' }}>
@@ -70,16 +74,14 @@ export default function Main() {
                                             {singleBoard.eventDate}
                                         </td>
                                     </tr>
-
-
-
                                 </tbody>
-
                             );
                         })}
                     </table>
                 </div>
             </section >
+            <br />
+            <br />
         </>
     );
 };;;

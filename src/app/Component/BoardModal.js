@@ -30,7 +30,7 @@ export default function BoardModal({ image }) {
     return (
         <div>
             <div onClick={handleOpen} >
-                <img src={image.snap} className='articleImage' style={{ borderRadius: '5px' }} />
+                <img src={image.snap} className='articleImage' style={{ borderRadius: '5px', cursor: 'pointer' }} />
             </div>
             <Modal
                 aria-labelledby="transition-modal-title"
