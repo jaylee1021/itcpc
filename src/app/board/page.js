@@ -12,11 +12,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 export default function Main() {
 
     const [board, setBoard] = useState([]);
+    const [count, setCount] = useState(0);
 
     useEffect(() => {
         axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/boards`)
             .then((response) => {
-                console.log(response.data.boards);
                 setBoard(response.data.boards);
             })
             .catch((err) => {
@@ -24,17 +24,7 @@ export default function Main() {
             });
     }, []);
 
-    const count = (singleBoard) => {
-        singleBoard.count += 1;
-        console.log(singleBoard.count);
-        axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/boards/${singleBoard._id}`, singleBoard)
-            .then((response) => {
-                console.log(response.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    };
+
     return (
         <>
             <title>게시판</title>
@@ -52,31 +42,23 @@ export default function Main() {
                     <table className='table' style={{ verticalAlign: 'middle' }}>
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">이벤트</th>
-                                <th scope="col">이벤트 날짜</th>
-
+                                <th scope="col" style={{ display: 'flex' }}>
+                                    <th style={{ width: '20%', padding: '10px' }}>링크</th>
+                                    <th style={{ width: '50%', padding: '10px' }}>이벤트</th>
+                                    <th style={{ width: '20%', padding: '10px' }}>이벤트 날짜</th>
+                                    <th style={{ width: '10%', padding: '10px' }}>조회수 </th>
+                                </th>
                             </tr>
                         </thead>
-                        {board.map((singleBoard) => {
-                            return (
-                                <tbody >
+                        <tbody>
+                            {board.map((singleBoard) => {
+                                return (
                                     <tr>
-                                        <td >
-                                            <div >
-                                                <BoardModal image={singleBoard} />
-                                            </div>
-                                        </td>
-                                        <td style={{ width: '60%' }}>
-                                            {singleBoard.title}
-                                        </td>
-                                        <td style={{ width: '20%', }}>
-                                            {singleBoard.eventDate}
-                                        </td>
+                                        <BoardModal image={singleBoard} />
                                     </tr>
-                                </tbody>
-                            );
-                        })}
+                                );
+                            })}
+                        </tbody>
                     </table>
                 </div>
             </section >
