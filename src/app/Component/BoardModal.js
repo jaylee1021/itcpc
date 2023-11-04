@@ -3,10 +3,10 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import '../css/page.css';
+import '../css/sermons.css';
 
 const style = {
     position: 'absolute',
@@ -29,8 +29,8 @@ export default function BoardModal({ image }) {
 
     return (
         <div>
-            <div onClick={handleOpen} style={{ color: 'black', padding: '0', cursor: 'pointer' }}>
-                {image.title}
+            <div onClick={handleOpen} >
+                <img src={image.snap} className='articleImage' style={{ borderRadius: '5px' }} />
             </div>
             <Modal
                 aria-labelledby="transition-modal-title"

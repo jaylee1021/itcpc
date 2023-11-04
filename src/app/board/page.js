@@ -44,45 +44,8 @@ export default function Main() {
                 <p className='subtitle-style'>Board</p>
             </div>
             <section className='board_section'>
-                <div style={{ maxWidth: '1440px', border: '1px solid black', borderRadius: '10px' }}>
-                    {/* <table>
-                        <thead>
-                            <tr>
-                                <th style={{ flex: '25%' }}>
-                                    #
-                                </th>
-                                <th style={{ width: '100%' }}>
-                                    title
-                                </th>
-                                <th style={{ width: '100%' }}>
-                                    date
-                                </th>
-                            </tr>
-                        </thead>
-                        {board.map((singleBoard) => {
-                            return (
-
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            {singleBoard.count}
-                                        </td>
-                                        <td>
-                                            <BoardModal image={singleBoard} />
-                                        </td>
-                                        <td>
-                                            {singleBoard.eventDate}
-                                        </td>
-                                    </tr>
-
-
-
-                                </tbody>
-
-                            );
-                        })}
-                    </table> */}
-                    <table className="table">
+                <div style={{ maxWidth: '980px', border: '1px solid black', borderRadius: '5px' }}>
+                    <table className='table' style={{ verticalAlign: 'middle' }}>
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -93,16 +56,17 @@ export default function Main() {
                         </thead>
                         {board.map((singleBoard) => {
                             return (
+                                <tbody >
+                                    <tr style={{ maxHeight: '72px' }}>
+                                        <td style={{ width: '20%' }}>
+                                            <div >
 
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            {singleBoard.count}
+                                            </div>
                                         </td>
-                                        <td>
-                                            <BoardModal image={singleBoard} />
+                                        <td style={{ width: '60%' }}>
+                                            {singleBoard.title}
                                         </td>
-                                        <td>
+                                        <td style={{ width: '20%', }}>
                                             {singleBoard.eventDate}
                                         </td>
                                     </tr>
