@@ -408,7 +408,18 @@
 }
 
 .news_image_button:hover {
-  background-color: rgba(255, 255, 255, 0.401);
+  background-color: rgba(255, 255, 255, 0.615);
+}
+
+.view_more_button {
+  color: white;
+  border: 1px solid white;
+  padding: 0 10px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.view_more_button:hover {
+  color: black;
 }
 
 .news_description {

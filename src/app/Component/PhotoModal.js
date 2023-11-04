@@ -29,7 +29,7 @@ export default function PhotoModal({ image }) {
 
     return (
         <div>
-            <Button onClick={handleOpen} style={{ color: 'black', padding: '0' }}>더보기</Button>
+            <button onClick={handleOpen} className='view_more_button'>더보기</button>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
