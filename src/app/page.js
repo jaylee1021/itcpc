@@ -75,62 +75,6 @@ export default function Home() {
 
         </article>
       </section>
-      <br />
-      <br />
-      <section className='videoSection' >
-        <div className='videoSection second_section'>
-          <div className='padding10'>
-            <div className='imageWrapper'>
-              <a href='./newComer'><img src='/new_comer.png' className='articleImage' /></a>
-            </div>
-          </div>
-          <div className='padding10'>
-            <div className='imageWrapper'>
-              <a href='https://www.tacomakoreanschool.org/'><img src='/korean_school.png' className='articleImage' /></a>
-            </div>
-          </div>
-        </div>
-        <div className='videoSection second_section'>
-          <div className='padding10'>
-            <div className='imageWrapper'>
-              <a href='./education'><img src='/church_school.png' className='articleImage' /></a>
-            </div>
-          </div>
-          <div className='padding10'>
-            <div className='imageWrapper'>
-              <a href='./serviceAndDirection'><img src='/direction.png' className='articleImage' /></a>
-            </div>
-          </div>
-        </div>
-      </section >
-      <br />
-      <div className='title'>
-        <p className='title-style'>2023년 교회표어</p>
-        <p className='subtitle-style'>Ministry Emphasis</p>
-      </div>
-      <section className='mid-banner'>
-        <div id="carouselExampleAutoplaying" className="carousel slide carousel-position" data-bs-ride="carousel">
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src="/banner1.png" className="d-block w-100" alt="..." />
-            </div>
-            <div className="carousel-item">
-              <img src="/banner2.png" className="d-block w-100" alt="..." />
-            </div>
-
-          </div>
-          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
-      <br />
-      <br />
       <div className='title'>
         <p className='title-style'>소식</p>
         <p className='subtitle-style'>News</p>
@@ -165,6 +109,61 @@ export default function Home() {
           </div >
         </div>
       </section >
+      <br />
+      <br />
+      <section className='videoSection' >
+        <div className='videoSection second_section'>
+          <div className='padding10'>
+            <div className='imageWrapper'>
+              <a href='./newComer'><img src='/new_comer.png' className='articleImage' /></a>
+            </div>
+          </div>
+          <div className='padding10'>
+            <div className='imageWrapper'>
+              <a href='https://www.tacomakoreanschool.org/'><img src='/korean_school.png' className='articleImage' /></a>
+            </div>
+          </div>
+        </div>
+        <div className='videoSection second_section'>
+          <div className='padding10'>
+            <div className='imageWrapper'>
+              <a href='./education'><img src='/church_school.png' className='articleImage' /></a>
+            </div>
+          </div>
+          <div className='padding10'>
+            <div className='imageWrapper'>
+              <a href='./serviceAndDirection'><img src='/direction.png' className='articleImage' /></a>
+            </div>
+          </div>
+        </div>
+      </section >
+      <br />
+      <br />
+      <div className='title'>
+        <p className='title-style'>2023년 교회표어</p>
+        <p className='subtitle-style'>Ministry Emphasis</p>
+      </div>
+      <section className='mid-banner'>
+        <div id="carouselExampleAutoplaying" className="carousel slide carousel-position" data-bs-ride="carousel">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img src="/banner1.png" className="d-block w-100" alt="..." />
+            </div>
+            <div className="carousel-item">
+              <img src="/banner2.png" className="d-block w-100" alt="..." />
+            </div>
+
+          </div>
+          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
       <br />
       <br />
       <br />
