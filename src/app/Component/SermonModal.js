@@ -37,7 +37,7 @@ export default function SermonModal({ sermon }) {
 
     return (
         <div>
-            <div onClick={handleOpen} className='sermon_info sermon_info_modal' style={{ fontSize: '1.5rem', padding: '0' }}>
+            <div onClick={handleOpen} className='sermon_info sermon_info_modal' >
                 <img src={sermon.snap} className='articleImage' />
             </div>
             <Modal
