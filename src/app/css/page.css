@@ -256,8 +256,26 @@
   margin: 0;
 }
 
-.padding10 {
+.padding10,
+.sermon_padding10 {
   padding: 10px;
+}
+
+.articleSub {
+  text-align: center;
+  font-size: 20px;
+  max-height: 0;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.sermon_padding10 {
+  width: 33.33%;
+}
+
+.sermon_padding10 .articleSub {
+  max-height: 100px;
+  padding: 5px;
 }
 
 .articleImage {
@@ -270,7 +288,7 @@
   background-color: black;
   border-radius: 5px;
   position: relative;
-
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .imageWrapper img {
@@ -323,10 +341,7 @@
   margin: 0;
 }
 
-.articleSub {
-  text-align: center;
-  font-size: 20px;
-}
+
 
 .date_time {
   font-size: 15px;
@@ -346,7 +361,7 @@
 .news_body{
   display: grid;
   place-items: center;
-  min-height: 30vh;
+  min-height: 20vh;
 }
 
 .news_wrapper {
@@ -459,7 +474,8 @@
 }
 
 .more-info p {
-  padding: 10px 10px 0px 10px;
+  padding: 16px 10px 0px 10px;
+  font-size: large;
 }
 
 .whats_new_image_wrapper {
@@ -512,6 +528,11 @@
   .videoSection {
     flex-direction: column;
     text-align: center;
+  }
+  
+  .sermon_padding10 {
+    width: 100%;
+    padding: 10px;
   }
 }
 
