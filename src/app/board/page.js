@@ -38,22 +38,20 @@ export default function Main() {
                 <p className='subtitle-style'>Board</p>
             </div>
             <section className='board_section'>
-                <div style={{ maxWidth: '980px', border: '1px solid black', borderRadius: '5px' }}>
+                <div style={{ maxWidth: '980px', border: '1px solid black', borderRadius: '10px' }}>
                     <table className='table' style={{ verticalAlign: 'middle' }}>
                         <thead>
-                            <tr>
-                                <th scope="col" style={{ display: 'flex' }}>
-                                    <th style={{ width: '20%', padding: '10px' }}>링크</th>
-                                    <th style={{ width: '50%', padding: '10px' }}>이벤트</th>
-                                    <th style={{ width: '20%', padding: '10px' }}>이벤트 날짜</th>
-                                    <th style={{ width: '10%', padding: '10px' }}>조회수 </th>
-                                </th>
+                            <tr scope="col" style={{ display: 'flex' }}>
+                                <th style={{ width: '20%', padding: '10px' }}>링크</th>
+                                <th style={{ width: '50%', padding: '10px' }}>이벤트</th>
+                                <th style={{ width: '20%', padding: '10px' }}>이벤트 날짜</th>
+                                <th style={{ width: '10%', padding: '10px' }}>조회수 </th>
                             </tr>
                         </thead>
                         <tbody>
                             {board.map((singleBoard) => {
                                 return (
-                                    <tr>
+                                    <tr key={singleBoard._id} >
                                         <BoardModal image={singleBoard} />
                                     </tr>
                                 );
