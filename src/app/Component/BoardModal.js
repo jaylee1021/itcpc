@@ -44,10 +44,10 @@ export default function BoardModal({ image }) {
     };
 
     return (
-        <div style={{ padding: ' 8px 8px 0 8px', maxHeight: '120px' }}>
+        <td style={{ maxHeight: '120px' }}>
             <td>
                 <div onClick={handleOpen} >
-                    <img src={image.snap} className='articleImage' style={{ borderRadius: '5px', cursor: 'pointer', padding: '10px' }} />
+                    <img src={image.snap} className='articleImage' style={{ borderRadius: '20px', cursor: 'pointer', padding: '10px' }} />
                 </div>
             </td>
             <td style={{ width: '50%', padding: '10px' }}>
@@ -60,7 +60,6 @@ export default function BoardModal({ image }) {
                 {count}
             </td>
 
-            <hr style={{ margin: '5px 0 0 0' }} />
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
@@ -82,6 +81,6 @@ export default function BoardModal({ image }) {
                     </Box>
                 </Fade>
             </Modal>
-        </div>
+        </td>
     );
 }
