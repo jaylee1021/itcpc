@@ -47,34 +47,32 @@ export default function Home() {
       </div>
 
       <section className='videoSection'>
-        <article className='padding10'>
+        <article className='sermon_padding10'>
           <div className='imageWrapper'>
             <GetLastSermon sermonSession='1부' />
           </div>
           <div className='articleSub'>
             <GetLastSermonDate sermonSession='1부' /> 1부 주일예배와 성가대 찬양
           </div>
-
         </article>
-        <article className='padding10'>
+        <article className='sermon_padding10'>
           <div className='imageWrapper'>
             <GetLastSermon sermonSession='2부' />
           </div>
           <div className='articleSub'>
             <GetLastSermonDate sermonSession='2부' /> 2부 주일 영어예배
           </div>
-
         </article>
-        <article className='padding10'>
+        <article className='sermon_padding10'>
           <div className='imageWrapper'>
             <GetLastSermon sermonSession='3부' />
           </div>
           <div className='articleSub'>
             <GetLastSermonDate sermonSession='3부' /> 3부 주일예배와 실로암 찬양대
           </div>
-
         </article>
       </section>
+      <br />
       <div className='title'>
         <p className='title-style'>소식</p>
         <p className='subtitle-style'>News</p>
@@ -109,6 +107,7 @@ export default function Home() {
           </div >
         </div>
       </section >
+      <br />
       <br />
       <br />
       <section className='videoSection' >
