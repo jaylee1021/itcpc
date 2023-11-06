@@ -47,12 +47,14 @@ export default function Footer() {
                         </div>
                         <br />
                         <p>
-                            253-589-8990
+                            TEL: 253-589-8990, 6873, 6874
+                            <br />
+                            FAX: 253-589-6875
                             <br />
                             <a className='email_link' href='mailto:office@itcpc.org'>office@itcpc.org</a>
                         </p>
                         <p>
-                            10002 59th Ave SW, Lakewood, WA 98499
+                            8001 Pine St. S. Lakewood, WA 98499
                         </p>
                         <br />
                         <p>
