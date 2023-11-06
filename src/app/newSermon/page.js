@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import '../css/page.css';
 import '../css/newSermon.css';
 import axios from 'axios';
+import { LoadingLine } from '../Component/Loading';
+import SnapImage from '../Component/SnapImage';
 
 export default function newSermon() {
 
@@ -15,6 +17,15 @@ export default function newSermon() {
     const [date, setDate] = useState('');
     const [title, setTitle] = useState('');
     const [passage, setPassage] = useState('');
+    const [snapImage, setSnapImage] = useState('');
+
+    const handleFileOpen = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setSnapImage(file);
+            setSnap(<SnapImage snap={file} />);
+        }
+    };
 
     const handleEmbed = (e) => {
         setEmbed(e.target.value);
@@ -46,7 +57,9 @@ export default function newSermon() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const new_sermon = { embed, preacher, session, snap, date, title, passage };
+        let sermonUrl = embed;
+        sermonUrl = sermonUrl.split('=')[1].slice(0, 11);
+        const new_sermon = { embed: sermonUrl, preacher, session, snap, date, title, passage };
         axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons/new`, new_sermon)
             .then(response => {
                 if (response.data.message === 'sermon already exists') {
@@ -78,8 +91,14 @@ export default function newSermon() {
             </div>
             <div className='new_sermon_section'>
                 <form onSubmit={handleSubmit} className='new_sermon_form' >
+                    <div>
+                        <label variant='primary' htmlFor='snapImage' >Upload Thumbnail Image</label>
+                        <input type="file" id="snapImage" name="snapImage" accept='.png, .jpg, .jpeg' onChange={handleFileOpen} style={{ display: 'none' }} />
+                        {snap}
+                    </div>
+                    <br />
                     <input type='text' name='embed' value={embed} onChange={handleEmbed} required />
-                    <p>Youtube Embed</p>
+                    <p>Youtube URL</p>
                     <input type='text' name='preacher' value={preacher} onChange={handlePreacher} required />
                     <p>Preacher</p>
                     <select name='session' value={session} onChange={handleSession} required >
