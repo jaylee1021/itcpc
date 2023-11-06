@@ -10,6 +10,15 @@ function LoadingCircle() {
     );
 }
 
+function LoadingSpinningBubble() {
+    return (
+        <div style={{ justifyContent: 'center', display: 'flex', margin: '300px 0' }}>
+            <ReactLoading type="spinningBubbles" color="black"
+                width={50} />
+        </div>
+    );
+}
+
 function LoadingLine() {
     return (
         <div style={{ justifyContent: 'center', display: 'flex' }}>
@@ -19,4 +28,4 @@ function LoadingLine() {
     );
 }
 
-export { LoadingCircle, LoadingLine };
+export { LoadingCircle, LoadingLine, LoadingSpinningBubble };
