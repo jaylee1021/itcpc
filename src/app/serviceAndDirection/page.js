@@ -1,7 +1,6 @@
 'use client';
 import '../css/page.css';
 import '../css/service.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function ServiceAndDirection() {
 

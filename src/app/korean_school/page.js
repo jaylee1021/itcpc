@@ -1,8 +1,6 @@
 'use client';
 import '../css/page.css';
 import '../css/about.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from 'react';
 
 export default function Korean_school() {
 

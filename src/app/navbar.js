@@ -1,14 +1,16 @@
 'use client';
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import React, { useEffect, useState } from 'react';
 import '../app/css/globals.css';
 import '../app/css/navbar.css';
-import { ListItemText } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 
-
 export default function Navbar() {
+
+    useEffect(() => {
+        require('bootstrap/dist/js/bootstrap.bundle.min.js');
+        require('bootstrap/dist/css/bootstrap.min.css');
+    }, []);
+
     const [menuVisible, setMenuVisible] = useState(false);
 
     const toggleMenu = () => {

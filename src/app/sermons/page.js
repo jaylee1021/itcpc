@@ -1,8 +1,5 @@
 'use client';
-
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import axios from 'axios';
+import React from 'react';
 import '../css/page.css';
 import '../css/sermons.css';
 import GetAllSermon from '../Component/GetAllSermon';

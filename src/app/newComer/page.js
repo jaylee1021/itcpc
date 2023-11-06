@@ -2,8 +2,6 @@
 import '../css/page.css';
 import '../css/newComer.css';
 import '../css/about.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 export default function NewComer() {
 

@@ -1,11 +1,9 @@
 'use client';
 import '../css/page.css';
 import '../css/board.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import BoardModal from '../Component/BoardModal';
-import 'bootstrap/dist/css/bootstrap.css';
 
 
 

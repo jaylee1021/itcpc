@@ -3,7 +3,6 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import '../css/page.css';
@@ -28,7 +27,7 @@ export default function PhotoModal({ image }) {
     const handleClose = () => setOpen(false);
 
     return (
-        <div>
+        <>
             <button onClick={handleOpen} className='view_more_button'>더보기</button>
             <Modal
                 aria-labelledby="transition-modal-title"
@@ -51,6 +50,6 @@ export default function PhotoModal({ image }) {
                     </Box>
                 </Fade>
             </Modal>
-        </div>
+        </>
     );
 }

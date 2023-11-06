@@ -1,11 +1,11 @@
 'use client';
 import './css/page.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import PhotoModal from './Component/PhotoModal';
 import GetLastSermon from './Component/GetLastSermon';
 import GetLastSermonDate from './Component/GetLastSermonDate';
+import { LoadingCircle } from './Component/Loading';
 
 export default function Home() {
 
@@ -13,6 +13,7 @@ export default function Home() {
   const [secondBoard, setSecondBoard] = useState([]);
   const [thirdBoard, setThirdBoard] = useState([]);
   const [fourthBoard, setFourthBoard] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchBoard = async () => {
@@ -23,6 +24,7 @@ export default function Home() {
         setSecondBoard(newBoard[newBoard.length - 3]);
         setThirdBoard(newBoard[newBoard.length - 2]);
         setFourthBoard(newBoard[newBoard.length - 1]);
+        // setIsLoading(false);
       }
       catch (err) {
         console.log(err);
@@ -31,7 +33,7 @@ export default function Home() {
     fetchBoard();
   }, []);
 
-  // if (isLoading) return <div>Loading...</div>;
+  // if (isLoading) return <LoadingCircle />;
 
   return (
     <>
@@ -80,25 +82,25 @@ export default function Home() {
       <section className='videoSection'>
         <div className='news_body'>
           <div className='news_wrapper'>
-            <div className='news_image' style={{ backgroundImage: `url(${firstBoard.snap})` }}>
+            <div className='news_image' style={{ backgroundImage: firstBoard.snap ? `url(${firstBoard.snap})` : 'none' }}>
               <div className='news_description'>
                 <h2 className='news_image_title'>{firstBoard.title}</h2>
                 <p className='news_image_button'><PhotoModal image={firstBoard.url} /></p>
               </div>
             </div>
-            <div className='news_image' style={{ backgroundImage: `url(${secondBoard.snap})` }}>
+            <div className='news_image' style={{ backgroundImage: secondBoard.snap ? `url(${secondBoard.snap})` : 'none' }}>
               <div className='news_description'>
                 <h2 className='news_image_title'>{secondBoard.title}</h2>
                 <p className='news_image_button'><PhotoModal image={secondBoard.url} /></p>
               </div>
             </div>
-            <div className='news_image' style={{ backgroundImage: `url(${thirdBoard.snap})` }}>
+            <div className='news_image' style={{ backgroundImage: thirdBoard.snap ? `url(${thirdBoard.snap})` : 'none' }}>
               <div className='news_description'>
                 <h2 className='news_image_title'>{thirdBoard.title}</h2>
                 <p className='news_image_button'><PhotoModal image={thirdBoard.url} /></p>
               </div>
             </div>
-            <div className='news_image' style={{ backgroundImage: `url(${fourthBoard.snap})` }}>
+            <div className='news_image' style={{ backgroundImage: fourthBoard.snap ? `url(${fourthBoard.snap})` : 'none' }}>
               <div className='news_description'>
                 <h2 className='news_image_title'>{fourthBoard.title}</h2>
                 <p className='news_image_button'><PhotoModal image={fourthBoard.url} /></p>

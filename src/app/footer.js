@@ -1,7 +1,4 @@
 'use client';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../app/css/globals.css';
 import '../app/css/footer.css';
 import React, { useRef, useState } from 'react';

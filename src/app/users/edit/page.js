@@ -1,5 +1,4 @@
 "use client";
-import 'bootstrap/dist/css/bootstrap.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
@@ -25,14 +24,14 @@ export default function EditUser() {
 	const [zipCode, setZipCode] = useState('');
 
 	const expirationTime = new Date(parseInt(localStorage.getItem('expiration')) * 1000);
-    let currentTime = Date.now();
+	let currentTime = Date.now();
 
-    // make a condition that compares exp and current time
-    if (currentTime >= expirationTime) {
-        handleLogout();
-        alert('Session has ended. Please login to continue.');
-        router.push('/users/login');
-    }
+	// make a condition that compares exp and current time
+	if (currentTime >= expirationTime) {
+		handleLogout();
+		alert('Session has ended. Please login to continue.');
+		router.push('/users/login');
+	}
 
 	// create the 
 	const handleFirstName = (e) => {
