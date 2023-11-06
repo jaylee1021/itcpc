@@ -1,11 +1,9 @@
 'use client';
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import '../css/page.css';
 import '../css/newSermon.css';
 import axios from 'axios';
 import { LoadingLine } from '../Component/Loading';
-import SnapImage from '../Component/SnapImage';
 
 export default function newSermon() {
 
@@ -63,14 +61,13 @@ export default function newSermon() {
                 .then((response) => response.json())
                 .then((data) => {
                     setSnap(data.secure_url);
-                    console.log('===>', data.secure_url);
                     setFile('');
                     setIsLoading(false);
                     setFileUploaded(<p className='file_uploaded'>파일이 업로드 되었습니다.</p>);
                 })
                 .catch((error) => console.log('Error', error));
         } else {
-            alert('업로드할 파일을 선택해주세요.');
+            alert('업로드할 파일을 먼저 선택해주세요.');
         }
     };
 
@@ -82,7 +79,7 @@ export default function newSermon() {
         axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons/new`, new_sermon)
             .then(response => {
                 if (response.data.message === 'sermon already exists') {
-                    alert('새로운 설교 등록에 "실패"했습니다.');
+                    alert('새로운 설교 등록에 "실패"했습니다. (같은 설교가 이미 존재합니다.)');
                 } else {
                     alert('새로운 설교 등록에 "성공"했습니다.');
                 }
