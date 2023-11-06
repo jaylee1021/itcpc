@@ -16,12 +16,12 @@ export default function newSermon() {
     const [date, setDate] = useState('');
     const [title, setTitle] = useState('');
     const [passage, setPassage] = useState('');
+    const [file, setFile] = useState('');
+    const [fileUploaded, setFileUploaded] = useState('');
+
 
     const handleFileOpen = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            setSnap(<SnapImage snap={file} />);
-        }
+        setFile(e.target.files[0]);
     };
 
     const handleEmbed = (e) => {
@@ -36,10 +36,6 @@ export default function newSermon() {
         setSession(e.target.value);
     };
 
-    const handleSnap = (e) => {
-        setSnap(e.target.value);
-    };
-
     const handleDate = (e) => {
         setDate(e.target.value);
     };
@@ -50,6 +46,32 @@ export default function newSermon() {
 
     const handlePassage = (e) => {
         setPassage(e.target.value);
+    };
+
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleImageUpload = () => {
+        if (file) {
+            setIsLoading(true);
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('upload_preset', 'itcpc_files');
+            fetch('https://api.cloudinary.com/v1_1/instaversecloud/image/upload/', {
+                method: 'POST',
+                body: formData,
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    setSnap(data.secure_url);
+                    console.log('===>', data.secure_url);
+                    setFile('');
+                    setIsLoading(false);
+                    setFileUploaded(<p className='file_uploaded'>파일이 업로드 되었습니다.</p>);
+                })
+                .catch((error) => console.log('Error', error));
+        } else {
+            alert('업로드할 파일을 선택해주세요.');
+        }
     };
 
     const handleSubmit = (e) => {
@@ -77,6 +99,8 @@ export default function newSermon() {
         setDate('');
         setTitle('');
         setPassage('');
+        setFile('');
+        setFileUploaded('');
     };
 
     return (
@@ -88,10 +112,10 @@ export default function newSermon() {
             </div>
             <div className='new_sermon_section'>
                 <form onSubmit={handleSubmit} className='new_sermon_form' >
-                    <div>
-                        <label variant='primary' htmlFor='snapImage' >Upload Thumbnail Image</label>
-                        <input type="file" id="snapImage" name="snapImage" accept='.png, .jpg, .jpeg' onChange={handleFileOpen} style={{ display: 'none' }} />
-                        {snap}
+                    <div className='thumbnails_uploader'>
+                        <input className='thumbnail_file' type="file" id="snapImage" name="snapImage" accept='.png, .jpg, .jpeg' onChange={handleFileOpen} />
+                        {file && isLoading ? <LoadingLine /> : fileUploaded}
+                        <button type='button' onClick={handleImageUpload} className='new_sermon_buttons'>Upload Thumbnail</button>
                     </div>
                     <br />
                     <input type='text' name='embed' value={embed} onChange={handleEmbed} required />
@@ -105,8 +129,6 @@ export default function newSermon() {
                         <option value='3부'>3부</option>
                     </select>
                     <p>Session</p>
-                    <input type='text' name='snap' value={snap} onChange={handleSnap} required />
-                    <p>Cloudinary Link</p>
                     <input type='date' name='date' value={date} onChange={handleDate} required />
                     <p>설교 날짜</p>
                     <input type='text' name='title' value={title} onChange={handleTitle} required />
@@ -115,14 +137,14 @@ export default function newSermon() {
                     <p>말씀 구절</p>
                     <div className='new_sermon_button_section'>
                         <button type='submit' className='new_sermon_buttons'>
-                            Submit
+                            등록
                         </button>
-                        <button type='button' onClick={handleClean} className='new_sermon_buttons'>
+                        <button type='button' onClick={handleClean} className='new_sermon_buttons clear_form_button'>
                             Clear form
                         </button>
                     </div>
-                </form>
-            </div>
+                </form >
+            </div >
             <br />
             <br />
             <br />
