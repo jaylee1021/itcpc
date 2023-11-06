@@ -53,7 +53,7 @@ export default function Navbar() {
                     <a href='#' className='menu_link'><MenuItem>주보</MenuItem></a>
                     <a href='./gallery' className='menu_link'><MenuItem>주일스케치</MenuItem></a>
                     <a href='./board' className='menu_link'><MenuItem>게시판</MenuItem></a>
-                    <a href='#' className='menu_link'><MenuItem>캘린더</MenuItem></a>
+                    <a href='./calendar' className='menu_link'><MenuItem>캘린더</MenuItem></a>
                 </ul>
             </li>
             <li className="nav-item">
@@ -114,7 +114,7 @@ export default function Navbar() {
                 <a href='#' className='menu_link'><MenuItem>주보</MenuItem></a>
                 <a href='./gallery' className='menu_link'><MenuItem>주일스케치</MenuItem></a>
                 <a href='./board' className='menu_link'><MenuItem>게시판</MenuItem></a>
-                <a href='#' className='menu_link'><MenuItem>캘린더</MenuItem></a>
+                <a href='./calendar' className='menu_link'><MenuItem>캘린더</MenuItem></a>
             </ul>
         </li>
         <li>
