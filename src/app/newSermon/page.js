@@ -9,7 +9,6 @@ import SnapImage from '../Component/SnapImage';
 
 export default function newSermon() {
 
-    const router = useRouter();
     const [embed, setEmbed] = useState('');
     const [preacher, setPreacher] = useState('');
     const [session, setSession] = useState('');
@@ -17,12 +16,10 @@ export default function newSermon() {
     const [date, setDate] = useState('');
     const [title, setTitle] = useState('');
     const [passage, setPassage] = useState('');
-    const [snapImage, setSnapImage] = useState('');
 
     const handleFileOpen = (e) => {
         const file = e.target.files[0];
         if (file) {
-            setSnapImage(file);
             setSnap(<SnapImage snap={file} />);
         }
     };
