@@ -14,8 +14,8 @@ export default function Gallery() {
             </section>
             <br />
             <div className='title' >
-                <p className='title-style'>교회학교</p>
-                <p className='subtitle-style'>Education</p>
+                <p className='title-style'>미니스트리</p>
+                <p className='subtitle-style'>Ministries</p>
             </div>
             <br />
             <section className='education_section'>
@@ -101,7 +101,82 @@ export default function Gallery() {
                 <div>
                     <img src='/youth.jpg' className='education_section_image right' />
                 </div>
-
+            </section>
+            <section className='education_section'>
+                <div>
+                    <img src='/team_k5.jpg' className='education_section_image left' />
+                </div>
+                <div className='education_section_description right'>
+                    <p className='education_section_title'>
+                        새가족부 New Comer
+                    </p>
+                    <p>
+                        Description goes here
+                    </p>
+                    <p>
+                        교역자: 김용주 목사
+                    </p>
+                    <p>
+                        팀멤버
+                    </p>
+                </div>
+            </section>
+            <section className='education_section'>
+                <div className='education_section_description left'>
+                    <p className='education_section_title'>
+                        찬양팀 Praise Team
+                    </p>
+                    <p>
+                        Description goes here
+                    </p>
+                    <p>
+                        교역자: 이대선 목사
+                    </p>
+                    <p>
+                        실로암, 헤세드
+                    </p>
+                </div>
+                <div>
+                    <img src='/youth.jpg' className='education_section_image right' />
+                </div>
+            </section>
+            <section className='education_section'>
+                <div>
+                    <img src='/team_k5.jpg' className='education_section_image left' />
+                </div>
+                <div className='education_section_description right'>
+                    <p className='education_section_title'>
+                        미디아팀 Media team
+                    </p>
+                    <p>
+                        Description goes here
+                    </p>
+                    <p>
+                        부장:
+                    </p>
+                    <p>
+                        팀멤버
+                    </p>
+                </div>
+            </section>
+            <section className='education_section'>
+                <div className='education_section_description left'>
+                    <p className='education_section_title'>
+                        IT 팀 IT Team
+                    </p>
+                    <p>
+                        Description goes here
+                    </p>
+                    <p>
+                        부장
+                    </p>
+                    <p>
+                        실로암, 헤세드
+                    </p>
+                </div>
+                <div>
+                    <img src='/youth.jpg' className='education_section_image right' />
+                </div>
             </section>
             <br />
         </div>
