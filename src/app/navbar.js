@@ -35,7 +35,7 @@ export default function Navbar() {
                 <a className="nav-link" href="./sermons" role="button" data-bs-toggle="dropdown" aria-expanded="false">설교말씀</a>
             </li>
             <li className="nav-item dropdown">
-                <a className="nav-link" href="./education" role="button" data-bs-toggle="dropdown" aria-expanded="false">교회학교</a>
+                <a className="nav-link" href="./ministry" role="button" data-bs-toggle="dropdown" aria-expanded="false">미니스트리</a>
             </li>
             <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">선교와 공동체</a>
@@ -90,7 +90,7 @@ export default function Navbar() {
             <a className="nav-link">|</a>
         </li>
         <li className="nav-item dropdown dropdowns">
-            <a className="nav-link" style={{ fontWeight: 'bold' }} href="./education">교회학교</a>
+            <a className="nav-link" style={{ fontWeight: 'bold' }} href="./ministry">미니스트리</a>
         </li>
         <li>
             <a className="nav-link">|</a>
