@@ -9,19 +9,22 @@ export default function GetLastSermon({ sermonSession }) {
     const [isLoading, setIsLoading] = useState(true);
 
     let time = '';
-
+    let sermonSessionEng = sermonSession;
     if (sermonSession === '1부') {
+        sermonSessionEng = '1st';
         time = '8:00 AM';
     } else if (sermonSession === '2부') {
+        sermonSessionEng = '2nd';
         time = '9:30 AM';
     } else if (sermonSession === '3부') {
+        sermonSessionEng = '3rd';
         time = '11:00 AM';
     }
 
     useEffect(() => {
         const fetchSermon = async () => {
             try {
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons/${sermonSession}`);
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons/${sermonSessionEng}`);
                 const newSermon = response.data.sermons;
                 const lastSermon = newSermon[newSermon.length - 1];
                 setSermon(lastSermon);
