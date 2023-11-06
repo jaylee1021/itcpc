@@ -33,3 +33,21 @@
     background-color: #4CAF50;
     padding: 0 10px;
 }
+
+.clear_form_button {
+    background-color: red;
+}
+
+.thumbnails_uploader {
+    display: flex;
+    flex-direction: column;
+}
+
+.thumbnail_file {
+    margin: 10px 0;
+}
+
+.file_uploaded {
+    margin: 0 0 10px 0;
+    text-align: center;
+}
