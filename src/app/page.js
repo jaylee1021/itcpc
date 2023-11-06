@@ -5,7 +5,7 @@ import axios from 'axios';
 import PhotoModal from './Component/PhotoModal';
 import GetLastSermon from './Component/GetLastSermon';
 import GetLastSermonDate from './Component/GetLastSermonDate';
-import { LoadingCircle } from './Component/Loading';
+import { LoadingSpinningBubble } from './Component/Loading';
 
 export default function Home() {
 
@@ -13,7 +13,7 @@ export default function Home() {
   const [secondBoard, setSecondBoard] = useState([]);
   const [thirdBoard, setThirdBoard] = useState([]);
   const [fourthBoard, setFourthBoard] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchBoard = async () => {
@@ -24,7 +24,7 @@ export default function Home() {
         setSecondBoard(newBoard[newBoard.length - 3]);
         setThirdBoard(newBoard[newBoard.length - 2]);
         setFourthBoard(newBoard[newBoard.length - 1]);
-        // setIsLoading(false);
+        setIsLoading(false);
       }
       catch (err) {
         console.log(err);
@@ -33,7 +33,7 @@ export default function Home() {
     fetchBoard();
   }, []);
 
-  // if (isLoading) return <LoadingCircle />;
+  if (isLoading) return <LoadingSpinningBubble />;
 
   return (
     <>
