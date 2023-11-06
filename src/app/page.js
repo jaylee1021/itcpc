@@ -128,7 +128,7 @@ export default function Home() {
         <div className='videoSection second_section'>
           <div className='padding10'>
             <div className='imageWrapper'>
-              <a href='./education'><img src='/church_school.png' className='articleImage' /></a>
+              <a href='./ministry'><img src='/church_school.png' className='articleImage' /></a>
             </div>
           </div>
           <div className='padding10'>
