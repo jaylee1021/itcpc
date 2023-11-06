@@ -11,9 +11,10 @@ export default function Profile() {
     const [isLoading, setLoading] = useState(true);
 
     let currentTime;
+    let expirationTime;
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            const expirationTime = new Date(parseInt(localStorage.getItem('expiration')) * 1000);
+            expirationTime = new Date(parseInt(localStorage.getItem('expiration')) * 1000);
             currentTime = Date.now();
         }
     }, []);

@@ -24,9 +24,10 @@ export default function EditUser() {
 	const [zipCode, setZipCode] = useState('');
 
 	let currentTime;
+	let expirationTime;
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
-			const expirationTime = new Date(parseInt(localStorage.getItem('expiration')) * 1000);
+			expirationTime = new Date(parseInt(localStorage.getItem('expiration')) * 1000);
 			currentTime = Date.now();
 		}
 	}, []);
