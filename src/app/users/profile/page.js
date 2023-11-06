@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import jwtDecode from 'jwt-decode';
 import { useRouter } from 'next/navigation';
 import handleLogout from '@/app/utils/handleLogout';
@@ -10,8 +10,13 @@ export default function Profile() {
     const [data, setData] = useState(null);
     const [isLoading, setLoading] = useState(true);
 
-    const expirationTime = new Date(parseInt(localStorage.getItem('expiration')) * 1000);
-    let currentTime = Date.now();
+    let currentTime;
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const expirationTime = new Date(parseInt(localStorage.getItem('expiration')) * 1000);
+            currentTime = Date.now();
+        }
+    }, []);
 
     // make a condition that compares exp and current time
     if (currentTime >= expirationTime) {

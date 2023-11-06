@@ -23,8 +23,13 @@ export default function EditUser() {
 	const [state, setState] = useState('');
 	const [zipCode, setZipCode] = useState('');
 
-	const expirationTime = new Date(parseInt(localStorage.getItem('expiration')) * 1000);
-	let currentTime = Date.now();
+	let currentTime;
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			const expirationTime = new Date(parseInt(localStorage.getItem('expiration')) * 1000);
+			currentTime = Date.now();
+		}
+	}, []);
 
 	// make a condition that compares exp and current time
 	if (currentTime >= expirationTime) {
