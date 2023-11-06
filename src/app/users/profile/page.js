@@ -21,26 +21,28 @@ export default function Profile() {
     }
 
     useEffect(() => {
-        if (localStorage.getItem('jwtToken')) {
-            fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/users/email/${localStorage.getItem('email')}`)
-                .then((res) => res.json())
-                .then((data) => {
-                    // data is an object
-                    let userData = jwtDecode(localStorage.getItem('jwtToken'));
-                    if (userData.email === localStorage.getItem('email')) {
-                        setData(data.user[0]);
-                        setLoading(false);
-                    } else {
-                        router.push('/users/login');
-                    }
+        if (typeof window !== 'undefined') {
+            if (localStorage.getItem('jwtToken')) {
+                fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/users/email/${localStorage.getItem('email')}`)
+                    .then((res) => res.json())
+                    .then((data) => {
+                        // data is an object
+                        let userData = jwtDecode(localStorage.getItem('jwtToken'));
+                        if (userData.email === localStorage.getItem('email')) {
+                            setData(data.user[0]);
+                            setLoading(false);
+                        } else {
+                            router.push('/users/login');
+                        }
 
-                })
-                .catch((error) => {
-                    console.log(error);
-                    router.push('/users/login');
-                });
-        } else {
-            router.push('/users/login');
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                        router.push('/users/login');
+                    });
+            } else {
+                router.push('/users/login');
+            }
         }
 
 
