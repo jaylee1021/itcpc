@@ -4,7 +4,6 @@ import '../app/css/footer.css';
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-
 export default function Footer() {
     const form = useRef();
     const [message, setMessage] = useState('');
