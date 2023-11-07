@@ -1,0 +1,19 @@
+
+.history_article {
+    display: flex;
+}
+
+.history_article_date {
+    display: flex;
+    justify-content: flex-end;
+    width: 15%;
+}
+
+p {
+    margin: 2px 0;
+}
+
+.history_article_description p {
+    margin-left: 20px;
+}
+
