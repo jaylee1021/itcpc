@@ -3,6 +3,7 @@ import '../css/page.css';
 import '../css/history.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import GetHistory from '../Component/GetHistory';
 
 
 export default function History() {
@@ -37,23 +38,12 @@ export default function History() {
                     미주 서북미의 한인 교민들에게 복음을 전하고 신앙 성장을 위해 주님의 뚯을 좇아 달려왔습니다.
                 </h4>
             </section>
-            <br />
             <section>
-                {histories.map((history, index) => (
-                    <div key={index} className='history_article'>
-                        <div className='history_article_date' style={{ width: '15%' }}>
-                            <p>{history.date}</p>
-                        </div>
-                        <div className='history_article_description'>
-                            {history.event_description.split(';').map((description, index) =>
-                                <p key={index}>{description}
-                                    <br /></p>
-
-
-                            )}
-                        </div>
-                    </div>
-                ))}
+                <a href='./history#order_1'> 창립초기 1972 - 1976</a>
+            </section>
+            <br />
+            <section id='order_1'>
+                <GetHistory order={1} />
             </section>
         </>
     );
