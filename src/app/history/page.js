@@ -42,11 +42,11 @@ export default function History() {
                 </h4>
             </section>
             <section >
-                <div style={{ display: 'flex', justifyContent: 'space-evenly', maxWidth: '950px', margin: 'auto', textAlign: 'center' }}>
-                    <a href='./history#order_1'> 창립초기 <br /> 1972 - 1976</a>
-                    <a href='./history#order_2'> 건축 및 성장기  <br /> 1977 - 1997</a>
-                    <a href='./history#order_3'> 선교 지향기  <br /> 1998 - 2003</a>
-                    <a href='./history#order_4'> 선교 사역 집중기  <br /> 2004 - 현재</a>
+                <div className='history_buttons_section'>
+                    <a href='./history#order_1'><button className='history_buttons'>창립초기 <br /> 1972 - 1976</button></a>
+                    <a href='./history#order_2'><button className='history_buttons'>건축 및 성장기 <br /> 1977 - 1997</button></a>
+                    <a href='./history#order_3'><button className='history_buttons'>선교 지향기 <br /> 1998 - 2003</button></a>
+                    <a href='./history#order_4'><button className='history_buttons'>선교 사역 집중기  <br /> 2004 - 현재</button></a>
                 </div>
 
             </section>
