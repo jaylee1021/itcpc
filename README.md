@@ -19,6 +19,4 @@ The application is meticulously crafted using the powerful MERN stack, incorpora
 ![NODE.JS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-<div width:'100px'>
 ![Cloudinary](https://cdn.worldvectorlogo.com/logos/cloudinary-1.svg)
-</div>
