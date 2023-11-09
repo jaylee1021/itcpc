@@ -44,7 +44,6 @@ export default function Navbar() {
                     <a href='#' className='menu_link'><MenuItem>세계선교</MenuItem></a>
                     <a href='#' className='menu_link'><MenuItem>평신도훈련</MenuItem></a>
                     <a href='https://www.tacomakoreanschool.org/' className='menu_link'><MenuItem>타코마한국학교</MenuItem></a>
-                    <a href='#' className='menu_link'><MenuItem>늘푸른대학</MenuItem></a>
                 </ul>
             </li>
             <li className="nav-item dropdown">
@@ -102,7 +101,6 @@ export default function Navbar() {
                 <a href='#' className='menu_link'><MenuItem>세계선교</MenuItem></a>
                 <a href='#' className='menu_link'><MenuItem>평신도훈련</MenuItem></a>
                 <a href='https://www.tacomakoreanschool.org/' className='menu_link'><MenuItem>타코마한국학교</MenuItem></a>
-                <a href='#' className='menu_link'><MenuItem>늘푸른대학</MenuItem></a>
             </ul>
         </li>
         <li>
