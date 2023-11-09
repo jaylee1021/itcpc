@@ -8,20 +8,21 @@ import { LoadingCircle } from './Loading';
 export default function GetHistory({ order }) {
 
     const [histories, setHistories] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
         axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/histories/${order}`)
             .then(response => {
                 if (response.status === 200) {
                     console.log('history', histories);
                     setHistories(response.data.histories);
-                    setIsLoading(true);
+                    setIsLoading(false);
                 }
             })
             .catch(error => console.log('===> Error fetching histories', error));
     }, [order]);
 
-    if (!isLoading) return (<LoadingCircle />);
+    if (isLoading) return (<LoadingCircle />);
 
     return (
         <>

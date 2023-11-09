@@ -3,7 +3,7 @@ import ReactLoading from "react-loading";
 
 function LoadingCircle() {
     return (
-        <div style={{ justifyContent: 'center', display: 'flex' }}>
+        <div style={{ justifyContent: 'center', display: 'flex', alignContent: 'center' }}>
             <ReactLoading type="spokes" color="black"
                 height={100} width={50} />
         </div>

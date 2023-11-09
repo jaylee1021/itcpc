@@ -6,7 +6,7 @@
 .history_article_date {
     display: flex;
     justify-content: flex-end;
-    width: 10%;
+    width: 12%;
 }
 
 p {
@@ -14,7 +14,7 @@ p {
 }
 
 .history_article_description {
-    width: 85%;
+    width: 100%;
 }
 
 .history_article_description p {
@@ -31,8 +31,10 @@ p {
 
 .history_buttons {
     padding: 10px;
+    color: white;
     border-radius: 15px;
+    border: none;
     width: 175px;
     font-size: 1.2rem;
-    background-color: rgb(85, 158, 158);
+    background-color: rgb(134, 151, 151);
 }
