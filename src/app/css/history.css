@@ -60,6 +60,12 @@ p {
     right: 0;
   } */
 
+  @media screen and (max-width: 863px) {
+    .history_article_date {
+        width: 14%;
+    }
+  }
+
   @media screen and (max-width: 819px) {
     .button_media {
         flex-direction: column;
@@ -67,6 +73,10 @@ p {
 
     .history_buttons {
         margin: 10px;
+    }
+
+    .history_article_description p {
+        margin: 5px 5px;
     }
   }
 
@@ -78,10 +88,6 @@ p {
     .history_article_date {
         justify-content: center;
         width: 100%;
-    }
-
-    .history_article_description p {
-        margin-left: 0;
     }
 
     .button_media {
@@ -101,5 +107,15 @@ p {
 
     h4 {
         padding: 0 10px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .history_title {
+        margin: 0 10px;
+    }
+
+    .history_article_description p {
+        margin: 5px 10px;
     }
   }
