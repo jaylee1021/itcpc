@@ -169,7 +169,6 @@ export default function GetAllSermon() {
                         </div >}
                 </div>
             }
-            <br />
         </>
     );
 };

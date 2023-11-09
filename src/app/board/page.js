@@ -58,8 +58,6 @@ export default function Main() {
                     </table>
                 </div>
             </section >
-            <br />
-            <br />
         </>
     );
 };;;

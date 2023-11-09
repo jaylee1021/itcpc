@@ -43,7 +43,7 @@ export default function Footer() {
                 <div className='footer-group'>
                     <div className='footer-section'>
                         <div className='logo-wrap'>
-                            <img src='/itcpc-logo-dark.png' className='footer-logo' />
+                            <a className="navbar-brand" href="/"><img src='/itcpc-logo-dark.png' className='footer-logo' /></a>
                         </div>
                         <br />
                         <p>

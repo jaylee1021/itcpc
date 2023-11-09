@@ -25,7 +25,6 @@ export default function Sermons() {
                     <GetAllPhotos />
                 </div>
             </div>
-
         </>
     );
 }

@@ -213,9 +213,6 @@ export default function Home() {
           </div>
         </div >
       </section >
-      <br />
-      <br />
-      <br />
     </>
   );
 };

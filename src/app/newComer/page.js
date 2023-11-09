@@ -225,7 +225,6 @@ export default function NewComer() {
                     </div>
                 </div>
             </section>
-            <br />
         </>
     );
 }

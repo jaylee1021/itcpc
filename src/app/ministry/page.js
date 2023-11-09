@@ -178,7 +178,6 @@ export default function Gallery() {
                     <img src='/youth.jpg' className='education_section_image right' />
                 </div>
             </section>
-            <br />
         </div>
     );
 };

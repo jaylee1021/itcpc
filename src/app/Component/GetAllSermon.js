@@ -100,8 +100,6 @@ export default function GetAllSermon() {
                     <Sermon_pagination totalPosts={sermonList.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
                 </div>
             }
-
-            <br />
         </>
     );
 };
