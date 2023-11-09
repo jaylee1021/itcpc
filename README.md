@@ -22,3 +22,5 @@ The application is meticulously crafted using the powerful MERN stack, incorpora
 ![Cloudinary](https://cdn.worldvectorlogo.com/logos/cloudinary-1.svg)
 
 # **Preview Screen**
+## Home
+![Home](src/app/readme_asset/tcpc-home.png)
