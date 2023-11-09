@@ -10,7 +10,7 @@ import GetHistory from '../Component/GetHistory';
 export default function History() {
 
     return (
-        <>
+        <div className='history'>
             <title>타코마중앙장로교회</title>
             <section >
                 <img src='/main_banner.png' className='mainBannerImage' />
@@ -22,10 +22,6 @@ export default function History() {
                 <p className='subtitle-style'>Church History</p>
             </div>
             <br />
-
-
-
-
             <section style={{ textAlign: 'center', maxWidth: '950px', margin: 'auto' }}>
                 <h4>
                     타코마 중앙 장로 교회는 1972년 창립되어 1973년 초대담임 목사님이 청빙 된후 지난 50여년간
@@ -49,38 +45,42 @@ export default function History() {
                     </section>
                     <br />
                     <div style={{ maxWidth: '950px', margin: 'auto' }}>
-                        <hr />
+
                         <div id='order_1'>
                             <p className='history_title'>
                                 창립초기 1972 - 1976
                             </p>
+                            <hr />
                         </div>
                         <section>
                             <GetHistory order={1} />
                         </section>
-                        <hr />
+
                         <div id='order_2'>
                             <p className='history_title'>
                                 건축 및 성장기 1977 - 1997
                             </p>
+                            <hr />
                         </div>
                         <section >
                             <GetHistory order={2} />
                         </section>
-                        <hr />
+
                         <div id='order_3' >
                             <p className='history_title'>
                                 선교 지향기 1998 - 2003
                             </p>
+                            <hr />
                         </div>
                         <section >
                             <GetHistory order={3} />
                         </section>
-                        <hr />
+
                         <div id='order_4'>
                             <p className='history_title'>
                                 선교 사역 집중기 2004 - 현재
                             </p>
+                            <hr />
                         </div>
                         <section >
                             <GetHistory order={4} />
@@ -88,6 +88,6 @@ export default function History() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };

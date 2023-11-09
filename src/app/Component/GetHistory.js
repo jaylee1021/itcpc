@@ -14,7 +14,6 @@ export default function GetHistory({ order }) {
         axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/histories/${order}`)
             .then(response => {
                 if (response.status === 200) {
-                    console.log('history', histories);
                     setHistories(response.data.histories);
                     setIsLoading(false);
                 }

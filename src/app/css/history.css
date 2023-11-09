@@ -1,6 +1,7 @@
 
+
 h4 {
-    padding: 0 30px;
+    padding: 0 25px;
 }
 .history_article {
     display: flex;
@@ -44,11 +45,14 @@ p {
 
 .history_title {
     font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
     color: rgb(176, 41, 41);
     position: relative;
 }
 
+hr {
+    margin: 10px 0;
+}
 /* .history_title:after{
     content:" ";
     height: 1px;
