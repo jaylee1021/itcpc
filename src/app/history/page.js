@@ -47,7 +47,7 @@ export default function History() {
                     <br />
                     <div style={{ maxWidth: '950px', margin: 'auto' }}>
                         <div id='order_1'>
-                            <p>
+                            <p className='history_title'>
                                 창립초기 1972 - 1976
                             </p>
                         </div>
@@ -56,7 +56,7 @@ export default function History() {
                         </section>
                         <br />
                         <div id='order_2'>
-                            <p>
+                            <p className='history_title'>
                                 건축 및 성장기 1977 - 1997
                             </p>
                         </div>
@@ -64,17 +64,19 @@ export default function History() {
                             <GetHistory order={2} />
                         </section>
                         <br />
-                        <div id='order_3'>
-                            <p>
+                        <div id='order_3' >
+                            <p className='history_title'>
                                 선교 지향기 1998 - 2003
                             </p>
+                            <hr />
+
                         </div>
                         <section >
                             <GetHistory order={3} />
                         </section>
                         <br />
                         <div id='order_4'>
-                            <p>
+                            <p className='history_title'>
                                 선교 사역 집중기 2004 - 현재
                             </p>
                         </div>
