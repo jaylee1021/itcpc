@@ -1,4 +1,7 @@
 
+h4 {
+    padding: 0 30px;
+}
 .history_article {
     display: flex;
 }
@@ -23,13 +26,13 @@ p {
 
 .history_buttons_section {
     display: flex;
+    max-width: 950;
+    margin: auto;
     justify-content: space-evenly;
-    max-width: 950px;
-    margin: 0 auto;
-    text-align: center;
 }
 
 .history_buttons {
+    margin: 10px;
     padding: 10px;
     color: white;
     border-radius: 15px;
@@ -43,4 +46,60 @@ p {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
     color: rgb(176, 41, 41);
+    position: relative;
 }
+
+/* .history_title:after{
+    content:" ";
+    height: 1px;
+    width: 65%;
+    background: red;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+  } */
+
+  @media screen and (max-width: 819px) {
+    .button_media {
+        flex-direction: column;
+    }
+
+    .history_buttons {
+        margin: 10px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .history_article {
+        flex-direction: column;
+    }
+
+    .history_article_date {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .history_article_description p {
+        margin-left: 0;
+    }
+
+    .button_media {
+        flex-direction: column;
+        
+    }
+
+    .history_buttons {
+        margin: 10px;
+    }
+  }
+
+  @media screen and (max-width: 429px) {
+    .two_buttons {
+        display: flex;
+    }
+
+    h4 {
+        padding: 0 10px;
+    }
+  }
