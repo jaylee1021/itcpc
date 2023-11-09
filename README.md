@@ -23,4 +23,4 @@ The application is meticulously crafted using the powerful MERN stack, incorpora
 
 # **Preview Screen**
 ## Home
-![Home](src/app/readme_asset/tcpc-home.png)
+![Home](public/readme_asset/tcpc-home.png)
