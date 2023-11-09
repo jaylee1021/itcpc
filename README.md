@@ -24,3 +24,11 @@ The application is meticulously crafted using the powerful MERN stack, incorpora
 # **Preview Screen**
 ## Home
 ![Home](public/readme_asset/tcpc-home.png)
+## Worship & News
+![worship&news](public/readme_asset/sunday_worship&news.png)
+## Sermons
+![Sermons](public/readme_asset/sermon_page.png)
+## Gallery
+![Gallery](public/readme_asset/gallery.png)
+## Board
+![Board](public/readme_asset/board.png)
