@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import '../css/page.css';
 import SermonModal from "./SermonModal";
+import { LoadingLine } from "./Loading";
 
 export default function GetLastSermon({ sermonSession }) {
 
@@ -28,6 +29,7 @@ export default function GetLastSermon({ sermonSession }) {
                 const newSermon = response.data.sermons;
                 const lastSermon = newSermon[newSermon.length - 1];
                 setSermon(lastSermon);
+                setIsLoading(false);
             }
             catch (err) {
                 console.log(err);
@@ -35,6 +37,8 @@ export default function GetLastSermon({ sermonSession }) {
         };
         fetchSermon();
     }, []);
+
+    if (isLoading) return (<LoadingLine />);
 
     return (
         <>
