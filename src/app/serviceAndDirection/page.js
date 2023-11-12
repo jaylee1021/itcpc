@@ -25,14 +25,17 @@ export default function ServiceAndDirection() {
             </div>
             <br />
             <section className='service_total'>
-                <div className='service_section'>
-                    <div className='service_section_title'>
-                        <p>주일예배
-                            <br />
-                            <span>Sunday Worship</span>
-                        </p>
+                <div className='service_section sunday_service_background'>
+                    <div className='service_section_image_wrapper'>
+                        <img src='/service_sunday_worship.png' className='service_section_image' />
                     </div>
                     <div className='hide'>
+                        <div className='service_section_title'>
+                            <p>주일예배
+                                <br />
+                                <span>Sunday Worship</span>
+                            </p>
+                        </div>
                         <div className='service_section_description'>
                             <p>
                                 <b>1부</b> 한어예배 오전 8:00
@@ -46,105 +49,150 @@ export default function ServiceAndDirection() {
                         </div>
                     </div>
                 </div>
-                <div className='service_section'>
-                    <div className='service_section_title'>
-                        <p>열린예베
-                            <br />
-                            <span> Open Worship</span>
-                        </p>
+                <div className='service_section ow_background'>
+                    <div className='service_section_image_wrapper'>
+                        <img src='/service_OW.png' className='service_section_image' />
                     </div>
-                    <div className='service_section_description'>
-                        <p>비전채플 Vision Chapel 주일 오전 11:00 </p>
+                    <div>
+                        <div className='service_section_title'>
+                            <p>열린예베
+                                <br />
+                                <span> Open Worship</span>
+                            </p>
+                        </div>
+                        <div className='service_section_description'>
+                            <p>비전채플 Vision Chapel 주일 오전 11:00 </p>
+                        </div>
                     </div>
                 </div>
-                <div className='service_section'>
-                    <div className='service_section_title'>
-                        <p>중고등부
-                            <br />
-                            <span> Youth Group</span>
-                        </p>
+                <div className='service_section youth_background'>
+                    <div className='service_section_image_wrapper'>
+                        <img src='/service_youth.png' className='service_section_image' />
                     </div>
-                    <div className='service_section_description'>
-                        <p>
-                            드림채플 Dream Chapel 주일 오전 11:00
-                        </p>
+                    <div>
                         <div className='service_section_title'>
-                            <p>
-                                <span> 금요예배</span>
+                            <p>중고등부
+                                <br />
+                                <span> Youth Group</span>
                             </p>
                         </div>
                         <div className='service_section_description'>
                             <p>
-                                매주 금요일 오후 7:00
+                                드림채플 Dream Chapel 주일 오전 11:00
+                            </p>
+                            <div className='service_section_title'>
+                                <p>
+                                    <span> 금요예배</span>
+                                </p>
+                            </div>
+                            <div className='service_section_description'>
+                                <p>
+                                    매주 금요일 오후 7:00
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='service_section sunday_school_background'>
+                    <div className='service_section_image_wrapper'>
+                        <img src='/service_sunday_school.png' className='service_section_image' />
+                    </div>
+                    <div>
+                        <div className='service_section_title'>
+                            <p>주일학교
+                                <br />
+                                <span>Sunday School</span>
+                            </p>
+                        </div>
+                        <div className='service_section_description'>
+                            <p><b>영아부</b> (영아부실) 오전 11:00
+                                <br />
+                                <b>유아부</b> (유아부실) 오전 11:00
+                                <br />
+                                <b>유년부</b> (주일학교 예배실) 오전 11:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='service_section wed_service_background'>
+                    <div className='service_section_image_wrapper'>
+                        <img src='/service_wed_service.png' className='service_section_image' />
+                    </div>
+                    <div>
+                        <div className='service_section_title'>
+                            <p>수요예배
+                                <br />
+                                <span>Wednesday Worship</span>
+                            </p>
+                        </div>
+                        <div className='service_section_description'>
+                            <p>
+                                매주 수요일 오전 10:00
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className='service_section'>
-                    <div className='service_section_title'>
-                        <p>주일학교
-                            <br />
-                            <span>Sunday School</span>
-                        </p>
+
+                <div className='service_section morning_prayer_background'>
+                    <div className='service_section_image_wrapper'>
+                        <img src='/service_morning_prayer.png' className='service_section_image' />
                     </div>
-                    <div className='service_section_description'>
-                        <p><b>영아부</b> (영아부실) 오전 11:00
-                            <br />
-                            <b>유아부</b> (유아부실) 오전 11:00
-                            <br />
-                            <b>유년부</b> (주일학교 예배실) 오전 11:00</p>
-                    </div>
-                </div>
-                <div className='service_section'>
-                    <div className='service_section_title'>
-                        <p>수요예배
-                            <br />
-                            <span>Wednesday Worship</span>
-                        </p>
-                    </div>
-                    <div className='service_section_description'>
-                        <p>
-                            매주 수요일 오전 10:00
-                        </p>
-                    </div>
-                    <br />
-                    <div className='service_section_title'>
-                        <p>새벽기도
-                            <br />
-                            <span>Morning Prayer</span>
-                        </p>
-                    </div>
-                    <div className='service_section_description'>
-                        <p>매주 화~토요일 오전 6:00
-                            <br />
-                            대면 및 온라인
-                            <a href='https://www.youtube.com/@TCPCTV'> &gt;라이브 온라인 예배&lt;</a>
-                        </p>
+                    <div>
+                        <div className='service_section_title'>
+                            <p>새벽기도
+                                <br />
+                                <span>Morning Prayer</span>
+                            </p>
+                        </div>
+                        <div className='service_section_description'>
+                            <p>매주 화~토요일 오전 6:00
+                                <br />
+                                대면 및 온라인
+                                <br />
+                                <a href='https://www.youtube.com/@TCPCTV'> &gt;라이브 온라인 예배&lt;</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div className='service_section'>
-                    <div className='service_section_title'>
-                        <p>소그룹모임
-                            <br />
-                            <span>Small Group</span>
-                        </p>
+
+                <div className='service_section small_group_background'>
+                    <div className='service_section_image_wrapper'>
+                        <img src='/service_small_group.png' className='service_section_image' />
                     </div>
-                    <div className='service_section_description'>
-                        <p>각 소그릅별</p>
-                    </div>
-                    <br />
-                    <div className='service_section_title'>
-                        <p>한국학교
-                            <br />
-                            <span>Korean School</span>
-                        </p>
-                    </div>
-                    <div className='service_section_description'>
-                        <p>학기중 매주 토요일 오전 9:30 ~ 오전 12:00
-                            <br />
-                            <a href='https://www.tacomakoreanschool.org/'>&gt;한국학교 홈페이지&lt;</a></p>
+                    <div>
+                        <div className='service_section_title'>
+                            <p>소그룹모임
+                                <br />
+                                <span>Small Group</span>
+                            </p>
+                        </div>
+                        <div className='service_section_description'>
+                            <p>각 소그릅별</p>
+                        </div>
                     </div>
                 </div>
+                <div className='service_section korean_school_background'>
+                    <div className='service_section_image_wrapper'>
+                        <img src='/service_korean_school.png' className='service_section_image' />
+                    </div>
+                    <div>
+                        <div className='service_section_title'>
+                            <p>한국학교
+                                <br />
+                                <span>Korean School</span>
+                            </p>
+                        </div>
+                        <div className='service_section_description'>
+                            <p>학기중 매주 토요일 오전 9:30 ~ 오전 12:00
+                                <br />
+                                <a href='https://www.tacomakoreanschool.org/'>&gt;한국학교 홈페이지&lt;</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div className='service_section '>
+
+                </div>
+
             </section >
             <br />
             <br />

@@ -34,17 +34,64 @@
 
 .service_section {
     display: flex;
-    flex: 1 0 50%;
-    padding: 0 px;
     margin: 10px;
     background-color: white;
-    max-width: 25%;
-    flex-direction: column;   
+    width: 30%;
+    height: 200px;
+    background-size: 150px 0em;
+    background-position: 100% 200%;
+    background-repeat: no-repeat;
+    transition: background-size .3s, background-position .3s .3s;
+}
+
+.service_section:hover {
+    transition: background-size .3s .3s, background-position .3s;
+    background-size: 150px 150px;
+    background-position: right 20px bottom;
+}
+
+.sunday_service_background {
+    background-image: url('../../../public/service_sunday_worship.png');
+}
+
+.ow_background {
+    background-image: url('../../../public/service_OW.PNG');
+}
+
+.youth_background {
+    background-image: url('../../../public/service_youth.PNG');
+}
+
+.sunday_school_background {
+    background-image: url('../../../public/service_sunday_school.PNG');
+}
+
+.wed_service_background {
+    background-image: url('../../../public/service_wed_service.PNG');
+}
+
+.morning_prayer_background {
+    background-image: url('../../../public/service_morning_prayer.PNG');
+}
+
+.small_group_background {
+    background-image: url('../../../public/service_small_group.PNG');
+}
+
+.korean_school_background {
+    background-image: url('../../../public/service_korean_school.PNG');
+}
+
+.service_section_image_wrapper {
+    margin-right: 10px;
+}
+
+.service_section_image {
+    width: 70px;
 }
 
 .service_section_title p {
     font-size: 1.2rem;
-    /* margin-bottom: 5px; */
     color: black;
     font-weight: bold;
 }
@@ -61,6 +108,11 @@
 .service_section_title span {
     font-size: 1.1rem;
     color: rgb(90, 90, 90);
+}
+
+.service_sub_section {
+    display: flex;
+    flex-direction: row;
 }
 
 .map_section {
@@ -83,10 +135,10 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
     .service_section {
         flex: 1 0 100%;
         max-width: 100%;
-        padding: 0 50px;
+        padding: 0 10px;
     }
 }
