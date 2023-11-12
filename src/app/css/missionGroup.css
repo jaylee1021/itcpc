@@ -5,10 +5,13 @@
 
 table {
     table-layout: fixed;
-    /* width: 100%; */
-    max-width: 750px;
-    /* border-collapse: collapse; */
-    /* border-width: 1px; */
+    max-width: 900px;
+}
+
+.table_top_section {
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
 }
 
 .positionBackground {
@@ -20,9 +23,6 @@ table {
 }
 
 .groupName {
-    /* display: flex; */
-    /* justify-content: flex-end; */
-    /* width: 30%; */
     font-weight: bolder;
     padding: 16px;
     border-right: 1px solid rgba(224, 224, 224, 1);

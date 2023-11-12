@@ -73,11 +73,11 @@ export default function GetMissionGroup({ gender }) {
                 </tbody>
             </table> */}
 
-            <TableContainer component={Paper} style={{ display: 'flex', justifyContent: 'center', boxShadow: 'none' }}>
+            <TableContainer component={Paper} className='table_top_section'>
                 <Table aria-label="simple table">
                     <TableHead >
                         <TableRow className='positionBackground'>
-                            <TableCell className='positionName' style={{ width: '170px' }}>{whichGender} 선교회명</TableCell>
+                            <TableCell className='positionName' style={{ width: '170px', fontSize: '1.2rem' }}>{whichGender} 선교회명</TableCell>
                             <TableCell align="center" style={{ width: '100%' }} className='positionName'>회장</TableCell>
                             <TableCell align="center" style={{ width: '100%' }} className='positionName'>부회장</TableCell>
                             <TableCell align="center" style={{ width: '100%' }} className='positionName'>총무</TableCell>
