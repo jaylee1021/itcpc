@@ -40,7 +40,7 @@ export default function Navbar() {
             <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">선교와 공동체</a>
                 <ul className="dropdown-menu">
-                    <a href='#' className='menu_link'><MenuItem>선교회/구역</MenuItem></a>
+                    <a href='./missionGroup' className='menu_link'><MenuItem>선교회</MenuItem></a>
                     <a href='#' className='menu_link'><MenuItem>세계선교</MenuItem></a>
                     <a href='#' className='menu_link'><MenuItem>평신도훈련</MenuItem></a>
                     <a href='https://www.tacomakoreanschool.org/' className='menu_link'><MenuItem>타코마한국학교</MenuItem></a>
@@ -97,7 +97,7 @@ export default function Navbar() {
         <li className="nav-item dropdown dropdowns">
             <a className="nav-link" style={{ fontWeight: 'bold' }} href="#">선교와 공동체</a>
             <ul className="dropdown-menu menus">
-                <a href='#' className='menu_link'><MenuItem>선교회/구역</MenuItem></a>
+                <a href='./missionGroup' className='menu_link'><MenuItem>선교회</MenuItem></a>
                 <a href='#' className='menu_link'><MenuItem>세계선교</MenuItem></a>
                 <a href='#' className='menu_link'><MenuItem>평신도훈련</MenuItem></a>
                 <a href='https://www.tacomakoreanschool.org/' className='menu_link'><MenuItem>타코마한국학교</MenuItem></a>
