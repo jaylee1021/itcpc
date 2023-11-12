@@ -33,18 +33,21 @@ export default function missionGroup() {
             <br />
             <br />
             <div className='title' >
-                <p className='title-style'>선교회</p>
+                <p className='title-style'>선교회 조직</p>
                 <p className='subtitle-style'>Mission Groups</p>
             </div>
             <section className='mission_group_section'>
                 {<GetMissionGroup gender='male' />}
             </section>
+            <br />
             <section className='mission_group_section'>
                 {<GetMissionGroup gender='female' />}
             </section>
+            <br />
             <section className='mission_group_section'>
                 {<GetMissionGroup gender='mix' />}
             </section>
+            <br />
             <section className='mission_group_section'>
                 {<GetMissionGroup gender='em' />}
             </section>

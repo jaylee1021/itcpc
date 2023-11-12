@@ -5,21 +5,30 @@
 
 table {
     table-layout: fixed;
-    width: 100%;
-    max-width: 922px;
-    border-collapse: collapse;
+    /* width: 100%; */
+    max-width: 750px;
+    /* border-collapse: collapse; */
+    /* border-width: 1px; */
+}
+
+.positionBackground {
+    background-color: lightgreen;
+}
+
+.positionName {
+    font-weight: bolder;
 }
 
 .groupName {
     /* display: flex; */
     /* justify-content: flex-end; */
     /* width: 30%; */
+    font-weight: bolder;
+    padding: 16px;
+    border-right: 1px solid rgba(224, 224, 224, 1);
 }
 
-td:first-child {
-    max-width: 30%;
-}
-
-td:nth-child(2) {
-    width: 70%;
+hr {
+    max-width: 700px;
+    margin: 10px auto;
 }
