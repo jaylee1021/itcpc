@@ -1,0 +1,25 @@
+.mission_group_section {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    max-width: 922px;
+    border-collapse: collapse;
+}
+
+.groupName {
+    /* display: flex; */
+    /* justify-content: flex-end; */
+    /* width: 30%; */
+}
+
+td:first-child {
+    max-width: 30%;
+}
+
+td:nth-child(2) {
+    width: 70%;
+}
