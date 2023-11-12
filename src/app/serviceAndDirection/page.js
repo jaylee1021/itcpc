@@ -194,8 +194,6 @@ export default function ServiceAndDirection() {
                 </div>
 
             </section >
-            <br />
-            <br />
             <div className='title' >
                 <p className='title-style'>교회 위치</p>
                 <p className='subtitle-style'>Location </p>

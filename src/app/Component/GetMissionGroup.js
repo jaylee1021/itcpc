@@ -77,12 +77,12 @@ export default function GetMissionGroup({ gender }) {
                 <Table aria-label="simple table">
                     <TableHead >
                         <TableRow className='positionBackground'>
-                            <TableCell className='positionName' style={{ width: '170px', fontSize: '1.2rem' }}>{whichGender} 선교회명</TableCell>
-                            <TableCell align="center" style={{ width: '100%' }} className='positionName'>회장</TableCell>
-                            <TableCell align="center" style={{ width: '100%' }} className='positionName'>부회장</TableCell>
-                            <TableCell align="center" style={{ width: '100%' }} className='positionName'>총무</TableCell>
-                            <TableCell align="center" style={{ width: '100%' }} className='positionName'>회계</TableCell>
-                            <TableCell align="center" style={{ width: '100%' }} className='positionName'>서기</TableCell>
+                            <TableCell className='positionName missionName' >{whichGender} 선교회명</TableCell>
+                            <TableCell align="center" className='positionName'>회장</TableCell>
+                            <TableCell align="center" className='positionName'>부회장</TableCell>
+                            <TableCell align="center" className='positionName'>총무</TableCell>
+                            <TableCell align="center" className='positionName'>회계</TableCell>
+                            <TableCell align="center" className='positionName'>서기</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -91,14 +91,14 @@ export default function GetMissionGroup({ gender }) {
                                 key={row.groupName}
                             // sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
-                                <TableCell component="th" scope="row" className='groupName' style={{ width: '100%' }}>
+                                <TableCell component="th" scope="row" className='groupName' >
                                     {row.groupName}
                                 </TableCell>
-                                <TableCell align="center" style={{ width: '100%' }}>{row.president}</TableCell>
-                                <TableCell align="center" style={{ width: '100%' }}>{row.vicePresident ? row.vicePresident : '-'}</TableCell>
-                                <TableCell align="center" style={{ width: '100%' }}>{row.secretary ? row.secretary : '-'}</TableCell>
-                                <TableCell align="center" style={{ width: '100%' }}>{row.accounting ? row.accounting : '-'}</TableCell>
-                                <TableCell align="center" style={{ width: '100%' }}>{row.clerk ? row.clerk : '-'}</TableCell>
+                                <TableCell align="center" className='names'>{row.president}</TableCell>
+                                <TableCell align="center" className='names'>{row.vicePresident ? row.vicePresident : '-'}</TableCell>
+                                <TableCell align="center" className='names'>{row.secretary ? row.secretary : '-'}</TableCell>
+                                <TableCell align="center" className='names'>{row.accounting ? row.accounting : '-'}</TableCell>
+                                <TableCell align="center" className='names'>{row.clerk ? row.clerk : '-'}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
