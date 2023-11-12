@@ -51,35 +51,35 @@
 }
 
 .sunday_service_background {
-    background-image: url('../../../public/service_sunday_worship.png');
+    background-image: url('/service_sunday_worship.png');
 }
 
 .ow_background {
-    background-image: url('../../../public/service_OW.PNG');
+    background-image: url('/service_OW.PNG');
 }
 
 .youth_background {
-    background-image: url('../../../public/service_youth.PNG');
+    background-image: url('/service_youth.PNG');
 }
 
 .sunday_school_background {
-    background-image: url('../../../public/service_sunday_school.PNG');
+    background-image: url('/service_sunday_school.PNG');
 }
 
 .wed_service_background {
-    background-image: url('../../../public/service_wed_service.PNG');
+    background-image: url('/service_wed_service.PNG');
 }
 
 .morning_prayer_background {
-    background-image: url('../../../public/service_morning_prayer.PNG');
+    background-image: url('/service_morning_prayer.PNG');
 }
 
 .small_group_background {
-    background-image: url('../../../public/service_small_group.PNG');
+    background-image: url('/service_small_group.PNG');
 }
 
 .korean_school_background {
-    background-image: url('../../../public/service_korean_school.PNG');
+    background-image: url('/service_korean_school.PNG');
 }
 
 .service_section_image_wrapper {
