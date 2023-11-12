@@ -11,7 +11,7 @@ table {
 .table_top_section {
     display: flex;
     justify-content: center;
-    box-shadow: none;
+    max-width: 900px;
 }
 
 .positionBackground {
