@@ -55,13 +55,16 @@ export default function ServiceAndDirection() {
                     </div>
                     <div>
                         <div className='service_section_title'>
-                            <p>열린예베
+                            <p>열린예배
                                 <br />
                                 <span> Open Worship</span>
                             </p>
                         </div>
                         <div className='service_section_description'>
-                            <p>비전채플 Vision Chapel 주일 오전 11:00 </p>
+                            <p>비전채플 Vision Chapel 주일 오전 11:00
+                                <br />
+                                <a href='https://owtcpc.org/'>&gt;열린예배 홈페이지&lt;</a>
+                            </p>
                         </div>
                     </div>
                 </div>
