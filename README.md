@@ -32,3 +32,11 @@ The application is meticulously crafted using the powerful MERN stack, incorpora
 ![Gallery](public/readme_asset/gallery.png)
 ## Board
 ![Board](public/readme_asset/board.png)
+
+# Features in progress
+- Feature to change themes with click of a button.
+- Feature to change language between Korean and English.
+- Dark mode feature.
+- Responsive design for mobile and tablet.
+- Admin page to upload multiple photos at once to Cloudinary.
+- Feature to add events to Google Calendar.
