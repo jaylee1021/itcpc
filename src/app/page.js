@@ -112,7 +112,23 @@ export default function Home() {
       <br />
       <br />
       <br />
-      <section className='videoSection' >
+      <section style={{ display: 'flex', maxWidth: '1522px', margin: 'auto', justifyContent: 'center' }}>
+        <div className='test newComer_background'  >
+          <img src='/box_newComer.png' className='testImage' />
+          <p style={{ color: 'white' }}>새가족</p>
+        </div>
+        <div className='test' >
+
+        </div>
+        <div className='test' >
+
+        </div>
+        <div className='test' >
+
+        </div>
+
+      </section>
+      {/* <section className='videoSection' >
         <div className='videoSection second_section'>
           <div className='padding10'>
             <div className='imageWrapper'>
@@ -137,7 +153,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section >
+      </section > */}
       <br />
       <br />
       <div className='title'>
