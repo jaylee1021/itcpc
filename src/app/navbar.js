@@ -32,10 +32,10 @@ export default function Navbar() {
                 </ul>
             </li>
             <li className="nav-item dropdown">
-                <a className="nav-link" href="./sermons" role="button" data-bs-toggle="dropdown" aria-expanded="false">설교말씀</a>
+                <a className="nav-link" href="./sermons" aria-expanded="false">설교말씀</a>
             </li>
             <li className="nav-item dropdown">
-                <a className="nav-link" href="./ministry" role="button" data-bs-toggle="dropdown" aria-expanded="false">미니스트리</a>
+                <a className="nav-link" href="./ministry" aria-expanded="false">미니스트리</a>
             </li>
             <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">선교와 공동체</a>
@@ -132,7 +132,7 @@ export default function Navbar() {
     return (
         <div >
             <nav className="navbar navbar-expand-lg sticky-top" >
-                <div className="container-fluid">
+                <div className="container-fluid" >
                     <a className="navbar-brand" href="/"><img src='/itcpc-logo.png' alt="Logo" /></a>
                     <button className="navbar-toggler" onClick={toggleMenu} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className={`navbar-toggler-icon ${menuVisible ? 'open' : ''}`}></span>
