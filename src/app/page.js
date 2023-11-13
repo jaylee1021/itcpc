@@ -115,7 +115,7 @@ export default function Home() {
       <section style={{ display: 'flex', maxWidth: '1522px', margin: 'auto', justifyContent: 'center' }}>
         <div className='test newComer_background'  >
           <img src='/box_newComer.png' className='testImage' />
-          <p style={{ color: 'white' }}>새가족</p>
+          <p style={{ color: 'white', fontSize: '3rem', display: 'flex', alignItems: 'center' }}>새가족</p>
         </div>
         <div className='test' >
 
