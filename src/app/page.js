@@ -128,7 +128,7 @@ export default function Home() {
         </div>
 
       </section>
-      {/* <section className='videoSection' >
+      <section className='videoSection' >
         <div className='videoSection second_section'>
           <div className='padding10'>
             <div className='imageWrapper'>
@@ -153,7 +153,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section > */}
+      </section >
       <br />
       <br />
       <div className='title'>
