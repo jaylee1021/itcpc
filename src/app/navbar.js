@@ -26,7 +26,7 @@ export default function Navbar() {
                 <ul className="dropdown-menu">
                     <a href='./about' className='menu_link'><MenuItem>환영인사</MenuItem></a>
                     <a href='./newComer' className='menu_link'><MenuItem>새가족</MenuItem></a>
-                    <a href='#' className='menu_link'><MenuItem>교회비전</MenuItem></a>
+                    <a href='./vision' className='menu_link'><MenuItem>교회비전</MenuItem></a>
                     <a href='./history' className='menu_link'><MenuItem>교회연혁</MenuItem></a>
                     <a href='./serviceAndDirection' className='menu_link'><MenuItem>예배안내/약도</MenuItem></a>
                 </ul>
@@ -74,7 +74,7 @@ export default function Navbar() {
             <ul className="dropdown-menu menus">
                 <a href="./about" className='menu_link'><MenuItem>환영인사</MenuItem></a>
                 <a href='./newComer' className='menu_link'><MenuItem>새가족</MenuItem></a>
-                <a href='#' className='menu_link'><MenuItem>교회비전</MenuItem></a>
+                <a href='./vision' className='menu_link'><MenuItem>교회비전</MenuItem></a>
                 <a href='./history' className='menu_link'><MenuItem>교회연혁</MenuItem></a>
                 <a href='./serviceAndDirection' className='menu_link'><MenuItem>예배안내/약도</MenuItem></a>
             </ul>
