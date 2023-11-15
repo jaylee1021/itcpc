@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { LoadingSpinningBubble } from '@/app/Component/Loading';
-import GetAllPhotos from '@/app/Component/GetAllPhotos';
+import GetEventPhotos from '@/app/Component/GetEventPhotos';
 import axios from 'axios';
 import '../../css/page.css';
 import '../../css/gallery.css';
@@ -41,7 +41,7 @@ export default function Gallery() {
             <br />
             <div>
                 <div className='gallery_section'>
-                    <GetAllPhotos eventName={eventName} />
+                    <GetEventPhotos eventName={eventName} />
                 </div>
             </div>
         </>

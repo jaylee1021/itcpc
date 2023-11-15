@@ -7,7 +7,7 @@ import '../css/page.css';
 import '../css/sermons.css';
 import '../css/gallery.css';
 
-export default function GetAllPhotos({ eventName }) {
+export default function GetEventPhotos({ eventName }) {
 
     const [photo, setPhoto] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
