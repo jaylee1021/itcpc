@@ -102,7 +102,6 @@ export default function GalleryAll() {
                         </div>
                         <div className="moreButton">
                             <br />
-                            <br />
                             {isCompleted ? (
                                 <button
                                     onClick={loadMore}
@@ -136,7 +135,6 @@ export default function GalleryAll() {
                                         ))}
                                     </div>
                                     <div className="moreButton">
-                                        <br />
                                         <br />
                                         {isCompleted ? (
                                             <button
