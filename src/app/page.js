@@ -1,11 +1,13 @@
 'use client';
-import './css/page.css';
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { LoadingSpinningBubble } from './Component/Loading';
 import axios from 'axios';
 import PhotoModal from './Component/PhotoModal';
 import GetLastSermon from './Component/GetLastSermon';
 import GetLastSermonDate from './Component/GetLastSermonDate';
-import { LoadingSpinningBubble } from './Component/Loading';
+import Link from 'next/link';
+import './css/page.css';
 
 export default function Home() {
 
@@ -17,6 +19,7 @@ export default function Home() {
   const [firstGallery, setFirstGallery] = useState([]);
   const [secondGallery, setSecondGallery] = useState([]);
   const [thirdGallery, setThirdGallery] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchBoard = async () => {
@@ -51,6 +54,11 @@ export default function Home() {
     };
     fetchGalleryThumbnail();
   }, []);
+
+  const handleGallery = (gallery) => {
+    let eventName = gallery.eventEngName;
+    router.push(`/gallery/${eventName}`);
+  };
 
   if (isLoading) return <LoadingSpinningBubble />;
 
@@ -131,46 +139,28 @@ export default function Home() {
       <br />
       <br />
       <br />
-      <section style={{ display: 'flex', maxWidth: '1522px', margin: 'auto', justifyContent: 'center' }}>
-        <div className='test newComer_background'  >
-          <img src='/box_newComer.png' className='testImage' />
-          <p style={{ color: 'white', fontSize: '3rem', display: 'flex', alignItems: 'center' }}>새가족</p>
-        </div>
-        <div className='test' >
-
-        </div>
-        <div className='test' >
-
-        </div>
-        <div className='test' >
-
-        </div>
-
-      </section>
-
-
       <section className='videoSection' >
         <div className='videoSection second_section'>
           <div className='padding10'>
             <div className='imageWrapper'>
-              <a href='./newComer'><img src='/new_comer.png' className='articleImage' /></a>
+              <Link href='./newComer'><img src='/new_comer.png' className='articleImage' /></Link>
             </div>
           </div>
           <div className='padding10'>
             <div className='imageWrapper'>
-              <a href='https://www.tacomakoreanschool.org/'><img src='/korean_school.png' className='articleImage' /></a>
+              <Link href='https://www.tacomakoreanschool.org/'><img src='/korean_school.png' className='articleImage' /></Link>
             </div>
           </div>
         </div>
         <div className='videoSection second_section'>
           <div className='padding10'>
             <div className='imageWrapper'>
-              <a href='./ministry'><img src='/church_school.png' className='articleImage' /></a>
+              <Link href='./ministry'><img src='/church_school.png' className='articleImage' /></Link>
             </div>
           </div>
           <div className='padding10'>
             <div className='imageWrapper'>
-              <a href='./serviceAndDirection'><img src='/direction.png' className='articleImage' /></a>
+              <Link href='./serviceAndDirection'><img src='/direction.png' className='articleImage' /></Link>
             </div>
           </div>
         </div>
@@ -228,7 +218,7 @@ export default function Home() {
         <article className='sermon_padding10'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
-              <a href='#'><img src={firstGallery.url} className='whats_new_image' /></a>
+              <img src={firstGallery.url} onClick={() => handleGallery(firstGallery)} className='whats_new_image' />
             </div>
             <div className='more-info'>
               <p>{firstGallery.eventKorName}</p>
@@ -238,7 +228,7 @@ export default function Home() {
         <article className='sermon_padding10'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
-              <a href='#'><img src={secondGallery.url} className='whats_new_image' /></a>
+              <img src={secondGallery.url} onClick={() => handleGallery(secondGallery)} className='whats_new_image' />
             </div>
             <div className='more-info'>
               <p>{secondGallery.eventKorName}</p>
@@ -248,7 +238,7 @@ export default function Home() {
         <article className='sermon_padding10'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
-              <a href='#'><img src={thirdGallery.url} className='whats_new_image' /></a>
+              <img src={thirdGallery.url} onClick={() => handleGallery(thirdGallery)} className='whats_new_image' />
             </div>
             <div className='more-info'>
               <p>{thirdGallery.eventKorName}</p>
