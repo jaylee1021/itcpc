@@ -46,7 +46,7 @@ export default function BoardModal({ image }) {
         <td style={{ maxHeight: '120px' }}>
             <td>
                 <div onClick={handleOpen} >
-                    <img src={image.snap} className='articleImage' style={{ borderRadius: '20px', cursor: 'pointer', padding: '10px' }} />
+                    <img src={image.snap} className='board_image' />
                 </div>
             </td>
             <td style={{ width: '50%', padding: '10px' }}>
