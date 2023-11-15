@@ -1,0 +1,33 @@
+
+.thumbnail_title {
+    padding-top:40px;
+    text-align: center;
+    position:absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    background: linear-gradient(rgba(54, 52, 52, 0.084), #000000);
+    padding: 10px;
+    font-size: 20px;
+    width: 100%;
+    margin: auto;
+    text-shadow: 0 0 3px #ffffff, 0 0 5px #000000; 
+}
+
+.thumbnail_title p {
+    margin: 0;
+}
+
+.thumbnails_wrapper {
+    position: relative;
+  }
+
+.thumbnail_image {
+  border-radius: 5px;
+  width: 360px;
+  object-fit: cover;
+  height: 250px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}
