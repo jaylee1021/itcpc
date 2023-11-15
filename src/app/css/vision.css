@@ -1,0 +1,20 @@
+.vision_title_kr {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: teal;
+}
+
+.vision_title_en {
+    font-size: 1.3rem;
+    color: black;
+}
+
+.threePointList {
+    margin: 20px;
+    color: maroon;
+    font-weight: bold;
+}
+.threePoint {
+    color:purple;
+    font-weight: bold;
+}
