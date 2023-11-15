@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import '../css/page.css';
 import '../css/about.css';
 
@@ -26,9 +27,9 @@ export default function Korean_school() {
                                     Welcome to Tacoma Korean School!
                                 </p>
                                 <div>
-                                    <a href='https://www.tacomakoreanschool.org/'>
+                                    <Link href='https://www.tacomakoreanschool.org/'>
                                         <button className='korean_school_home_button'><p>타코마한국학교 홈페이지</p></button>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <p>

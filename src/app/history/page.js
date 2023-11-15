@@ -1,10 +1,9 @@
 'use client';
+import React from 'react';
+import GetHistory from '../Component/GetHistory';
 import '../css/page.css';
 import '../css/history.css';
 import '../css/about.css';
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import GetHistory from '../Component/GetHistory';
 
 
 export default function History() {

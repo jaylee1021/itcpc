@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import '../css/page.css';
 import '../css/newComer.css';
 import '../css/about.css';
@@ -42,12 +43,12 @@ export default function NewComer() {
                                 <div className='new_comer_contact phone'>
                                     <p>&nbsp;연락처(TEL): 253-589-8900</p>
                                 </div>
-                                <a href='mailto:office@itcpc.org' className='new_comer_contact e-mail'>
+                                <Link href='mailto:office@itcpc.org' className='new_comer_contact e-mail'>
                                     <p> &nbsp;Email: office@itcpc.org</p>
-                                </a>
-                                <a href='./serviceAndDirection' className='new_comer_contact direction'>
+                                </Link>
+                                <Link href='./serviceAndDirection' className='new_comer_contact direction'>
                                     <p>&nbsp;약도 및 예배시간(SERVICE & MAP)</p>
-                                </a>
+                                </Link>
                             </div>
                             <div className='new_comer_helper_section'>
                                 <div className='new_comer_helper'>
