@@ -499,6 +499,10 @@
   margin: auto;
 }
 
+.whats_new_view_more_wrapper {
+  text-align: center;
+}
+
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {

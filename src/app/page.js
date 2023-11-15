@@ -245,7 +245,10 @@ export default function Home() {
             </div>
           </div >
         </article>
-      </section >
+      </section>
+      <div className='whats_new_view_more_wrapper'>
+        <Link href='./galleryAll'><button type="button" className="btn btn-danger"> 갤러리 더보기</button></Link >
+      </div>
     </>
   );
 };
