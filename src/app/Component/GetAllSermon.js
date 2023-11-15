@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
-import '../css/page.css';
-import '../css/sermons.css';
+import { LoadingCircle } from "./Loading";
 import Sermon_pagination from "./Sermon_pagination";
 import SermonsList from "./SermonsList";
-import { LoadingCircle } from "./Loading";
+import '../css/page.css';
+import '../css/sermons.css';
 
 export default function GetAllSermon() {
 

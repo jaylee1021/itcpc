@@ -1,6 +1,6 @@
+import SermonModal from "./SermonModal";
 import '../css/page.css';
 import '../css/sermons.css';
-import SermonModal from "./SermonModal";
 
 export default function SermonsList({ sermon }) {
 

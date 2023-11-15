@@ -1,10 +1,9 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import GetMissionGroup from '../Component/GetMissionGroup';
 import '../css/page.css';
 import '../css/missionGroup.css';
-import axios from 'axios';
-import { LoadingCircle } from '../Component/Loading';
-import GetMissionGroup from '../Component/GetMissionGroup';
 
 export default function missionGroup() {
 

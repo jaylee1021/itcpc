@@ -1,8 +1,9 @@
 'use client';
-import '../app/css/globals.css';
-import '../app/css/footer.css';
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Link from 'next/link';
+import '../app/css/globals.css';
+import '../app/css/footer.css';
 
 export default function Footer() {
     const form = useRef();
@@ -43,7 +44,7 @@ export default function Footer() {
                 <div className='footer-group'>
                     <div className='footer-section'>
                         <div className='logo-wrap'>
-                            <a className="navbar-brand" href="/"><img src='/itcpc-logo-dark.png' className='footer-logo' /></a>
+                            <Link className="navbar-brand" href="/"><img src='/itcpc-logo-dark.png' className='footer-logo' /></Link>
                         </div>
                         <br />
                         <p>
@@ -51,19 +52,19 @@ export default function Footer() {
                             <br />
                             FAX: 253-589-6875
                             <br />
-                            <a className='email_link' href='mailto:office@itcpc.org'>office@itcpc.org</a>
+                            <Link className='email_link' href='mailto:office@itcpc.org'>office@itcpc.org</Link>
                         </p>
                         <p>
                             8001 Pine St. S. Lakewood, WA 98499
                         </p>
                         <br />
                         <p>
-                            <a href='https://www.youtube.com/@TCPCTV' target='_blank'>
+                            <Link href='https://www.youtube.com/@TCPCTV' target='_blank'>
                                 <img src='/youtube.webp' className='social-icon' />
-                            </a>
-                            <a href='https://www.facebook.com/itgroup.tcpc' target='_blank'>
+                            </Link>
+                            <Link href='https://www.facebook.com/itgroup.tcpc' target='_blank'>
                                 <img src='/facebook.webp' className='social-icon' />
-                            </a>
+                            </Link>
                         </p>
                         <p>
                             ©2023 by Tacoma Central Presbyterian Church.

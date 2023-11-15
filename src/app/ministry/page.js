@@ -1,5 +1,4 @@
 'use client';
-
 import React from 'react';
 import '../css/page.css';
 import '../css/education.css';

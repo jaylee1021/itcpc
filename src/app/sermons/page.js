@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
+import GetAllSermon from '../Component/GetAllSermon';
 import '../css/page.css';
 import '../css/sermons.css';
-import GetAllSermon from '../Component/GetAllSermon';
 
 export default function Sermons() {
 

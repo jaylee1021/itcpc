@@ -1,8 +1,5 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import '../css/page.css';
-import '../css/missionGroup.css';
-import axios from 'axios';
 import { LoadingCircle } from './Loading';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -11,6 +8,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import axios from 'axios';
+import '../css/page.css';
+import '../css/missionGroup.css';
 
 export default function GetMissionGroup({ gender }) {
 
@@ -41,38 +41,6 @@ export default function GetMissionGroup({ gender }) {
 
     return (
         <>
-
-            {/* <table className='missionGroupTable'>
-                <colgroup>
-                    <col style={{ width: '15%' }} />
-                    <col style={{ width: '40%' }} />
-                </colgroup>
-
-                <thead>
-                    <tr>
-                        <th>{whichGender} 선교회명</th>
-                        <th>임원단</th>
-                    </tr>
-
-                </thead>
-                <tbody>
-                    {missionGroups.map((missionGroup, index) => (
-                        <tr key={index} className=''>
-                            <td className='groupName' >
-                                {missionGroup.groupName}
-                            </td>
-                            <td className='' >
-                                회장: {missionGroup.president}
-                                {missionGroup.vicePresident ? missionGroup.vicePresident : null}
-                                {missionGroup.secretary ? ', 총무:' + missionGroup.secretary : null}
-                                {missionGroup.accounting ? missionGroup.accounting : null}
-                                {missionGroup.clerk ? ', 서기: ' + missionGroup.clerk : null}
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table> */}
-
             <TableContainer component={Paper} className='table_top_section'>
                 <Table aria-label="simple table">
                     <TableHead >

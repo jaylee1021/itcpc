@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import '../css/page.css';
-import SermonModal from "./SermonModal";
 import { LoadingLine } from "./Loading";
+import SermonModal from "./SermonModal";
+import '../css/page.css';
 
 export default function GetLastSermon({ sermonSession }) {
 

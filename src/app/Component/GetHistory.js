@@ -1,9 +1,9 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import { LoadingCircle } from './Loading';
+import axios from 'axios';
 import '../css/page.css';
 import '../css/history.css';
-import axios from 'axios';
-import { LoadingCircle } from './Loading';
 
 export default function GetHistory({ order }) {
 

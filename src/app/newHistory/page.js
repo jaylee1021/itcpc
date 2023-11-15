@@ -1,9 +1,8 @@
 'use client';
 import React, { useState, useRef } from 'react';
+import axios from 'axios';
 import '../css/page.css';
 import '../css/newSermon.css';
-import axios from 'axios';
-import { LoadingLine } from '../Component/Loading';
 
 export default function newSermon() {
 

@@ -1,14 +1,13 @@
 import * as React from 'react';
-import { useEffect } from 'react';
+import { useState } from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
-import { useState } from 'react';
+import axios from 'axios';
 import '../css/page.css';
 import '../css/sermons.css';
-import axios from 'axios';
 
 const style = {
     position: 'absolute',
