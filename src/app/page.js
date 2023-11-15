@@ -1,6 +1,6 @@
 'use client';
 import './css/page.css';
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import axios from 'axios';
 import PhotoModal from './Component/PhotoModal';
 import GetLastSermon from './Component/GetLastSermon';
@@ -14,6 +14,9 @@ export default function Home() {
   const [thirdBoard, setThirdBoard] = useState([]);
   const [fourthBoard, setFourthBoard] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [firstGallery, setFirstGallery] = useState([]);
+  const [secondGallery, setSecondGallery] = useState([]);
+  const [thirdGallery, setThirdGallery] = useState([]);
 
   useEffect(() => {
     const fetchBoard = async () => {
@@ -31,6 +34,22 @@ export default function Home() {
       }
     };
     fetchBoard();
+  }, []);
+
+  useEffect(() => {
+    const fetchGalleryThumbnail = async () => {
+      try {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/galleryThumbnails`);
+        const newThumb = response.data.galleryThumbnails;
+        setFirstGallery(newThumb[newThumb.length - 3]);
+        setSecondGallery(newThumb[newThumb.length - 2]);
+        setThirdGallery(newThumb[newThumb.length - 1]);
+      }
+      catch (err) {
+        console.log(err);
+      }
+    };
+    fetchGalleryThumbnail();
   }, []);
 
   if (isLoading) return <LoadingSpinningBubble />;
@@ -128,6 +147,8 @@ export default function Home() {
         </div>
 
       </section>
+
+
       <section className='videoSection' >
         <div className='videoSection second_section'>
           <div className='padding10'>
@@ -204,30 +225,36 @@ export default function Home() {
         <p className='subtitle-style'>What's New</p>
       </div>
       <section className='videoSection'>
-        <div className='whats_new_image_wrapper'>
-          <div className=''>
-            <a href='#'><img src='/2023_vbs.png' className='whats_new_image' /></a>
+        <article className='sermon_padding10'>
+          <div className='whats_new_image_wrapper'>
+            <div className=''>
+              <a href='#'><img src={firstGallery.url} className='whats_new_image' /></a>
+            </div>
+            <div className='more-info'>
+              <p>{firstGallery.eventKorName}</p>
+            </div>
           </div>
-          <div className='more-info'>
-            <p>2023 VBS</p>
+        </article>
+        <article className='sermon_padding10'>
+          <div className='whats_new_image_wrapper'>
+            <div className=''>
+              <a href='#'><img src={secondGallery.url} className='whats_new_image' /></a>
+            </div>
+            <div className='more-info'>
+              <p>{secondGallery.eventKorName}</p>
+            </div>
           </div>
-        </div>
-        <div className='whats_new_image_wrapper'>
-          <div className=''>
-            <a href='#'><img src='/2023_picnic.png' className='whats_new_image' /></a>
-          </div>
-          <div className='more-info'>
-            <p>2023 전교인 피크닉</p>
-          </div>
-        </div>
-        <div className='whats_new_image_wrapper'>
-          <div className=''>
-            <a href='#'><img src='/2023_appointment.png' className='whats_new_image' /></a>
-          </div>
-          <div className='more-info'>
-            <p>2023 신년 임직식</p>
-          </div>
-        </div >
+        </article>
+        <article className='sermon_padding10'>
+          <div className='whats_new_image_wrapper'>
+            <div className=''>
+              <a href='#'><img src={thirdGallery.url} className='whats_new_image' /></a>
+            </div>
+            <div className='more-info'>
+              <p>{thirdGallery.eventKorName}</p>
+            </div>
+          </div >
+        </article>
       </section >
     </>
   );
