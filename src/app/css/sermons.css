@@ -62,3 +62,28 @@
     outline: none;
     text-indent: 10px;
 }
+
+@media screen and (max-width: 835px) {
+    .component_sermon_section {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 1rem;
+    }
+    .sermon_info {
+        padding: 0;
+        text-align: center;
+    }
+    .sermon_info h3 {
+        font-size: 1.5rem;
+        padding: 5px;
+        margin: 0;
+    }
+    .sermon_info p {
+        font-size: 1rem;
+        padding: 5px;
+    }
+    .sermon_info_modal {
+        font-size: 1.5rem;
+    }
+    
+}
