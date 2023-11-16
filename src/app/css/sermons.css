@@ -107,3 +107,12 @@ iframe {
     
     
 }
+
+@media screen and (max-height: 500px) {
+
+    iframe {
+        width: 80vw;
+        height: 100%;
+    }
+    
+}
