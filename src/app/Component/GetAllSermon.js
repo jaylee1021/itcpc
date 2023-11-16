@@ -2,7 +2,7 @@ import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { LoadingCircle } from "./Loading";
 import Sermon_pagination from "./Sermon_pagination";
-import SermonsList from "./SermonsList";
+import SermonModal from "./SermonModal";
 import '../css/page.css';
 import '../css/sermons.css';
 
@@ -45,7 +45,7 @@ export default function GetAllSermon() {
         if (sermonList.length) {
             for (let i = 0; i < sermonList.length; i++) {
                 rows.push(
-                    <SermonsList sermon={sermonList[i]} key={sermonList[i]._id} />
+                    <SermonModal sermon={sermonList[i]} key={sermonList[i]._id} />
                 );
             }
         } else {
@@ -89,7 +89,7 @@ export default function GetAllSermon() {
                     <Sermon_pagination totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
                     <br />
                     {currentPosts.map((sermon) => (
-                        <SermonsList sermon={sermon} key={sermon._id} />))}
+                        <SermonModal sermon={sermon} key={sermon._id} />))}
                     <Sermon_pagination totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
                 </div>
                 :
