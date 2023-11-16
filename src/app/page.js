@@ -65,11 +65,27 @@ export default function Home() {
   return (
     <>
       <title>타코마중앙장로교회</title>
-      <section className='mainBannerCenter'>
-        <img src='/main_banner.png' className='mainBannerImage' />
+      <section className='mid-banner'>
+        <div id="carouselExampleAutoplaying" className="carousel slide carousel-position" data-bs-ride="carousel">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img src="/banner1.png" className="d-block w-100" alt="..." />
+            </div>
+            <div className="carousel-item">
+              <img src="/banner2.png" className="d-block w-100" alt="..." />
+            </div>
+
+          </div>
+          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
       </section>
-      <br />
-      <br />
       <div className='title' >
         <p className='title-style'>주일 예배</p>
         <p className='subtitle-style'>Sunday Worship</p>
@@ -168,34 +184,6 @@ export default function Home() {
       <br />
       <br />
       <div className='title'>
-        <p className='title-style'>2023년 교회표어</p>
-        <p className='subtitle-style'>Ministry Emphasis</p>
-      </div>
-      <section className='mid-banner'>
-        <div id="carouselExampleAutoplaying" className="carousel slide carousel-position" data-bs-ride="carousel">
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src="/banner1.png" className="d-block w-100" alt="..." />
-            </div>
-            <div className="carousel-item">
-              <img src="/banner2.png" className="d-block w-100" alt="..." />
-            </div>
-
-          </div>
-          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
-      <br />
-      <br />
-      <br />
-      <div className='title'>
         <p className='title-style'>새가족 안내</p>
         <p className='subtitle-style'>New Comer</p>
       </div>
@@ -207,7 +195,6 @@ export default function Home() {
           <p>새가족으로 등록 하신 분들은 교회 소개와 안내, 소그룹안내(구역) 밑 새가족 교육에 참여하시면서 교회 생활에 필요한 도움을 받으시게 됩니다.</p>
         </div>
       </section>
-
       <br />
       <br />
       <div className='title'>
