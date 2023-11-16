@@ -63,7 +63,17 @@
     text-indent: 10px;
 }
 
+iframe {
+    width: 835px;
+    height: 480px;
+}
+
 @media screen and (max-width: 835px) {
+
+    iframe {
+        width: 700px;
+        height: 480px;
+    }
     .component_sermon_section {
         display: flex;
         flex-direction: column;
@@ -85,5 +95,15 @@
     .sermon_info_modal {
         font-size: 1.5rem;
     }
+    
+}
+
+@media screen and (max-width: 420px) {
+
+    iframe {
+        width: 340px;
+        height: 100%;
+    }
+    
     
 }

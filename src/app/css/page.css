@@ -107,6 +107,12 @@
 .logo {
   position: relative;
 }
+
+.photo_size {
+  max-height: 90vh;
+  max-width: 80vw;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {

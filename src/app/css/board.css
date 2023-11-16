@@ -64,7 +64,7 @@
 
 .image_size {
     max-height: 90vh;
-    max-width: 90vw;
+    max-width: 80vw;
 }
 
 @media screen and (max-width: 835px) {
