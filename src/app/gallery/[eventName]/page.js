@@ -35,7 +35,6 @@ export default function Gallery() {
                 <p className='title-style'>{thumbnail.eventKorName}</p>
                 {/* <p className='subtitle-style'>Gallery</p> */}
             </div>
-            <br />
             <div>
                 <div className='gallery_section'>
                     <GetEventPhotos eventName={eventName} />
