@@ -11,7 +11,6 @@ export default function Gallery() {
             <section className='mainBannerCenter'>
                 <img src='/2023_VBS_all.png' className='mainBannerImage' />
             </section>
-            <br />
             <div className='title' >
                 <p className='title-style'>미니스트리</p>
                 <p className='subtitle-style'>Ministries</p>

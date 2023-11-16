@@ -18,8 +18,6 @@ export default function About() {
                     </div> */}
                 </div>
             </section>
-            <br />
-            <br />
             <div className='title'>
                 <p className='title-style'>환영인사</p>
                 <p className='subtitle-style'>Welcome Message</p>

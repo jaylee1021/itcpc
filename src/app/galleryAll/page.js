@@ -71,13 +71,10 @@ export default function GalleryAll() {
             <section className='mainBannerCenter'>
                 <img src='/main_banner.png' className='mainBannerImage' />
             </section>
-            <br />
-            <br />
             <div className='title' >
                 <p className='title-style'>갤러리</p>
                 <p className='subtitle-style'>Gallery</p>
             </div>
-            <br />
             {isLoading ? <LoadingCircle /> :
                 <div className='gallery_section' style={{ maxWidth: '1522px' }}>
                     <div className="input_style">

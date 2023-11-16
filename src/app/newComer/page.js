@@ -21,8 +21,6 @@ export default function NewComer() {
                     </div>
                 </div>
             </section>
-            <br />
-            <br />
             <div className='title'>
                 <p className='title-style'>새가족 등록 안내</p>
                 <p className='subtitle-style'>Welcome Message</p>

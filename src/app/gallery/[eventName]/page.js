@@ -31,13 +31,10 @@ export default function Gallery() {
             <section className='mainBannerCenter'>
                 <img src='/gallery_page.jpg' className='mainBannerImage' />
             </section>
-            <br />
-            <br />
             <div className='title' >
                 <p className='title-style'>{thumbnail.eventKorName}</p>
                 {/* <p className='subtitle-style'>Gallery</p> */}
             </div>
-            <br />
             <br />
             <div>
                 <div className='gallery_section'>

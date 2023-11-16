@@ -11,7 +11,6 @@ export default function Korean_school() {
             <section >
                 <img src='/korean_school_banner.jpg' className='mainBannerImage' />
             </section>
-            <br />
             <div className='title' >
                 <p className='title-style'>타코마한국학고</p>
                 <p className='subtitle-style'>Tacoma Korean School</p>

@@ -14,8 +14,6 @@ export default function History() {
             <section className='mainBannerCenter'>
                 <img src='/main_banner.png' className='mainBannerImage' />
             </section>
-            <br />
-            <br />
             <div className='title' >
                 <p className='title-style'>교회연혁</p>
                 <p className='subtitle-style'>Church History</p>

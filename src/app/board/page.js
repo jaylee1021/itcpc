@@ -32,8 +32,6 @@ export default function Main() {
             <section className='mainBannerCenter'>
                 <img src='/main_banner.png' className='mainBannerImage' />
             </section>
-            <br />
-            <br />
             <div className='title' >
                 <p className='title-style'>게시판</p>
                 <p className='subtitle-style'>Board</p>

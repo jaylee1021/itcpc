@@ -10,8 +10,6 @@ export default function Calendar() {
             <section className='mainBannerCenter'>
                 <img src='/main_banner.png' className='mainBannerImage' />
             </section>
-            <br />
-            <br />
             <div className='title' >
                 <p className='title-style'>캘린더</p>
                 <p className='subtitle-style'>Calendar</p>

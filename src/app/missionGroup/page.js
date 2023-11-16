@@ -29,8 +29,6 @@ export default function missionGroup() {
             <section className='mainBannerCenter'>
                 <img src='/main_banner.png' className='mainBannerImage' />
             </section>
-            <br />
-            <br />
             <div className='title' >
                 <p className='title-style'>선교회 조직</p>
                 <p className='subtitle-style'>Mission Groups</p>

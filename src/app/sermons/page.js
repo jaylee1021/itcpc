@@ -12,8 +12,6 @@ export default function Sermons() {
             <section className='mainBannerCenter'>
                 <img src='/sermon_banner.jpg' className='mainBannerImage' />
             </section>
-            <br />
-            <br />
             <div className='title' >
                 <p className='title-style'>설교말씀</p>
                 <p className='subtitle-style'>Sermon</p>
