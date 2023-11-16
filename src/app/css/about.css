@@ -23,7 +23,7 @@
 
 .about_banner_wrapper {
     overflow: hidden;
-    background-color: black;
+    /* background-color: black; */
     position: relative;
 }
 

@@ -222,6 +222,11 @@
 
 .mainBannerImage {
   width: 100%;
+  max-width: 1522px;
+}
+
+.mainBannerCenter {
+  text-align: center;
 }
 
 /* .mainBannerVideo {

@@ -8,8 +8,6 @@ import '../css/galleryThumbnail.css';
 import '../css/gallery.css';
 import '../css/sermons.css';
 
-
-
 export default function GalleryAll() {
 
     const [galleryThumbnails, setGalleryThumbnails] = useState([]);  // photo
@@ -67,12 +65,10 @@ export default function GalleryAll() {
         router.push(`/gallery/${eventName}`);
     };
 
-    if (isLoading) return <LoadingCircle />;
-
     return (
         <>
             <title>갤러리</title>
-            <section >
+            <section className='mainBannerCenter'>
                 <img src='/main_banner.png' className='mainBannerImage' />
             </section>
             <br />
@@ -82,91 +78,93 @@ export default function GalleryAll() {
                 <p className='subtitle-style'>Gallery</p>
             </div>
             <br />
-            <div className='gallery_section' style={{ maxWidth: '1522px' }}>
-                <div className="input_style">
-                    <input type="text" placeholder="찾기... (이벤트 이름과 날자로 찾아 보실 수 있습니다)" className="search_sermon" onChange={handleSearchChange} />
-                </div>
-                {searchQuery === '' ?
-                    <>
-                        <div className="photoSection">
-                            {photoToDisplay.map((photo) => (
-                                <article key={photo._id} className='padding10'>
-                                    <div className='thumbnails_wrapper'>
-                                        <img src={photo.url} onClick={() => handleGallery(photo)} className='thumbnail_image' />
-                                        <div className='thumbnail_title'>
-                                            <p>{photo.eventKorName}</p>
-                                        </div>
-                                    </div>
-                                </article>
-                            ))}
-                        </div>
-                        <div className="moreButton">
-                            <br />
-                            {isCompleted ? (
-                                <button
-                                    onClick={loadMore}
-                                    type="button"
-                                    className="btn btn-danger disabled"
-                                >
-                                    That's It
-                                </button>
-                            ) : (
-                                <button onClick={loadMore} type="button" className="btn btn-danger">
-                                    더보기
-                                </button>
-                            )}
-                        </div>
-                    </>
-                    :
-                    <div>
-                        {photoSearchList.length ?
-                            (
-                                <>
-                                    <div className="photoSection">
-                                        {searchToDisplay.map((photo) => (
-                                            <article key={photo._id} className='padding10'>
-                                                <div className='thumbnails_wrapper'>
-                                                    <img src={photo.url} onClick={() => handleGallery(photo)} className='thumbnail_image' />
-                                                    <div className='thumbnail_title'>
-                                                        <p>{photo.eventKorName}</p>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        ))}
-                                    </div>
-                                    <div className="moreButton">
-                                        <br />
-                                        {isCompleted ? (
-                                            <button
-                                                onClick={loadMore}
-                                                type="button"
-                                                className="btn btn-danger disabled"
-                                            >
-                                                That's It
-                                            </button>
-                                        ) : (
-                                            <button onClick={loadMore} type="button" className="btn btn-danger">
-                                                더보기
-                                            </button>
-                                        )}
-                                    </div>
-                                </>
-                            ) : <div className="component_sermon_section" key={galleryThumbnails._id}>
-                                <div className="sermon_snap">
-                                    <img src='404_not_found.png' className='articleImage' />
-                                </div>
-                                <div className="sermon_info" >
-                                    <h3>
-                                        <h3>검색 결과가 없습니다.</h3>
-                                    </h3>
-                                    <p style={{ paddingRight: '400px' }}>
-                                        <h3>철자를 확인 하시고 다시 검색 해 주세요.</h3>
-                                    </p>
-                                </div>
-                            </div >}
+            {isLoading ? <LoadingCircle /> :
+                <div className='gallery_section' style={{ maxWidth: '1522px' }}>
+                    <div className="input_style">
+                        <input type="text" placeholder="찾기... (이벤트 이름과 날자로 찾아 보실 수 있습니다)" className="search_sermon" onChange={handleSearchChange} />
                     </div>
-                }
-            </div>
+                    {searchQuery === '' ?
+                        <>
+                            <div className="photoSection">
+                                {photoToDisplay.map((photo) => (
+                                    <article key={photo._id} className='padding10'>
+                                        <div className='thumbnails_wrapper'>
+                                            <img src={photo.url} onClick={() => handleGallery(photo)} className='thumbnail_image' />
+                                            <div className='thumbnail_title'>
+                                                <p>{photo.eventKorName}</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                ))}
+                            </div>
+                            <div className="moreButton">
+                                <br />
+                                {isCompleted ? (
+                                    <button
+                                        onClick={loadMore}
+                                        type="button"
+                                        className="btn btn-danger disabled"
+                                    >
+                                        That's It
+                                    </button>
+                                ) : (
+                                    <button onClick={loadMore} type="button" className="btn btn-danger">
+                                        더보기
+                                    </button>
+                                )}
+                            </div>
+                        </>
+                        :
+                        <div>
+                            {photoSearchList.length ?
+                                (
+                                    <>
+                                        <div className="photoSection">
+                                            {searchToDisplay.map((photo) => (
+                                                <article key={photo._id} className='padding10'>
+                                                    <div className='thumbnails_wrapper'>
+                                                        <img src={photo.url} onClick={() => handleGallery(photo)} className='thumbnail_image' />
+                                                        <div className='thumbnail_title'>
+                                                            <p>{photo.eventKorName}</p>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                            ))}
+                                        </div>
+                                        <div className="moreButton">
+                                            <br />
+                                            {isCompleted ? (
+                                                <button
+                                                    onClick={loadMore}
+                                                    type="button"
+                                                    className="btn btn-danger disabled"
+                                                >
+                                                    That's It
+                                                </button>
+                                            ) : (
+                                                <button onClick={loadMore} type="button" className="btn btn-danger">
+                                                    더보기
+                                                </button>
+                                            )}
+                                        </div>
+                                    </>
+                                ) : <div className="component_sermon_section" key={galleryThumbnails._id}>
+                                    <div className="sermon_snap">
+                                        <img src='404_not_found.png' className='articleImage' />
+                                    </div>
+                                    <div className="sermon_info" >
+                                        <h3>
+                                            <h3>검색 결과가 없습니다.</h3>
+                                        </h3>
+                                        <p style={{ paddingRight: '400px' }}>
+                                            <h3>철자를 확인 하시고 다시 검색 해 주세요.</h3>
+                                        </p>
+                                    </div>
+                                </div >}
+                        </div>
+                    }
+                </div>
+            }
         </>
     );
 }
