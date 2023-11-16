@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
+import axios from 'axios';
 import '../css/page.css';
 import '../css/sermons.css';
 
@@ -24,8 +25,12 @@ const style = {
 
 export default function SermonModal({ sermon }) {
     const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
+    const [count, setCount] = useState(sermon.count);
     const handleClose = () => setOpen(false);
+    const handleOpen = () => {
+        setOpen(true);
+        countClick();
+    };
 
     let emPreacher = '';
     if (sermon.preacher.includes('Danny Kim') || sermon.preacher.includes('David Rho')) {
@@ -34,10 +39,36 @@ export default function SermonModal({ sermon }) {
         emPreacher = 'Rev. ' + sermon.preacher;
     }
 
+    const countClick = () => {
+        axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons/${sermon._id}`, { count: sermon.count + 1 })
+            .then((response) => {
+                setCount(response.data.sermon.count);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
     return (
-        <div>
-            <div onClick={handleOpen} className='sermon_info sermon_info_modal' >
-                <img src={sermon.snap} className='articleImage' />
+        <div className="component_sermon_section" key={sermon._id}>
+            <div className="imageWrapper">
+                <div onClick={handleOpen} className='sermon_info sermon_info_modal' >
+                    <img src={sermon.snap} className='articleImage' />
+                </div>
+            </div>
+            <div className="sermon_info" >
+                <h3>
+                    {sermon.title} - {sermon.passage}
+                </h3>
+                <div className='date_time_wrapper'>
+                    <p className='date_time'>
+                        {sermon.date.split('T')[0]} @ {sermon.session === '1부' ? '8:00 AM 1부 - ' + sermon.preacher + '목사' : null ||
+                            sermon.session === '2부' ? '9:30 AM 2부 - ' + emPreacher : null ||
+                                sermon.session === '3부' ? '11:00 AM 3부 - ' + sermon.preacher + '목사' : null}
+
+                    </p>
+                    <p className='counter'>조회수: {count} </p>
+                </div>
             </div>
             <Modal
                 aria-labelledby="transition-modal-title"

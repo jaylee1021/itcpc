@@ -32,7 +32,7 @@
     font-size: 2rem;
 }
 
-.sermon_info p {
+.date_time {
     margin: 0;
     padding: 0;
     font-size: 1.3rem;
@@ -63,6 +63,20 @@
     text-indent: 10px;
 }
 
+.date_time_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.counter {
+    font-size: 0.9rem;
+    display: flex;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
 iframe {
     width: 835px;
     height: 480px;
@@ -88,28 +102,29 @@ iframe {
         padding: 5px;
         margin: 0;
     }
-    .sermon_info p {
+    .date_time {
         font-size: 1rem;
         padding: 5px;
     }
     .sermon_info_modal {
         font-size: 1.5rem;
     }
-    
+    .date_time_wrapper {
+        justify-content: center;
+    }  
+    .counter {
+        padding: 5px;
+    }  
 }
 
 @media screen and (max-width: 420px) {
-
     iframe {
         width: 340px;
         height: 100%;
     }
-    
-    
 }
 
 @media screen and (max-height: 500px) {
-
     iframe {
         width: 80vw;
         height: 100%;
