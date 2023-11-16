@@ -1,9 +1,9 @@
 import '../app/css/globals.css';
-import { Roboto } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import Navbar from './navbar';
 import Footer from './footer';
 
-const roboto = Roboto({
+const roboto = Poppins({
   weight: '400',
   subsets: ['latin']
 });
