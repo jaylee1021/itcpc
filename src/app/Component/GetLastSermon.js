@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { LoadingLine } from "./Loading";
-import SermonModal from "./SermonModal";
+import SermonModalMainPage from "./SermonModalMainPage";
 import '../css/page.css';
 
 export default function GetLastSermon({ sermonSession }) {
@@ -44,7 +44,7 @@ export default function GetLastSermon({ sermonSession }) {
         <>
             {sermon.date && (
                 <>
-                    <SermonModal sermon={sermon} />
+                    <SermonModalMainPage sermon={sermon} />
                     <div className='articleTitle'>
                         <p>
                             {sermon.title}
