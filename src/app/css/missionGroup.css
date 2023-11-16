@@ -1,6 +1,7 @@
 .mission_group_section {
     display: flex;
     justify-content: center;
+    padding: 5px;
 }
 
 table {
