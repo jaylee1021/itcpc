@@ -25,23 +25,23 @@ export default function Navbar() {
             <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle" role="button" href='#' data-bs-toggle="dropdown" aria-expanded="false">교회소개</Link>
                 <ul className="dropdown-menu">
-                    <Link href='./about' className='menu_link'><MenuItem>환영인사</MenuItem></Link>
-                    <Link href='./newComer' className='menu_link'><MenuItem>새가족</MenuItem></Link>
-                    <Link href='./vision' className='menu_link'><MenuItem>교회비전</MenuItem></Link>
-                    <Link href='./history' className='menu_link'><MenuItem>교회연혁</MenuItem></Link>
-                    <Link href='./serviceAndDirection' className='menu_link'><MenuItem>예배안내/약도</MenuItem></Link>
+                    <Link href='../about' className='menu_link'><MenuItem>환영인사</MenuItem></Link>
+                    <Link href='../newComer' className='menu_link'><MenuItem>새가족</MenuItem></Link>
+                    <Link href='../vision' className='menu_link'><MenuItem>교회비전</MenuItem></Link>
+                    <Link href='../history' className='menu_link'><MenuItem>교회연혁</MenuItem></Link>
+                    <Link href='../serviceAndDirection' className='menu_link'><MenuItem>예배안내/약도</MenuItem></Link>
                 </ul>
             </li>
             <li className="nav-item dropdown">
-                <Link className="nav-link" href="./sermons" aria-expanded="false">설교말씀</Link>
+                <Link className="nav-link" href="../sermons" aria-expanded="false">설교말씀</Link>
             </li>
             <li className="nav-item dropdown">
-                <Link className="nav-link" href="./ministry" aria-expanded="false">미니스트리</Link>
+                <Link className="nav-link" href="../ministry" aria-expanded="false">미니스트리</Link>
             </li>
             <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">선교와 공동체</Link>
                 <ul className="dropdown-menu">
-                    <Link href='./missionGroup' className='menu_link'><MenuItem>선교회</MenuItem></Link>
+                    <Link href='../missionGroup' className='menu_link'><MenuItem>선교회</MenuItem></Link>
                     <Link href='#' className='menu_link'><MenuItem>세계선교</MenuItem></Link>
                     <Link href='#' className='menu_link'><MenuItem>평신도훈련</MenuItem></Link>
                     <Link href='https://www.tacomakoreanschool.org/' className='menu_link'><MenuItem>타코마한국학교</MenuItem></Link>
@@ -51,9 +51,9 @@ export default function Navbar() {
                 <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">교회소식</Link>
                 <ul className="dropdown-menu">
                     <Link href='#' className='menu_link'><MenuItem>주보</MenuItem></Link>
-                    <Link href='./galleryAll' className='menu_link'><MenuItem>주일스케치</MenuItem></Link>
-                    <Link href='./board' className='menu_link'><MenuItem>게시판</MenuItem></Link>
-                    <Link href='./calendar' className='menu_link'><MenuItem>캘린더</MenuItem></Link>
+                    <Link href='../galleryAll' className='menu_link'><MenuItem>주일스케치</MenuItem></Link>
+                    <Link href='../board' className='menu_link'><MenuItem>게시판</MenuItem></Link>
+                    <Link href='../calendar' className='menu_link'><MenuItem>캘린더</MenuItem></Link>
                 </ul>
             </li>
             <li className="nav-item">
@@ -73,24 +73,24 @@ export default function Navbar() {
         <li className="nav-item dropdown dropdowns">
             <button className="nav-link" style={{ fontWeight: 'bold' }} >교회소개</button>
             <ul className="dropdown-menu menus">
-                <Link href="./about" className='menu_link'><MenuItem>환영인사</MenuItem></Link>
-                <Link href='./newComer' className='menu_link'><MenuItem>새가족</MenuItem></Link>
-                <Link href='./vision' className='menu_link'><MenuItem>교회비전</MenuItem></Link>
-                <Link href='./history' className='menu_link'><MenuItem>교회연혁</MenuItem></Link>
-                <Link href='./serviceAndDirection' className='menu_link'><MenuItem>예배안내/약도</MenuItem></Link>
+                <Link href="../about" className='menu_link'><MenuItem>환영인사</MenuItem></Link>
+                <Link href='../newComer' className='menu_link'><MenuItem>새가족</MenuItem></Link>
+                <Link href='../vision' className='menu_link'><MenuItem>교회비전</MenuItem></Link>
+                <Link href='../history' className='menu_link'><MenuItem>교회연혁</MenuItem></Link>
+                <Link href='../serviceAndDirection' className='menu_link'><MenuItem>예배안내/약도</MenuItem></Link>
             </ul>
         </li>
         <li>
             <a className="nav-link">|</a>
         </li>
         <li className="nav-item dropdown dropdowns">
-            <Link className="nav-link" style={{ fontWeight: 'bold' }} href="./sermons">설교말씀</Link>
+            <Link className="nav-link" style={{ fontWeight: 'bold' }} href="../sermons">설교말씀</Link>
         </li>
         <li>
             <a className="nav-link">|</a>
         </li>
         <li className="nav-item dropdown dropdowns">
-            <Link className="nav-link" style={{ fontWeight: 'bold' }} href="./ministry">미니스트리</Link>
+            <Link className="nav-link" style={{ fontWeight: 'bold' }} href="../ministry">미니스트리</Link>
         </li>
         <li>
             <a className="nav-link">|</a>
@@ -98,7 +98,7 @@ export default function Navbar() {
         <li className="nav-item dropdown dropdowns">
             <Link className="nav-link" style={{ fontWeight: 'bold' }} href="#">선교와 공동체</Link>
             <ul className="dropdown-menu menus">
-                <Link href='./missionGroup' className='menu_link'><MenuItem>선교회</MenuItem></Link>
+                <Link href='../missionGroup' className='menu_link'><MenuItem>선교회</MenuItem></Link>
                 <Link href='#' className='menu_link'><MenuItem>세계선교</MenuItem></Link>
                 <Link href='#' className='menu_link'><MenuItem>평신도훈련</MenuItem></Link>
                 <Link href='https://www.tacomakoreanschool.org/' className='menu_link'><MenuItem>타코마한국학교</MenuItem></Link>
@@ -111,9 +111,9 @@ export default function Navbar() {
             <Link className="nav-link" style={{ fontWeight: 'bold' }} href="#">교회소식</Link>
             <ul className="dropdown-menu menus">
                 <Link href='#' className='menu_link'><MenuItem>주보</MenuItem></Link>
-                <Link href='./galleryAll' className='menu_link'><MenuItem>주일스케치</MenuItem></Link>
-                <Link href='./board' className='menu_link'><MenuItem>게시판</MenuItem></Link>
-                <Link href='./calendar' className='menu_link'><MenuItem>캘린더</MenuItem></Link>
+                <Link href='../galleryAll' className='menu_link'><MenuItem>주일스케치</MenuItem></Link>
+                <Link href='../board' className='menu_link'><MenuItem>게시판</MenuItem></Link>
+                <Link href='../calendar' className='menu_link'><MenuItem>캘린더</MenuItem></Link>
             </ul>
         </li>
         <li>
