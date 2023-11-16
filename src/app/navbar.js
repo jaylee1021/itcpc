@@ -131,8 +131,8 @@ export default function Navbar() {
     </ul>);
 
     return (
-        <div >
-            <nav className="navbar navbar-expand-lg sticky-top" >
+        <div className='nav_center'>
+            <nav className="navbar navbar-expand-lg sticky-top" style={{ maxWidth: '1522px' }}>
                 <div className="container-fluid" >
                     <Link className="navbar-brand" href="/"><img src='/itcpc-logo.png' alt="Logo" /></Link>
                     <button className="navbar-toggler" onClick={toggleMenu} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
