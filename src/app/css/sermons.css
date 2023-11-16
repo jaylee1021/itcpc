@@ -111,9 +111,12 @@ iframe {
     }
     .date_time_wrapper {
         justify-content: center;
+        align-content: center;
+        flex-direction: column;
     }  
     .counter {
-        padding: 5px;
+        padding-bottom: 5px;
+        justify-content: center;
     }  
 }
 
