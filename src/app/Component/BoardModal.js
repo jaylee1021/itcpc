@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import axios from 'axios';
 import '../css/page.css';
 import '../css/sermons.css';
+import '../css/board.css';
 
 const style = {
     position: 'absolute',
@@ -24,6 +25,7 @@ const style = {
 };
 
 export default function BoardModal({ image }) {
+
     const [open, setOpen] = useState(false);
     const [count, setCount] = useState(image.count);
     const handleClose = () => setOpen(false);
@@ -43,19 +45,19 @@ export default function BoardModal({ image }) {
     };
 
     return (
-        <td style={{ maxHeight: '120px' }}>
-            <td>
-                <div onClick={handleOpen} >
-                    <img src={image.snap} className='board_image' />
+        <td style={{ display: 'flex' }}>
+            <td className='board_col1' onClick={handleOpen}>
+                <img src={image.snap} className='board_image' />
+            </td>
+            <td className='board_col2' >
+                <div onClick={handleOpen} className='title_cursor'>
+                    {image.title}
                 </div>
             </td>
-            <td style={{ width: '50%', padding: '10px' }}>
-                {image.title}
-            </td>
-            <td style={{ width: '20%', padding: '10px' }}>
+            <td className='board_col3'>
                 {image.eventDate}
             </td>
-            <td style={{ width: '10%', padding: '10px' }}>
+            <td className='board_col4'>
                 {count}
             </td>
 
@@ -75,7 +77,7 @@ export default function BoardModal({ image }) {
                 <Fade in={open}>
                     <Box sx={style}>
                         <Typography id="transition-modal-title" variant="h6" component="h2" style={{ overflow: 'auto' }}>
-                            <img src={image.url} style={{ maxHeight: '90vh' }} alt="..." />
+                            <img src={image.url} className='image_size' alt="..." />
                         </Typography>
                     </Box>
                 </Fade>
