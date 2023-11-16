@@ -227,6 +227,7 @@
 
 .mainBannerCenter {
   text-align: center;
+  padding-bottom: 10px;
 }
 
 /* .mainBannerVideo {
@@ -256,14 +257,14 @@
 .title-style {
   font-size: 40px;
   font-weight: bold;
-  text-shadow: 0 0 3px #ffffff, 0 0 5px #000000;
+  /* text-shadow: 0 0 3px #ffffff, 0 0 5px #000000; */
   margin: 0;
 }
 
 .subtitle-style{
   font-size: 25px;
   font-weight: bold;
-  text-shadow: 0 0 3px #ffffff, 0 0 5px #000000;
+  /* text-shadow: 0 0 3px #ffffff, 0 0 5px #000000; */
   margin: 0;
 }
 
@@ -352,12 +353,6 @@
 
 .articleTitle p {
   margin: 0;
-}
-
-
-
-.date_time {
-  font-size: 15px;
 }
 
 .new_comer_content {
@@ -510,6 +505,7 @@
 .mid-banner {
   max-width: 1522px;
   margin: auto;
+  padding-bottom: 10px;
 }
 
 .whats_new_view_more_wrapper {
