@@ -68,11 +68,10 @@ export default function SermonModalMainPage({ sermon }) {
                 }}
             >
                 <Fade in={open}>
-                    <Box sx={style}>
+                    <Box sx={style} onClick={handleClose}>
                         <Typography id="transition-modal-title" variant="h6" component="h2" style={{ overflow: 'auto' }}>
                             <div className="video-responsive">
                                 <iframe
-
                                     src={`https://www.youtube.com/embed/${sermon.embed}`}
                                     frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

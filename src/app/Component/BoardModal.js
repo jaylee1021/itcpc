@@ -77,7 +77,7 @@ export default function BoardModal({ image }) {
                 <Fade in={open}>
                     <Box sx={style}>
                         <Typography id="transition-modal-title" variant="h6" component="h2" style={{ overflow: 'auto' }}>
-                            <img src={image.url} className='image_size' alt="..." />
+                            <img src={image.url} onClick={handleClose} className='image_size' alt="..." />
                         </Typography>
                     </Box>
                 </Fade>
