@@ -90,6 +90,9 @@
     }
     .board_col1 {
         flex: 1 0 10%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
     }
     .board_col2 {
         flex: 1 0 30%;
