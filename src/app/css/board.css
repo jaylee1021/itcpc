@@ -69,10 +69,18 @@
 
 @media screen and (max-width: 835px) {
     .board_col1,
-    .board_col2,
-    .board_col3,
-    .board_col4 {
+    .board_col2{
         flex: 1 0 30%;
+    }
+    
+    .board_col3{
+        flex: 1 0 20%;
+    }
+    .board_col4 {
+        flex: 1 0 15%;
+        align-content: flex-end;
+        flex-wrap: wrap;
+    
     }
 }
 
