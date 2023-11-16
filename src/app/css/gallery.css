@@ -31,8 +31,17 @@
 
 .moreButton {
     text-align: center;
+    padding-top: 20px;
 }
 
+.bottomButtons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonMargin {
+    margin: 10px;
+}
 @media screen and (max-width: 800px) {
     .column {
         flex: 50%;
