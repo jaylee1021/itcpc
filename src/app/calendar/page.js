@@ -7,7 +7,7 @@ export default function Calendar() {
     return (
         <>
             <title>캘린더</title>
-            <section >
+            <section className='mainBannerCenter'>
                 <img src='/main_banner.png' className='mainBannerImage' />
             </section>
             <br />

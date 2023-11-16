@@ -9,7 +9,7 @@ export default function Sermons() {
     return (
         <>
             <title>타코마중앙장로교회</title>
-            <section >
+            <section className='mainBannerCenter'>
                 <img src='/sermon_banner.jpg' className='mainBannerImage' />
             </section>
             <br />

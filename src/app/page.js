@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <>
       <title>타코마중앙장로교회</title>
-      <section >
+      <section className='mainBannerCenter'>
         <img src='/main_banner.png' className='mainBannerImage' />
       </section>
       <br />

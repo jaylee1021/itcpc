@@ -1,10 +1,10 @@
 'use client';
+import { useEffect, useState } from 'react';
+import { LoadingCircle } from '../Component/Loading';
+import BoardModal from '../Component/BoardModal';
+import axios from 'axios';
 import '../css/page.css';
 import '../css/board.css';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import BoardModal from '../Component/BoardModal';
-import { LoadingCircle } from '../Component/Loading';
 
 
 
@@ -29,7 +29,7 @@ export default function Main() {
     return (
         <>
             <title>게시판</title>
-            <section >
+            <section className='mainBannerCenter'>
                 <img src='/main_banner.png' className='mainBannerImage' />
             </section>
             <br />

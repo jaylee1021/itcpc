@@ -26,7 +26,7 @@ export default function missionGroup() {
     return (
         <>
             <title>선교회</title>
-            <section >
+            <section className='mainBannerCenter'>
                 <img src='/main_banner.png' className='mainBannerImage' />
             </section>
             <br />

@@ -8,7 +8,7 @@ export default function Gallery() {
     return (
         <div >
             <title>타코마중앙장로교회</title>
-            <section>
+            <section className='mainBannerCenter'>
                 <img src='/2023_VBS_all.png' className='mainBannerImage' />
             </section>
             <br />

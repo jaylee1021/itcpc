@@ -9,15 +9,15 @@ export default function NewComer() {
     return (
         <>
             <title>타코마중앙장로교회</title>
-            <section >
+            <section className='mainBannerCenter'>
                 <div className='newComer_banner_wrapper'>
                     <img src='/new_comer_top_banner.jpg' className='mainBannerImage' />
                     <div className='newComer_banner_title'>
-                        <p>
+                        {/* <p>
                             새가족
                             <br />
                             New Comer
-                        </p>
+                        </p> */}
                     </div>
                 </div>
             </section>

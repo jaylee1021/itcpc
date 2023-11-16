@@ -8,7 +8,7 @@ export default function ServiceAndDirection() {
     return (
         <>
             <title>타코마중앙장로교회</title>
-            <section >
+            <section className='mainBannerCenter'>
                 <div className='service_banner_wrapper'>
                     <img src='/new_comer_top_banner.jpg' className='mainBannerImage' />
                     <div className='service_banner_title'>

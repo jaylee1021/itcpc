@@ -28,7 +28,7 @@ export default function Gallery() {
     return (
         <>
             <title>타코마중앙장로교회</title>
-            <section >
+            <section className='mainBannerCenter'>
                 <img src='/gallery_page.jpg' className='mainBannerImage' />
             </section>
             <br />

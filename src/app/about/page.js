@@ -8,7 +8,7 @@ export default function About() {
     return (
         <>
             <title>환영합니다!</title>
-            <section>
+            <section className='mainBannerCenter' style={{ backgroundColor: 'white' }}>
                 <div className='about_banner_wrapper'>
                     <img src='/main_banner.png' className='mainBannerImage' />
                     {/* <div className='about_banner_title'>

@@ -11,7 +11,7 @@ export default function History() {
     return (
         <div className='history'>
             <title>타코마중앙장로교회</title>
-            <section >
+            <section className='mainBannerCenter'>
                 <img src='/main_banner.png' className='mainBannerImage' />
             </section>
             <br />

@@ -9,7 +9,7 @@ export default function Vision() {
     return (
         <>
             <title>교회비전</title>
-            <section >
+            <section className='mainBannerCenter'>
                 <div className='service_banner_wrapper'>
                     <img src='/new_comer_top_banner.jpg' className='mainBannerImage' />
                 </div>
