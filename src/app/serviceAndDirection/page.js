@@ -193,7 +193,7 @@ export default function ServiceAndDirection() {
                         </div>
                     </div>
                 </div>
-                <div className='service_section '>
+                <div className='service_section last_one'>
 
                 </div>
 

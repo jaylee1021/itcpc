@@ -133,6 +133,10 @@
         flex: 1 0 100%;
         max-width: 45%;
     }
+
+    .last_one {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 420px) {
@@ -140,5 +144,9 @@
         flex: 1 0 100%;
         max-width: 100%;
         padding: 0 10px;
+    }
+
+    .last_one {
+        display: none;
     }
 }
