@@ -550,6 +550,10 @@
     padding: 10px;
   }
 
+  .news_image {
+    padding: 0 2rem;
+  }
+
   .news_image:hover {
     width: 50%;
   }
