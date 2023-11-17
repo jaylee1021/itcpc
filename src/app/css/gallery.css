@@ -1,13 +1,13 @@
 .gallery_section {
     max-width: 1440px;
     margin: auto;
+    padding: 10px;
 }
 
 .photoSection {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 10px 0 10px 0;
 }
 
 .input_style {
