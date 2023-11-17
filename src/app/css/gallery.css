@@ -7,6 +7,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 10px 0 10px 0;
 }
 
 .input_style {
@@ -31,7 +32,6 @@
 
 .moreButton {
     text-align: center;
-    padding-top: 20px;
 }
 
 .bottomButtons{
@@ -39,12 +39,35 @@
     justify-content: space-between;
 }
 
-.buttonMargin {
-    margin: 10px;
+.nextButton {
+    padding: 0.5rem 2rem;
+    background: #fff;
+    border: 2px solid #111;
+    color: #111;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-radius: 0;
 }
+
+.more_button_margin {
+    margin: 0 10px 0 10px;
+}
+
+.nextButton:hover {
+    background-color: #111;
+    color: #fff;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 800px) {
     .column {
         flex: 50%;
         max-width: 800px;
+    }
+
+    .more_button {
+        margin-top: 10px;
     }
 }

@@ -38,7 +38,8 @@ export default function GetEventPhotos({ eventName }) {
 
                 for (let i = 0; i < thumbnail.length; i++) {
                     if (thumbnail[i].eventEngName === eventName) {
-                        setCurrentEvent(i + 1);
+                        setCurrentEvent(i + 1
+                        );
                     }
                 }
                 setIsLoading(false);
@@ -73,15 +74,15 @@ export default function GetEventPhotos({ eventName }) {
         <>
             <div className="bottomButtons">
                 <div>
-                    {currentEvent - 1 === 0 ? null : <button onClick={() => routePrevOrNExt(thumbnail[currentEvent - 2].eventEngName)} className="btn btn-success buttonMargin">&lt;&lt;{thumbnail[currentEvent - 2].eventKorName}</button>}
+                    {currentEvent - 1 === 0 ? null : <button onClick={() => routePrevOrNExt(thumbnail[currentEvent - 2].eventEngName)} className="btn nextButton">&lt;&lt;{thumbnail[currentEvent - 2].eventKorName}</button>}
                 </div>
                 <div>
-                    {currentEvent ? currentEvent !== thumbnail.length ? <button onClick={() => routePrevOrNExt(thumbnail[currentEvent].eventEngName)} className="btn btn-success buttonMargin">{thumbnail[currentEvent].eventKorName}&gt;&gt;</button> : null : null}
+                    {currentEvent ? currentEvent !== thumbnail.length ? <button onClick={() => routePrevOrNExt(thumbnail[currentEvent].eventEngName)} className="btn nextButton">{thumbnail[currentEvent].eventKorName}&gt;&gt;</button> : null : null}
                 </div>
             </div>
             <div className="photoSection">
                 {photoToDisplay.map((photo) => (
-                    <div className='column' key={photo._id}>
+                    <div className='column' key={photo._id} >
                         <GalleryModal image={photo.url} />
                     </div>
                 ))}
@@ -89,45 +90,50 @@ export default function GetEventPhotos({ eventName }) {
             <div className="moreButton">
                 {isCompleted ? (
                     <div>
-                        <div>
-                            {currentEvent - 1 === 0 ? null : <button onClick={() => routePrevOrNExt(thumbnail[currentEvent - 2].eventEngName)} className="btn btn-success buttonMargin">&lt;&lt;{thumbnail[currentEvent - 2].eventKorName}</button>}
+                        <div className="bottomButtons">
+                            <div>
+                                {currentEvent - 1 === 0 ? null
+                                    : <button onClick={() => routePrevOrNExt(thumbnail[currentEvent - 2].eventEngName)} className=" nextButton">&lt;&lt;{thumbnail[currentEvent - 2].eventKorName}</button>}
+                            </div>
+
+                            <div>
+                                {currentEvent ? currentEvent !== thumbnail.length ?
+                                    <button onClick={() => routePrevOrNExt(thumbnail[currentEvent].eventEngName)} className=" nextButton">{thumbnail[currentEvent].eventKorName}&gt;&gt;</button> : null : null}
+                            </div>
                         </div>
                         <div>
-                            <button
-                                onClick={loadMore}
-                                type="button"
-                                className="btn btn-danger disabled"
-                            >
+                            <button onClick={loadMore} type="button" className=" disabled nextButton more_button_margin" >
                                 That's It
                             </button>
-                            <button onClick={goToGallery} type="button" className="btn btn-primary buttonMargin" >
+                            <button onClick={goToGallery} type="button" className=" nextButton more_button_margin" >
                                 갤러리 더보기
                             </button>
-                        </div>
-                        <div>
-                            {currentEvent ? currentEvent !== thumbnail.length ? <button onClick={() => routePrevOrNExt(thumbnail[currentEvent].eventEngName)} className="btn btn-success buttonMargin">{thumbnail[currentEvent].eventKorName}&gt;&gt;</button> : null : null}
                         </div>
                     </div>
                 ) : (
-                    <div className="bottomButtons">
-                        <div>
-                            {currentEvent - 1 === 0 ? null : <button onClick={() => routePrevOrNExt(thumbnail[currentEvent - 2].eventEngName)} className="btn btn-success buttonMargin">&lt;&lt;{thumbnail[currentEvent - 2].eventKorName}</button>}
+                    <div>
+                        <div className="bottomButtons">
+                            <div>
+                                {currentEvent - 1 === 0 ? null
+                                    : <button onClick={() => routePrevOrNExt(thumbnail[currentEvent - 2].eventEngName)} className=" nextButton">&lt;&lt;{thumbnail[currentEvent - 2].eventKorName}</button>}
+                            </div>
+
+                            <div>
+                                {currentEvent ? currentEvent !== thumbnail.length ?
+                                    <button onClick={() => routePrevOrNExt(thumbnail[currentEvent].eventEngName)} className=" nextButton">{thumbnail[currentEvent].eventKorName}&gt;&gt;</button> : null : null}
+                            </div>
                         </div>
                         <div>
-                            <button onClick={loadMore} type="button" className="btn btn-danger buttonMargin" >
+                            <button onClick={loadMore} type="button" className=" nextButton more_button_margin" >
                                 더보기
                             </button>
-                            <button onClick={goToGallery} type="button" className="btn btn-primary buttonMargin" >
+                            <button onClick={goToGallery} type="button" className=" nextButton more_button_margin" >
                                 갤러리 더보기
                             </button>
                         </div>
-                        <div>
-                            {currentEvent ? currentEvent !== thumbnail.length ? <button onClick={() => routePrevOrNExt(thumbnail[currentEvent].eventEngName)} className="btn btn-success buttonMargin">{thumbnail[currentEvent].eventKorName}&gt;&gt;</button> : null : null}
-                        </div>
+
                     </div>
                 )}
-
-
             </div>
         </>
     );
