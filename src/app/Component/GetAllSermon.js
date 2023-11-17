@@ -80,7 +80,7 @@ export default function GetAllSermon() {
     return (
         <>
             <div>
-                <input type="text" placeholder="찾기... (설교자, 설교제목, 성경구절, 또는 설교 날짜로 찾아 보실 수 있습니다)" className="search_sermon" onChange={handleSearchChange} />
+                <input type="text" placeholder="설교 찾기... (설교자, 설교제목, 성경구절, 또는 설교 날짜로 찾아 보실 수 있습니다)" className="search_sermon" onChange={handleSearchChange} />
                 (왼쪽 사진을 클릭하시면 설교를 보실 수 있습니다.)
             </div>
 
