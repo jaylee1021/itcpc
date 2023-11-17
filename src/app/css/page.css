@@ -281,7 +281,8 @@
 }
 
 .four_button_margin{
-  margin: 30px auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .articleImage {
