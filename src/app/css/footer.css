@@ -74,15 +74,21 @@ footer {
 }
 
 .footer-button {
-    padding: 0 20px 0 20px;
-    margin-top: 10px;
-    background-color: rgb(49, 65, 71);
-    border: 1px solid white;
-    color: white;
+    padding: 0.2rem 1rem;
+    background: #fff;
+    border: 2px solid #111;
+    color: #111;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 0;
 }
 
 .footer-button:hover {
-    background-color:darkcyan;
+    background-color: #111;
+    color: #fff;
+    cursor: pointer;
 }
 
 .email_link {
