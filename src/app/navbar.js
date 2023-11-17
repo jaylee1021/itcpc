@@ -50,7 +50,7 @@ export default function Navbar() {
             <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">교회소식</Link>
                 <ul className="dropdown-menu">
-                    <Link href='#' className='menu_link'><MenuItem>주보</MenuItem></Link>
+                    <Link href='../bulletins' className='menu_link'><MenuItem>주보</MenuItem></Link>
                     <Link href='../galleryAll' className='menu_link'><MenuItem>주일스케치</MenuItem></Link>
                     <Link href='../board' className='menu_link'><MenuItem>게시판</MenuItem></Link>
                     <Link href='../calendar' className='menu_link'><MenuItem>캘린더</MenuItem></Link>
@@ -110,7 +110,7 @@ export default function Navbar() {
         <li className="nav-item dropdown dropdowns">
             <Link className="nav-link" style={{ fontWeight: 'bold' }} href="#">교회소식</Link>
             <ul className="dropdown-menu menus">
-                <Link href='#' className='menu_link'><MenuItem>주보</MenuItem></Link>
+                <Link href='../bulletins' className='menu_link'><MenuItem>주보</MenuItem></Link>
                 <Link href='../galleryAll' className='menu_link'><MenuItem>주일스케치</MenuItem></Link>
                 <Link href='../board' className='menu_link'><MenuItem>게시판</MenuItem></Link>
                 <Link href='../calendar' className='menu_link'><MenuItem>캘린더</MenuItem></Link>
