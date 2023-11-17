@@ -94,10 +94,10 @@ export default function GetAllSermon() {
                 </div>
                 :
                 <div>
-                    <Sermon_pagination totalPosts={sermonList.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+                    {/* <Sermon_pagination totalPosts={sermonList.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} /> */}
                     <br />
                     {renderSermon()}
-                    <Sermon_pagination totalPosts={sermonList.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+                    {/* <Sermon_pagination totalPosts={sermonList.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} /> */}
                 </div>
             }
         </>
