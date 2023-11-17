@@ -97,15 +97,11 @@ export default function GalleryAll() {
                             <div className="moreButton">
                                 <br />
                                 {isCompleted ? (
-                                    <button
-                                        onClick={loadMore}
-                                        type="button"
-                                        className="btn btn-danger disabled"
-                                    >
+                                    <button onClick={loadMore} type="button" className="nextButton disabled">
                                         That's It
                                     </button>
                                 ) : (
-                                    <button onClick={loadMore} type="button" className="btn btn-danger">
+                                    <button onClick={loadMore} type="button" className="nextButton">
                                         더보기
                                     </button>
                                 )}
@@ -134,12 +130,12 @@ export default function GalleryAll() {
                                                 <button
                                                     onClick={loadMore}
                                                     type="button"
-                                                    className="btn btn-danger disabled"
+                                                    className="nextButton disabled"
                                                 >
                                                     That's It
                                                 </button>
                                             ) : (
-                                                <button onClick={loadMore} type="button" className="btn btn-danger">
+                                                <button onClick={loadMore} type="button" className="nextButton">
                                                     더보기
                                                 </button>
                                             )}
