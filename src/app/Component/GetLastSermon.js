@@ -38,12 +38,35 @@ export default function GetLastSermon({ sermonSession }) {
         fetchSermon();
     }, []);
 
+    const handleSermon = () => {
+        switch (sermonSession) {
+            case '1부':
+                return (
+                    <>
+                        {sermon.date.split('T')[0]} 1부 주일 예배와 성가대 찬양
+                    </>
+                );
+            case '2부':
+                return (
+                    <>
+                        {sermon.date.split('T')[0]} 2부 주일 영어예배
+                    </>
+                );
+            case '3부':
+                return (
+                    <>
+                        {sermon.date.split('T')[0]} 3부 주일 예배와 실로암 찬양대
+                    </>
+                );
+        };
+    };
+
     if (isLoading) return (<LoadingLine />);
 
     return (
-        <>
+        <article className='sermon_padding10'>
             {sermon.date && (
-                <>
+                <div className='imageWrapper'>
                     <SermonModalMainPage sermon={sermon} />
                     <div className='articleTitle'>
                         <p>
@@ -60,10 +83,12 @@ export default function GetLastSermon({ sermonSession }) {
                                 {sermon.date.split('T')[0]} @ {time} - Rev. {sermon.preacher}
                             </p>
                         )}
-
                     </div>
-                </>
+                </div>
             )}
-        </>
+            <div className='articleSub'>
+                {sermon.date && handleSermon()}
+            </div>
+        </article>
     );
 };
