@@ -23,7 +23,7 @@ export default function NewComer() {
             </section>
             <div className='title'>
                 <p className='title-style'>새가족 등록 안내</p>
-                <p className='subtitle-style'>Welcome Message</p>
+                {/* <p className='subtitle-style'>Welcome Message</p> */}
             </div>
             <br />
             <section>

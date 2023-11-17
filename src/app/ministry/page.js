@@ -93,7 +93,7 @@ export default function Gallery() {
                     <p>
                         예배시간: 주일 11:00 AM ~ 12:30 PM
                         <br />
-                        금요예배: 금요일 7:00 PM ~ 9:00 PM
+                        금요성경공부: 금요일 7:00 PM ~ 9:00 PM
                     </p>
                 </div>
                 <div>

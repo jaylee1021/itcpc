@@ -14,13 +14,10 @@ export default function Vision() {
                     <img src='/new_comer_top_banner.jpg' className='mainBannerImage' />
                 </div>
             </section>
-            <br />
-            <br />
             <div className='title' >
                 <p className='title-style'>교회비전</p>
                 <p className='subtitle-style'>Vision</p>
             </div>
-            <br />
             <div className='top'>
                 <div className='top_background' style={{ maxWidth: '890px' }}>
                     <p className='vision_title_kr'>

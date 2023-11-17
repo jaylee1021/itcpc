@@ -16,8 +16,6 @@ export default function Sermons() {
                 <p className='title-style'>설교말씀</p>
                 <p className='subtitle-style'>Sermon</p>
             </div>
-            <br />
-            <br />
             <div className='sermon_section_all'>
                 <div className='session_section' >
                     <GetAllSermon />
