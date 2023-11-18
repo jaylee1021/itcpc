@@ -561,6 +561,10 @@
   .news_image {
     width: 300px;
   }
+
+  .four_button_title {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 1024px){
@@ -569,6 +573,9 @@
     text-align: center;
   }
 
+  .four_button_title {
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 919px) {
