@@ -135,11 +135,17 @@ export default function Home() {
           <div className='padding10'>
             <div className='imageWrapper'>
               <Link href='./newComer'><img src='/new_comer.png' className='articleImage' /></Link>
+              <div className='four_button_title'>
+                <p>새가족</p>
+              </div>
             </div>
           </div>
           <div className='padding10'>
             <div className='imageWrapper'>
               <Link href='https://www.tacomakoreanschool.org/'><img src='/korean_school.png' className='articleImage' /></Link>
+              <div className='four_button_title'>
+                <p>한국학교</p>
+              </div>
             </div>
           </div>
         </div>
@@ -147,11 +153,17 @@ export default function Home() {
           <div className='padding10'>
             <div className='imageWrapper'>
               <Link href='./ministry'><img src='/church_school.png' className='articleImage' /></Link>
+              <div className='four_button_title'>
+                <p>미니스트리</p>
+              </div>
             </div>
           </div>
           <div className='padding10'>
             <div className='imageWrapper'>
               <Link href='./serviceAndDirection'><img src='/direction.png' className='articleImage' /></Link>
+              <div className='four_button_title'>
+                <p>예배안내/약도</p>
+              </div>
             </div>
           </div>
         </div>
