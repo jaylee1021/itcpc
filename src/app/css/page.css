@@ -486,7 +486,8 @@
 /* what's new section */
 
 .whats_new {
-  display: flex
+  /* display: flex */
+  width: 33.33%;
 }
 
 .more-info {
@@ -516,8 +517,9 @@
 
 .whats_new_image {
   border-radius: 5px;
+  object-fit: cover;
   width: 100%;
-  max-height: 300px;
+  height: 300px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   cursor: pointer;
 }
@@ -602,6 +604,10 @@
   .sermon_padding10 {
     width: 100%;
     padding: 10px;
+  }
+
+  .whats_new {
+    width: 100%;
   }
 
   .whats_new_image {

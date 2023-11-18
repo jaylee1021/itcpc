@@ -185,7 +185,7 @@ export default function Home() {
         <p className='subtitle-style'>What's New</p>
       </div>
       <section className='videoSection'>
-        <article >
+        <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
               <img src={firstGallery.url} onClick={() => handleGallery(firstGallery)} className='whats_new_image' />
@@ -195,7 +195,7 @@ export default function Home() {
             </div>
           </div>
         </article>
-        <article >
+        <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
               <img src={secondGallery.url} onClick={() => handleGallery(secondGallery)} className='whats_new_image' />
@@ -205,7 +205,7 @@ export default function Home() {
             </div>
           </div>
         </article>
-        <article >
+        <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
               <img src={thirdGallery.url} onClick={() => handleGallery(thirdGallery)} className='whats_new_image' />
