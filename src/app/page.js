@@ -32,7 +32,6 @@ export default function Home() {
         setSecondBoard(newBoard[newBoard.length - 3]);
         setThirdBoard(newBoard[newBoard.length - 2]);
         setFourthBoard(newBoard[newBoard.length - 1]);
-        setIsLoading(false);
       }
       catch (err) {
         console.log(err);
@@ -63,14 +62,14 @@ export default function Home() {
   };
 
   function runTask() {
-    // Your task to be executed on Sundays at 10:50 AM PST
-    console.log("Task started on Sunday at 11 AM PST");
-    setLiveLink(<Link href='https://www.youtube.com/channel/UC8ilaSeso9X1qNQq00WxKeA/live' target='_blank' className='live_stream_link'>&gt;라이브 온라인 예배&lt;</Link>);
+    // Your task to be executed on Sundays at 07:50 AM PST
+    console.log("Task started on Sunday at 07:50 AM PST");
     // Include your specific code or function to run here
+    setLiveLink(<Link href='https://www.youtube.com/channel/UC8ilaSeso9X1qNQq00WxKeA/live' target='_blank' className='live_stream_link'>&gt;라이브 온라인 예배&lt;</Link>);
 
     // End the task at 12:30 PM PST on the same day
     const endTaskTime = new Date();
-    endTaskTime.setHours(12, 30, 0, 0);
+    endTaskTime.setUTCHours(19, 30, 0, 0); // Setting 12:30 PM PST in UTC (19:30 UTC)
 
     // Calculate the delay until 12:30 PM PST on the same Sunday
     const delayToEnd = endTaskTime - new Date();
@@ -78,38 +77,58 @@ export default function Home() {
     // Schedule the task to end at 12:30 PM PST
     setTimeout(function () {
       console.log("Task ended at 12:30 PM PST");
-      setLiveLink('');
       // Include any cleanup or finalization code here
+      setLiveLink('');
     }, delayToEnd);
   }
 
+  const [scheduled, setScheduled] = useState('');
+
   function scheduleSundayTask() {
-    // Get the current date
-    const currentDate = new Date();
+    const taskScheduled = () => {
+      axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/scheduled/6559d0d05b3a057f10e39a29`)
+        .then((response) => {
+          console.log('response', response.data.scheduled.scheduled);
+          setScheduled(response.data.scheduled.scheduled);
+          setIsLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    taskScheduled();
 
-    // Find the next Sunday from the current date
-    const nextSunday = new Date(currentDate);
-    nextSunday.setDate(currentDate.getDate() + (7 - currentDate.getDay())); // Calculate the date for the next Sunday
+    if (!scheduled) {
+      const currentDate = new Date();
 
-    // Set the time to 7:50 AM PST
-    nextSunday.setHours(7, 50, 0, 0);
+      // Calculate the delay until the next Sunday at 07:50 AM PST
+      const delayToNextSunday = 7 - ((currentDate.getDay() + 6) % 7); // Calculate the days until next Sunday
+      const delayToStart = delayToNextSunday * 24 * 60 * 60 * 1000 - (currentDate % (24 * 60 * 60 * 1000)) + (7 * 60 * 60 * 1000 + 50 * 60 * 1000); // Calculate milliseconds until next Sunday 07:50 AM PST
 
-    // Calculate the delay until the next Sunday at 10:50 AM PST
-    const delayToStart = nextSunday - currentDate;
+      // Schedule the task to start on the next Sunday at 07:50 AM PST
+      setTimeout(function () {
+        runTask(); // Execute the task
 
-    // Schedule the task to start on the next Sunday at 10:50 AM PST
-    setTimeout(function () {
-      runTask(); // Execute the task
+        // Set an interval to run the task every 7 days (604800000 milliseconds = 7 days)
+        setInterval(runTask, 7 * 24 * 60 * 60 * 1000);
 
-      // Set an interval for every 7 days after the first execution
-      setInterval(function () {
-        runTask();
-      }, 7 * 24 * 60 * 60 * 1000);
-    }, delayToStart);
+        // Mark the task as scheduled in localStorage
+        axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/scheduled/6559d0d05b3a057f10e39a29`, { scheduled: true })
+          .then((response) => {
+            console.log('response', response.data.scheduled.scheduled);
+            console.log('scheduled');
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+
+      }, delayToStart);
+    }
   }
 
   // Call the function to schedule the task
   scheduleSundayTask();
+
 
 
   if (isLoading) return <LoadingSpinningBubble />;
