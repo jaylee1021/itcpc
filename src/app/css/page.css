@@ -280,6 +280,11 @@
   padding: 5px;
 }
 
+.live_stream_link {
+  text-decoration: none;
+  color: rgb(255, 0, 0);
+}
+
 .four_button_margin{
   margin-top: 30px;
   margin-bottom: 10px;

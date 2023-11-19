@@ -6,6 +6,7 @@ import axios from 'axios';
 import PhotoModal from './Component/PhotoModal';
 import GetLastSermon from './Component/GetLastSermon';
 import Link from 'next/link';
+import 'animate.css';
 import './css/page.css';
 import './css/gallery.css';
 
@@ -19,6 +20,7 @@ export default function Home() {
   const [firstGallery, setFirstGallery] = useState([]);
   const [secondGallery, setSecondGallery] = useState([]);
   const [thirdGallery, setThirdGallery] = useState([]);
+  const [liveLink, setLiveLink] = useState('');
   const router = useRouter();
 
   useEffect(() => {
@@ -60,6 +62,56 @@ export default function Home() {
     router.push(`/gallery/${eventName}`);
   };
 
+  function runTask() {
+    // Your task to be executed on Sundays at 10:50 AM PST
+    console.log("Task started on Sunday at 11 AM PST");
+    setLiveLink(<Link href='https://www.youtube.com/channel/UC8ilaSeso9X1qNQq00WxKeA/live' target='_blank' className='live_stream_link'>&gt;라이브 온라인 예배&lt;</Link>);
+    // Include your specific code or function to run here
+
+    // End the task at 12:30 PM PST on the same day
+    const endTaskTime = new Date();
+    endTaskTime.setHours(12, 30, 0, 0);
+
+    // Calculate the delay until 12:30 PM PST on the same Sunday
+    const delayToEnd = endTaskTime - new Date();
+
+    // Schedule the task to end at 12:30 PM PST
+    setTimeout(function () {
+      console.log("Task ended at 12:30 PM PST");
+      setLiveLink('');
+      // Include any cleanup or finalization code here
+    }, delayToEnd);
+  }
+
+  function scheduleSundayTask() {
+    // Get the current date
+    const currentDate = new Date();
+
+    // Find the next Sunday from the current date
+    const nextSunday = new Date(currentDate);
+    nextSunday.setDate(currentDate.getDate() + (7 - currentDate.getDay())); // Calculate the date for the next Sunday
+
+    // Set the time to 7:50 AM PST
+    nextSunday.setHours(7, 50, 0, 0);
+
+    // Calculate the delay until the next Sunday at 10:50 AM PST
+    const delayToStart = nextSunday - currentDate;
+
+    // Schedule the task to start on the next Sunday at 10:50 AM PST
+    setTimeout(function () {
+      runTask(); // Execute the task
+
+      // Set an interval for every 7 days after the first execution
+      setInterval(function () {
+        runTask();
+      }, 7 * 24 * 60 * 60 * 1000);
+    }, delayToStart);
+  }
+
+  // Call the function to schedule the task
+  scheduleSundayTask();
+
+
   if (isLoading) return <LoadingSpinningBubble />;
 
   return (
@@ -89,6 +141,9 @@ export default function Home() {
       <div className='title' >
         <p className='title-style'>주일 예배</p>
         <p className='subtitle-style'>Sunday Worship</p>
+      </div>
+      <div style={{ textAlign: 'center', animationDuration: '5s' }} className='animate__animated animate__flash animate__infinite'>
+        {liveLink}
       </div>
       <section className='videoSection'>
         <GetLastSermon sermonSession='1부' />
@@ -134,6 +189,24 @@ export default function Home() {
         <div className='videoSection second_section'>
           <div className='padding10'>
             <div className='imageWrapper'>
+              <Link href='./serviceAndDirection'><img src='/direction.png' className='articleImage' /></Link>
+              <div className='four_button_title'>
+                <p>예배안내/약도</p>
+              </div>
+            </div>
+          </div>
+          <div className='padding10'>
+            <div className='imageWrapper'>
+              <Link href='./ministry'><img src='/church_school.png' className='articleImage' /></Link>
+              <div className='four_button_title'>
+                <p>미니스트리</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='videoSection second_section'>
+          <div className='padding10'>
+            <div className='imageWrapper'>
               <Link href='./newComer'><img src='/new_comer.png' className='articleImage' /></Link>
               <div className='four_button_title'>
                 <p>새가족</p>
@@ -150,24 +223,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className='videoSection second_section'>
-          <div className='padding10'>
-            <div className='imageWrapper'>
-              <Link href='./ministry'><img src='/church_school.png' className='articleImage' /></Link>
-              <div className='four_button_title'>
-                <p>미니스트리</p>
-              </div>
-            </div>
-          </div>
-          <div className='padding10'>
-            <div className='imageWrapper'>
-              <Link href='./serviceAndDirection'><img src='/direction.png' className='articleImage' /></Link>
-              <div className='four_button_title'>
-                <p>예배안내/약도</p>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </section >
       <div className='title'>
         <p className='title-style'>새가족 안내</p>
