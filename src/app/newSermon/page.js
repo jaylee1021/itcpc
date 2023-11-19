@@ -53,8 +53,8 @@ export default function newSermon() {
             setIsLoading(true);
             const formData = new FormData();
             formData.append('file', file);
-            formData.append('upload_preset', 'itcpc_files');
-            fetch('https://api.cloudinary.com/v1_1/instaversecloud/image/upload/', {
+            formData.append('upload_preset', `${process.env.NEXT_PUBLIC_SERMON_PRESET}`);
+            fetch(`${process.env.NEXT_PUBLIC_CLOUDINARY_URL}`, {
                 method: 'POST',
                 body: formData,
             })
