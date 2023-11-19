@@ -43,7 +43,7 @@ export default function ServiceAndDirection() {
                                 <br />
                                 <b>3부</b> 한어예배 오전 11:00
                                 <br />
-                                <Link href='https://www.youtube.com/@TCPCTV'>&gt;라이브 온라인 예배&lt;</Link>
+                                <Link href='https://www.youtube.com/channel/UC8ilaSeso9X1qNQq00WxKeA/live' target='_blank'>&gt;라이브 온라인 예배&lt;</Link>
                             </p>
                         </div>
                     </div>
@@ -62,7 +62,9 @@ export default function ServiceAndDirection() {
                         <div className='service_section_description'>
                             <p>비전채플 Vision Chapel 주일 오전 11:00
                                 <br />
-                                <Link href='https://owtcpc.org/'>&gt;열린예배 홈페이지&lt;</Link>
+                                <Link href='https://owtcpc.org/' target='_blank'>&gt;열린예배 홈페이지&lt;</Link>
+                                <br />
+                                <Link href='https://www.youtube.com/channel/UCTA5-nCCW3qFc1MzghAeNGw/live' target='_blank'>&gt;열린예배 라이브 온라인 예배&lt;</Link>
                             </p>
                         </div>
                     </div>
@@ -151,7 +153,7 @@ export default function ServiceAndDirection() {
                                 <br />
                                 대면 및 온라인
                                 <br />
-                                <Link href='https://www.youtube.com/@TCPCTV'> &gt;라이브 온라인 예배&lt;</Link>
+                                <Link href='https://www.youtube.com/channel/UC8ilaSeso9X1qNQq00WxKeA/live' target='_blank'>&gt;라이브 온라인 예배&lt;</Link>
                             </p>
                         </div>
                     </div>
@@ -187,7 +189,7 @@ export default function ServiceAndDirection() {
                         <div className='service_section_description'>
                             <p>학기중 매주 토요일 오전 9:30 ~ 오전 12:00
                                 <br />
-                                <Link href='https://www.tacomakoreanschool.org/'>&gt;한국학교 홈페이지&lt;</Link></p>
+                                <Link href='https://www.tacomakoreanschool.org/' target='_blank'>&gt;한국학교 홈페이지&lt;</Link></p>
                         </div>
                     </div>
                 </div>
