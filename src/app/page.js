@@ -65,12 +65,13 @@ export default function Home() {
     axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/scheduled/6559d0d05b3a057f10e39a29`)
       .then((response) => {
         const isScheduled = response.data.scheduled.scheduled;
-        setIsLoading(false);
+
 
         // If today is Sunday and the task hasn't been scheduled yet, call the scheduling function
-        if (new Date().getDay() === 0 && isScheduled === false) {
+        if (isScheduled === false) {
           scheduleSundayTask();
         }
+        setIsLoading(false);
       })
       .catch((err) => {
         console.log(err);
