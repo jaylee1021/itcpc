@@ -52,7 +52,7 @@ export default function newSermon() {
         <>
             <title>연헉등록</title>
             <div className='title' >
-                <p className='title-style'>연헉등록</p>
+                <p className='title-style'>연혁등록</p>
                 <p className='subtitle-style'>Register History</p>
             </div>
             <div className='new_sermon_section'>

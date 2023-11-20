@@ -144,7 +144,7 @@ export default function Gallery() {
                 </div>
                 <div className='education_section_description right'>
                     <p className='education_section_title'>
-                        미디아팀 Media team
+                        미디아 부서 Media team
                     </p>
                     <p>
                         Description goes here
@@ -160,7 +160,7 @@ export default function Gallery() {
             <section className='education_section'>
                 <div className='education_section_description left'>
                     <p className='education_section_title'>
-                        IT 팀 IT Team
+                        IT 부서 IT Team
                     </p>
                     <p>
                         Description goes here
