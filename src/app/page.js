@@ -61,15 +61,72 @@ export default function Home() {
     router.push(`/gallery/${eventName}`);
   };
 
+  useEffect(() => {
+    axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/scheduled/6559d0d05b3a057f10e39a29`)
+      .then((response) => {
+        const isScheduled = response.data.scheduled.scheduled;
+        setIsLoading(false);
+
+        // If today is Sunday and the task hasn't been scheduled yet, call the scheduling function
+        if (new Date().getDay() === 0 && isScheduled === false) {
+          scheduleSundayTask();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  function millisecondsSinceMidnight() {
+    const currentDate = new Date(); // Get current date and time
+    const hours = currentDate.getHours(); // Get the current hour
+    const minutes = currentDate.getMinutes(); // Get the current minute
+    const seconds = currentDate.getSeconds(); // Get the current second
+
+    // Calculate the elapsed time since midnight in milliseconds
+    const elapsedMilliseconds = (hours * 60 * 60 * 1000) + (minutes * 60 * 1000) + (seconds * 1000);
+    return elapsedMilliseconds; // Return the total milliseconds elapsed since midnight
+  }
+
+  function scheduleSundayTask() {
+    const currentDate = new Date();
+    // Calculate the delay until the next Sunday at 08:40 AM PST
+    let delayToNextSunday = 7 - currentDate.getDay(); // Calculate the days until next Sunday
+
+    if (delayToNextSunday === 0) delayToNextSunday = 7; // If it's Sunday today, set it to 7 days
+
+    const millisecondsElapsed = millisecondsSinceMidnight();
+
+    const delayToStart = delayToNextSunday * 24 * 60 * 60 * 1000 + (7 * 60 * 60 * 1000 + 50 * 60 * 1000) - (millisecondsElapsed); // Calculate milliseconds until next Sunday 07:50 AM PST
+    console.log('delaytostart', delayToStart);
+    // Schedule the task to start on this Sunday at 08:40 AM PST and repeat every 7 days
+    setTimeout(function () {
+      runTask(); // Execute the task
+
+      // Set an interval to run the task every 7 days (604800000 milliseconds = 7 days)
+      setInterval(runTask, 7 * 24 * 60 * 60 * 1000);
+
+      // Mark the task as scheduled on your server side
+      axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/scheduled/6559d0d05b3a057f10e39a29`, { scheduled: true })
+        .then((response) => {
+          console.log('scheduled');
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+    }, delayToStart);
+  }
+
   function runTask() {
-    // Your task to be executed on Sundays at 07:50 AM PST
-    console.log("Task started on Sunday at 07:50 AM PST");
+    // Your task to be executed on Sundays at 08:30 AM PST
+    console.log("Task started on Sunday at 08:30 AM PST");
     // Include your specific code or function to run here
     setLiveLink(<Link href='https://www.youtube.com/channel/UC8ilaSeso9X1qNQq00WxKeA/live' target='_blank' className='live_stream_link'>&gt;라이브 온라인 예배&lt;</Link>);
 
     // End the task at 12:30 PM PST on the same day
     const endTaskTime = new Date();
-    endTaskTime.setUTCHours(19, 30, 0, 0); // Setting 12:30 PM PST in UTC (19:30 UTC)
+    endTaskTime.setUTCHours(20, 30, 0, 0); // Setting 12:30 PM PST in UTC (20:30 UTC)
 
     // Calculate the delay until 12:30 PM PST on the same Sunday
     const delayToEnd = endTaskTime - new Date();
@@ -77,58 +134,9 @@ export default function Home() {
     // Schedule the task to end at 12:30 PM PST
     setTimeout(function () {
       console.log("Task ended at 12:30 PM PST");
-      // Include any cleanup or finalization code here
       setLiveLink('');
     }, delayToEnd);
   }
-
-  const [scheduled, setScheduled] = useState('');
-
-  function scheduleSundayTask() {
-    const taskScheduled = () => {
-      axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/scheduled/6559d0d05b3a057f10e39a29`)
-        .then((response) => {
-          console.log('response', response.data.scheduled.scheduled);
-          setScheduled(response.data.scheduled.scheduled);
-          setIsLoading(false);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-    taskScheduled();
-
-    if (!scheduled) {
-      const currentDate = new Date();
-
-      // Calculate the delay until the next Sunday at 07:50 AM PST
-      const delayToNextSunday = 7 - ((currentDate.getDay() + 6) % 7); // Calculate the days until next Sunday
-      const delayToStart = delayToNextSunday * 24 * 60 * 60 * 1000 - (currentDate % (24 * 60 * 60 * 1000)) + (7 * 60 * 60 * 1000 + 50 * 60 * 1000); // Calculate milliseconds until next Sunday 07:50 AM PST
-
-      // Schedule the task to start on the next Sunday at 07:50 AM PST
-      setTimeout(function () {
-        runTask(); // Execute the task
-
-        // Set an interval to run the task every 7 days (604800000 milliseconds = 7 days)
-        setInterval(runTask, 7 * 24 * 60 * 60 * 1000);
-
-        // Mark the task as scheduled in localStorage
-        axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/scheduled/6559d0d05b3a057f10e39a29`, { scheduled: true })
-          .then((response) => {
-            console.log('response', response.data.scheduled.scheduled);
-            console.log('scheduled');
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-
-      }, delayToStart);
-    }
-  }
-
-  // Call the function to schedule the task
-  scheduleSundayTask();
-
 
 
   if (isLoading) return <LoadingSpinningBubble />;
