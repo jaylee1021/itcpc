@@ -7,19 +7,16 @@ import '../css/newSermon.css';
 
 export default function newSermon() {
 
-    const [groupName, setGroupName] = useState([]);
-    const [missionGrouop, setMissionGroup] = useState([]);
-    const [president, setPresident] = useState('');
-    const [vicePresident, setVicePresident] = useState('');
-    const [secretary, setSecretary] = useState('');
-    const [clerk, setClerk] = useState('');
-    const [accounting, setAccounting] = useState('');
+    const [missionGroup, setMissionGroup] = useState([]);
+    const [data, setData] = useState({ president: '', vicePresident: '', secretary: '', clerk: '', accounting: '' });
+    const [groupId, setGroupId] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/missionGroups/`)
             .then((response) => {
-                console.log('missionGroups', response.data.missionGroups);
                 setMissionGroup(response.data.missionGroups);
+                setIsLoading(false);
             })
             .catch((err) => {
                 console.log(err);
@@ -28,18 +25,45 @@ export default function newSermon() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('test');
-
+        axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/missionGroups/${groupId}`, data)
+            .then((response) => {
+                alert('Mission Group Updated');
+                window.location.reload();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
 
-    const handleClean = () => {
-        setGroupName('');
-        setPresident('');
-        setVicePresident('');
-        setSecretary('');
-        setClerk('');
-        setAccounting('');
+    const handleChange = (e) => {
+        setData(prevState => ({ ...data, [e.target.name]: e.target.value }));
     };
+
+    const handleGroup = (e) => {
+        const selectedMissionGroup = missionGroup.find((singleMissionGroup) => {
+            return singleMissionGroup._id === e.target.value;
+        });
+        setData({
+            ...data, groupName: selectedMissionGroup.groupName,
+            president: selectedMissionGroup.president,
+            vicePresident: selectedMissionGroup.vicePresident ? selectedMissionGroup.vicePresident : '',
+            secretary: selectedMissionGroup.secretary ? selectedMissionGroup.secretary : '',
+            clerk: selectedMissionGroup.clerk ? selectedMissionGroup.clerk : '',
+            accounting: selectedMissionGroup.accounting ? selectedMissionGroup.accounting : '',
+        });
+        setGroupId(e.target.value);
+    };
+
+    // const handleClean = () => {
+    //     setGroupName('');
+    //     setPresident('');
+    //     setVicePresident('');
+    //     setSecretary('');
+    //     setClerk('');
+    //     setAccounting('');
+    // };
+
+    if (isLoading) { <LoadingLine />; }
 
     return (
         <>
@@ -51,13 +75,34 @@ export default function newSermon() {
             <div className='new_sermon_section'>
                 <form onSubmit={handleSubmit} className='new_sermon_form' >
 
-                    <select>
-                        {missionGrouop.map((singleMissionGroup) => {
+                    <select onChange={handleGroup} defaultValue={'default'}>
+                        <option value='default' disabled>선교회를 선택 해 주세요 </option>
+                        {missionGroup.map((singleMissionGroup) => {
                             return (
-                                <option value={singleMissionGroup._id} key={singleMissionGroup._id}>{singleMissionGroup.groupName}</option>
+                                <option key={singleMissionGroup._id} value={singleMissionGroup._id}> {singleMissionGroup.groupName}</option>
                             );
                         })}
                     </select>
+                    <br />
+                    <input type='text' name='president' value={data.president} onChange={handleChange} required />
+                    <p>회장</p>
+                    <input type='text' name='vicePresident' value={data.vicePresident} onChange={handleChange} />
+                    <p>부회장</p>
+                    <input type='text' name='secretary' value={data.secretary} onChange={handleChange} />
+                    <p>총무</p>
+                    <input type='text' name='clerk' value={data.clerk} onChange={handleChange} />
+                    <p>서기</p>
+                    <input type='text' name='accounting' value={data.accounting} onChange={handleChange} />
+                    <p>회계</p>
+                    <div className='new_sermon_button_section'>
+                        <button type='submit' className='new_sermon_buttons'>
+                            등록
+                        </button>
+                        {/* <button type='button' onClick={handleClean} className='new_sermon_buttons clear_form_button'>
+                            Clear form
+                        </button> */}
+                    </div>
+
                 </form >
             </div >
             <br />
