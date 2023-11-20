@@ -5,7 +5,7 @@ import axios from 'axios';
 import '../css/page.css';
 import '../css/newSermon.css';
 
-export default function newSermon() {
+export default function EditMissionGroup() {
 
     const [missionGroup, setMissionGroup] = useState([]);
     const [data, setData] = useState({ president: '', vicePresident: '', secretary: '', clerk: '', accounting: '' });
@@ -67,10 +67,10 @@ export default function newSermon() {
 
     return (
         <>
-            <title>설교등록</title>
+            <title>선교회등록</title>
             <div className='title' >
-                <p className='title-style'>설교등록</p>
-                <p className='subtitle-style'>Register Sermon</p>
+                <p className='title-style'>선교회등록</p>
+                <p className='subtitle-style'>Register Mission Group</p>
             </div>
             <div className='new_sermon_section'>
                 <form onSubmit={handleSubmit} className='new_sermon_form' >
@@ -83,7 +83,7 @@ export default function newSermon() {
                             );
                         })}
                     </select>
-                    <br />
+                    <p>선교회</p>
                     <input type='text' name='president' value={data.president} onChange={handleChange} required />
                     <p>회장</p>
                     <input type='text' name='vicePresident' value={data.vicePresident} onChange={handleChange} />
@@ -105,9 +105,6 @@ export default function newSermon() {
 
                 </form >
             </div >
-            <br />
-            <br />
-            <br />
         </>
     );
 };
