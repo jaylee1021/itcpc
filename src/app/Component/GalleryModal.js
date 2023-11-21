@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -48,7 +49,7 @@ export default function GalleryModal({ image }) {
                 <Fade in={open}>
                     <Box sx={style}>
                         <Typography id="transition-modal-title" variant="h6" component="h2" style={{ overflow: 'auto' }}>
-                            <img src={image} onClick={handleClose} className='photo_size' alt="..." />
+                            <LazyLoadImage src={image} onClick={handleClose} className='photo_size' alt="..." />
                         </Typography>
                     </Box>
 
