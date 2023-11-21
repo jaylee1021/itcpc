@@ -4,7 +4,7 @@ import axios from 'axios';
 import '../css/page.css';
 import '../css/newSermon.css';
 
-export default function newSermon() {
+export default function newHistory() {
 
     const [date, setDate] = useState('');
     const [event_description, setEvent_description] = useState('');
