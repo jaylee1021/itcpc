@@ -28,7 +28,7 @@ export default function Editmission() {
         axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/missionGroups/${groupId}`, data)
             .then((response) => {
                 alert('Mission Group Updated');
-                // window.location.reload();
+                window.location.reload();
             })
             .catch((err) => {
                 console.log(err);
@@ -66,7 +66,7 @@ export default function Editmission() {
     if (isLoading) { <LoadingLine />; }
 
     return (
-        <>
+        <div>
             <title>선교회등록</title>
             <div className='title' >
                 <p className='title-style'>선교회등록</p>
@@ -105,6 +105,6 @@ export default function Editmission() {
 
                 </form >
             </div >
-        </>
+        </div>
     );
 };
