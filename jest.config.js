@@ -10,9 +10,3 @@ const customJestConfig = {
 };
 // createJestConfig is exported in this way to ensure that next/jest can load the Next.js configuration, which is async
 module.exports = createJestConfig(customJestConfig);
-
-// {
-//     "moduleNameMapper": {
-//         "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
-//             "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js";
-//     },
