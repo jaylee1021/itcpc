@@ -1,11 +1,13 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { LoadingSpinningBubble } from './Component/Loading';
 import axios from 'axios';
 import PhotoModal from './Component/PhotoModal';
 import GetLastSermon from './Component/GetLastSermon';
+import ShowBanner from './Component/ShowBanner';
 import Link from 'next/link';
+import Carousel from 'react-bootstrap/Carousel';
 import 'animate.css';
 import './css/page.css';
 import './css/gallery.css';
@@ -98,7 +100,7 @@ export default function Home() {
 
     const millisecondsElapsed = millisecondsSinceMidnight();
 
-    const delayToStart = delayToNextSunday * 24 * 60 * 60 * 1000 + (7 * 60 * 60 * 1000 + 50 * 60 * 1000) - (millisecondsElapsed); // Calculate milliseconds until next Sunday 07:50 AM PST
+    const delayToStart = 27876000 - (millisecondsElapsed); // Calculate milliseconds until next Sunday 07:50 AM PST
     console.log('delaytostart', delayToStart);
     // Schedule the task to start on this Sunday at 08:40 AM PST and repeat every 7 days
     setTimeout(function () {
@@ -139,32 +141,13 @@ export default function Home() {
     }, delayToEnd);
   }
 
-
   if (isLoading) return <LoadingSpinningBubble />;
 
   return (
     <>
       <title>타코마중앙장로교회</title>
       <section className='mid-banner'>
-        <div id="carouselExampleAutoplaying" className="carousel slide carousel-position" data-bs-ride="carousel">
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src="/banner1.png" className="d-block w-100" alt="..." />
-            </div>
-            <div className="carousel-item">
-              <img src="/banner2.png" className="d-block w-100" alt="..." />
-            </div>
-
-          </div>
-          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
+        {<ShowBanner />}
       </section>
       <div className='title' >
         <p className='title-style'>주일 예배</p>
