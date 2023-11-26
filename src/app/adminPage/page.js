@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Editmission from '../Component/Editmission';
 import NewHistories from '../Component/NewHistories';
 import NewSermons from '../Component/NewSermons';
+import NewBanners from '../Component/NewBanners';
 
 
 export default function AdminPage() {
@@ -20,7 +21,6 @@ export default function AdminPage() {
     return (
         <div>
             <title>Admin Page</title>
-
             <div className='title'>
                 <p className='title-style'>관리자</p>
                 <p className='subtitle-style'>Admin</p>
@@ -37,6 +37,9 @@ export default function AdminPage() {
                 </div>
                 <div style={{ padding: '10px' }}>
                     {<NewSermons />}
+                </div>
+                <div style={{ padding: '10px' }}>
+                    {<NewBanners />}
                 </div>
             </div>
 
