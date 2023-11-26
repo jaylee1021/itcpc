@@ -122,23 +122,16 @@ export default function Home() {
   }
 
   function runTask() {
-    // Your task to be executed on Sundays at 08:30 AM PST
-    console.log("Task started on Sunday at 08:30 AM PST");
+    // Your task to be executed on Sundays at 07:50 AM PST
+    console.log("Task started on Sunday at 07:50 AM PST");
     // Include your specific code or function to run here
     setLiveLink(<Link href='https://www.youtube.com/channel/UC8ilaSeso9X1qNQq00WxKeA/live' target='_blank' className='live_stream_link'>&gt;라이브 온라인 예배&lt;</Link>);
 
-    // End the task at 12:30 PM PST on the same day
-    const endTaskTime = new Date();
-    endTaskTime.setUTCHours(20, 30, 0, 0); // Setting 12:30 PM PST in UTC (20:30 UTC)
-
-    // Calculate the delay until 12:30 PM PST on the same Sunday
-    const delayToEnd = endTaskTime - new Date();
-
-    // Schedule the task to end at 12:30 PM PST
+    // Schedule the task to end after 4 hours and 40 mins (roughly at 12:30 PM PST)
     setTimeout(function () {
       console.log("Task ended at 12:30 PM PST");
       setLiveLink('');
-    }, delayToEnd);
+    }, 16800000);
   }
 
   if (isLoading) return <LoadingSpinningBubble />;
