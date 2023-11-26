@@ -50,7 +50,6 @@ export default function NewHistories() {
 
     return (
         <div>
-            <title>연헉등록</title>
             <div className='title' >
                 <p className='title-style'>연혁등록</p>
                 <p className='subtitle-style'>Register History</p>

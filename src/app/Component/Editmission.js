@@ -67,7 +67,6 @@ export default function Editmission() {
 
     return (
         <div>
-            <title>선교회등록</title>
             <div className='title' >
                 <p className='title-style'>선교회등록</p>
                 <p className='subtitle-style'>Register Mission Group</p>
