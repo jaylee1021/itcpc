@@ -50,6 +50,7 @@ export default function Home() {
         setFirstGallery(newThumb[newThumb.length - 3]);
         setSecondGallery(newThumb[newThumb.length - 2]);
         setThirdGallery(newThumb[newThumb.length - 1]);
+        setIsLoading(false);
       }
       catch (err) {
         console.log(err);
@@ -63,76 +64,71 @@ export default function Home() {
     router.push(`/gallery/${eventName}`);
   };
 
-  useEffect(() => {
-    axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/scheduled/6559d0d05b3a057f10e39a29`)
-      .then((response) => {
-        const isScheduled = response.data.scheduled.scheduled;
+  // timer to show live link on sunday
+  // useEffect(() => {
+  //   axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/scheduled/6559d0d05b3a057f10e39a29`)
+  //     .then((response) => {
+  //       const isScheduled = response.data.scheduled.scheduled;
 
 
-        // If today is Sunday and the task hasn't been scheduled yet, call the scheduling function
-        if (isScheduled === false) {
-          scheduleSundayTask();
-        }
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  //       // If today is Sunday and the task hasn't been scheduled yet, call the scheduling function
+  //       if (isScheduled === false) {
+  //         scheduleSundayTask();
+  //       }
+  //       setIsLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
-  function millisecondsSinceMidnight() {
-    const currentDate = new Date(); // Get current date and time
-    const hours = currentDate.getHours(); // Get the current hour
-    const minutes = currentDate.getMinutes(); // Get the current minute
-    const seconds = currentDate.getSeconds(); // Get the current second
+  // function millisecondsSinceMidnight() {
+  //   const currentDate = new Date(); // Get current date and time
+  //   const hours = currentDate.getHours(); // Get the current hour
+  //   const minutes = currentDate.getMinutes(); // Get the current minute
+  //   const seconds = currentDate.getSeconds(); // Get the current second
 
-    // Calculate the elapsed time since midnight in milliseconds
-    const elapsedMilliseconds = (hours * 60 * 60 * 1000) + (minutes * 60 * 1000) + (seconds * 1000);
-    return elapsedMilliseconds; // Return the total milliseconds elapsed since midnight
-  }
+  //   // Calculate the elapsed time since midnight in milliseconds
+  //   const elapsedMilliseconds = (hours * 60 * 60 * 1000) + (minutes * 60 * 1000) + (seconds * 1000);
+  //   return elapsedMilliseconds; // Return the total milliseconds elapsed since midnight
+  // }
 
-  function scheduleSundayTask() {
-    const currentDate = new Date();
-    // Calculate the delay until the next Sunday at 08:40 AM PST
-    let delayToNextSunday = 7 - currentDate.getDay(); // Calculate the days until next Sunday
+  // function scheduleSundayTask() {
+  //   const millisecondsElapsed = millisecondsSinceMidnight();
 
-    if (delayToNextSunday === 0) delayToNextSunday = 7; // If it's Sunday today, set it to 7 days
+  //   const delayToStart = 27876000 - (millisecondsElapsed); // Calculate milliseconds until next Sunday 07:50 AM PST
+  //   console.log('delaytostart', delayToStart);
+  //   // Schedule the task to start on this Sunday at 08:40 AM PST and repeat every 7 days
+  //   setTimeout(function () {
+  //     runTask(); // Execute the task
 
-    const millisecondsElapsed = millisecondsSinceMidnight();
+  //     // Set an interval to run the task every 7 days (604800000 milliseconds = 7 days)
+  //     setInterval(runTask, 7 * 24 * 60 * 60 * 1000);
 
-    const delayToStart = 27876000 - (millisecondsElapsed); // Calculate milliseconds until next Sunday 07:50 AM PST
-    console.log('delaytostart', delayToStart);
-    // Schedule the task to start on this Sunday at 08:40 AM PST and repeat every 7 days
-    setTimeout(function () {
-      runTask(); // Execute the task
+  //     // Mark the task as scheduled on your server side
+  //     axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/scheduled/6559d0d05b3a057f10e39a29`, { scheduled: true })
+  //       .then((response) => {
+  //         console.log('scheduled');
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
 
-      // Set an interval to run the task every 7 days (604800000 milliseconds = 7 days)
-      setInterval(runTask, 7 * 24 * 60 * 60 * 1000);
+  //   }, delayToStart);
+  // }
 
-      // Mark the task as scheduled on your server side
-      axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/scheduled/6559d0d05b3a057f10e39a29`, { scheduled: true })
-        .then((response) => {
-          console.log('scheduled');
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+  // function runTask() {
+  //   // Your task to be executed on Sundays at 07:50 AM PST
+  //   console.log("Task started on Sunday at 07:50 AM PST");
+  //   // Include your specific code or function to run here
+  //   setLiveLink(<Link href='https://www.youtube.com/channel/UC8ilaSeso9X1qNQq00WxKeA/live' target='_blank' className='live_stream_link'>&gt;라이브 온라인 예배&lt;</Link>);
 
-    }, delayToStart);
-  }
-
-  function runTask() {
-    // Your task to be executed on Sundays at 07:50 AM PST
-    console.log("Task started on Sunday at 07:50 AM PST");
-    // Include your specific code or function to run here
-    setLiveLink(<Link href='https://www.youtube.com/channel/UC8ilaSeso9X1qNQq00WxKeA/live' target='_blank' className='live_stream_link'>&gt;라이브 온라인 예배&lt;</Link>);
-
-    // Schedule the task to end after 4 hours and 40 mins (roughly at 12:30 PM PST)
-    setTimeout(function () {
-      console.log("Task ended at 12:30 PM PST");
-      setLiveLink('');
-    }, 16800000);
-  }
+  //   // Schedule the task to end after 4 hours and 40 mins (roughly at 12:30 PM PST)
+  //   setTimeout(function () {
+  //     console.log("Task ended at 12:30 PM PST");
+  //     setLiveLink('');
+  //   }, 16800000);
+  // }
 
   if (isLoading) return <LoadingSpinningBubble />;
 
