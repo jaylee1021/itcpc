@@ -134,7 +134,7 @@ export default function Navbar() {
         <div className='nav_center'>
             <nav className="navbar navbar-expand-lg sticky-top" style={{ maxWidth: '1522px' }}>
                 <div className="container-fluid" >
-                    <Link className="navbar-brand" href="/"><img src='/itcpc-logo.png' alt="Logo" /></Link>
+                    <Link className="navbar-brand" href="/"><img src='/tcpc_logo_green.png' style={{ maxWidth: '250px' }} alt="Logo" /></Link>
                     <button className="navbar-toggler" onClick={toggleMenu} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className={`navbar-toggler-icon ${menuVisible ? 'open' : ''}`}></span>
                     </button>
