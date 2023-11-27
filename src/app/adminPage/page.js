@@ -7,6 +7,7 @@ import Editmission from '../Component/Editmission';
 import NewHistories from '../Component/NewHistories';
 import NewSermons from '../Component/NewSermons';
 import NewBanners from '../Component/NewBanners';
+import NewBoards from '../Component/NewBoards';
 
 
 export default function AdminPage() {
@@ -40,6 +41,9 @@ export default function AdminPage() {
                 </div>
                 <div style={{ padding: '10px' }}>
                     {<NewBanners />}
+                </div>
+                <div style={{ padding: '10px' }}>
+                    {<NewBoards />}
                 </div>
             </div>
 
