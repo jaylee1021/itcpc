@@ -10,7 +10,7 @@ export default function Sermons() {
         <>
             <title>타코마중앙장로교회</title>
             <section className='mainBannerCenter'>
-                <img src='/sermon_banner.jpg' className='mainBannerImage' />
+                <img src='/2023_santuary_back_drop.jpg' className='mainBannerImage' />
             </section>
             <div className='title' >
                 <p className='title-style'>설교말씀</p>
