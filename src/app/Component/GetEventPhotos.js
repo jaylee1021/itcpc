@@ -38,8 +38,7 @@ export default function GetEventPhotos({ eventName }) {
 
                 for (let i = 0; i < thumbnail.length; i++) {
                     if (thumbnail[i].eventEngName === eventName) {
-                        setCurrentEvent(i + 1
-                        );
+                        setCurrentEvent(i + 1);
                     }
                 }
                 setIsLoading(false);
