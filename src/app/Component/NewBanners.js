@@ -133,14 +133,25 @@ export default function NewSermons() {
             </div>
             <div className='new_sermon_section'>
                 <form className='new_sermon_form' style={{ width: '440px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <p>
+                            Show
+                        </p>
+                        <p>
+                            Title
+                        </p>
+                        <p style={{ padding: '0 10px' }}>
+                            Delete
+                        </p>
+                    </div>
                     <br />
                     {banners.map((singleBanner) => {
                         return (
-                            <div key={singleBanner._id} style={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <div key={singleBanner._id} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
                                 <input style={{ width: '30px' }} type='checkbox' name='url' value={singleBanner._id}
                                     checked={singleBanner.show === true ? true : false} onChange={() => handleShow(singleBanner)} required />
-                                <p>{singleBanner.title}</p>
-                                <button value={singleBanner._id} onClick={handleDelete}>Delete</button>
+                                <p style={{ marginBottom: '0' }}>{singleBanner.title}</p>
+                                <button value={singleBanner._id} onClick={handleDelete} className='clear_form_button' style={{ padding: '0 10px' }}>Delete</button>
                             </div>
                         );
                     })}
