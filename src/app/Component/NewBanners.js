@@ -68,7 +68,8 @@ export default function NewSermons() {
             });
     }, []);
 
-    const handleShow = (singleBanner) => {
+    const handleShow = (e, singleBanner) => {
+        e.preventDefault();
         const bannerId = singleBanner._id;
         if (singleBanner.show === true) {
             const bannerShow = { show: false };
@@ -149,7 +150,7 @@ export default function NewSermons() {
                         return (
                             <div key={singleBanner._id} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
                                 <input style={{ width: '30px' }} type='checkbox' name='url' value={singleBanner._id}
-                                    checked={singleBanner.show === true ? true : false} onChange={() => handleShow(singleBanner)} required />
+                                    checked={singleBanner.show === true ? true : false} onChange={(e) => handleShow(e, singleBanner)} required />
                                 <p style={{ marginBottom: '0' }}>{singleBanner.title}</p>
                                 <button value={singleBanner._id} onClick={handleDelete} className='clear_form_button' style={{ padding: '0 10px' }}>Delete</button>
                             </div>
