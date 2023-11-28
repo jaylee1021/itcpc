@@ -134,25 +134,19 @@ export default function NewSermons() {
             </div>
             <div className='new_sermon_section'>
                 <form className='new_sermon_form' style={{ width: '440px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <p>
-                            Show
-                        </p>
-                        <p>
-                            Title
-                        </p>
-                        <p style={{ padding: '0 10px' }}>
-                            Delete
-                        </p>
-                    </div>
-                    <br />
+
                     {banners.map((singleBanner) => {
                         return (
-                            <div key={singleBanner._id} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                                <input style={{ width: '30px' }} type='checkbox' name='url' value={singleBanner._id}
-                                    checked={singleBanner.show === true ? true : false} onChange={(e) => handleShow(e, singleBanner)} required />
-                                <p style={{ marginBottom: '0' }}>{singleBanner.title}</p>
-                                <button value={singleBanner._id} onClick={handleDelete} className='clear_form_button' style={{ padding: '0 10px' }}>Delete</button>
+                            <div key={singleBanner._id} style={{ display: 'flex', marginBottom: '10px', justifyContent: 'space-between' }}>
+                                <div style={{ display: 'flex' }}>
+                                    <input style={{ width: '30px' }} type='checkbox' name='url' value={singleBanner._id}
+                                        checked={singleBanner.show === true ? true : false} onChange={(e) => handleShow(e, singleBanner)} required />
+                                    {singleBanner.show === true ? <p style={{ marginBottom: '0' }}>Showing</p> : <p style={{ marginBottom: '0' }}>Hiding</p>}
+                                </div>
+                                <div style={{ display: 'flex' }}>
+                                    <p style={{ marginBottom: '0' }}>{singleBanner.title}</p>
+                                    <button value={singleBanner._id} onClick={handleDelete} className='clear_form_button' style={{ padding: '0 10px', marginLeft: '20px' }}>Delete</button>
+                                </div>
                             </div>
                         );
                     })}
