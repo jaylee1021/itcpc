@@ -20,9 +20,22 @@ import { LoadingCircle } from '../Component/Loading';
 export default function AdminPage() {
 
     const [user, setUser] = useState({});
-    const [isLoading, setIsLoading] = useState(true);
 
     const router = useRouter();
+
+    useEffect(() => {
+        if (typeof window !== undefined) {
+            const expirationTime = new Date(parseInt(localStorage.getItem('expiration')) * 1000);
+            let currentTime = Date.now();
+
+            setAuthToken(localStorage.getItem('jwtToken'));
+            // make a condition that compares exp and current time
+            if (currentTime >= expirationTime) {
+                handleLogout();
+                router.push('/users/login');
+            }
+        }
+    }, [router]);
 
     useEffect(() => {
         setAuthToken(localStorage.getItem('jwtToken'));
@@ -35,7 +48,6 @@ export default function AdminPage() {
                             try {
                                 const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/users/${localStorage.getItem('userId')}`);
                                 setUser(response.data.user);
-                                // setIsLoading(false);
                             } catch (error) {
                                 console.log('Error fetching user data', error);
                             }
@@ -54,14 +66,13 @@ export default function AdminPage() {
         }
     }, [router]);
 
-    // if (isLoading) return (<LoadingCircle />);
-
     return (
         <div>
             <title>Admin Page</title>
             <div className='title'>
                 <p className='title-style'>관리자</p>
                 <p className='subtitle-style'>Admin</p>
+                <Link href='/' onClick={handleLogout}>LOGOUT</Link>
             </div>
             <div style={{ display: 'flex' }}>
                 {/* <Link href='/newSermon'> <button className='admin_button'>설교말씀 등록</button></Link>
@@ -83,8 +94,6 @@ export default function AdminPage() {
                     {<NewBoards />}
                 </div>
             </div>
-            <Link href='/' onClick={handleLogout}>LOGOUT</Link>
-
         </div>
     );
 }
