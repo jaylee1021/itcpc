@@ -73,8 +73,7 @@ export default function Editmission() {
             </div>
             <div className='new_sermon_section'>
                 <form onSubmit={handleSubmit} className='new_sermon_form' >
-
-                    <select onChange={handleGroup} defaultValue={'default'}>
+                    <select onChange={handleGroup} defaultValue={'default'} id='missionGroup'>
                         <option value='default' disabled>선교회를 선택 해 주세요 </option>
                         {missionGroup.map((singleMissionGroup) => {
                             return (
