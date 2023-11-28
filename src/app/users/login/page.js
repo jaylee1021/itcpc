@@ -7,7 +7,6 @@ import jwtDecode from 'jwt-decode';
 
 export default function Login() {
     const router = useRouter();
-    const [redirect, setRedirect] = useState(false);
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
 
@@ -32,15 +31,12 @@ export default function Login() {
                 }
                 setAuthToken(response.data.token);
                 // let decoded = jwtDecode(response.data.token);
-                // setRedirect(true);
                 router.push('/admin');
             })
             .catch(error => {
                 alert('Either your username or password is incorrect');
             });
     };
-
-    // if (redirect) { router.push('/admin'); }
 
     return (
         <div className="container">
