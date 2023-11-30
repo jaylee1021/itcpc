@@ -1,0 +1,65 @@
+/* admin section */
+.admin_all {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.forms_all {
+    display: flex;
+    max-width: 1522px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.forms {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    background: rgb(255, 248, 248);
+}
+
+.logout_button {
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    letter-spacing: 2px;
+}
+
+.logout_button:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+/* newBanner component */
+
+.choose_banner_form {
+    width: 440px;
+}
+
+.choose_banner_options {
+    display: flex;
+    margin: 5px 0;
+    justify-content: space-between;
+}
+
+.choose_banner_option {
+    display: flex;
+}
+
+.choose_banner_option p {
+    margin-bottom: 0;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.choose_banner_option button {
+    padding: 0 10px;
+}

@@ -133,19 +133,19 @@ export default function NewSermons() {
                 <p className='subtitle-style'>Choose Banner</p>
             </div>
             <div className='new_sermon_section'>
-                <form className='new_sermon_form' style={{ width: '440px' }}>
+                <form className='new_sermon_form choose_banner_form'>
 
                     {banners.map((singleBanner) => {
                         return (
-                            <div key={singleBanner._id} style={{ display: 'flex', marginBottom: '10px', justifyContent: 'space-between' }}>
-                                <div style={{ display: 'flex' }}>
+                            <div key={singleBanner._id} className='choose_banner_options'>
+                                <div className='choose_banner_option'>
                                     <input style={{ width: '30px' }} type='checkbox' name='url' value={singleBanner._id}
                                         checked={singleBanner.show === true ? true : false} onChange={(e) => handleShow(e, singleBanner)} required />
-                                    {singleBanner.show === true ? <p style={{ marginBottom: '0' }}>Showing</p> : <p style={{ marginBottom: '0' }}>Hiding</p>}
+                                    {singleBanner.show === true ? <p >Showing</p> : <p >Hiding</p>}
                                 </div>
-                                <div style={{ display: 'flex' }}>
-                                    <p style={{ marginBottom: '0' }}>{singleBanner.title}</p>
-                                    <button value={singleBanner._id} onClick={handleDelete} className='clear_form_button' style={{ padding: '0 10px', marginLeft: '20px' }}>Delete</button>
+                                <div className='choose_banner_option'>
+                                    <p >{singleBanner.title}</p>
+                                    <button value={singleBanner._id} onClick={handleDelete} className='clear_form_button' >Delete</button>
                                 </div>
                             </div>
                         );
