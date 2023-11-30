@@ -80,13 +80,10 @@ export default function NewBoards() {
         const new_board = { url: poster, title, snap, eventDate };
         axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/boards/new`, new_board)
             .then(response => {
-                if (response.data.message === 'sermon already exists') {
-                    alert('새로운 설교 등록에 "실패"했습니다. (같은 설교가 이미 존재합니다.)');
 
-                } else {
-                    alert('새로운 설교 등록에 "성공"했습니다.');
-                    window.location.reload();
-                }
+                alert('새로운 게시글 등록에 "성공"했습니다.');
+                window.location.reload();
+
             })
             .catch(error => console.log('===> Error creating a sermon', error));
     };
@@ -124,9 +121,6 @@ export default function NewBoards() {
                     </div>
                 </form >
             </div >
-            <br />
-            <br />
-            <br />
         </div>
     );
 }

@@ -141,9 +141,6 @@ export default function NewSermons() {
                     </div>
                 </form >
             </div >
-            <br />
-            <br />
-            <br />
         </div>
     );
 }

@@ -233,10 +233,10 @@
 .title {
   text-align: center;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
   padding: 10px;
+  align-content: center;
 }
 
 .videoSection {
