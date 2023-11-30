@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import '../css/page.css';
+import '../css/admin.css';
 import Link from 'next/link';
 import Editmission from '../Component/Editmission';
 import NewHistories from '../Component/NewHistories';
 import NewSermons from '../Component/NewSermons';
 import NewBanners from '../Component/NewBanners';
 import NewBoards from '../Component/NewBoards';
+import NewPhotos from '../Component/NewPhotos';
 import setAuthToken from '../utils/setAuthToken';
 import jwtDecode from 'jwt-decode';
 import axios from 'axios';
@@ -67,31 +69,34 @@ export default function AdminPage() {
     }, [router]);
 
     return (
-        <div>
+        <div className='admin_all'>
             <title>Admin Page</title>
             <div className='title'>
                 <p className='title-style'>관리자</p>
                 <p className='subtitle-style'>Admin</p>
-                <Link href='/' onClick={handleLogout}>LOGOUT</Link>
+                <Link href='/' className='logout_button' onClick={handleLogout}>LOGOUT</Link>
             </div>
-            <div style={{ display: 'flex' }}>
+            <div className='forms_all'>
                 {/* <Link href='/newSermon'> <button className='admin_button'>설교말씀 등록</button></Link>
             <Link href='/newHistory'> <button className='admin_button'>연혁 등록</button></Link>
             <Link href='/editMissionGroup'> <button className='admin_button'>선교회 등록</button></Link> */}
-                <div style={{ padding: '10px' }}>
-                    {<Editmission />}
-                </div>
-                <div style={{ padding: '10px' }}>
-                    {<NewHistories />}
-                </div>
-                <div style={{ padding: '10px' }}>
+                <div className='forms'>
                     {<NewSermons />}
                 </div>
-                <div style={{ padding: '10px' }}>
+                <div className='forms'>
+                    {<NewBoards />}
+                </div>
+                <div className='forms'>
+                    {<NewPhotos />}
+                </div>
+                <div className='forms'>
                     {<NewBanners />}
                 </div>
-                <div style={{ padding: '10px' }}>
-                    {<NewBoards />}
+                <div className='forms'>
+                    {<Editmission />}
+                </div>
+                <div className='forms'>
+                    {<NewHistories />}
                 </div>
             </div>
         </div>
