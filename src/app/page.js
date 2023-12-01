@@ -245,12 +245,12 @@ export default function Home() {
         <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
-              <img src={firstGallery.url} onClick={() => handleGallery(firstGallery)} className='whats_new_image' />
+              <img src={thirdGallery.url} onClick={() => handleGallery(thirdGallery)} className='whats_new_image' />
             </div>
             <div className='more-info'>
-              <p>{firstGallery.eventKorName}</p>
+              <p>{thirdGallery.eventKorName}</p>
             </div>
-          </div>
+          </div >
         </article>
         <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
@@ -265,12 +265,12 @@ export default function Home() {
         <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
-              <img src={thirdGallery.url} onClick={() => handleGallery(thirdGallery)} className='whats_new_image' />
+              <img src={firstGallery.url} onClick={() => handleGallery(firstGallery)} className='whats_new_image' />
             </div>
             <div className='more-info'>
-              <p>{thirdGallery.eventKorName}</p>
+              <p>{firstGallery.eventKorName}</p>
             </div>
-          </div >
+          </div>
         </article>
       </section>
       <div className='whats_new_view_more_wrapper'>
