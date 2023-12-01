@@ -1,11 +1,17 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LoadingLine } from './Loading';
 import axios from 'axios';
 import '../css/page.css';
 import '../css/newSermon.css';
 
 export default function NewPhotos() {
+
+    useEffect(() => {
+        require('bootstrap/dist/js/bootstrap.bundle.min.js');
+        require('bootstrap/dist/css/bootstrap.min.css');
+    }, []);
+
     const [thumbnail, setThumbnail] = useState('');
     const [photos, setPhotos] = useState([]);
     const [eventEngName, setEventEngName] = useState('');
@@ -13,12 +19,14 @@ export default function NewPhotos() {
     const [eventDate, setEventDate] = useState('');
     const [file, setFile] = useState('');
     const [thumbUploaded, setThumbUploaded] = useState('');
-    const [photosUploaded, setPhotosUploaded] = useState('');
     const [allPhotosUploaded, setAllPhotosUploaded] = useState('');
+    const [photosUploadPercentage, setPhotosUploadPercentage] = useState(0);
+    const [photosUploadCount, setPhotosUploadCount] = useState('');
+    const [galleryUploadPercentage, setGalleryUploadPercentage] = useState(0);
+    const [galleryUploadCount, setGalleryUploadCount] = useState('');
 
     const handleFileOpen = (e) => {
         if (e.target.files.length > 1) {
-            console.log(e.target.files);
             setFile(e.target.files);
         } else {
             setFile(e.target.files[0]);
@@ -81,13 +89,14 @@ export default function NewPhotos() {
                         });
                         const data = await response.json();
                         allPhotoUrl.push(data.secure_url);
+                        setPhotosUploadPercentage((Math.round((i + 1) / file.length * 100)));
+                        setPhotosUploadCount(`${i + 1}/${file.length} (${(Math.round((i + 1) / file.length * 100))}%) uploaded`);
                     }
                     catch { ((error) => console.log('Error', error)); };
                 }
                 setPhotos(allPhotoUrl);
                 setFile('');
                 setIsPhotosLoading(false);
-                setPhotosUploaded(<p className='file_uploaded'>사진들이 업로드 되었습니다.</p>);
             } else {
                 alert('사진을 두장 이상 선택해주세요.');
             }
@@ -101,20 +110,22 @@ export default function NewPhotos() {
         if (thumbnail) {
             const new_thumbnail = { url: thumbnail, eventEngName, eventKorName, eventDate };
             axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/galleryThumbnails/new`, new_thumbnail)
-                .then(response => {
+                .then(async (response) => {
+                    const delay = ms => new Promise(res => setTimeout(res, ms));
                     if (photos.length > 0) {
                         setIsAllPhotosUploaded(true);
                         for (let i = 0; i < photos.length; i++) {
                             const new_photos = { url: photos[i], event: eventEngName };
-                            axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/photos/new`, new_photos)
+                            await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/photos/new`, new_photos)
                                 .then(response => {
-                                    console.log('response', response);
+                                    setGalleryUploadPercentage((Math.round((i + 1) / photos.length * 100)));
+                                    setGalleryUploadCount(`${i + 1}/${photos.length} (${(Math.round((i + 1) / photos.length * 100))}%) uploaded`);
                                 })
                                 .catch(error => console.log('===> Error creating a sermon', error));
                         }
+                        await delay(1000);
                         setIsAllPhotosUploaded(false);
                         alert('새로운 갤러리 등록에 "성공"했습니다.');
-                        // setAllPhotosUploaded(<p className='file_uploaded'>겔러리가 업로드 되었습니다.</p>);
                         window.location.reload();
                     } else {
                         alert('사진들을 먼저 업로드해주세요.');
@@ -148,12 +159,35 @@ export default function NewPhotos() {
                     <p>Event Date</p>
                     <div className='thumbnails_uploader'>
                         <input className='thumbnail_file' multiple type="file" id="photos" name="photos" accept='.png, .jpg, .jpeg' onChange={handleFileOpen} />
-                        {file && isPhotosLoading ? <LoadingLine /> : photosUploaded}
+                        {file && isPhotosLoading ?
+                            <div className='progress mb-3'>
+                                <div className='progress-bar bg-info' style={{ width: `${photosUploadPercentage}%` }}>
+                                    {photosUploadCount}
+                                </div>
+                            </div>
+                            :
+                            photosUploadPercentage === 100 ?
+                                <div>
+                                    <div className='progress mb-3'>
+                                        <div className='progress-bar bg-info' style={{ width: `${photosUploadPercentage}%` }}>
+                                            {photosUploadCount}
+                                        </div>
+                                    </div>
+                                    <p className='file_uploaded'>사진들이 업로드 되었습니다.</p>
+                                </div>
+                                :
+                                null}
                         <button type='button' onClick={handlePhotosUpload} className='new_sermon_buttons'>Upload Photos</button>
                     </div>
                     <br />
                     <div>
-                        {photos && isAllPhotosUploaded ? <LoadingLine /> : allPhotosUploaded}
+                        {photos && isAllPhotosUploaded ?
+                            <div className='progress mb-3'>
+                                <div className='progress-bar bg-info' style={{ width: `${galleryUploadPercentage}%` }}>
+                                    {galleryUploadCount}
+                                </div>
+                            </div>
+                            : allPhotosUploaded}
                         <button type='submit' className='new_sermon_buttons'>
                             등록
                         </button>
