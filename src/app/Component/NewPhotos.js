@@ -19,7 +19,7 @@ export default function NewPhotos() {
     const [eventDate, setEventDate] = useState('');
     const [file, setFile] = useState('');
     const [thumbUploaded, setThumbUploaded] = useState('');
-    const [allPhotosUploaded, setAllPhotosUploaded] = useState('');
+    // const [allPhotosUploaded, setAllPhotosUploaded] = useState('');
     const [photosUploadPercentage, setPhotosUploadPercentage] = useState(0);
     const [photosUploadCount, setPhotosUploadCount] = useState('');
     const [galleryUploadPercentage, setGalleryUploadPercentage] = useState(0);
@@ -187,7 +187,7 @@ export default function NewPhotos() {
                                     {galleryUploadCount}
                                 </div>
                             </div>
-                            : allPhotosUploaded}
+                            : null}
                         <button type='submit' className='new_sermon_buttons'>
                             등록
                         </button>
