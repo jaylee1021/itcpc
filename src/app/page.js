@@ -47,9 +47,9 @@ export default function Home() {
       try {
         const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/galleryThumbnails`);
         const newThumb = response.data.galleryThumbnails;
-        setFirstGallery(newThumb[newThumb.length - 3]);
-        setSecondGallery(newThumb[newThumb.length - 2]);
-        setThirdGallery(newThumb[newThumb.length - 1]);
+        setFirstGallery(newThumb[0]);
+        setSecondGallery(newThumb[1]);
+        setThirdGallery(newThumb[2]);
         setIsLoading(false);
       }
       catch (err) {
@@ -245,12 +245,12 @@ export default function Home() {
         <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
-              <img src={thirdGallery.url} onClick={() => handleGallery(thirdGallery)} className='whats_new_image' />
+              <img src={firstGallery.url} onClick={() => handleGallery(firstGallery)} className='whats_new_image' />
             </div>
             <div className='more-info'>
-              <p>{thirdGallery.eventKorName}</p>
+              <p>{firstGallery.eventKorName}</p>
             </div>
-          </div >
+          </div>
         </article>
         <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
@@ -265,12 +265,12 @@ export default function Home() {
         <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
-              <img src={firstGallery.url} onClick={() => handleGallery(firstGallery)} className='whats_new_image' />
+              <img src={thirdGallery.url} onClick={() => handleGallery(thirdGallery)} className='whats_new_image' />
             </div>
             <div className='more-info'>
-              <p>{firstGallery.eventKorName}</p>
+              <p>{thirdGallery.eventKorName}</p>
             </div>
-          </div>
+          </div >
         </article>
       </section>
       <div className='whats_new_view_more_wrapper'>
