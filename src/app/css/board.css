@@ -26,6 +26,11 @@
     cursor: pointer;
 }
 
+
+.title_cursor {
+    cursor: pointer;
+}
+
 .board_tr {
     display: flex;
     padding: 8px 8px 0 8px;
@@ -40,9 +45,6 @@
     padding: 10px;
 }
 
-.title_cursor {
-    cursor: pointer;
-}
 
 .board_col3 {
     flex: 1 0 20%;
@@ -67,6 +69,37 @@
     max-width: 80vw;
 }
 
+/* BulletModal */
+
+.bulletin_col1 {
+    flex: 1 0 20%;
+    padding: 10px;
+}
+
+.bulletin_col2 {
+    flex: 1 0 50%;
+    padding: 10px;
+}
+
+
+.bulletin_col3 {
+    flex: 1 0 20%;
+    padding: 10px;
+}
+
+.bulletin_col4 {
+    flex: 1 0 10%;
+    padding: 10px;
+}   
+
+.bulletin_col2,
+.bulletin_col3,
+.bulletin_col4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 @media screen and (max-width: 835px) {
     .board_col1,
     .board_col2{
@@ -80,7 +113,43 @@
         flex: 1 0 15%;
         align-content: flex-end;
         flex-wrap: wrap;
+    }
+
+    .bulletin_col1 {
+        flex: 1 0 15%;
+    }
+
+    .bulletin_col2{
+        flex: 1 0 50%;
+    }
     
+    .bulletin_col3{
+        flex: 1 0 20%;
+    }
+    .bulletin_col4 {
+        flex: 1 0 15%;
+        align-content: flex-end;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 614px) {
+    
+    .bulletin_col1 {
+        flex: 1 0 15%;
+    }
+
+    .bulletin_col2{
+        flex: 1 0 40%;
+    }
+    
+    .bulletin_col3{
+        flex: 1 0 30%;
+    }
+    .bulletin_col4 {
+        flex: 1 0 15%;
+        align-content: flex-end;
+        flex-wrap: wrap;
     }
 }
 
@@ -94,13 +163,39 @@
         flex-wrap: wrap;
         align-content: center;
     }
-    .board_col2 {
+    .bulletin_col1 {
+        flex: 1 0 7%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        padding-right: 0;
+    }
+
+    .board_col2,
+    .bulletin_col2 {
         flex: 1 0 27%;
     }
-    .board_col3 {
+    .board_col3,
+    .bulletin_col3 {
         flex: 1 0 20%;
     }
-    .board_col4 {
+    .board_col4,
+    .bulletin_col4 {
+        flex: 1 0 10%;
+        align-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .bulletin_col2 {
+        flex: 1 0 35%;
+    }
+
+    .bulletin_col3 {
+        flex: 1 0 20%;
+        padding: 0;
+    }
+
+    .bulletin_col4 {
         flex: 1 0 10%;
         align-content: flex-end;
         flex-wrap: wrap;

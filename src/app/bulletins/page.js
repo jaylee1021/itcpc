@@ -6,6 +6,9 @@ import { Document, Page, pdfjs } from "react-pdf";
 import axios from "axios";
 import BulletinModal from "../Component/BulletinModal";
 import { LoadingCircle } from "../Component/Loading";
+import '../css/page.css';
+import '../css/sermons.css';
+import '../css/board.css';
 
 export default function PDFViewer() {
     pdfjs.GlobalWorkerOptions.workerSrc =
@@ -29,32 +32,32 @@ export default function PDFViewer() {
 
     return (
         <>
-            <title>게시판</title>
+            <title>주보</title>
             <section className='mainBannerCenter'>
                 <img src='/main_banner.png' className='mainBannerImage' />
             </section>
             <div className='title' >
-                <p className='title-style'>게시판</p>
-                <p className='subtitle-style'>Board</p>
+                <p className='title-style'>주보</p>
+                <p className='subtitle-style'>Bulletin</p>
             </div>
             {isLoading ? <LoadingCircle />
                 :
                 <section className='board_section'>
                     <div className='table_border'>
-                        <table className='table'>
+                        <table className='table' >
                             <thead>
                                 <tr scope="col" className='board_tr'>
-                                    <th className='board_col1'>포스터</th>
-                                    <th className='board_col2'>이벤트</th>
-                                    <th className='board_col3'>이벤트 날짜</th>
-                                    <th className='board_col4'>조회수</th>
+                                    <th className='bulletin_col1'>번호</th>
+                                    <th className='bulletin_col2'>주보</th>
+                                    <th className='bulletin_col3'>날짜</th>
+                                    <th className='bulletin_col4'>조회수</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {file.map((singleFile) => {
+                                {file.map((singleFile, index) => {
                                     return (
                                         <tr key={singleFile._id}>
-                                            <BulletinModal file={singleFile} />
+                                            <BulletinModal file={singleFile} index={Math.abs(index - file.length)} />
                                         </tr>
                                     );
                                 })}

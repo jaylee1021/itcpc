@@ -6,7 +6,8 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 import '../css/page.css';
-import '../css/gallery.css';
+import '../css/sermons.css';
+import '../css/board.css';
 import axios from 'axios';
 
 import { Document, Page, pdfjs } from 'react-pdf';
@@ -26,7 +27,7 @@ const style = {
     overflowY: 'scroll'
 };
 
-export default function BulletinModal({ file }) {
+export default function BulletinModal({ file, index }) {
     const [open, setOpen] = useState(false);
     const handleClose = () => setOpen(false);
     const [count, setCount] = useState(file.count);
@@ -58,16 +59,19 @@ export default function BulletinModal({ file }) {
 
     return (
         <td style={{ display: 'flex' }}>
-            <td className='board_col1' onClick={handleOpen} style={{ cursor: 'pointer' }}>
+            <td className='bulletin_col1'>
+                {index}
+            </td>
+            <td className='bulletin_col2 title_cursor' onClick={handleOpen}>
                 {file.special_title ?
                     file.date.split('T')[0] + ' ' + file.special_title + '' + file.title
                     :
                     file.date.split('T')[0] + ' ' + file.title}
             </td>
-            <td className='board_col3'>
+            <td className='bulletin_col3'>
                 {file.date.split('T')[0]}
             </td>
-            <td className='board_col4'>
+            <td className='bulletin_col4'>
                 {count}
 
             </td>
@@ -92,7 +96,7 @@ export default function BulletinModal({ file }) {
                                     <Page
                                         key={`page_${index + 1}`}
                                         pageNumber={index + 1}
-                                        width={1000}
+                                        width={1200}
                                         renderAnnotationLayer={false}
                                         renderTextLayer={false}
                                     />
