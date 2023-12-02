@@ -24,7 +24,7 @@ export default function GalleryAll() {
         const fetchGalleryThumbnail = async () => {
             try {
                 const response = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/galleryThumbnails`);
-                const newThumb = response.data.galleryThumbnails.toReversed();
+                const newThumb = response.data.galleryThumbnails;
                 setGalleryThumbnails(newThumb);
                 setIsLoading(false);
             }
