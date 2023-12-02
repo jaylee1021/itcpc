@@ -11,6 +11,7 @@ import NewSermons from '../Component/NewSermons';
 import NewBanners from '../Component/NewBanners';
 import NewBoards from '../Component/NewBoards';
 import NewPhotos from '../Component/NewPhotos';
+import NewBulletin from '../Component/NewBulletin';
 import setAuthToken from '../utils/setAuthToken';
 import jwtDecode from 'jwt-decode';
 import axios from 'axios';
@@ -82,6 +83,9 @@ export default function AdminPage() {
             <Link href='/editMissionGroup'> <button className='admin_button'>선교회 등록</button></Link> */}
                 <div className='forms'>
                     {<NewSermons />}
+                </div>
+                <div className='forms'>
+                    {<NewBulletin />}
                 </div>
                 <div className='forms'>
                     {<NewBoards />}
