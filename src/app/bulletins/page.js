@@ -67,7 +67,7 @@ export default function PDFViewer() {
                                     {currentBulletins.map((singleFile, index) => {
                                         return (
                                             <tr key={singleFile._id}>
-                                                <BulletinModal file={singleFile} index={Math.abs(index - file.length)} />
+                                                <BulletinModal file={singleFile} index={Math.abs(index + (postsPerPage * (currentPage - 1)) - file.length)} />
                                             </tr>
                                         );
                                     })}
