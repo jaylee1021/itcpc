@@ -155,7 +155,7 @@ export default function NewPhotos() {
                     <p>Event English Name</p>
                     <input type='text' name='eventKorName' value={eventKorName} onChange={handleEventKorName} required />
                     <p>Event Korean Name</p>
-                    <input type='text' name='eventDate' value={eventDate} onChange={handleEventDate} required />
+                    <input type='date' name='eventDate' value={eventDate} onChange={handleEventDate} required />
                     <p>Event Date</p>
                     <div className='thumbnails_uploader'>
                         <input className='thumbnail_file' multiple type="file" id="photos" name="photos" accept='.png, .jpg, .jpeg' onChange={handleFileOpen} />
