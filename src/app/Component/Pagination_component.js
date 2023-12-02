@@ -2,7 +2,7 @@ import React from 'react';
 import Pagination from '@mui/material/Pagination';
 import '../css/sermons.css';
 
-const Sermon_pagination = ({ totalPosts, postsPerPage, setCurrentPage }) => {
+const Pagination_component = ({ totalPosts, postsPerPage, setCurrentPage }) => {
     const pages = [];
 
     for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
@@ -20,4 +20,4 @@ const Sermon_pagination = ({ totalPosts, postsPerPage, setCurrentPage }) => {
     );
 };
 
-export default Sermon_pagination;
+export default Pagination_component;

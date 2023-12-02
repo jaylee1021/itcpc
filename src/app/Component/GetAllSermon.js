@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { LoadingCircle } from "./Loading";
-import Sermon_pagination from "./Sermon_pagination";
+import Pagination_component from "./Pagination_component";
 import SermonModal from "./SermonModal";
 import '../css/page.css';
 import '../css/sermons.css';
@@ -86,18 +86,18 @@ export default function GetAllSermon() {
 
             {searchQuery === '' ?
                 <div>
-                    <Sermon_pagination totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+                    <Pagination_component totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
                     <br />
                     {currentPosts.map((sermon) => (
                         <SermonModal sermon={sermon} key={sermon._id} />))}
-                    <Sermon_pagination totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+                    <Pagination_component totalPosts={sermon.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
                 </div>
                 :
                 <div>
-                    {/* <Sermon_pagination totalPosts={sermonList.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} /> */}
+                    {/* <Pagination_component totalPosts={sermonList.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} /> */}
                     <br />
                     {renderSermon()}
-                    {/* <Sermon_pagination totalPosts={sermonList.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} /> */}
+                    {/* <Pagination_component totalPosts={sermonList.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} /> */}
                 </div>
             }
         </>
