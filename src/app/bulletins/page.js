@@ -1,11 +1,10 @@
 'use client';
 import React, { useState, useEffect } from "react";
-// import default react-pdf entry
 import { Document, Page, pdfjs } from "react-pdf";
-
-import axios from "axios";
-import BulletinModal from "../Component/BulletinModal";
 import { LoadingCircle } from "../Component/Loading";
+import Pagination_component from "../Component/Pagination_component";
+import BulletinModal from "../Component/BulletinModal";
+import axios from "axios";
 import '../css/page.css';
 import '../css/sermons.css';
 import '../css/board.css';
@@ -16,17 +15,24 @@ export default function PDFViewer() {
 
     const [file, setFile] = useState("");
     const [isLoading, setIsLoading] = useState(true);
+    const [currentBulletins, setCurrentBulletins] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(15);
 
     useEffect(() => {
+        const lastPostIndex = currentPage * postsPerPage;
+        const firstPostIndex = lastPostIndex - postsPerPage;
+
         axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/bulletins`)
             .then((response) => {
                 setFile(response.data.bulletins);
+                setCurrentBulletins(response.data.bulletins.slice(firstPostIndex, lastPostIndex));
                 setIsLoading(false);
             })
             .catch((err) => {
                 console.log(err);
             });
-    }, []);
+    }, [currentPage]);
 
     if (isLoading) return <LoadingCircle />;
 
@@ -42,27 +48,32 @@ export default function PDFViewer() {
             </div>
             {isLoading ? <LoadingCircle />
                 :
-                <section className='board_section'>
-                    <div className='table_border'>
-                        <table className='table' >
-                            <thead>
-                                <tr scope="col" className='board_tr'>
-                                    <th className='bulletin_col1'>번호</th>
-                                    <th className='bulletin_col2'>주보</th>
-                                    <th className='bulletin_col3'>날짜</th>
-                                    <th className='bulletin_col4'>조회수</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {file.map((singleFile, index) => {
-                                    return (
-                                        <tr key={singleFile._id}>
-                                            <BulletinModal file={singleFile} index={Math.abs(index - file.length)} />
-                                        </tr>
-                                    );
-                                })}
-                            </tbody>
-                        </table>
+                <section className="bulletin_section">
+                    <div className='bulletin_wrapper'>
+                        <div className="bulletin_pagination">
+                            <Pagination_component totalPosts={file.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+                        </div>
+                        <div className='table_border'>
+                            <table className='table' >
+                                <thead>
+                                    <tr scope="col" className='board_tr'>
+                                        <th className='bulletin_col1'>번호</th>
+                                        <th className='bulletin_col2'>주보</th>
+                                        <th className='bulletin_col3'>날짜</th>
+                                        <th className='bulletin_col4'>조회수</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {currentBulletins.map((singleFile, index) => {
+                                        return (
+                                            <tr key={singleFile._id}>
+                                                <BulletinModal file={singleFile} index={Math.abs(index - file.length)} />
+                                            </tr>
+                                        );
+                                    })}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </section>
             }
