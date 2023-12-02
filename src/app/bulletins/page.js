@@ -1,54 +1,68 @@
 'use client';
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { LoadingCircle } from '../Component/Loading';
-import '../css/page.css';
+import React, { useState, useEffect } from "react";
+// import default react-pdf entry
+import { Document, Page, pdfjs } from "react-pdf";
 
-export default function Bulletin() {
+import axios from "axios";
+import BulletinModal from "../Component/BulletinModal";
+import { LoadingCircle } from "../Component/Loading";
 
-    const [bulletin, setBulletin] = useState([]);
+export default function PDFViewer() {
+    pdfjs.GlobalWorkerOptions.workerSrc =
+        `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+    const [file, setFile] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/bulletins`)
             .then((response) => {
-                setBulletin(response.data.bulletins);
+                setFile(response.data.bulletins);
+                setIsLoading(false);
             })
             .catch((err) => {
                 console.log(err);
             });
     }, []);
 
+    if (isLoading) return <LoadingCircle />;
+
     return (
         <>
-            <title>주보</title>
+            <title>게시판</title>
             <section className='mainBannerCenter'>
                 <img src='/main_banner.png' className='mainBannerImage' />
             </section>
             <div className='title' >
-                <p className='title-style'>주보</p>
-                <p className='subtitle-style'>Bulletin</p>
+                <p className='title-style'>게시판</p>
+                <p className='subtitle-style'>Board</p>
             </div>
-            <section>
-                {bulletin.map((singleBulletin) => {
-                    return (
-                        <div key={singleBulletin._id} className='bulletin_section'>
-                            <div className='bulletin_title'>
-                                <p>{singleBulletin.title}</p>
-                            </div>
-                            <div className='bulletin_date'>
-                                <p>{singleBulletin.date}</p>
-                            </div>
-                            <div className='bulletin_description'>
-
-                                <object data={singleBulletin.content} type="application/pdf" width="100%" height="1000px">
-                                    <p>Alternative text - include a link <a href="http://africau.edu/images/default/sample.pdf">to the PDF!</a></p>
-                                </object>
-                            </div>
-
-                        </div>
-                    );
-                })}
-            </section>
+            {isLoading ? <LoadingCircle />
+                :
+                <section className='board_section'>
+                    <div className='table_border'>
+                        <table className='table'>
+                            <thead>
+                                <tr scope="col" className='board_tr'>
+                                    <th className='board_col1'>포스터</th>
+                                    <th className='board_col2'>이벤트</th>
+                                    <th className='board_col3'>이벤트 날짜</th>
+                                    <th className='board_col4'>조회수</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {file.map((singleFile) => {
+                                    return (
+                                        <tr key={singleFile._id}>
+                                            <BulletinModal file={singleFile} />
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            }
         </>
     );
 }
