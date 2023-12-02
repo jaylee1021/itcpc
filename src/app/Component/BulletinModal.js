@@ -1,16 +1,18 @@
 import * as React from 'react';
 import { useState } from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
+import axios from 'axios';
 import '../css/page.css';
 import '../css/sermons.css';
 import '../css/board.css';
-import axios from 'axios';
 
-import { Document, Page, pdfjs } from 'react-pdf';
+
+
 
 const style = {
     position: 'absolute',
@@ -28,13 +30,14 @@ const style = {
 };
 
 export default function BulletinModal({ file, index }) {
-    const [open, setOpen] = useState(false);
-    const handleClose = () => setOpen(false);
-    const [count, setCount] = useState(file.count);
 
     pdfjs.GlobalWorkerOptions.workerSrc =
         `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
+    const [open, setOpen] = useState(false);
+    const [count, setCount] = useState(file.count);
+    const [numPages, setNumPages] = useState(null);
+    const handleClose = () => setOpen(false);
     const handleOpen = () => {
         setOpen(true);
         countClick();
@@ -51,8 +54,6 @@ export default function BulletinModal({ file, index }) {
             });
     };
 
-    const [numPages, setNumPages] = useState(null);
-
     function onDocumentLoadSuccess({ numPages: nextNumPages }) {
         setNumPages(nextNumPages);
     }
@@ -62,7 +63,7 @@ export default function BulletinModal({ file, index }) {
             <td className='bulletin_col1'>
                 {index}
             </td>
-            <td className='bulletin_col2 title_cursor' onClick={handleOpen}>
+            <td className='bulletin_col2' onClick={handleOpen}>
                 {file.special_title ?
                     file.date.split('T')[0] + ' ' + file.special_title + '' + file.title
                     :

@@ -50,7 +50,7 @@ export default function BoardModal({ image }) {
                 <img src={image.snap} className='board_image' />
             </td>
             <td className='board_col2' >
-                <div onClick={handleOpen} className='title_cursor'>
+                <div onClick={handleOpen} >
                     {image.title}
                 </div>
             </td>
