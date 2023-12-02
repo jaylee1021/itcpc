@@ -23,12 +23,13 @@
     width: 160px;
     height: 50px;
     object-fit: cover;
-    cursor: pointer;
+    
 }
 
-
-.title_cursor {
+.board_image:hover {
+    /* opacity: 0.5; */
     cursor: pointer;
+    border: 3px solid black;
 }
 
 .board_tr {
@@ -44,7 +45,6 @@
     flex: 1 0 50%;
     padding: 10px;
 }
-
 
 .board_col3 {
     flex: 1 0 20%;
@@ -64,20 +64,44 @@
     justify-content: center;
 }
 
+.board_col2:hover {
+    color: white;
+    cursor: pointer;
+    background-color: black;
+}
+
 .image_size {
     max-height: 90vh;
     max-width: 80vw;
 }
 
-/* BulletModal */
+/* Bullet Section */
+
+.bulletin_section {
+    display:flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.bulletin_wrapper {
+    display:flex;
+    justify-content: center;
+    padding: 10px;
+    flex-direction: column;
+    max-width: 900px;
+}
+
+.bulletin_pagination {
+    padding: 10px 0;
+}
 
 .bulletin_col1 {
-    flex: 1 0 20%;
+    flex: 1 0 15%;
     padding: 10px;
 }
 
 .bulletin_col2 {
-    flex: 1 0 50%;
+    flex: 1 0 55%;
     padding: 10px;
 }
 
@@ -98,6 +122,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.bulletin_col2:hover {
+    color: white;
+    cursor: pointer;
+    background-color: black;
 }
 
 @media screen and (max-width: 835px) {
