@@ -23,7 +23,7 @@ export default function GetAllSermon() {
 
         axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sermons`)
             .then((response) => {
-                setCurrentPosts(response.data.sermons.toReversed().slice(firstPostIndex, lastPostIndex));
+                setCurrentPosts(response.data.sermons.slice(firstPostIndex, lastPostIndex));
                 setSermon(response.data.sermons);
                 setIsLoading(false);
             })
