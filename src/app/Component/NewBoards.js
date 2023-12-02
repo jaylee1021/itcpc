@@ -111,7 +111,7 @@ export default function NewBoards() {
                     <br />
                     <input type='text' name='title' value={title} onChange={handleTitle} required />
                     <p>Title</p>
-                    <input type='text' name='eventDate' value={eventDate} onChange={handleEventDate} required />
+                    <input type='text' name='eventDate' value={eventDate} onChange={handleEventDate} placeholder='2023.01.01' required />
                     <p>Event Date</p>
 
                     <div className='new_sermon_button_section'>
