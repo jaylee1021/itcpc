@@ -193,6 +193,20 @@
         flex-wrap: wrap;
         align-content: center;
     }
+    
+
+    .board_col2{
+        flex: 1 0 25%;
+    }
+    .board_col3 {
+        flex: 1 0 20%;
+    }
+    .board_col4 {
+        flex: 1 0 10%;
+        align-content: flex-end;
+        flex-wrap: wrap;
+    }
+
     .bulletin_col1 {
         flex: 1 0 7%;
         display: flex;
@@ -200,22 +214,6 @@
         align-content: center;
         padding-right: 0;
     }
-
-    .board_col2,
-    .bulletin_col2 {
-        flex: 1 0 27%;
-    }
-    .board_col3,
-    .bulletin_col3 {
-        flex: 1 0 20%;
-    }
-    .board_col4,
-    .bulletin_col4 {
-        flex: 1 0 10%;
-        align-content: flex-end;
-        flex-wrap: wrap;
-    }
-
     .bulletin_col2 {
         flex: 1 0 35%;
     }

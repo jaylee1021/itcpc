@@ -60,7 +60,7 @@ export default function PDFViewer() {
                                         <th className='bulletin_col1'>번호</th>
                                         <th className='bulletin_col2'>주보</th>
                                         <th className='bulletin_col3'>날짜</th>
-                                        <th className='bulletin_col4'>조회수</th>
+                                        <th className='bulletin_col4' style={{ paddingLeft: '0' }}>조회수</th>
                                     </tr>
                                 </thead>
                                 <tbody>
