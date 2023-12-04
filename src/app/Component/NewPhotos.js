@@ -13,6 +13,7 @@ export default function NewPhotos() {
     }, []);
 
     const [thumbnail, setThumbnail] = useState('');
+
     const [photos, setPhotos] = useState([]);
     const [eventEngName, setEventEngName] = useState('');
     const [eventKorName, setEventKorName] = useState('');
@@ -64,6 +65,7 @@ export default function NewPhotos() {
                     setThumbnail(data.secure_url);
                     setFile('');
                     setIsThumbnailLoading(false);
+                    setBtnThumbnail(<button type='button' disabled style={{ backgroundColor: 'gray' }} onClick={handleThumbnailUpload} className='new_sermon_buttons'>Change Thumbnail</button>);
                     setThumbUploaded(<p className='file_uploaded'>썸네일이 업로드 되었습니다.</p>);
                 })
                 .catch((error) => console.log('Error', error));
@@ -97,6 +99,7 @@ export default function NewPhotos() {
                 setPhotos(allPhotoUrl);
                 setFile('');
                 setIsPhotosLoading(false);
+                setBtnPhotos(<button type='button' disabled style={{ backgroundColor: 'gray' }} onClick={handlePhotosUpload} className='new_sermon_buttons'>Change Photos</button>);
             } else {
                 alert('사진을 두장 이상 선택해주세요.');
             }
@@ -104,6 +107,9 @@ export default function NewPhotos() {
             alert('업로드할 파일을 먼저 선택해주세요.');
         }
     };
+
+    const [btnThumbnail, setBtnThumbnail] = useState(<button type='button' onClick={handleThumbnailUpload} className='new_sermon_buttons'>Upload Thumbnail</button>);
+    const [btnPhotos, setBtnPhotos] = useState(<button type='button' onClick={handlePhotosUpload} className='new_sermon_buttons'>Upload Photos</button>);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -148,7 +154,7 @@ export default function NewPhotos() {
                     <div className='thumbnails_uploader'>
                         <input className='thumbnail_file' type="file" id="thumbnail" name="thumbnail" accept='.png, .jpg, .jpeg' onChange={handleFileOpen} />
                         {file && isThumbnailLoading ? <LoadingLine /> : thumbUploaded}
-                        <button type='button' onClick={handleThumbnailUpload} className='new_sermon_buttons'>Upload Thumbnail</button>
+                        {btnThumbnail}
                     </div>
                     <br />
                     <input type='text' name='eventEngName' value={eventEngName} onChange={handleEventEngName} required />
@@ -177,7 +183,7 @@ export default function NewPhotos() {
                                 </div>
                                 :
                                 null}
-                        <button type='button' onClick={handlePhotosUpload} className='new_sermon_buttons'>Upload Photos</button>
+                        {btnPhotos}
                     </div>
                     <br />
                     <div>
