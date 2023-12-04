@@ -54,10 +54,10 @@ export default function NewPhotos() {
             setIsThumbnailLoading(true);
             const formData = new FormData();
             formData.append('file', file);
-            formData.append('upload_preset', `${process.env.NEXT_PUBLIC_PHOTO_PRESET}`);
+            formData.append('upload_preset', `${process.env.NEXT_PUBLIC_PHOTO_THUMBNAIL_PRESET}`);
             fetch(`${process.env.NEXT_PUBLIC_CLOUDINARY_URL}`, {
                 method: 'POST',
-                body: formData,
+                body: formData
             })
                 .then((response) => response.json())
                 .then((data) => {
