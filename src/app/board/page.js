@@ -10,7 +10,7 @@ import '../css/board.css';
 
 
 
-export default function Main() {
+export default function Board() {
 
     const [isLoading, setIsLoading] = useState(true);
     const [board, setBoard] = useState([]);
