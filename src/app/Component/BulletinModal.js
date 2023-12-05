@@ -46,7 +46,6 @@ export default function BulletinModal({ file, index }) {
     const countClick = () => {
         axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/bulletins/${file._id}`, { count: file.count + 1 })
             .then((response) => {
-                console.log('response.data.bulletin.count', response.data.bulletin.count);
                 setCount(response.data.bulletin.count);
             })
             .catch((err) => {
@@ -59,7 +58,7 @@ export default function BulletinModal({ file, index }) {
     }
 
     return (
-        <td style={{ display: 'flex' }}>
+        <td style={{ display: 'flex' }} key={file._id}>
             <td className='bulletin_col1'>
                 {index}
             </td>
