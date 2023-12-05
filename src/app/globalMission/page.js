@@ -1,19 +1,25 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import GetMissionGroup from '../Component/GetMissionGroup';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 import '../css/page.css';
 import '../css/missionGroup.css';
 
-export default function missionGroup() {
+export default function GlobalMission() {
 
-    const [missionGroup, setMissionGroup] = useState([]);
+    const [globalMissions, setGlobalMissions] = useState([]);
     // const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/missionGroups`)
+        axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/globalMissions`)
             .then((res) => {
-                setMissionGroup(res.data.missionGroups);
+                setGlobalMissions(res.data.globalMissions);
                 // setIsLoading(false);
             })
             .catch((err) => {
@@ -34,19 +40,30 @@ export default function missionGroup() {
                 <p className='subtitle-style'>Global Mission</p>
             </div>
             <section className='mission_group_section'>
-                {<GetMissionGroup gender='male' />}
-            </section>
-            <br />
-            <section className='mission_group_section'>
-                {<GetMissionGroup gender='female' />}
-            </section>
-            <br />
-            <section className='mission_group_section'>
-                {<GetMissionGroup gender='mix' />}
-            </section>
-            <br />
-            <section className='mission_group_section'>
-                {<GetMissionGroup gender='em' />}
+                <TableContainer component={Paper} className='table_top_section'>
+                    <Table aria-label="simple table">
+                        <TableHead >
+                            <TableRow className='positionBackground'>
+                                <TableCell className='positionName missionName' >부서명</TableCell>
+                                <TableCell align="center" className='positionName'>회장</TableCell>
+                                <TableCell align="center" className='positionName'>부회장</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {globalMissions.map((row) => (
+                                <TableRow
+                                    key={row._id}
+                                >
+                                    <TableCell component="th" scope="row" className='groupName' >
+                                        {row.groupName}
+                                    </TableCell>
+                                    <TableCell align="center" className='names'>{row.teamLead ? row.teamLead : '-'}</TableCell>
+                                    <TableCell align="center" className='names'>{row.member ? row.member : '-'}</TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
             </section>
         </>
     );
