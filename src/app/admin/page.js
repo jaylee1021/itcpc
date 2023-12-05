@@ -6,6 +6,7 @@ import '../css/page.css';
 import '../css/admin.css';
 import Link from 'next/link';
 import Editmission from '../Component/Editmission';
+import EditGlobalMission from '../Component/EditGlobalMission';
 import NewHistories from '../Component/NewHistories';
 import NewSermons from '../Component/NewSermons';
 import NewBanners from '../Component/NewBanners';
@@ -98,6 +99,9 @@ export default function AdminPage() {
                 </div>
                 <div className='forms'>
                     {<Editmission />}
+                </div>
+                <div className='forms'>
+                    {<EditGlobalMission />}
                 </div>
                 <div className='forms'>
                     {<NewHistories />}
