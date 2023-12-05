@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import { LoadingCircle } from "../Component/Loading";
 import Pagination_component from "../Component/Pagination_component";
@@ -9,7 +9,7 @@ import '../css/page.css';
 import '../css/sermons.css';
 import '../css/board.css';
 
-export default function PDFViewer() {
+export default function Bulletins() {
     pdfjs.GlobalWorkerOptions.workerSrc =
         `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -18,6 +18,9 @@ export default function PDFViewer() {
     const [currentBulletins, setCurrentBulletins] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(15);
+
+    const [searchQuery, setSearchQuery] = useState('');
+    const [bulletinList, setBulletinList] = useState([]);
 
     useEffect(() => {
         const lastPostIndex = currentPage * postsPerPage;
@@ -34,6 +37,50 @@ export default function PDFViewer() {
             });
     }, [currentPage]);
 
+    const bulletinSearchResult = useCallback((newSearchQuery) => {
+        const results = file.filter((singleBulletin) => {
+            return singleBulletin.date.includes(newSearchQuery);
+        });
+
+        setBulletinList(results);
+    }, [file]);
+
+    const renderBulletin = () => {
+        let rows = [];
+        if (bulletinList.length) {
+            for (let i = 0; i < bulletinList.length; i++) {
+                rows.push(
+                    <tr key={i}>
+                        <BulletinModal file={bulletinList[i]} index={Math.abs(i - bulletinList.length)} />
+                    </tr>
+                );
+            }
+        } else {
+            return (
+                <div className="component_sermon_section" key={file._id}>
+                    <div className="sermon_snap">
+                        <img src='404_not_found.png' className='articleImage' />
+                    </div>
+                    <div className="sermon_info" >
+                        <h3>
+                            검색 결과가 없습니다.
+                            <br />
+                            날짜를 확인 하시고 다시 검색 해 주세요.
+                        </h3>
+                    </div>
+                </div >
+            );
+        }
+
+        return rows;
+    };
+
+    const handleSearchChange = (e) => {
+        const newSearchQuery = e.target.value;
+        setSearchQuery(newSearchQuery);
+        bulletinSearchResult(newSearchQuery);
+    };
+
     if (isLoading) return <LoadingCircle />;
 
     return (
@@ -46,10 +93,15 @@ export default function PDFViewer() {
                 <p className='title-style'>주보</p>
                 <p className='subtitle-style'>Bulletin</p>
             </div>
+
             {isLoading ? <LoadingCircle />
                 :
                 <section className="bulletin_section">
+
                     <div className='bulletin_wrapper'>
+                        <div>
+                            <input type="text" placeholder="주보 찾기... (주보 날짜로 찾아 보실 수 있습니다)" className="search_sermon" onChange={handleSearchChange} />
+                        </div>
                         <div className="bulletin_pagination">
                             <Pagination_component totalPosts={file.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
                         </div>
@@ -64,13 +116,17 @@ export default function PDFViewer() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {currentBulletins.map((singleFile, index) => {
-                                        return (
-                                            <tr key={singleFile._id}>
-                                                <BulletinModal file={singleFile} index={Math.abs(index + (postsPerPage * (currentPage - 1)) - file.length)} />
-                                            </tr>
-                                        );
-                                    })}
+                                    {searchQuery === '' ?
+                                        currentBulletins.map((singleFile, index) => {
+                                            return (
+                                                <tr key={singleFile._id}>
+                                                    <BulletinModal file={singleFile} index={Math.abs(index + (postsPerPage * (currentPage - 1)) - file.length)} />
+                                                </tr>
+                                            );
+                                        })
+                                        :
+                                        renderBulletin()
+                                    }
                                 </tbody>
                             </table>
                         </div>

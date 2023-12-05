@@ -49,24 +49,24 @@ export default function GetAllSermon() {
                 );
             }
         } else {
-            rows.push(
+            return (
                 <div className="component_sermon_section" key={sermon._id}>
                     <div className="sermon_snap">
                         <img src='404_not_found.png' className='articleImage' />
                     </div>
                     <div className="sermon_info" >
                         <h3>
-                            <h3>검색 결과가 없습니다.</h3>
+                            검색 결과가 없습니다.
                         </h3>
-                        <p style={{ paddingRight: '400px' }}>
-                            <h3>철자를 확인 하시고 다시 검색 해 주세요.</h3>
-                        </p>
+                        <h3 style={{ paddingRight: '400px' }}>
+                            철자를 확인 하시고 다시 검색 해 주세요.
+                        </h3>
                     </div>
                 </div >
             );
         }
 
-        return rows.toReversed();
+        return rows;
     };
 
     const handleSearchChange = (e) => {

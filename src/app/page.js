@@ -34,6 +34,7 @@ export default function Home() {
         setSecondBoard(newBoard[newBoard.length - 3]);
         setThirdBoard(newBoard[newBoard.length - 2]);
         setFourthBoard(newBoard[newBoard.length - 1]);
+        setIsLoading(false);
       }
       catch (err) {
         console.log(err);
@@ -50,7 +51,6 @@ export default function Home() {
         setFirstGallery(newThumb[0]);
         setSecondGallery(newThumb[1]);
         setThirdGallery(newThumb[2]);
-        setIsLoading(false);
       }
       catch (err) {
         console.log(err);
