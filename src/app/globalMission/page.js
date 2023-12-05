@@ -10,6 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import '../css/page.css';
 import '../css/missionGroup.css';
+import '../css/globalMission.css';
 
 export default function GlobalMission() {
 
@@ -44,16 +45,14 @@ export default function GlobalMission() {
                     <Table aria-label="simple table">
                         <TableHead >
                             <TableRow className='positionBackground'>
-                                <TableCell className='positionName missionName' >부서명</TableCell>
-                                <TableCell align="center" className='positionName'>회장</TableCell>
-                                <TableCell align="center" className='positionName'>부회장</TableCell>
+                                <TableCell className='globalMissionTitle globalMissionName' >부서명</TableCell>
+                                <TableCell align="center" className='positionName'>부장</TableCell>
+                                <TableCell align="center" className='positionName'>부원</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {globalMissions.map((row) => (
-                                <TableRow
-                                    key={row._id}
-                                >
+                                <TableRow key={row._id}>
                                     <TableCell component="th" scope="row" className='groupName' >
                                         {row.groupName}
                                     </TableCell>

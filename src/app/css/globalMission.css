@@ -1,0 +1,10 @@
+.globalMissionTitle {
+    font-weight: bolder;
+    width: 100%;
+    text-align: center;
+}
+
+.globalMissionName {
+    /* width: 170px; */
+    font-size: 1.2rem;
+}
