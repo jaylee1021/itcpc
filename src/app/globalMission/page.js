@@ -8,6 +8,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { LoadingCircle } from '../Component/Loading';
 import '../css/page.css';
 import '../css/missionGroup.css';
 import '../css/globalMission.css';
@@ -16,21 +17,21 @@ export default function GlobalMission() {
 
     const [globalMissions, setGlobalMissions] = useState([]);
     const [lastElement, setLastElement] = useState([]);
-    // const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/globalMissions`)
             .then((res) => {
                 setGlobalMissions(res.data.globalMissions);
                 setLastElement(res.data.globalMissions.pop());
-                // setIsLoading(false);
+                setIsLoading(false);
             })
             .catch((err) => {
                 console.log(err);
             });
     }, []);
 
-    // if (isLoading) return <LoadingCircle />;
+    if (isLoading) return <LoadingCircle />;
 
     return (
         <>

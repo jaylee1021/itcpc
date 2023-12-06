@@ -11,6 +11,7 @@ export default function NewBulletin() {
     const [content, setContent] = useState('');
     const [file, setFile] = useState('');
     const [contentUpload, setContentUpload] = useState('');
+    const [kmEm, setKmEm] = useState('');
 
     const handleFileOpen = (e) => {
         setFile(e.target.files[0]);
@@ -24,8 +25,11 @@ export default function NewBulletin() {
         setDate(e.target.value);
     };
 
+    const handleKmEm = (e) => {
+        setKmEm(e.target.value);
+    };
+
     const [isContentLoading, setIsContentLoading] = useState(false);
-    const [isPosterLoading, setIsPosterLoading] = useState(false);
 
     const handleContentUpload = () => {
         if (file) {
@@ -52,7 +56,7 @@ export default function NewBulletin() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const new_bulletin = { special_title, content, date };
+        const new_bulletin = { special_title, content, date, kmEm };
         axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/bulletins/new`, new_bulletin)
             .then(response => {
                 alert('새로운 주보 등록에 "성공"했습니다.');
@@ -78,9 +82,14 @@ export default function NewBulletin() {
                     <br />
                     <input type='text' name='special_title' value={special_title} onChange={handleTitle} placeholder='Ex: 추수감사주일 (not required)' />
                     <p>Special Title</p>
-                    <input type='text' name='date' value={date} onChange={handleDate} placeholder='2023-01-01' required />
+                    <input type='date' name='date' value={date} onChange={handleDate} placeholder='2023-01-01' required />
                     <p>Event Date</p>
-
+                    <select name='kmEm' defaultValue={'default'} onChange={handleKmEm} required>
+                        <option value='default' disabled>Language</option>
+                        <option value='km'>Korean Ministry</option>
+                        <option value='em'>English Ministry</option>
+                    </select>
+                    <br />
                     <div className='new_sermon_button_section'>
                         <button type='submit' className='new_sermon_buttons'>
                             등록
