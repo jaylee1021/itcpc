@@ -60,20 +60,38 @@ export default function Bulletins() {
                 );
             }
         } else {
-            return (
-                <div className="component_sermon_section" key={file._id}>
-                    <div className="sermon_snap">
-                        <img src='404_not_found.png' className='articleImage' />
-                    </div>
-                    <div className="sermon_info" >
-                        <h3>
-                            검색 결과가 없습니다.
-                            <br />
-                            날짜를 확인 하시고 다시 검색 해 주세요.
-                        </h3>
-                    </div>
-                </div >
-            );
+
+            if (language === 'km') {
+                return (
+                    <div className="component_sermon_section" key={file._id}>
+                        <div className="sermon_snap">
+                            <img src='../404_not_found.png' className='articleImage' />
+                        </div>
+                        <div className="sermon_info" >
+                            <h3>
+                                검색 결과가 없습니다.
+                                <br />
+                                날짜를 확인 하시고 다시 검색 해 주세요.
+                            </h3>
+                        </div>
+                    </div >
+                );
+            } else {
+                return (
+                    <div className="component_sermon_section" key={file._id}>
+                        <div className="sermon_snap">
+                            <img src='../404_not_found.png' className='articleImage' />
+                        </div>
+                        <div className="sermon_info" >
+                            <h3>
+                                No search results found.
+                                <br />
+                                Please check the date and search again.
+                            </h3>
+                        </div>
+                    </div >
+                );
+            }
         }
 
         return rows;
@@ -179,4 +197,4 @@ export default function Bulletins() {
             }
         </>
     );
-}
+};
