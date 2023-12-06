@@ -15,12 +15,14 @@ import '../css/globalMission.css';
 export default function GlobalMission() {
 
     const [globalMissions, setGlobalMissions] = useState([]);
+    const [lastElement, setLastElement] = useState([]);
     // const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/globalMissions`)
             .then((res) => {
                 setGlobalMissions(res.data.globalMissions);
+                setLastElement(res.data.globalMissions.pop());
                 // setIsLoading(false);
             })
             .catch((err) => {
@@ -46,12 +48,38 @@ export default function GlobalMission() {
                         <TableHead >
                             <TableRow className='positionBackground'>
                                 <TableCell className='globalMissionTitle globalMissionName' >부서명</TableCell>
+                                <TableCell align="center" className='positionName'>사역원장</TableCell>
+                                <TableCell align="center" className='positionName'>총무</TableCell>
+                                <TableCell align="center" className='positionName'>회계</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {/* {globalMissions.slice(0, -1).map((row) => ( */}
+                            <TableRow>
+                                <TableCell component="th" scope="row" className='groupName' >
+                                    {lastElement.groupName}
+                                </TableCell>
+                                <TableCell align="center" className='names'>{lastElement.globalMissionsLeader ? lastElement.globalMissionsLeader : '-'}</TableCell>
+                                <TableCell align="center" className='names'>{lastElement.secretary ? lastElement.secretary : '-'}</TableCell>
+                                <TableCell align="center" className='names'>{lastElement.treasurer ? lastElement.treasurer : '-'}</TableCell>
+                            </TableRow>
+                            {/* ))} */}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </section>
+            <section className='mission_group_section'>
+                <TableContainer component={Paper} className='table_top_section'>
+                    <Table aria-label="simple table">
+                        <TableHead >
+                            <TableRow className='positionBackground'>
+                                <TableCell className='globalMissionTitle globalMissionName' >부서명</TableCell>
                                 <TableCell align="center" className='positionName'>부장</TableCell>
                                 <TableCell align="center" className='positionName'>부원</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {globalMissions.map((row) => (
+                            {globalMissions.slice(0, -1).map((row) => (
                                 <TableRow key={row._id}>
                                     <TableCell component="th" scope="row" className='groupName' >
                                         {row.groupName}
