@@ -75,17 +75,34 @@ export default function NewBoards() {
         }
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const new_board = { url: poster, title, snap, eventDate };
+    const postNewBoard = (new_board) => {
         axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/boards/new`, new_board)
             .then(response => {
-
                 alert('새로운 게시글 등록에 "성공"했습니다.');
                 window.location.reload();
 
             })
             .catch(error => console.log('===> Error creating a sermon', error));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let new_board = {};
+        if (poster) {
+            if (!snap) {
+                if (confirm('Do you want to use poster image as thumbnail?')) {
+                    new_board = { url: poster, title, snap: poster, eventDate };
+                    postNewBoard(new_board);
+                } else {
+                    alert('썸네일을 먼저 업로드해주세요.');
+                }
+            } else {
+                new_board = { url: poster, title, snap, eventDate };
+                postNewBoard(new_board);
+            }
+        } else {
+            alert('포스터 파일을 먼저 업로드해주세요.');
+        }
     };
 
     return (
@@ -123,4 +140,4 @@ export default function NewBoards() {
             </div >
         </div>
     );
-}
+};
