@@ -40,22 +40,20 @@ export default function GlobalMission() {
                 <img src='/main_banner.png' className='mainBannerImage' />
             </section>
             <div className='title' >
-                <p className='title-style'>세계선교</p>
-                <p className='subtitle-style'>Global Mission</p>
-            </div>
-            <div style={{ maxWidth: '900px', margin: '20px auto 0 auto' }}>
-                <h4 style={{ margin: '0' }}>선교사역원 조직 Global Missions Staff</h4>
+                <p className='title-style'>평신도훈련</p>
+                <p className='subtitle-style'>Adult Training</p>
             </div>
             <section className='mission_group_section'>
-                <TableContainer component={Paper} className='table_top_section' style={{ display: 'flex', flexDirection: 'column' }}>
-                    <Table aria-label="simple table"><TableHead >
-                        <TableRow className='positionBackground'>
-                            <TableCell className='globalMissionTitle globalMissionName' >부서명</TableCell>
-                            <TableCell align="center" className='positionName'>사역원장</TableCell>
-                            <TableCell align="center" className='positionName'>총무</TableCell>
-                            <TableCell align="center" className='positionName'>회계</TableCell>
-                        </TableRow>
-                    </TableHead>
+                <TableContainer component={Paper} className='table_top_section'>
+                    <Table aria-label="simple table">
+                        <TableHead >
+                            <TableRow className='positionBackground'>
+                                <TableCell className='globalMissionTitle globalMissionName' >부서명</TableCell>
+                                <TableCell align="center" className='positionName'>사역원장</TableCell>
+                                <TableCell align="center" className='positionName'>총무</TableCell>
+                                <TableCell align="center" className='positionName'>회계</TableCell>
+                            </TableRow>
+                        </TableHead>
                         <TableBody>
                             {/* {globalMissions.slice(0, -1).map((row) => ( */}
                             <TableRow>

@@ -1,12 +1,12 @@
 .globalMissionTitle {
-    font-weight: bolder;
+    font-weight: bolder !important;
     width: 100%;
     text-align: center;
 }
 
 .globalMissionName {
     width: 300px;
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
 }
 
 @media screen and (max-width: 550px) {
