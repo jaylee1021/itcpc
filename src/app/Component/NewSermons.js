@@ -130,7 +130,7 @@ export default function NewSermons() {
     };
 
     const handleClean = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         setEmbed0('');
         setEmbed1('');
         setEmbed2('');
