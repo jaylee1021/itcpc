@@ -30,7 +30,7 @@ table {
 
 .missionName {
     width: 170px;
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
 }
 
 .groupName {
