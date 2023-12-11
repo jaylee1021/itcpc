@@ -56,13 +56,17 @@ export default function NewBulletin() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const new_bulletin = { special_title, content, date, kmEm };
-        axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/bulletins/new`, new_bulletin)
-            .then(response => {
-                alert('새로운 주보 등록에 "성공"했습니다.');
-                window.location.reload();
-            })
-            .catch(error => console.log('===> Error creating a sermon', error));
+        if (content) {
+            const new_bulletin = { special_title, content, date, kmEm };
+            axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/bulletins/new`, new_bulletin)
+                .then(response => {
+                    alert('새로운 주보 등록에 "성공"했습니다.');
+                    window.location.reload();
+                })
+                .catch(error => console.log('===> Error creating a sermon', error));
+        } else {
+            alert('주보를 먼저 업로드 해주세요.');
+        }
     };
 
     return (
