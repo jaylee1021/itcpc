@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect, useCallback } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
+import { pdfjs } from "react-pdf";
 import { useParams } from "next/navigation";
 import { LoadingCircle } from "../../Component/Loading";
 import Pagination_component from "../../Component/Pagination_component";
@@ -22,7 +22,6 @@ export default function Bulletins() {
     const [currentBulletins, setCurrentBulletins] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(15);
-
     const [searchQuery, setSearchQuery] = useState('');
     const [bulletinList, setBulletinList] = useState([]);
 
@@ -60,7 +59,6 @@ export default function Bulletins() {
                 );
             }
         } else {
-
             if (language === 'km') {
                 return (
                     <div className="component_sermon_section" key={file._id}>
@@ -93,7 +91,6 @@ export default function Bulletins() {
                 );
             }
         }
-
         return rows;
     };
 

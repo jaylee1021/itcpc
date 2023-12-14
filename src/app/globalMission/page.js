@@ -57,7 +57,6 @@ export default function GlobalMission() {
                         </TableRow>
                     </TableHead>
                         <TableBody>
-                            {/* {globalMissions.slice(0, -1).map((row) => ( */}
                             <TableRow>
                                 <TableCell component="th" scope="row" className='groupName' >
                                     {lastElement.groupName}
@@ -66,7 +65,6 @@ export default function GlobalMission() {
                                 <TableCell align="center" className='names'>{lastElement.secretary ? lastElement.secretary : '-'}</TableCell>
                                 <TableCell align="center" className='names'>{lastElement.treasurer ? lastElement.treasurer : '-'}</TableCell>
                             </TableRow>
-                            {/* ))} */}
                         </TableBody>
                     </Table>
                 </TableContainer>

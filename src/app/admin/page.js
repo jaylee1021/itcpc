@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import '../css/page.css';
@@ -17,7 +16,6 @@ import setAuthToken from '../utils/setAuthToken';
 import jwtDecode from 'jwt-decode';
 import axios from 'axios';
 import handleLogout from '../utils/handleLogout';
-import { LoadingCircle } from '../Component/Loading';
 
 
 

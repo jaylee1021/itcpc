@@ -1,5 +1,5 @@
 'use client';
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { LoadingSpinningBubble } from './Component/Loading';
 import axios from 'axios';
@@ -7,7 +7,6 @@ import PhotoModal from './Component/PhotoModal';
 import GetLastSermon from './Component/GetLastSermon';
 import ShowBanner from './Component/ShowBanner';
 import Link from 'next/link';
-import Carousel from 'react-bootstrap/Carousel';
 import 'animate.css';
 import './css/page.css';
 import './css/gallery.css';

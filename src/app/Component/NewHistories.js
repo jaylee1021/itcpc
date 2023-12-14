@@ -23,8 +23,6 @@ export default function NewHistories() {
         setOrder(e.target.value);
     };
 
-    const [isLoading, setIsLoading] = useState(false);
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const new_history = { date, event_description, order };

@@ -11,9 +11,6 @@ import '../css/page.css';
 import '../css/sermons.css';
 import '../css/board.css';
 
-
-
-
 const style = {
     position: 'absolute',
     top: '50%',

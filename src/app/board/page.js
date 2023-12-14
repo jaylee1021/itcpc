@@ -7,9 +7,6 @@ import axios from 'axios';
 import '../css/page.css';
 import '../css/board.css';
 
-
-
-
 export default function Board() {
 
     const [isLoading, setIsLoading] = useState(true);
@@ -32,7 +29,6 @@ export default function Board() {
                 console.log(err);
             });
     }, []);
-
 
     return (
         <>
@@ -77,4 +73,4 @@ export default function Board() {
             }
         </>
     );
-};;;
+};
