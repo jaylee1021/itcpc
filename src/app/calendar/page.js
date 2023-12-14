@@ -1,6 +1,4 @@
-'use client';
 import '../css/page.css';
-
 
 export default function Calendar() {
 

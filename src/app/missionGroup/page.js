@@ -1,27 +1,9 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import GetMissionGroup from '../Component/GetMissionGroup';
 import '../css/page.css';
 import '../css/missionGroup.css';
 
 export default function missionGroup() {
-
-    const [missionGroup, setMissionGroup] = useState([]);
-    // const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/missionGroups`)
-            .then((res) => {
-                setMissionGroup(res.data.missionGroups);
-                // setIsLoading(false);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, []);
-
-    // if (isLoading) return <LoadingCircle />;
 
     return (
         <>

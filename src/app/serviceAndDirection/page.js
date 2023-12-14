@@ -1,5 +1,3 @@
-'use client';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Link from 'next/link';
 import '../css/page.css';
 import '../css/service.css';
@@ -11,7 +9,7 @@ export default function ServiceAndDirection() {
             <title>타코마중앙장로교회</title>
             <section className='mainBannerCenter'>
                 <div className='service_banner_wrapper'>
-                    <LazyLoadImage src='/new_comer_top_banner.jpg' className='mainBannerImage' />
+                    <img src='/new_comer_top_banner.jpg' className='mainBannerImage' />
                     <div className='service_banner_title'>
                         <p>
                             {/* 예배 및 모임 / 약도 */}
@@ -27,7 +25,7 @@ export default function ServiceAndDirection() {
             <section className='service_total'>
                 <div className='service_section sunday_service_background'>
                     <div className='service_section_image_wrapper'>
-                        <LazyLoadImage src='/service_sunday_worship.png' className='service_section_image' />
+                        <img src='/service_sunday_worship.png' className='service_section_image' />
                     </div>
                     <div className='hide'>
                         <div className='service_section_title'>
@@ -51,7 +49,7 @@ export default function ServiceAndDirection() {
                 </div>
                 <div className='service_section ow_background'>
                     <div className='service_section_image_wrapper'>
-                        <LazyLoadImage src='/service_OW.png' className='service_section_image' />
+                        <img src='/service_OW.png' className='service_section_image' />
                     </div>
                     <div>
                         <div className='service_section_title'>
@@ -72,7 +70,7 @@ export default function ServiceAndDirection() {
                 </div>
                 <div className='service_section youth_background'>
                     <div className='service_section_image_wrapper'>
-                        <LazyLoadImage src='/service_youth.png' className='service_section_image' />
+                        <img src='/service_youth.png' className='service_section_image' />
                     </div>
                     <div>
                         <div className='service_section_title'>
@@ -100,7 +98,7 @@ export default function ServiceAndDirection() {
                 </div>
                 <div className='service_section sunday_school_background'>
                     <div className='service_section_image_wrapper'>
-                        <LazyLoadImage src='/service_sunday_school.png' className='service_section_image' />
+                        <img src='/service_sunday_school.png' className='service_section_image' />
                     </div>
                     <div>
                         <div className='service_section_title'>
@@ -121,7 +119,7 @@ export default function ServiceAndDirection() {
 
                 <div className='service_section wed_service_background'>
                     <div className='service_section_image_wrapper'>
-                        <LazyLoadImage src='/service_wed_service.png' className='service_section_image' />
+                        <img src='/service_wed_service.png' className='service_section_image' />
                     </div>
                     <div>
                         <div className='service_section_title'>
@@ -140,7 +138,7 @@ export default function ServiceAndDirection() {
 
                 <div className='service_section morning_prayer_background'>
                     <div className='service_section_image_wrapper'>
-                        <LazyLoadImage src='/service_morning_prayer.png' className='service_section_image' />
+                        <img src='/service_morning_prayer.png' className='service_section_image' />
                     </div>
                     <div>
                         <div className='service_section_title'>
@@ -162,7 +160,7 @@ export default function ServiceAndDirection() {
 
                 <div className='service_section small_group_background'>
                     <div className='service_section_image_wrapper'>
-                        <LazyLoadImage src='/service_small_group.png' className='service_section_image' />
+                        <img src='/service_small_group.png' className='service_section_image' />
                     </div>
                     <div>
                         <div className='service_section_title'>
@@ -178,7 +176,7 @@ export default function ServiceAndDirection() {
                 </div>
                 <div className='service_section korean_school_background'>
                     <div className='service_section_image_wrapper'>
-                        <LazyLoadImage src='/service_korean_school.png' className='service_section_image' />
+                        <img src='/service_korean_school.png' className='service_section_image' />
                     </div>
                     <div>
                         <div className='service_section_title'>

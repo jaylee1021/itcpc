@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import GetAllSermon from '../Component/GetAllSermon';
 import '../css/page.css';

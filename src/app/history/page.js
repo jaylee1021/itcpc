@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import GetHistory from '../Component/GetHistory';
 import '../css/page.css';

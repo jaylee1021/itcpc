@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import '../css/page.css';
 import '../css/about.css';
@@ -11,11 +9,6 @@ export default function About() {
             <section className='mainBannerCenter' style={{ backgroundColor: 'white' }}>
                 <div className='about_banner_wrapper'>
                     <img src='/main_banner.png' className='mainBannerImage' />
-                    {/* <div className='about_banner_title'>
-                        <p>
-                            W  E  L  C  O  M  E
-                        </p>
-                    </div> */}
                 </div>
             </section>
             <div className='title'>
