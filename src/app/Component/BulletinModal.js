@@ -61,7 +61,7 @@ export default function BulletinModal({ file, index }) {
             </td>
             <td className='bulletin_col2' onClick={handleOpen}>
                 {file.special_title ?
-                    file.date.split('T')[0] + ' ' + file.special_title + '' + file.title
+                    file.date.split('T')[0] + ' ' + file.special_title + ' ' + file.title
                     :
                     file.date.split('T')[0] + ' ' + file.title}
             </td>
