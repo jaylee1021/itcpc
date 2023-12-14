@@ -44,7 +44,7 @@ export default function Navbar() {
                     <Link href='../missionGroup' className='menu_link'><MenuItem>선교회</MenuItem></Link>
                     <Link href='../globalMission' className='menu_link'><MenuItem>세계선교</MenuItem></Link>
                     <Link href='#' className='menu_link'><MenuItem>평신도훈련</MenuItem></Link>
-                    <Link href='https://www.tacomakoreanschool.org/' className='menu_link'><MenuItem>타코마한국학교</MenuItem></Link>
+                    <Link href='https://www.tacomakoreanschool.org/' target='_blank' className='menu_link'><MenuItem>타코마한국학교</MenuItem></Link>
                 </ul>
             </li>
             <li className="nav-item dropdown">
@@ -101,7 +101,7 @@ export default function Navbar() {
                 <Link href='../missionGroup' className='menu_link'><MenuItem>선교회</MenuItem></Link>
                 <Link href='../globalMission' className='menu_link'><MenuItem>세계선교</MenuItem></Link>
                 <Link href='#' className='menu_link'><MenuItem>평신도훈련</MenuItem></Link>
-                <Link href='https://www.tacomakoreanschool.org/' className='menu_link'><MenuItem>타코마한국학교</MenuItem></Link>
+                <Link href='https://www.tacomakoreanschool.org/' target='_blank' className='menu_link'><MenuItem>타코마한국학교</MenuItem></Link>
             </ul>
         </li>
         <li>

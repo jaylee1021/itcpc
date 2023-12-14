@@ -214,7 +214,7 @@ export default function Home() {
           </div>
           <div className='padding10'>
             <div className='imageWrapper'>
-              <Link href='https://www.tacomakoreanschool.org/'>
+              <Link href='https://www.tacomakoreanschool.org/' target='_blank'>
                 <img src='/korean_school.png' className='articleImage' />
               </Link>
               <div className='four_button_title'>
