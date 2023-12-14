@@ -71,6 +71,9 @@ export default function GetEventPhotos({ eventName }) {
 
     return (
         <>
+            <div className='title' >
+                <p className='title-style'>{thumbnail[currentEvent - 1].eventKorName}</p>
+            </div>
             <div className="bottomButtons">
                 <div>
                     {currentEvent - 1 === 0 ? null : <button onClick={() => routePrevOrNExt(thumbnail[currentEvent - 2].eventEngName)} className="btn nextButton">&lt;&lt;{thumbnail[currentEvent - 2].eventKorName}</button>}
