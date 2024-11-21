@@ -21,7 +21,6 @@ export default function Home() {
   const [firstGallery, setFirstGallery] = useState([]);
   const [secondGallery, setSecondGallery] = useState([]);
   const [thirdGallery, setThirdGallery] = useState([]);
-  const [liveLink, setLiveLink] = useState('');
   const router = useRouter();
 
   useEffect(() => {
@@ -63,72 +62,6 @@ export default function Home() {
     router.push(`/gallery/${eventName}`);
   };
 
-  // timer to show live link on sunday
-  // useEffect(() => {
-  //   axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/scheduled/6559d0d05b3a057f10e39a29`)
-  //     .then((response) => {
-  //       const isScheduled = response.data.scheduled.scheduled;
-
-
-  //       // If today is Sunday and the task hasn't been scheduled yet, call the scheduling function
-  //       if (isScheduled === false) {
-  //         scheduleSundayTask();
-  //       }
-  //       setIsLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
-
-  // function millisecondsSinceMidnight() {
-  //   const currentDate = new Date(); // Get current date and time
-  //   const hours = currentDate.getHours(); // Get the current hour
-  //   const minutes = currentDate.getMinutes(); // Get the current minute
-  //   const seconds = currentDate.getSeconds(); // Get the current second
-
-  //   // Calculate the elapsed time since midnight in milliseconds
-  //   const elapsedMilliseconds = (hours * 60 * 60 * 1000) + (minutes * 60 * 1000) + (seconds * 1000);
-  //   return elapsedMilliseconds; // Return the total milliseconds elapsed since midnight
-  // }
-
-  // function scheduleSundayTask() {
-  //   const millisecondsElapsed = millisecondsSinceMidnight();
-
-  //   const delayToStart = 27876000 - (millisecondsElapsed); // Calculate milliseconds until next Sunday 07:50 AM PST
-  //   console.log('delaytostart', delayToStart);
-  //   // Schedule the task to start on this Sunday at 08:40 AM PST and repeat every 7 days
-  //   setTimeout(function () {
-  //     runTask(); // Execute the task
-
-  //     // Set an interval to run the task every 7 days (604800000 milliseconds = 7 days)
-  //     setInterval(runTask, 7 * 24 * 60 * 60 * 1000);
-
-  //     // Mark the task as scheduled on your server side
-  //     axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/scheduled/6559d0d05b3a057f10e39a29`, { scheduled: true })
-  //       .then((response) => {
-  //         console.log('scheduled');
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-
-  //   }, delayToStart);
-  // }
-
-  // function runTask() {
-  //   // Your task to be executed on Sundays at 07:50 AM PST
-  //   console.log("Task started on Sunday at 07:50 AM PST");
-  //   // Include your specific code or function to run here
-  //   setLiveLink(<Link href='https://www.youtube.com/channel/UC8ilaSeso9X1qNQq00WxKeA/live' target='_blank' className='live_stream_link'>&gt;라이브 온라인 예배&lt;</Link>);
-
-  //   // Schedule the task to end after 4 hours and 40 mins (roughly at 12:30 PM PST)
-  //   setTimeout(function () {
-  //     console.log("Task ended at 12:30 PM PST");
-  //     setLiveLink('');
-  //   }, 16800000);
-  // }
-
   if (isLoading) return <LoadingSpinningBubble />;
 
   return (
@@ -140,9 +73,6 @@ export default function Home() {
       <div className='title' >
         <p className='title-style'>주일 예배</p>
         <p className='subtitle-style'>Sunday Worship</p>
-      </div>
-      <div style={{ textAlign: 'center', animationDuration: '5s' }} className='animate__animated animate__flash animate__infinite'>
-        {liveLink}
       </div>
       <section className='videoSection'>
         <GetLastSermon sermonSession='1부' />

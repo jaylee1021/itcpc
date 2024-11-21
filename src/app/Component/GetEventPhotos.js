@@ -23,7 +23,6 @@ export default function GetEventPhotos({ eventName }) {
         axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/photos/${eventName}`)
             .then((response) => {
                 setPhoto(response.data.photos.toReversed());
-
             })
             .catch((err) => {
                 console.log(err);
