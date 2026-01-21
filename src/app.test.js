@@ -1,11 +1,8 @@
-// import renderer from 'react-test-renderer';
-// import { render, screen } from '@testing-library/react';
-// import Navbar from './app/navbar';
-// // import RootLayout from './app/layout';
-// import History from './app/history/page';
+import { render } from '@testing-library/react';
+import Navbar from './app/navbar';
 
-// it('renders without crashing', async () => {
-//     render(<Navbar />);
-// });
+it('renders without crashing', async () => {
+    render(<Navbar />);
+});
 
 
