@@ -6,6 +6,7 @@ import axios from 'axios';
 import PhotoModal from './Component/PhotoModal';
 import GetLastSermon from './Component/GetLastSermon';
 import ShowBanner from './Component/ShowBanner';
+import Image from 'next/image';
 import Link from 'next/link';
 import 'animate.css';
 import './css/page.css';
@@ -118,7 +119,16 @@ export default function Home() {
         <div className='videoSection second_section'>
           <div className='padding10'>
             <div className='imageWrapper'>
-              <Link href='./serviceAndDirection'><img src='/direction.png' className='articleImage' /></Link>
+              <Link href='./serviceAndDirection'>
+                <Image
+                  src='/direction.png'
+                  className='articleImage'
+                  alt='direction'
+                  width={300}
+                  height={200}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </Link>
               <div className='four_button_title'>
                 <p>예배안내/약도</p>
               </div>
@@ -126,7 +136,16 @@ export default function Home() {
           </div>
           <div className='padding10'>
             <div className='imageWrapper'>
-              <Link href='./ministry'><img src='/church_school.png' className='articleImage' /></Link>
+              <Link href='./ministry'>
+                <Image
+                  src='/church_school.png'
+                  className='articleImage'
+                  alt='church_school'
+                  width={300}
+                  height={200}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </Link>
               <div className='four_button_title'>
                 <p>미니스트리</p>
               </div>
@@ -136,7 +155,16 @@ export default function Home() {
         <div className='videoSection second_section'>
           <div className='padding10'>
             <div className='imageWrapper'>
-              <Link href='./newComer'><img src='/new_comer.png' className='articleImage' /></Link>
+              <Link href='./newComer'>
+                <Image
+                  src='/new_comer.png'
+                  className='articleImage'
+                  alt='new_comer'
+                  width={300}
+                  height={200}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </Link>
               <div className='four_button_title'>
                 <p>새가족</p>
               </div>
@@ -145,7 +173,14 @@ export default function Home() {
           <div className='padding10'>
             <div className='imageWrapper'>
               <Link href='https://www.tacomakoreanschool.org/' target='_blank'>
-                <img src='/korean_school.png' className='articleImage' />
+                <Image
+                  src='/korean_school.png'
+                  className='articleImage'
+                  alt='korean_school'
+                  width={300}
+                  height={200}
+                  style={{ width: '100%', height: 'auto' }}
+                />
               </Link>
               <div className='four_button_title'>
                 <p>한국학교</p>
@@ -174,7 +209,15 @@ export default function Home() {
         <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
-              <img src={firstGallery.url} onClick={() => handleGallery(firstGallery)} className='whats_new_image' />
+              <Image
+                src={firstGallery.url}
+                onClick={() => handleGallery(firstGallery)}
+                className='whats_new_image'
+                height={300}
+                width={300}
+                alt='gallery1'
+                style={{ objectFit: 'cover' }}
+              />
             </div>
             <div className='more-info'>
               <p>{firstGallery.eventKorName}</p>
@@ -184,7 +227,15 @@ export default function Home() {
         <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
-              <img src={secondGallery.url} onClick={() => handleGallery(secondGallery)} className='whats_new_image' />
+              <Image
+                src={secondGallery.url}
+                onClick={() => handleGallery(secondGallery)}
+                className='whats_new_image'
+                height={300}
+                width={300}
+                alt='gallery2'
+                style={{ objectFit: 'cover' }}
+              />
             </div>
             <div className='more-info'>
               <p>{secondGallery.eventKorName}</p>
@@ -194,7 +245,15 @@ export default function Home() {
         <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
-              <img src={thirdGallery.url} onClick={() => handleGallery(thirdGallery)} className='whats_new_image' />
+              <Image
+                src={thirdGallery.url}
+                onClick={() => handleGallery(thirdGallery)}
+                className='whats_new_image'
+                height={300}
+                width={300}
+                alt='gallery3'
+                style={{ objectFit: 'cover' }}
+              />
             </div>
             <div className='more-info'>
               <p>{thirdGallery.eventKorName}</p>

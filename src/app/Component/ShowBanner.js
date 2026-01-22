@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { LoadingSpinningBubble } from './Loading';
 import Carousel from 'react-bootstrap/Carousel';
 import axios from 'axios';
+import Image from 'next/image';
 import 'animate.css';
 import '../css/page.css';
 import '../css/gallery.css';
@@ -30,7 +31,15 @@ export default function ShowBanner() {
             {banners.map((singleBanner, index) => {
                 return (
                     <Carousel.Item key={index}>
-                        <img src={singleBanner.url} className="d-block w-100" alt="..." />
+                        <Image
+                            src={singleBanner.url}
+                            className="d-block w-100"
+                            alt="..."
+                            width={1600}
+                            height={900}
+                            style={{ width: '100%', height: 'auto' }}
+                            priority={index === 0}
+                        />
                     </Carousel.Item>
                 );
             })}
