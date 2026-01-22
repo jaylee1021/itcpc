@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import WelcomingCommitee from '../Component/WelcomingCommitee';
 import '../css/page.css';
 import '../css/newComer.css';
 import '../css/about.css';
@@ -78,150 +79,12 @@ export default function NewComer() {
                 <p className='subtitle-style'>Welcoming Committee</p>
             </div>
             <section className='staff_section'>
-                <div className='profile_section'>
-                    <img src='/pastor_james.png' className='pastor_image' />
-                    <div className='profile_info'>
-                        <p>
-                            <span className='staff_name'>
-                                김용주 목사
-                            </span>
-                            <br />
-                            <span className='staff_eng_name'>
-                                Pastor James Y. Kim
-                            </span>
-                            <br />
-                            <span className='staff_position'>
-                                교구, 양육/새가족
-                            </span>
-                            <br />
-                            <br />
-                            <br />
-                            <span>
-                                tcpcristern@gmail.com
-                            </span>
-                        </p>
-                    </div>
-                </div>
-                <div className='profile_section'>
-                    <img src='/pastor_james.png' className='pastor_image' />
-                    <div className='profile_info'>
-                        <p>
-                            <span className='staff_name'>
-                                김용주 목사
-                            </span>
-                            <br />
-                            <span className='staff_eng_name'>
-                                Pastor James Y. Kim
-                            </span>
-                            <br />
-                            <span className='staff_position'>
-                                교구, 양육/새가족
-                            </span>
-                            <br />
-                            <br />
-                            <br />
-                            <span>
-                                tcpcristern@gmail.com
-                            </span>
-                        </p>
-                    </div>
-                </div>
-                <div className='profile_section'>
-                    <img src='/pastor_james.png' className='pastor_image' />
-                    <div className='profile_info'>
-                        <p>
-                            <span className='staff_name'>
-                                김용주 목사
-                            </span>
-                            <br />
-                            <span className='staff_eng_name'>
-                                Pastor James Y. Kim
-                            </span>
-                            <br />
-                            <span className='staff_position'>
-                                교구, 양육/새가족
-                            </span>
-                            <br />
-                            <br />
-                            <br />
-                            <span>
-                                tcpcristern@gmail.com
-                            </span>
-                        </p>
-                    </div>
-                </div>
-                <div className='profile_section'>
-                    <img src='/pastor_james.png' className='pastor_image' />
-                    <div className='profile_info'>
-                        <p>
-                            <span className='staff_name'>
-                                김용주 목사
-                            </span>
-                            <br />
-                            <span className='staff_eng_name'>
-                                Pastor James Y. Kim
-                            </span>
-                            <br />
-                            <span className='staff_position'>
-                                교구, 양육/새가족
-                            </span>
-                            <br />
-                            <br />
-                            <br />
-                            <span>
-                                tcpcristern@gmail.com
-                            </span>
-                        </p>
-                    </div>
-                </div>
-                <div className='profile_section'>
-                    <img src='/pastor_james.png' className='pastor_image' />
-                    <div className='profile_info'>
-                        <p>
-                            <span className='staff_name'>
-                                김용주 목사
-                            </span>
-                            <br />
-                            <span className='staff_eng_name'>
-                                Pastor James Y. Kim
-                            </span>
-                            <br />
-                            <span className='staff_position'>
-                                교구, 양육/새가족
-                            </span>
-                            <br />
-                            <br />
-                            <br />
-                            <span>
-                                tcpcristern@gmail.com
-                            </span>
-                        </p>
-                    </div>
-                </div>
-                <div className='profile_section'>
-                    <img src='/pastor_james.png' className='pastor_image' />
-                    <div className='profile_info'>
-                        <p>
-                            <span className='staff_name'>
-                                김용주 목사
-                            </span>
-                            <br />
-                            <span className='staff_eng_name'>
-                                Pastor James Y. Kim
-                            </span>
-                            <br />
-                            <span className='staff_position'>
-                                교구, 양육/새가족
-                            </span>
-                            <br />
-                            <br />
-                            <br />
-                            <span>
-                                tcpcristern@gmail.com
-                            </span>
-                        </p>
-                    </div>
-                </div>
+                <WelcomingCommitee src='/pastor_james.png' staffName='김용주 목사' staffEngName='Pastor James Y. Kim' staffPosition='교구, 양육/새가족' staffEmail='tcpcristern@gmail.com' />
+                <WelcomingCommitee src='/pastor_james.png' staffName='김용주 목사' staffEngName='Pastor James Y. Kim' staffPosition='교구, 양육/새가족' staffEmail='tcpcristern@gmail.com' />
+                <WelcomingCommitee src='/pastor_james.png' staffName='김용주 목사' staffEngName='Pastor James Y. Kim' staffPosition='교구, 양육/새가족' staffEmail='tcpcristern@gmail.com' />
+                <WelcomingCommitee src='/pastor_james.png' staffName='김용주 목사' staffEngName='Pastor James Y. Kim' staffPosition='교구, 양육/새가족' staffEmail='tcpcristern@gmail.com' />
+                <WelcomingCommitee src='/pastor_james.png' staffName='김용주 목사' staffEngName='Pastor James Y. Kim' staffPosition='교구, 양육/새가족' staffEmail='tcpcristern@gmail.com' />
+                <WelcomingCommitee src='/pastor_james.png' staffName='김용주 목사' staffEngName='Pastor James Y. Kim' staffPosition='교구, 양육/새가족' staffEmail='tcpcristern@gmail.com' />
             </section>
         </>
     );
