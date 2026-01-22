@@ -209,54 +209,60 @@ export default function Home() {
         <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
-              <Image
-                src={firstGallery.url}
-                onClick={() => handleGallery(firstGallery)}
-                className='whats_new_image'
-                height={300}
-                width={300}
-                alt='gallery1'
-                style={{ objectFit: 'cover' }}
-              />
+              {firstGallery?.url && (
+                <Image
+                  src={firstGallery.url}
+                  onClick={() => handleGallery(firstGallery)}
+                  className='whats_new_image'
+                  height={300}
+                  width={300}
+                  alt='gallery1'
+                  style={{ objectFit: 'cover' }}
+                />
+              )}
             </div>
             <div className='more-info'>
-              <p>{firstGallery.eventKorName}</p>
+              <p>{firstGallery?.eventKorName || ''}</p>
             </div>
           </div>
         </article>
         <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
-              <Image
-                src={secondGallery.url}
-                onClick={() => handleGallery(secondGallery)}
-                className='whats_new_image'
-                height={300}
-                width={300}
-                alt='gallery2'
-                style={{ objectFit: 'cover' }}
-              />
+              {secondGallery?.url && (
+                <Image
+                  src={secondGallery.url}
+                  onClick={() => handleGallery(secondGallery)}
+                  className='whats_new_image'
+                  height={300}
+                  width={300}
+                  alt='gallery2'
+                  style={{ objectFit: 'cover' }}
+                />
+              )}
             </div>
             <div className='more-info'>
-              <p>{secondGallery.eventKorName}</p>
+              <p>{secondGallery?.eventKorName || ''}</p>
             </div>
           </div>
         </article>
         <article className='whats_new'>
           <div className='whats_new_image_wrapper'>
             <div className=''>
-              <Image
-                src={thirdGallery.url}
-                onClick={() => handleGallery(thirdGallery)}
-                className='whats_new_image'
-                height={300}
-                width={300}
-                alt='gallery3'
-                style={{ objectFit: 'cover' }}
-              />
+              {thirdGallery?.url && (
+                <Image
+                  src={thirdGallery.url}
+                  onClick={() => handleGallery(thirdGallery)}
+                  className='whats_new_image'
+                  height={300}
+                  width={300}
+                  alt='gallery3'
+                  style={{ objectFit: 'cover' }}
+                />
+              )}
             </div>
             <div className='more-info'>
-              <p>{thirdGallery.eventKorName}</p>
+              <p>{thirdGallery?.eventKorName || ''}</p>
             </div>
           </div >
         </article>
