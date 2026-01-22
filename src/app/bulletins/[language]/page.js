@@ -10,6 +10,8 @@ import '../../css/page.css';
 import '../../css/sermons.css';
 import '../../css/board.css';
 
+export const runtime = 'edge';
+
 export default function Bulletins() {
 
     const { language } = useParams();
