@@ -383,10 +383,12 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: aqua;
   height:300px;
   padding:10px;
   margin-bottom: 20px;
+  background-color: rgba(var(--callout-rgb), 0.5);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
 }
 
 /* news section */
