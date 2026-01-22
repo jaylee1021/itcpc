@@ -31,6 +31,8 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    // 1. Force a static export so Cloudflare can host it as assets
+    output: 'export',
     // experimental: {
     //     appDir: true,
     // },
@@ -41,6 +43,9 @@ const nextConfig = {
         return config;
     },
     images: {
+        // 2. The default Next.js Image Optimization API doesn't work with 'export'.
+        // Setting unoptimized to true fixes build errors.
+        unoptimized: true,
         domains: ['res.cloudinary.com'],
     }
 };
