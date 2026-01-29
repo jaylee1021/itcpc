@@ -25,7 +25,7 @@ export default function ServiceAndDirection() {
             <section className='service_total'>
                 <div className='service_section sunday_service_background'>
                     <div className='service_section_image_wrapper'>
-                        <img src='/service_sunday_worship.png' className='service_section_image' />
+                        <img src='/service_sunday_worship.PNG' className='service_section_image' />
                     </div>
                     <div className='hide'>
                         <div className='service_section_title'>
@@ -49,7 +49,7 @@ export default function ServiceAndDirection() {
                 </div>
                 <div className='service_section ow_background'>
                     <div className='service_section_image_wrapper'>
-                        <img src='/service_OW.png' className='service_section_image' />
+                        <img src='/service_OW.PNG' className='service_section_image' />
                     </div>
                     <div>
                         <div className='service_section_title'>
@@ -70,7 +70,7 @@ export default function ServiceAndDirection() {
                 </div>
                 <div className='service_section youth_background'>
                     <div className='service_section_image_wrapper'>
-                        <img src='/service_youth.png' className='service_section_image' />
+                        <img src='/service_youth.PNG' className='service_section_image' />
                     </div>
                     <div>
                         <div className='service_section_title'>
@@ -98,7 +98,7 @@ export default function ServiceAndDirection() {
                 </div>
                 <div className='service_section sunday_school_background'>
                     <div className='service_section_image_wrapper'>
-                        <img src='/service_sunday_school.png' className='service_section_image' />
+                        <img src='/service_sunday_school.PNG' className='service_section_image' />
                     </div>
                     <div>
                         <div className='service_section_title'>
@@ -119,7 +119,7 @@ export default function ServiceAndDirection() {
 
                 <div className='service_section wed_service_background'>
                     <div className='service_section_image_wrapper'>
-                        <img src='/service_wed_service.png' className='service_section_image' />
+                        <img src='/service_wed_service.PNG' className='service_section_image' />
                     </div>
                     <div>
                         <div className='service_section_title'>
@@ -138,7 +138,7 @@ export default function ServiceAndDirection() {
 
                 <div className='service_section morning_prayer_background'>
                     <div className='service_section_image_wrapper'>
-                        <img src='/service_morning_prayer.png' className='service_section_image' />
+                        <img src='/service_morning_prayer.PNG' className='service_section_image' />
                     </div>
                     <div>
                         <div className='service_section_title'>
@@ -160,7 +160,7 @@ export default function ServiceAndDirection() {
 
                 <div className='service_section small_group_background'>
                     <div className='service_section_image_wrapper'>
-                        <img src='/service_small_group.png' className='service_section_image' />
+                        <img src='/service_small_group.PNG' className='service_section_image' />
                     </div>
                     <div>
                         <div className='service_section_title'>
@@ -176,7 +176,7 @@ export default function ServiceAndDirection() {
                 </div>
                 <div className='service_section korean_school_background'>
                     <div className='service_section_image_wrapper'>
-                        <img src='/service_korean_school.png' className='service_section_image' />
+                        <img src='/service_korean_school.PNG' className='service_section_image' />
                     </div>
                     <div>
                         <div className='service_section_title'>
