@@ -1,3 +1,4 @@
+import Image from 'next/image';
 
 export default function Ministry({ title, description, staff, time, image, position }) {
     if (position === 'right') {
@@ -18,7 +19,15 @@ export default function Ministry({ title, description, staff, time, image, posit
                     </p>
                 </div>
                 <div>
-                    <img src={image} className='education_section_image right' />
+                    <Image
+                        src={image}
+                        className='education_section_image right'
+                        alt={title}
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        style={{ width: '100%', height: 'auto' }}
+                    />
                 </div>
             </section>
         );
@@ -26,7 +35,15 @@ export default function Ministry({ title, description, staff, time, image, posit
     return (
         <section className='education_section'>
             <div>
-                <img src={image} className='education_section_image left' />
+                <Image
+                    src={image}
+                    className='education_section_image left'
+                    alt={title}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                />
             </div>
             <div className='education_section_description right'>
                 <p className='education_section_title'>
