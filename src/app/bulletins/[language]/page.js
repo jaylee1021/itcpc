@@ -1,23 +1,21 @@
 'use client';
 import React, { useState, useEffect, useCallback } from "react";
-import { pdfjs } from "react-pdf";
+import dynamic from 'next/dynamic';
 import { useParams } from "next/navigation";
 import { LoadingCircle } from "../../Component/Loading";
 import Pagination_component from "../../Component/Pagination_component";
-import BulletinModal from "../../Component/BulletinModal";
 import axios from "axios";
 import '../../css/page.css';
 import '../../css/sermons.css';
 import '../../css/board.css';
 
-export const runtime = 'edge';
+const BulletinModal = dynamic(() => import('../../Component/BulletinModal'), {
+    ssr: false,
+});
 
 export default function Bulletins() {
 
     const { language } = useParams();
-
-    pdfjs.GlobalWorkerOptions.workerSrc =
-        `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
     const [file, setFile] = useState("");
     const [isLoading, setIsLoading] = useState(true);

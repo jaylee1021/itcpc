@@ -1,3 +1,4 @@
+'use client';
 import * as React from 'react';
 import { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
@@ -29,7 +30,7 @@ const style = {
 export default function BulletinModal({ file, index }) {
 
     pdfjs.GlobalWorkerOptions.workerSrc =
-        `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+        `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
     const [open, setOpen] = useState(false);
     const [count, setCount] = useState(file.count);
