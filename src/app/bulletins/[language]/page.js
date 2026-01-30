@@ -13,6 +13,8 @@ const BulletinModal = dynamic(() => import('../../Component/BulletinModal'), {
     ssr: false,
 });
 
+export const runtime = 'edge';
+
 export default function Bulletins() {
 
     const { language } = useParams();
